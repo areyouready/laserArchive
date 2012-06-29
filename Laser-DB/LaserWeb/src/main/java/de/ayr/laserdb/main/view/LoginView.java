@@ -12,9 +12,12 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+import de.ayr.laserdb.main.controller.LoginHandler;
+
 public class LoginView extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
+    private final LoginHandler loginHandler = new LoginHandler();
 
     private TextField txtUsername = new TextField("Login");
     private PasswordField pwdPassword = new PasswordField("Password");
@@ -31,10 +34,12 @@ public class LoginView extends CustomComponent {
         txtUsername.setRequired(true);
         pwdPassword.setRequired(true);
         
-        final Panel loginPanel = new Panel("Login");
+        final Panel loginPanel = new Panel("Login...");
         vLayout.addComponent(loginPanel);
         loginPanel.setWidth("300px");
         loginPanel.setHeight("200px");
+        
+        
         
         //Ein Layout um Form und Buttons gemeinsam ins Panel packen zu können
         final VerticalLayout formWrapper = new VerticalLayout();
@@ -59,7 +64,9 @@ public class LoginView extends CustomComponent {
         loginButton.addListener(new ClickListener() {
             public void buttonClick(ClickEvent event) {
                 String loginField = (String) txtUsername.getValue();
-                getApplication().setUser(loginField);
+                String pwdField = (String) pwdPassword.getValue();
+                loginHandler.doLogin(loginField, pwdField);
+                //getApplication().setUser(loginField);
                 // if ("packtpub".equals(loginField)) {
                 // getApplication().setUser(loginField);
                 //

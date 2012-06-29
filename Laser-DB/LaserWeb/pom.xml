@@ -175,6 +175,11 @@
       <scope>provided</scope>
 	</dependency>
     -->
+    <dependency>
+    	<groupId>de.ayr.superpom</groupId>
+    	<artifactId>CommonServices</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
 </project>

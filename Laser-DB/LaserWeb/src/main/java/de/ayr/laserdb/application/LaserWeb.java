@@ -8,11 +8,15 @@ import de.ayr.laserdb.main.view.MainWindow;
 
 public class LaserWeb extends Application implements UserChangeListener {
 
+    protected static ThreadLocal<LaserWeb> thisApplication = new ThreadLocal<LaserWeb>();
+
     MainController mainController;
     MainWindow mainWindow;
 
     @Override
     public void init() {
+        
+        setProject(this);
 
         mainWindow = new MainWindow();
         setMainWindow(mainWindow);
@@ -23,18 +27,25 @@ public class LaserWeb extends Application implements UserChangeListener {
 
     }
 
+    public static void setProject(LaserWeb t) {
+        thisApplication.set(t);
+    }
+
+    public static LaserWeb getProject() {
+        return thisApplication.get();
+    }
+
     public void applicationUserChanged(UserChangeEvent event) {
 
         if (event.getNewUser() == null) {
 
-            //setContent(loginView);
+            // setContent(loginView);
             mainWindow.showNotification("Ausgeloggt");
-            
 
         } else if (event.getNewUser() != null) {
 
             mainWindow.showNotification("Eingeloggt");
-            
+
             String userName = (String) getUser();
             mainController.userLoggedIn(userName);
 

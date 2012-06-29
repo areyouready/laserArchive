@@ -21,7 +21,7 @@ public class MainController {
 
     public void userLoggedIn(String userName) {
 
-        if ("DemoUser".equals(userName)) {
+        if ("Demo User".equals(userName)) {
 
             mainWindow.showNotification("alles gut gelaufen");
 
