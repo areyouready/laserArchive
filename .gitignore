@@ -1,0 +1,33 @@
+an ignore specific files
+#.DS_Store
+
+# Use wildcards as well
+#*~
+#*.swp
+*.jar
+*.war
+*.rar
+*.har
+*.sar
+.project
+.classpath
+.settings/
+.settings/**/*
+
+# Can also ignore all directories and files in a directory.
+#tmp/**/*
+.metadata
+.metadata/**/*
+#!.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+#!.plugins/org.eclipse.core.resources/.projects/*/.location
+bin/**/*
+res/**/*
+target/**/*
+classes/**/*
+application.xml
+.gwt-log
+bin
+res
+target
+build
+

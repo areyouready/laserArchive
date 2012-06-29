@@ -1,0 +1,2 @@
+# Module de.ayr.laserdb.application.widgetset.LaserdbWidgetset
+# RPC service class, partial path of RPC policy file
