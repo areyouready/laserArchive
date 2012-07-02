@@ -2,11 +2,13 @@ package de.ayr.laserdb.main.controller;
 
 import com.vaadin.ui.Window;
 
+import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;
 
 public class MainController {
 
     private MainWindow mainWindow;
+    private UIHandler uiHandler;
 
     public MainController(MainWindow mainWindow) {
 
@@ -24,6 +26,9 @@ public class MainController {
         if ("Demo User".equals(userName)) {
 
             mainWindow.showNotification("alles gut gelaufen");
+            uiHandler = new UIHandler();
+            
+            mainWindow.setLaserWebView(uiHandler);
 
         } else {
 

@@ -4,8 +4,32 @@
   <artifactId>Laser-DB</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <vaadin.version>6.7.1</vaadin.version>
+    <gwt.version>2.3.0</gwt.version>
+    <gwt.plugin.version>2.2.0</gwt.plugin.version>
+  </properties>
+  
+  <repositories>
+    <repository>
+      <id>vaadin-snapshots</id>
+      <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>vaadin-addons</id>
+      <url>http://maven.vaadin.com/vaadin-addons</url>
+    </repository>
+  </repositories>
+  
   <modules>
-
   <module>LaserWeb</module>
   <module>CommonServices</module>
   </modules>
@@ -45,6 +69,12 @@
   	</pluginManagement>
   </build>
   <dependencies>
+  
+  	<dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin</artifactId>
+      <version>${vaadin.version}</version>
+    </dependency>
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
@@ -63,12 +93,12 @@
   	</dependency>
   	<dependency>
   		<groupId>com.google.gwt</groupId>
-  		<artifactId>gwt-user</artifactId>
+  		<artifactId>gwt-dev</artifactId>
   		<version>2.5.0-rc1</version>
   	</dependency>
   	<dependency>
   		<groupId>com.google.gwt</groupId>
-  		<artifactId>gwt-dev</artifactId>
+  		<artifactId>gwt-user</artifactId>
   		<version>2.5.0-rc1</version>
   	</dependency>
   	<dependency>

@@ -30,8 +30,7 @@ public class LoginHandler extends Panel {
             // Sets the application user and sends out an event to inform that
             // the user has logged in. UiHandler will receive this event.
             LaserWeb.getProject().setUser((Object) user.getVorname() + " " + user.getNachname());
-
-            
+                        
         } else {
 
             getApplication().getMainWindow().showNotification("Login Failed, try using demo / demo");
