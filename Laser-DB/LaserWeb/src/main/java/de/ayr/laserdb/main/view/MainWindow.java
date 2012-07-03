@@ -14,7 +14,7 @@ public class MainWindow extends Window {
 
         setName("LaserDisc Database");
         setSizeFull();
-        setTheme("runo");
+        setTheme("lasertheme");
         setLoginView();
                 
         

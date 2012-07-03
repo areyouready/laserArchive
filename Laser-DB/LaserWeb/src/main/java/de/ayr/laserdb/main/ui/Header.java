@@ -10,6 +10,8 @@ public class Header extends HorizontalLayout {
 
     public Header() {
         
+        setStyleName("Header-Style");
+        
         initUI();
     }
 
@@ -17,13 +19,15 @@ public class Header extends HorizontalLayout {
         
         setWidth("100%");
         Panel headerPanel = new Panel();
-        headerPanel.setSizeFull();
+//        headerPanel.setSizeFull();
         headerPanel.setScrollable(false);
-        headerPanel.setHeight("150");
+//        headerPanel.setHeight("150");
+        headerPanel.setHeight("100%");
         
         HorizontalLayout hLayout = new HorizontalLayout();
         
         Label titleLabel = new Label("LaserDisc Database");
+        //titleLabel.setHeight("50%");
         hLayout.addComponent(titleLabel);
         hLayout.setComponentAlignment(titleLabel, Alignment.MIDDLE_LEFT);
         hLayout.setWidth("100%");
