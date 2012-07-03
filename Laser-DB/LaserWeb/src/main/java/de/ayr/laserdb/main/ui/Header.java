@@ -11,6 +11,7 @@ public class Header extends HorizontalLayout {
     public Header() {
         
         setStyleName("Header-Style");
+        setHeight("44px");
         
         initUI();
     }

@@ -34,7 +34,7 @@ public class UIHandler extends CustomComponent {
     private void initUI() {
 
         header = new Header();
-         header.setHeight(100, Sizeable.UNITS_PERCENTAGE);
+        // header.setHeight(100, Sizeable.UNITS_PERCENTAGE);
 
         // laserView = new LaserView();
 
@@ -50,9 +50,9 @@ public class UIHandler extends CustomComponent {
 
         vLayout.addComponent(header);
         vLayout.addComponent(menuHoSplit);
-        vLayout.setExpandRatio(header, 0.15f);
-        vLayout.setExpandRatio(menuHoSplit, 0.8F);
-//        vLayout.setExpandRatio(menuHoSplit, 1);
+//        vLayout.setExpandRatio(header, 0.15f);
+//        vLayout.setExpandRatio(menuHoSplit, 0.8F);
+        vLayout.setExpandRatio(menuHoSplit, 1);
 
     }
 

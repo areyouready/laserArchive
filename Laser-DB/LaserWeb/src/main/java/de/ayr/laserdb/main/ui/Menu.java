@@ -1,11 +1,11 @@
 package de.ayr.laserdb.main.ui;
 
-import com.vaadin.ui.CustomComponent;
+import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.Tree;
 
-public class Menu extends CustomComponent {
+public class Menu extends CssLayout {
     
     private HorizontalLayout hLayout = new HorizontalLayout();
     private Tree menuTree = new Tree();
@@ -18,7 +18,7 @@ public class Menu extends CustomComponent {
 
     public Menu() {
         
-        setCompositionRoot(hLayout);
+//        setCompositionRoot(hLayout);
         setHeight("100%");
         //setMargin(true);
         setStyleName("Menu-Style");
@@ -49,8 +49,8 @@ public class Menu extends CustomComponent {
         // menuPanel = new Panel();
         // menuPanel.addComponent(menuTree);
         // menuPanel.setSizeFull();
-        hLayout.addComponent(menuTree);
-        hLayout.setHeight("100%");
+        addComponent(menuTree);
+        setHeight("100%");
         // menuPanel.setHeight("100%");
         // addComponent(menuPanel);
 
