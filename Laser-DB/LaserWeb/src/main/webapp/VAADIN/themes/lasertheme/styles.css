@@ -4,8 +4,24 @@
 	font-size: 14px;
 	font-weight: bold;
 	margin: 22px;
+	cursor: pointer;
+}
+
+.Menu-Style {
+	background-color: lightGoldenRodYellow;
 }
 
 .v-tree-node span {
 	padding: 3px 2px;
+}
+
+.v-captiontext {
+    text-align: center;
+    color: lightSlateGray;
+    overflow: hidden;
+    vertical-align: middle;
+    text-decoration: underline;
+    font-size: 14px;
+    float: none;
+     
 }

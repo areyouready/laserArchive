@@ -1,11 +1,15 @@
 package de.ayr.laserdb.main.ui;
 
+import java.util.HashMap;
+
+
 import com.vaadin.terminal.Sizeable;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.laserweb.view.HomeView;
+import de.ayr.laserdb.main.view.AbstractLaserView;
 
 public class UIHandler extends CustomComponent {
 
@@ -19,14 +23,15 @@ public class UIHandler extends CustomComponent {
 
     // private LaserView laserView;
 
+    private HashMap<String, AbstractLaserView> viewList = new HashMap<String, AbstractLaserView>();    
+    
     public UIHandler() {
 
-         vLayout.setSizeFull();
+        vLayout.setSizeFull();
         setCompositionRoot(vLayout);
-         setHeight("100%");
+        setHeight("100%");
         setSizeFull();
         setStyleName("UIHandler-Style");
-
 
         initUI();
     }
@@ -50,10 +55,15 @@ public class UIHandler extends CustomComponent {
 
         vLayout.addComponent(header);
         vLayout.addComponent(menuHoSplit);
-//        vLayout.setExpandRatio(header, 0.15f);
-//        vLayout.setExpandRatio(menuHoSplit, 0.8F);
+        // vLayout.setExpandRatio(header, 0.15f);
+        // vLayout.setExpandRatio(menuHoSplit, 0.8F);
         vLayout.setExpandRatio(menuHoSplit, 1);
 
+    }
+
+    public void switchView(String clickedView) {
+        // TODO Auto-generated method stub
+        
     }
 
 }

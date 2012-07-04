@@ -4,6 +4,7 @@ import com.vaadin.Application;
 import com.vaadin.Application.UserChangeListener;
 
 import de.ayr.laserdb.main.controller.MainController;
+import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;
 
 public class LaserWeb extends Application implements UserChangeListener {
@@ -33,6 +34,11 @@ public class LaserWeb extends Application implements UserChangeListener {
 
     public static LaserWeb getProject() {
         return thisApplication.get();
+    }
+    
+    public UIHandler getUiHandler() {
+                
+        return thisApplication.get().mainController.getUIHandler();
     }
 
     public void applicationUserChanged(UserChangeEvent event) {

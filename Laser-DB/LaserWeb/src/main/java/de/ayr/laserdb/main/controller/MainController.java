@@ -8,7 +8,7 @@ import de.ayr.laserdb.main.view.MainWindow;
 public class MainController {
 
     private MainWindow mainWindow;
-    private UIHandler uiHandler;
+    public UIHandler uiHandler;
 
     public MainController(MainWindow mainWindow) {
 
@@ -36,6 +36,12 @@ public class MainController {
 
         }
 
+    }
+    
+    public UIHandler getUIHandler() {
+        
+        return uiHandler;
+        
     }
 
 }
