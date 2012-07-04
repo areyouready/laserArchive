@@ -1,5 +1,6 @@
-an ignore specific files
+# can ignore specific files
 #.DS_Store
+rebel.xml
 
 # Use wildcards as well
 #*~
