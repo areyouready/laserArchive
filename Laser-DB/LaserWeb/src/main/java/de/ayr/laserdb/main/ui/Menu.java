@@ -27,6 +27,7 @@ public class Menu extends CssLayout {
         menuTree.setSelectable(true);
         menuTree.setMultiSelect(false);
         menuTree.setImmediate(true);
+        menuTree.setStyleName("menuTree-style");
 
         treePop();
 

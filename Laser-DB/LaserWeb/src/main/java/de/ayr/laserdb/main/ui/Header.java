@@ -45,7 +45,7 @@ public class Header extends HorizontalLayout {
 
         Button btnLogout = new Button("Logout");
         hLayout.addComponent(btnLogout);
-        hLayout.setComponentAlignment(btnLogout, Alignment.MIDDLE_RIGHT);
+        hLayout.setComponentAlignment(btnLogout, Alignment.MIDDLE_CENTER);
 
         headerPanel.addComponent(hLayout);
 

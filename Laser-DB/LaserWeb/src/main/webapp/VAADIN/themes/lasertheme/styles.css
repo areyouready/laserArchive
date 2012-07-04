@@ -1,3 +1,11 @@
 @import url(../reindeer/styles.css);
 
+.menuTree-style {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 22px;
+}
 
+.v-tree-node span {
+	padding: 3px 2px;
+}
