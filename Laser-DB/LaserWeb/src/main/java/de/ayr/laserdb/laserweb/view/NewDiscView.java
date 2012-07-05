@@ -6,26 +6,27 @@ import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
-public class LaserView extends AbstractLaserView {
+public class NewDiscView extends AbstractLaserView {
     
-    private final VerticalLayout vLayout = new VerticalLayout();
+    protected final VerticalLayout vLayout = new VerticalLayout();
     
-    public LaserView() {
+    public NewDiscView() {
         
         setCompositionRoot(vLayout);
         setSizeFull();
-        setStyleName("LaserView-Style");
+        setStyleName("NewDiscView-Style");
         
         initUI();
+        
     }
-
+    
     private void initUI() {
         
-        Panel contentPanel = new Panel("Platzhalter");
-        Label contentLabel = new Label("LaserView");
+        Panel contentPanel = new Panel("Inhalt");
+        Label contentLabel = new Label("Neue Disc View");
         
         contentPanel.setHeight("300px");
-        contentPanel.setWidth("250px");
+        contentPanel.setWidth("200px");
         
         contentPanel.addComponent(contentLabel);
         vLayout.addComponent(contentPanel);

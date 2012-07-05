@@ -1,10 +1,11 @@
 package de.ayr.laserdb.laserweb.view;
 
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-public class HomeView extends CustomComponent {
+import de.ayr.laserdb.main.view.AbstractLaserView;
+
+public class HomeView extends AbstractLaserView {
     
     private VerticalLayout vLayout = new VerticalLayout();;
     private Label welcomeLbl;
@@ -24,6 +25,12 @@ public class HomeView extends CustomComponent {
         
         vLayout.addComponent(welcomeLbl);
         vLayout.setSizeFull();
+    }
+
+    @Override
+    protected void close() throws Exception {
+        // TODO Auto-generated method stub
+        
     }
 
 }

@@ -22,7 +22,6 @@ public class Header extends HorizontalLayout {
 
         setWidth("100%");
         Panel headerPanel = new Panel();
-        // headerPanel.setSizeFull();
         headerPanel.setScrollable(false);
         // headerPanel.setHeight("150");
         headerPanel.setHeight("100%");

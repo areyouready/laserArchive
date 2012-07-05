@@ -2,24 +2,27 @@ package de.ayr.laserdb.main.ui;
 
 import java.util.HashMap;
 
-
 import com.vaadin.terminal.Sizeable;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.laserweb.view.HomeView;
+import de.ayr.laserdb.laserweb.view.LaserView;
+import de.ayr.laserdb.laserweb.view.NewDiscView;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
 public class UIHandler extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
+    private HorizontalSplitPanel menuHoSplit;
+
 
     private Header header;
-
-    private HorizontalSplitPanel menuHoSplit;
     private Menu menu;
-    private HomeView hView;
+    private HomeView homeView;
+    private LaserView laserView;
+    private NewDiscView newDiscView;
 
     // private LaserView laserView;
 
@@ -39,30 +42,40 @@ public class UIHandler extends CustomComponent {
     private void initUI() {
 
         header = new Header();
-        // header.setHeight(100, Sizeable.UNITS_PERCENTAGE);
 
         // laserView = new LaserView();
 
         menu = new Menu();
-        hView = new HomeView();
+        homeView = new HomeView();
+        laserView = new LaserView();
+        newDiscView = new NewDiscView();
 
+        viewList.put("Home", homeView);
+        viewList.put("Discs anzeigen", laserView);
+        viewList.put("Neue Disc", newDiscView);
+
+        
         menuHoSplit = new HorizontalSplitPanel();
         menuHoSplit.setHeight(100, Sizeable.UNITS_PERCENTAGE);
         menuHoSplit.setSplitPosition(200, UNITS_PIXELS);
         menuHoSplit.setFirstComponent(menu);
-        menuHoSplit.setSecondComponent(hView);
-        // menuHoSplit.setHeight("100%");
+        menuHoSplit.setSecondComponent(homeView);
 
         vLayout.addComponent(header);
         vLayout.addComponent(menuHoSplit);
-        // vLayout.setExpandRatio(header, 0.15f);
-        // vLayout.setExpandRatio(menuHoSplit, 0.8F);
         vLayout.setExpandRatio(menuHoSplit, 1);
 
     }
 
     public void switchView(String clickedView) {
-        // TODO Auto-generated method stub
+        
+        setMainView(viewList.get(clickedView));
+        
+    }
+
+    private void setMainView(AbstractLaserView abstractLaserView) {
+        
+        menuHoSplit.setSecondComponent(abstractLaserView);
         
     }
 
