@@ -15,24 +15,23 @@ public class MainWindow extends Window {
         setName("LaserDisc Database");
         setSizeFull();
         setTheme("lasertheme");
-//        setTheme("runo");
+        // setTheme("runo");
         setLoginView();
-                
-        
+        setCaption("Laser Archive");
+
     }
-    
+
     public void setLoginView() {
-        
+
         loginView = new LoginView();
         setContent(loginView);
     }
-    
+
     public void setLaserWebView(UIHandler uiHandler) {
-        
+
         loginView = null;
         setContent(uiHandler);
-        
+
     }
 
- 
 }
