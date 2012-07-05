@@ -20,7 +20,10 @@ public class LaserWeb extends Application implements UserChangeListener {
         setProject(this);
 
         mainWindow = new MainWindow();
+        mainWindow.setSizeFull();
+        
         setMainWindow(mainWindow);
+        
 
         mainController = new MainController(mainWindow);
 

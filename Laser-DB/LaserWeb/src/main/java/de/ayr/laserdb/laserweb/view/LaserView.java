@@ -1,9 +1,12 @@
 package de.ayr.laserdb.laserweb.view;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 
+import de.ayr.laserdb.application.LaserWeb;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
 public class LaserView extends AbstractLaserView {
@@ -12,9 +15,10 @@ public class LaserView extends AbstractLaserView {
     
     public LaserView() {
         
+//        vLayout.setSizeFull();
         setCompositionRoot(vLayout);
-        setSizeFull();
         setStyleName("LaserView-Style");
+        setSizeFull();
         
         initUI();
     }
@@ -29,6 +33,9 @@ public class LaserView extends AbstractLaserView {
         
         contentPanel.addComponent(contentLabel);
         vLayout.addComponent(contentPanel);
+        
+        vLayout.setComponentAlignment(contentPanel, Alignment.BOTTOM_CENTER);
+        vLayout.setSizeFull();
         
     }
 

@@ -1,5 +1,6 @@
 package de.ayr.laserdb.laserweb.view;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
@@ -26,10 +27,12 @@ public class NewDiscView extends AbstractLaserView {
         Label contentLabel = new Label("Neue Disc View");
         
         contentPanel.setHeight("300px");
-        contentPanel.setWidth("200px");
+        contentPanel.setWidth("250px");
         
         contentPanel.addComponent(contentLabel);
         vLayout.addComponent(contentPanel);
+        
+        vLayout.setComponentAlignment(contentPanel, Alignment.MIDDLE_CENTER);
         
     }
 

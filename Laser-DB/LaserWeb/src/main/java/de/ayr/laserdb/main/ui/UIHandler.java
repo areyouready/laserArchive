@@ -32,7 +32,6 @@ public class UIHandler extends CustomComponent {
 
         vLayout.setSizeFull();
         setCompositionRoot(vLayout);
-        setHeight("100%");
         setSizeFull();
         setStyleName("UIHandler-Style");
 

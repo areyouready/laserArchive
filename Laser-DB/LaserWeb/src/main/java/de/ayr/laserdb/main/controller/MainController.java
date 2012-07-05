@@ -1,7 +1,6 @@
 package de.ayr.laserdb.main.controller;
 
-import com.vaadin.ui.Window;
-
+import de.ayr.laserdb.application.LaserWeb;
 import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;
 
@@ -33,7 +32,8 @@ public class MainController {
         } else {
 
             mainWindow.showNotification("Muss was schief gegangen sein");
-
+            
+            
         }
 
     }
