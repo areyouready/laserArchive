@@ -1,8 +1,15 @@
 package de.ayr.laserdb.common.services.login.control;
 
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+
 import de.ayr.laserdb.common.services.login.entity.User;
 
-public class Authentication {
+@Named
+@SessionScoped
+public class Authentication implements Serializable {
 
     public Authentication() {
 

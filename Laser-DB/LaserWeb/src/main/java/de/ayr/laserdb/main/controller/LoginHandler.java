@@ -1,21 +1,30 @@
 package de.ayr.laserdb.main.controller;
 
-import com.vaadin.ui.Panel;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import de.ayr.laserdb.application.LaserWeb;
 import de.ayr.laserdb.common.services.login.control.Authentication;
 import de.ayr.laserdb.common.services.login.entity.User;
 
-public class LoginHandler extends Panel {
+@Named
+public class LoginHandler {
 
     private Authentication auth = new Authentication();
+    
+    private static final long serialVersionUID = 2126197548761564883L;
 
+//    @Inject
+//    private Authentication auth2;
+    
     private String loginField;
     private String pwdField;
     private User user;
 
     public LoginHandler() {
-
+        
+        //System.out.println(auth2);
+        
     }
 
     public void doLogin(String loginField, String pwdField) {
@@ -32,8 +41,12 @@ public class LoginHandler extends Panel {
             LaserWeb.getProject().setUser((Object) user.getVorname() + " " + user.getNachname());
                         
         } else {
-
-            getApplication().getMainWindow().showNotification("Login Failed, try using demo / demo");
+            
+            // Da getApplication nur aus einer Vaadin KOmponent heraus funktioniert wird dies durch die statische
+            // ThreadLocal VAriable LaserWeb umgangen. Bei getApplication müsste diese Klasse von einem Vaadin
+            // Element wie Panel oder CustomComponent extenden
+            LaserWeb.getProject().getMainWindow().showNotification("Login Failed, try using demo / demo");
+            //getApplication().getMainWindow().showNotification("Login Failed, try using demo / demo");
 
         }
 
