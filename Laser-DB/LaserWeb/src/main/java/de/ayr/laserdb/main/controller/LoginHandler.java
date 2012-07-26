@@ -26,7 +26,7 @@ public class LoginHandler {
                 
     }
 
-    public void doLogin(String loginField, String pwdField) throws NamingException {
+    public void doLogin(String loginField, String pwdField) {
         
                
         this.loginField = loginField;
