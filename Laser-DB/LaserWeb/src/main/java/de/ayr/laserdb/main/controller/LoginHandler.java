@@ -1,38 +1,39 @@
 package de.ayr.laserdb.main.controller;
 
-import javax.inject.Inject;
-import javax.inject.Named;
+import javax.naming.NamingException;
+
+import com.google.inject.Inject;
 
 import de.ayr.laserdb.application.LaserWeb;
 import de.ayr.laserdb.common.services.login.control.Authentication;
 import de.ayr.laserdb.common.services.login.entity.User;
 
-@Named
 public class LoginHandler {
 
-    private Authentication auth = new Authentication();
+//    private AuthenticationImpl auth = new AuthenticationImpl();
     
     private static final long serialVersionUID = 2126197548761564883L;
-
-//    @Inject
-//    private Authentication auth2;
+    
+            
+    @Inject
+    private Authentication auth;
     
     private String loginField;
     private String pwdField;
     private User user;
 
     public LoginHandler() {
-        
-        //System.out.println(auth2);
-        
+                
     }
 
-    public void doLogin(String loginField, String pwdField) {
-
+    public void doLogin(String loginField, String pwdField) throws NamingException {
+        
+               
         this.loginField = loginField;
         this.pwdField = pwdField;
 
         user = auth.Authenticate(loginField, pwdField);
+//        System.out.println(auth2);
 
         if (user != null) {
 

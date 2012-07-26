@@ -1,5 +1,7 @@
 package de.ayr.laserdb.main.view;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -17,7 +19,10 @@ import de.ayr.laserdb.main.controller.LoginHandler;
 public class LoginView extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
-    private final LoginHandler loginHandler = new LoginHandler();
+    //private final LoginHandler loginHandler = new LoginHandler();
+    Injector injector = Guice.createInjector();  
+    LoginHandler loginHandler = injector.getInstance(LoginHandler.class);  
+    //customer.changeSomething();
 
     private TextField txtUsername = new TextField("Login");
     private PasswordField pwdPassword = new PasswordField("Password");

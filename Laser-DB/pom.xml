@@ -119,6 +119,11 @@
   		<artifactId>cdi-api</artifactId>
   		<scope>provided</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>com.google.inject</groupId>
+  		<artifactId>guice</artifactId>
+  		<version>3.0</version>
+  	</dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>
