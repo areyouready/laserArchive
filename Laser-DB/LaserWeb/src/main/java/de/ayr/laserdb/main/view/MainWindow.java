@@ -1,9 +1,6 @@
 package de.ayr.laserdb.main.view;
 
-import com.vaadin.Application.UserChangeEvent;
-import com.vaadin.Application.UserChangeListener;
 import com.vaadin.ui.Window;
-import com.vaadin.ui.Window.CloseListener;
 
 import de.ayr.laserdb.main.ui.UIHandler;
 

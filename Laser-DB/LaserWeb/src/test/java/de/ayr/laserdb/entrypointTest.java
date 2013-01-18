@@ -2,7 +2,7 @@ package de.ayr.laserdb;
 
 import org.junit.Test;
 
-import de.ayr.laserdb.application.LaserWeb;
+import de.ayr.laserdb.ui.LaserWeb;
 
 public class entrypointTest {
 	

@@ -1,12 +1,10 @@
 package de.ayr.laserdb.main.controller;
 
-import javax.naming.NamingException;
-
 import com.google.inject.Inject;
 
-import de.ayr.laserdb.application.LaserWeb;
 import de.ayr.laserdb.common.services.login.control.Authentication;
 import de.ayr.laserdb.common.services.login.entity.User;
+import de.ayr.laserdb.ui.LaserWeb;
 
 public class LoginHandler {
 
@@ -15,15 +13,17 @@ public class LoginHandler {
     private static final long serialVersionUID = 2126197548761564883L;
     
             
-    @Inject
     private Authentication auth;
     
     private String loginField;
     private String pwdField;
     private User user;
 
-    public LoginHandler() {
-                
+    @Inject
+    public LoginHandler(Authentication auth) {
+        
+        this.auth = auth;
+        
     }
 
     public void doLogin(String loginField, String pwdField) {
@@ -34,6 +34,8 @@ public class LoginHandler {
 
         user = auth.Authenticate(loginField, pwdField);
 //        System.out.println(auth2);
+       
+
 
         if (user != null) {
 

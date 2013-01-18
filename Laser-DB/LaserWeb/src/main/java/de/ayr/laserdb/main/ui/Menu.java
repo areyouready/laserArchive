@@ -7,7 +7,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.Tree;
 
-import de.ayr.laserdb.application.LaserWeb;
+import de.ayr.laserdb.ui.LaserWeb;
 
 public class Menu extends CssLayout implements ValueChangeListener {
 

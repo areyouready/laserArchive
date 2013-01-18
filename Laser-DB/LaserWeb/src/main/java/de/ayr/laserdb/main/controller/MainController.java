@@ -1,22 +1,42 @@
 package de.ayr.laserdb.main.controller;
 
-import de.ayr.laserdb.application.LaserWeb;
+import java.io.Serializable;
+
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+
+import com.vaadin.ui.UI;
+
+import de.ayr.laserdb.login.UserHandler;
 import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;
 
-public class MainController {
+@SessionScoped
+public class MainController implements Serializable {
 
     private MainWindow mainWindow;
-    public UIHandler uiHandler;
+    private UIHandler uiHandler;
 
-    public MainController(MainWindow mainWindow) {
-
+    @Inject
+    public MainController(MainWindow mainWindow, UIHandler uiHandler) {
         this.mainWindow = mainWindow;
-
-        init();
+        this.uiHandler = uiHandler;
+    }
+    
+    protected MainController() {
     }
 
+    @PostConstruct
     private void init() {
+//        public void go() {
+            if (UserHandler.getUser() == null) {
+                showLogin();
+            } else {
+                showMainView();
+            }
+
+//        }
 
     }
 
@@ -24,15 +44,14 @@ public class MainController {
 
         if ("Demo User".equals(userName)) {
 
-            mainWindow.showNotification("alles gut gelaufen");
+            UI.getCurrent().showNotification("alles gut gelaufen");
             uiHandler = new UIHandler();
             
             mainWindow.setLaserWebView(uiHandler);
 
         } else {
 
-            mainWindow.showNotification("Muss was schief gegangen sein");
-            
+            UI.getCurrent().showNotification("Muss was schief gegangen sein");
             
         }
 

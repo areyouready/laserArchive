@@ -6,8 +6,8 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 
-import de.ayr.laserdb.application.LaserWeb;
 import de.ayr.laserdb.main.view.AbstractLaserView;
+import de.ayr.laserdb.ui.LaserWeb;
 
 public class LaserView extends AbstractLaserView {
     
