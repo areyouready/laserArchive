@@ -1,5 +1,8 @@
 package de.ayr.laserdb.main.ui;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.ui.CssLayout;
@@ -12,33 +15,40 @@ import de.ayr.laserdb.ui.LaserWeb;
 public class Menu extends CssLayout implements ValueChangeListener {
 
     private HorizontalLayout hLayout = new HorizontalLayout();
-    private Tree menuTree = new Tree();
+    private Tree menuTree = new Tree("Auswahlmenü");
     private Panel menuPanel;
+    
+    private UIHandler uiHandler;
 
     // String Mappings für die Menüpunkte
     public static final String M_HOME = "Home";
     public static final String M_SHOW = "Discs anzeigen";
     public static final String M_NEU = "Neue Disc";
 
-    public Menu() {
+    @Inject
+    public Menu(UIHandler uiHandler) {
 
+        this.uiHandler = uiHandler;
+    }
+
+    @PostConstruct
+    private void init() {
         // setCompositionRoot(hLayout);
         setHeight("100%");
         // setMargin(true);
         setStyleName("Menu-Style");
-
-        menuTree = new Tree("Auswahlmenü");
+        
         menuTree.setSelectable(true);
         menuTree.setMultiSelect(false);
         menuTree.setImmediate(true);
         menuTree.setStyleName("menuTree-style");
-
+        
         menuTree.addListener((ValueChangeListener) this);
-
+        
         treePop();
-
+        
     }
-
+    
     // Menüpunkte in den Tree einfügen
     private void treePop() {
 
@@ -71,7 +81,9 @@ public class Menu extends CssLayout implements ValueChangeListener {
         // Referenz vom UIHandler aus LaserWeb holen und in UIHandler switchView
         // aufrufen. SwitchView wird der String des
         // geklickten Menüeintrages mitgegeben
-        LaserWeb.getProject().getUiHandler().switchView(clickedView);
+//        LaserWeb.getProject().getUiHandler().switchView(clickedView);
+        
+        uiHandler.switchView(clickedView);
 
     }
 }

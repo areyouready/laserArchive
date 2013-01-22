@@ -11,7 +11,7 @@ public class entrypointTest {
 	
 	@Test
 	public void testInitRuns() {
-		LaserWeb lw = new LaserWeb();
+//		LaserWeb lw = new LaserWeb();
 	}
 
 }

@@ -2,7 +2,9 @@ package de.ayr.laserdb.main.ui;
 
 import java.util.HashMap;
 
-import com.vaadin.terminal.Sizeable;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
@@ -24,30 +26,23 @@ public class UIHandler extends CustomComponent {
     private LaserView laserView;
     private NewDiscView newDiscView;
 
-    // private LaserView laserView;
-
     private HashMap<String, AbstractLaserView> viewList = new HashMap<String, AbstractLaserView>();    
     
-    public UIHandler() {
+    @Inject
+    public UIHandler(Header header, Menu menu, HomeView homeView, LaserView laserView, NewDiscView newDiscView) {
+        this.header = header;
+        this.menu = menu;
+        this.homeView = homeView;
+        this.laserView = laserView;
+        this.newDiscView = newDiscView;
+    }
 
+    @PostConstruct
+    private void initUI() {
         vLayout.setSizeFull();
         setCompositionRoot(vLayout);
         setSizeFull();
         setStyleName("UIHandler-Style");
-
-        initUI();
-    }
-
-    private void initUI() {
-
-        header = new Header();
-
-        // laserView = new LaserView();
-
-        menu = new Menu();
-        homeView = new HomeView();
-        laserView = new LaserView();
-        newDiscView = new NewDiscView();
 
         viewList.put("Home", homeView);
         viewList.put("Discs anzeigen", laserView);
@@ -55,7 +50,7 @@ public class UIHandler extends CustomComponent {
 
         
         menuHoSplit = new HorizontalSplitPanel();
-        menuHoSplit.setHeight(100, Sizeable.UNITS_PERCENTAGE);
+        menuHoSplit.setHeight(100, UNITS_PERCENTAGE);
         menuHoSplit.setSplitPosition(200, UNITS_PIXELS);
         menuHoSplit.setFirstComponent(menu);
         menuHoSplit.setSecondComponent(homeView);

@@ -1,8 +1,7 @@
 package de.ayr.laserdb.common.services.login.control;
 
 import javax.ejb.Stateless;
-
-import com.google.inject.Inject;
+import javax.inject.Inject;
 
 import de.ayr.laserdb.common.services.login.entity.User;
 

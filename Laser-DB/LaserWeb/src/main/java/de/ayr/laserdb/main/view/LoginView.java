@@ -1,7 +1,8 @@
 package de.ayr.laserdb.main.view;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -19,44 +20,44 @@ import de.ayr.laserdb.main.controller.LoginHandler;
 public class LoginView extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
-    //private final LoginHandler loginHandler = new LoginHandler();
-    Injector injector = Guice.createInjector();  
-    LoginHandler loginHandler = injector.getInstance(LoginHandler.class);  
+    private final LoginHandler loginHandler;
     //customer.changeSomething();
 
     private TextField txtUsername = new TextField("Login");
     private PasswordField pwdPassword = new PasswordField("Password");
+    private final Panel loginPanel = new Panel("Login...");
+    private final VerticalLayout formWrapper = new VerticalLayout();
+    private final FormLayout formLogin = new FormLayout();
+    private final HorizontalLayout buttonLayout = new HorizontalLayout();
 
-    public LoginView() {
+    @Inject
+    public LoginView(LoginHandler loginHandler) {
 
-        setCompositionRoot(vLayout);
-        setSizeFull();
-        initUI();
+        this.loginHandler = loginHandler;
+        
     }
 
+    @PostConstruct
     private void initUI() {
+        setCompositionRoot(vLayout);
+        setSizeFull();
         
         txtUsername.setRequired(true);
         pwdPassword.setRequired(true);
         
-        final Panel loginPanel = new Panel("Login...");
         vLayout.addComponent(loginPanel);
         loginPanel.setWidth("300px");
         loginPanel.setHeight("200px");
         
         
-        
         //Ein Layout um Form und Buttons gemeinsam ins Panel packen zu können
-        final VerticalLayout formWrapper = new VerticalLayout();
         
-        final FormLayout formLogin = new FormLayout();
         formWrapper.addComponent(formLogin);
         formLogin.setMargin(true);
         formLogin.setStyleName("formLogin");
         formLogin.addComponent(txtUsername);
         formLogin.addComponent(pwdPassword);
         
-        final HorizontalLayout buttonLayout = new HorizontalLayout();
         formWrapper.addComponent(buttonLayout);
         formWrapper.setComponentAlignment(buttonLayout, Alignment.BOTTOM_CENTER);
         Button loginButton = new Button("Login");
@@ -81,7 +82,7 @@ public class LoginView extends CustomComponent {
 
         logoutButton.addListener(new ClickListener() {
             public void buttonClick(ClickEvent event) {
-                getApplication().setUser(null);
+//                getApplication().setUser(null);
             }
         });
         
@@ -91,3 +92,4 @@ public class LoginView extends CustomComponent {
 
     }
 }
+

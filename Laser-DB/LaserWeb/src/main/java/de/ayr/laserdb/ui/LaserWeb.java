@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.cdi.Root;
 import com.vaadin.cdi.VaadinUI;
 import com.vaadin.server.VaadinRequest;
@@ -15,6 +16,7 @@ import de.ayr.laserdb.main.controller.MainController;
 import de.ayr.laserdb.main.view.MainWindow;
 
 @Theme("lasertheme")
+@Title("LaserDisc Database")
 @PreserveOnRefresh
 @VaadinUI
 @Root
