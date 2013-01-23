@@ -16,7 +16,7 @@ public class Menu extends CssLayout implements ValueChangeListener {
 
     private HorizontalLayout hLayout = new HorizontalLayout();
     private Tree menuTree = new Tree("Auswahlmenü");
-    private Panel menuPanel;
+//    private Panel menuPanel;
     
     private UIHandler uiHandler;
 
@@ -34,14 +34,16 @@ public class Menu extends CssLayout implements ValueChangeListener {
     @PostConstruct
     private void init() {
         // setCompositionRoot(hLayout);
-        setHeight("100%");
+//        setHeight("100%");
         // setMargin(true);
+        setSizeFull();
         setStyleName("Menu-Style");
         
         menuTree.setSelectable(true);
         menuTree.setMultiSelect(false);
         menuTree.setImmediate(true);
         menuTree.setStyleName("menuTree-style");
+        menuTree.setSizeFull();
         
         menuTree.addListener((ValueChangeListener) this);
         
@@ -67,7 +69,7 @@ public class Menu extends CssLayout implements ValueChangeListener {
         // menuPanel.addComponent(menuTree);
         // menuPanel.setSizeFull();
         addComponent(menuTree);
-        setHeight("100%");
+//        setHeight("100%");
         // menuPanel.setHeight("100%");
         // addComponent(menuPanel);
 

@@ -1,55 +1,121 @@
-.v-theme-version:after {content:"6_8_0";}
-.v-theme-version-6_8_0 {display: none;}
-/* Automatically compiled css file from subdirectories. */
+.v-theme-version:after {content:"7_0_0_rc1";}
+.v-theme-version-7_0_0_rc1 {display: none;}
+.v-generated-body {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+}
 
-.v-absolutelayout-wrapper {
+.v-debug-console {
+	background: #fff;
+	opacity: 0.9;
+	border: 1px solid #000;
+	font-family: sans-serif;
+}
+
+.v-debug-console-caption {
+	background: #000;
+	border-bottom: 1px solid grey;
+	color: white;
+	font-weight: bold;
+}
+
+.v-debug-console-content {
+	font-size: x-small;
+	overflow: auto;
+	white-space: pre;
+}
+
+.v-debug-console-content input {
+	font-size: xx-small;
+}
+
+.v-app .invalidlayout, .v-app .invalidlayout * {
+	background: #f99 !important;
+}
+
+.liferay .v-widget {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: bottom;
+	font-size: 11px;
+	line-height: normal;
+}
+
+.liferay .v-absolutelayout-wrapper {
 	position: absolute;
 	overflow: hidden;
 }
 
-.v-accordion {
+.liferay .v-absolutelayout-margin, .liferay .v-absolutelayout-canvas {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.liferay .v-absolutelayout.v-has-height > div, .liferay .v-absolutelayout.v-has-height > div > div {
+	height: 100%;
+}
+
+.liferay .v-absolutelayout.v-has-width > div, .liferay .v-absolutelayout.v-has-width > div > div {
+	width: 100%;
+}
+
+.liferay .v-accordion {
 	position: relative;
 	outline: none;
-	overflow: hidden;
-	text-align: left /* Force default alignment */
+	overflow: visible;
+	text-align: left;
+	font-size: 0;
 }
-.v-accordion-item {
+
+.liferay .v-accordion-item {
 	position: relative;
-	zoom: 1;
+	display: inline-block;
+	width: 100%;
 }
-.v-accordion-item-caption {
-	overflow: hidden;
+
+.liferay .v-accordion-item-caption {
+	overflow: visible;
 	white-space: nowrap;
 	background: #eee;
 	border-bottom: 1px solid #ddd;
 }
-.v-accordion-item-caption .v-caption {
+
+.liferay .v-accordion-item-caption .v-caption {
 	cursor: pointer;
+	font-size: 11px;
 }
-.v-accordion-item-open .v-accordion-item-caption .v-caption {
+
+.liferay .v-accordion-item-open .v-accordion-item-caption .v-caption {
 	cursor: default;
 }
-.v-accordion-item-content {
+
+.liferay .v-accordion-item-content {
 	position: absolute;
 	width: 100%;
 }
 
-/*
- * Default button (more customizable)
- * -------------------------------------- */
-.v-button {
+.liferay .v-button {
 	display: inline-block;
 	zoom: 1;
-	text-align: center;
+	text-align: center !important;
 	text-decoration: none;
 	border: 2px outset #ddd;
 	background: #eee;
 	cursor: pointer;
 	white-space: nowrap;
 	margin: 0;
-	padding: .2em 1em;
+	padding: 0.2em 1em;
 	color: inherit;
 	font: inherit;
+	font-size: 11px;
 	line-height: normal;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -57,51 +123,37 @@
 	user-select: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.v-button.v-disabled {
+.liferay .v-button.v-disabled {
 	cursor: default;
 }
 
-.v-ie6 .v-button {
-	display: inline;
-}
-
-.v-ie7 .v-button {
-   display: inline;
-}
-
-.v-button-wrap,
-.v-button-caption {
-	vertical-align: middle;
+.liferay .v-button-wrap, .liferay .v-button-caption {
+	vertical-align: baseline;
 	white-space: nowrap;
 	font: inherit;
 	color: inherit;
 	line-height: normal;
-	}
+}
 
-.v-button .v-icon,
-.v-nativebutton .v-icon {
+.liferay .v-button .v-icon {
 	vertical-align: middle;
 	margin-right: 3px;
 	border: none;
-	}
+}
 
-.v-button .v-errorindicator,
-.v-nativebutton .v-errorindicator {
+.liferay .v-button .v-errorindicator {
 	display: inline-block;
 	zoom: 1;
 	vertical-align: middle;
 	float: none;
 }
 
-/* Link style (we really should deprecate this) */
-.v-button-link,
-.v-nativebutton-link {
+.liferay .v-button-link {
 	border: none;
-	text-align: left;
+	text-align: left !important;
 	background: transparent;
 	padding: 0;
 	color: inherit;
@@ -111,320 +163,459 @@
 	user-select: text;
 }
 
-/* Inset Safari focus outline a bit */
-.v-sa .v-button-link:focus{
+.v-sa .liferay .v-button-link:focus {
 	outline-offset: -3px;
-	}
+}
 
-.v-button-link .v-button-caption,
-.v-nativebutton-link .v-nativebutton-caption {
+.liferay .v-button-link .v-button-caption {
 	text-decoration: underline;
 	color: inherit;
 	text-align: left;
-	}
+}
 
+.liferay .v-nativebutton .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+	border: none;
+}
 
-/*
- * NativeButton styles (html button element)
- * -------------------------------------- */
-.v-nativebutton {
-	text-align: center;
+.liferay .v-nativebutton .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	float: none;
+}
+
+.liferay .v-nativebutton-link {
+	border: none;
+	text-align: left !important;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ie-user-select: text;
+	user-select: text;
+}
+
+.liferay .v-nativebutton-link .v-nativebutton-caption {
+	text-decoration: underline;
+	color: inherit;
+	text-align: left;
+}
+
+.liferay .v-nativebutton {
+	text-align: center !important;
 	cursor: pointer;
 	white-space: nowrap;
 	margin: 0;
 	color: inherit;
 	font: inherit;
 	line-height: normal;
-	}
-.v-nativebutton .v-nativebutton-caption {
+}
+
+.liferay .v-nativebutton .v-nativebutton-caption {
 	vertical-align: middle;
 	white-space: nowrap;
 	font: inherit;
 	color: inherit;
-	}
+}
 
-.v-nativebutton .v-icon {
+.liferay .v-nativebutton .v-icon {
 	vertical-align: middle;
 	margin-right: 3px;
-	}
+}
 
-.v-nativebutton .v-errorindicator {
+.liferay .v-nativebutton .v-errorindicator {
 	display: inline-block;
 	zoom: 1;
 	float: none;
 }
-/* Fixes streched buttons in IE6 and IE7*/
-.v-ie6 .v-nativebutton {
-	width: 1px;
-}
-.v-ie .v-nativebutton {
+
+.v-ie .liferay .v-nativebutton {
 	overflow: visible;
 	padding-left: 1em;
 	padding-right: 1em;
 }
 
-.v-ie .v-nativebutton-link {
+.v-ie .liferay .v-nativebutton-link {
 	padding: 0;
 }
 
-/*
- * Checkbox styles
- * -------------------------------------- */
- 
- .v-checkbox {
- 	display: block;
- }
+.liferay .v-checkbox {
+	display: block;
+}
 
-.v-checkbox,
-.v-checkbox label,
-.v-checkbox input,
-.v-checkbox .v-icon {
+.liferay .v-checkbox, .liferay .v-checkbox label, .liferay .v-checkbox input, .liferay .v-checkbox .v-icon {
 	vertical-align: middle;
 	white-space: nowrap;
 }
 
-/* Fix for IE6/IE7 issue where checkbox moves 1 pixel down after selection (#4636) */
-.v-ie6 .v-checkbox,
-.v-ie7 .v-checkbox {
-	vertical-align: baseline;
-}
-
-.v-checkbox .v-icon {
+.liferay .v-checkbox .v-icon {
 	margin: 0 2px;
 }
-.v-checkbox .v-errorindicator {
+
+.liferay .v-checkbox .v-errorindicator {
 	float: none;
 	display: inline;
 	display: inline-block;
 	zoom: 1;
 }
 
+.liferay .v-captionwrapper {
+	text-align: left;
+}
 
-/* Disabled by default
-.v-checkbox-error {
-	background: #ffe0e0;
-}
-*/
-/* Disabled by default
-.v-checkbox-required {
-	background: #ffe0e0;
-}
-*/
-
-.v-captionwrapper {
-	text-align: left; /* Force default alignment */
-}
-.v-caption {
+.liferay .v-caption {
 	overflow: hidden;
 	white-space: nowrap;
+	font-size: 11px;
 }
-.v-errorindicator {
-	float: left;
+
+.liferay .v-errorindicator {
+	display: inline-block;
 }
-.v-caption .v-icon {
-	float: left;
+
+.liferay .v-caption .v-icon {
+	display: inline-block;
 	padding-right: 2px;
 	vertical-align: middle;
 }
-.v-caption .v-captiontext {
-	float: left;
+
+.liferay .v-caption .v-captiontext {
+	display: inline-block;
 	overflow: hidden;
 	vertical-align: middle;
 }
-.v-caption .v-required-field-indicator {
+
+.liferay .v-caption .v-required-field-indicator {
+	display: inline-block;
+}
+
+.liferay .v-colorpicker {
+	text-align: center;
+}
+
+.liferay .v-colorpicker-button-color {
+	border: 1px solid silver;
 	float: left;
+	width: 10px;
+	height: 10px;
+	margin-top: 2px;
+	margin-right: 5px;
 }
 
-.v-caption-clearelem {
-	clear: both;
-	width: 0;
-	height: 0;
-	overflow: hidden;
+.liferay .v-colorpicker-area {
+	border: 1px solid silver;
+	margin: 1px auto;
 }
 
-/* Fix IE6 "double-float-margin-bug" */
-.v-ie6 .v-errorindicator,
-.v-ie6 .v-icon,
-.v-ie6 .v-captiontext,
-.v-ie6 .v-required-field-indicator {
-	display: inline;
+.liferay .v-colorpicker-history {
+	margin: 5px;
 }
 
-.v-ie9 .v-gridlayout-margin>div>div>.v-caption,
-.v-ie9 .v-verticallayout>div>div>.v-caption,
-.v-ie9 .v-horizontallayout>div>div>.v-caption {
-	/* Fix possible sub pixel rounding errors that cause error indicators to drop */
-	margin-right:-0.5px;
+.liferay .v-colorpicker-history td {
+	border: 1px solid silver !important;
 }
 
-/* References the BODY tag generated by Vaadin application servlet */
-.v-generated-body {
+.liferay .v-colorpicker-history td {
+	line-height: 15px;
+}
+
+.liferay .v-colorpicker-popup {
+	width: 244px;
+}
+
+.liferay .v-colorpicker-popup .v-scrollable {
+	background-color: #dddddd;
+}
+
+.liferay .v-colorpicker-popup .v-tabsheet-content .v-scrollable {
+	background-color: #eaeaea;
+}
+
+.liferay .v-colorpicker-popup .v-tabsheet-content .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.liferay .v-colorpicker-popup .resize-button {
+	border: 0px solid silver;
+	background: url(../base/colorpicker/images/resizebg.png);
+	margin-top: 5px;
+}
+
+.liferay .v-colorpicker-popup .resize-button-caption {
+	display: none;
+}
+
+.liferay .v-colorpicker-popup .resize-button:hover {
+	background: url(../base/colorpicker/images/resizebg-selected.png);
+}
+
+.liferay .v-colorpicker-popup .resize-button:focus {
+	outline: none;
+}
+
+.liferay .v-colorpicker-gradient {
+	width: 220px;
+	height: 220px;
+	padding-left: 10px;
+	margin-top: 0px;
+}
+
+.liferay .v-colorpicker-gradient .v-colorpicker-gradient-clicklayer {
+	background-color: white;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+}
+
+.liferay .v-colorpicker-popup .rgb-gradient .v-colorpicker-gradient-background {
+	width: 220px;
+	height: 220px;
+	background: url(../base/colorpicker/images/gradient2.png);
+}
+
+.liferay .v-colorpicker-popup .hsv-gradient .v-colorpicker-gradient-foreground {
+	background: url(../base/colorpicker/images/gradient.png);
+}
+
+.liferay .v-colorpicker-popup .v-colorpicker-gradient-lowerbox {
+	border-right: 1px solid white;
+	border-top: 1px solid white;
+}
+
+.liferay .v-colorpicker-popup .v-colorpicker-gradient-higherbox {
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.liferay .v-colorpicker-popup .rgb-sliders {
+	width: 227px;
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.liferay .v-colorpicker-popup .rgb-sliders .red .v-slider-base {
+	background-color: red;
+}
+
+.liferay .v-colorpicker-popup .rgb-sliders .green .v-slider-base {
+	background-color: green;
+}
+
+.liferay .v-colorpicker-popup .rgb-sliders .blue .v-slider-base {
+	background-color: blue;
+}
+
+.liferay .v-colorpicker-popup .hsv-sliders {
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.liferay .v-colorpicker-popup .hue-slider {
+	height: 10px;
+	border: 0px solid silver;
+	background-image: url(../base/colorpicker/images/slider_hue_bg.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	margin-top: 0px;
+}
+
+.liferay .v-colorpicker-popup .hue-slider .v-slider-handle {
+	margin-top: -2px;
+}
+
+.liferay .v-colorpicker-popup .hue-slider .v-slider-base {
+	border: 0px none;
+	height: 0px;
+	background-color: transparent;
+}
+
+.liferay .v-colorpicker-popup .v-colorpicker-preview {
+	margin-top: 5px;
+	padding-left: 11px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+}
+
+.liferay .v-colorpicker-popup .v-absolutelayout-wrapper {
 	width: 100%;
 	height: 100%;
-	border: 0;
-	margin: 0;
-	overflow: hidden;
 }
-.v-app {
+
+.liferay .v-colorpicker-popup .v-colorpicker-preview-textfield {
+	background: none;
+	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.liferay .v-colorpicker-popup .v-textfield-dark {
+	color: #FFFFFF;
+}
+
+.liferay .v-colorpicker-popup .v-textfield-light {
+	color: #000000;
+}
+
+.liferay .v-colorpicker-popup .colorselect {
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.liferay .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 319px;
+}
+
+.liferay .v-colorpicker-popup .colorselect td {
+	line-height: 15px;
+}
+
+.liferay .v-colorpicker-popup .v-filterselect {
+	padding-right: 16px;
+}
+
+.liferay.v-app {
 	height: 100%;
 }
-/* Force arrow cursor for all elements inside the app */
-.v-app,
-.v-window,
-.v-popupview-popup,
-.v-label,
-.v-caption {
+
+.liferay.v-app, .liferay .v-window, .liferay .v-popupview-popup, .liferay .v-label, .liferay .v-caption {
 	cursor: default;
 }
-div.v-app-loading {
-	/* You can use this to provide indication for the user that the application is loading. */
-	/* It is applied to the same element as .v-app */
+
+body .liferay.v-app-loading {
 	background-image: url(../base/common/img/loading-indicator.gif);
 	background-repeat: no-repeat;
 	background-position: 50%;
 	width: 100%;
 	height: 100%;
 }
-.v-view {
+
+.liferay .v-ui {
 	height: 100%;
 	width: 100%;
-	/* avoid scrollbars with margins in root layout */
 	outline: none;
-	margin-top: -1px;
-	border-top: 1px solid transparent;
 	position: relative;
 }
-/**
- * Try to handle printing somehow. Reasonable printing support 
- * needs application specific planning and CSS tuning.
- */
-@media print {
-	.v-generated-body {
-		height: auto;
-		min-height: 20cm;
-		overflow: visible;
-	}
-	.v-app {
-		height: auto;
-		min-height: 20cm;
-	}
-	.v-view {
-		overflow: visible;
-	}
-	.v-gridlayout {
-		overflow: visible !important;
-	}
+
+.liferay .v-ui.v-ui-embedded {
+	margin-top: -1px;
+	border-top: 1px solid transparent;
 }
-.v-view:active,
-.v-view:focus {
+
+.liferay .v-ui:active, .liferay .v-ui:focus {
 	outline: none;
 }
-.v-app select,
-.v-window select {
+
+.liferay.v-app select, .liferay .v-window select {
 	margin: 0;
 }
-.v-disabled {
-	opacity: .3;
+
+.liferay .v-disabled {
+	opacity: 0.3;
 	filter: alpha(opacity=30);
 	cursor: default;
 }
-.v-disabled * {
+
+.liferay .v-disabled * {
 	cursor: default;
 }
-* html .v-disabled {
+
+* html .liferay .v-disabled {
 	zoom: 1;
 }
-*+html .v-disabled {
+
+* + html .liferay .v-disabled {
 	zoom: 1;
 }
-.v-disabled .v-disabled {
+
+.liferay .v-disabled .v-disabled {
 	opacity: 1;
 }
-.v-required-field-indicator {
+
+.liferay .v-required-field-indicator {
 	padding-left: 2px;
 	color: red;
 }
-.v-form fieldset {
+
+.liferay .v-form fieldset {
 	border: none;
 	padding: 0;
 	margin: 0;
+	height: 100%;
 }
-/* Field modified */ /* Disabled by default
-.v-modified,
-.v-richtextarea.v-modified iframe.gwt-RichTextArea,
-.v-checkbox.v-modified,
-.v-modified .v-select-option,
-.v-modified .v-textfield,
-.v-modified .v-datefield-calendarpanel,
-.v-modified .v-select-select,
-.v-modified .v-select-twincol-selections,
-.v-modified .v-select-twincol-options,
-.v-modified .v-slider-base {
-	background: #ffffe0;
+
+.liferay .v-form-content {
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-*/
-.v-tooltip {
+
+.liferay .v-tooltip {
 	cursor: default;
 	background: #fff;
 }
-.v-tooltip-text {
+
+.liferay .v-tooltip-text {
 	overflow: auto;
 }
-.v-tooltip .v-errormessage {
+
+.liferay .v-tooltip .v-errormessage {
 	overflow: auto;
 }
-.v-contextmenu {
+
+.liferay .v-contextmenu {
 	background: #fff;
 }
-.v-contextmenu .gwt-MenuItem {
+
+.liferay .v-contextmenu .gwt-MenuItem {
 	cursor: pointer;
 	vertical-align: middle;
 	padding: 0;
 	border: 0;
 	margin: 0;
 }
-.v-contextmenu .gwt-MenuItem div {
+
+.liferay .v-contextmenu .gwt-MenuItem div {
 	cursor: pointer;
 	vertical-align: middle;
 	white-space: nowrap;
 }
-.v-contextmenu .gwt-MenuItem-selected div {
+
+.liferay .v-contextmenu .gwt-MenuItem-selected div {
 	background: #aaa;
 	color: #fff;
 }
-.v-contextmenu table {
+
+.liferay .v-contextmenu table {
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 }
-.v-contextmenu .gwt-MenuItem img {
+
+.liferay .v-contextmenu .gwt-MenuItem img {
 	margin-right: 1em;
 	vertical-align: middle;
 }
-/* Margins are not supported within Label */
-.v-label pre {
+
+.liferay .v-label pre {
 	margin: 0;
 }
-/* A label with undefined width is always considered to be on one line */
-.v-label-undef-w {
+
+.liferay .v-label-undef-w {
 	white-space: nowrap;
 }
-/* Revert line-height for heading elements inside labels */
-.v-label h1,
-.v-label h2,
-.v-label h3,
-.v-label h4,
-.v-label h5,
-.v-label h6 {
+
+.liferay .v-label h1, .liferay .v-label h2, .liferay .v-label h3, .liferay .v-label h4, .liferay .v-label h5, .liferay .v-label h6 {
 	line-height: normal;
-} 
-/* Loading indicator states
- * Note: client side expects that loading indicator has a height. It depends on
- * this css property to ensure browsers have applied all required styles.
- */
-.v-loading-indicator,
-.v-loading-indicator-delay,
-.v-loading-indicator-wait {
+}
+
+.liferay .v-loading-indicator, .liferay .v-loading-indicator-delay, .liferay .v-loading-indicator-wait {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -435,238 +626,529 @@ div.v-app-loading {
 	margin-right: 5px;
 	margin-top: 5px;
 }
-.v-loading-indicator-delay {
+
+.liferay .v-loading-indicator-delay {
 	background-image: url(../base/common/img/loading-indicator-delay.gif);
 }
-.v-loading-indicator-wait {
+
+.liferay .v-loading-indicator-wait {
 	background-image: url(../base/common/img/loading-indicator-wait.gif);
 }
-/* Debug dialog */
-.v-debug-console {
-	background: #fff;
-	opacity: .9;
-	border: 1px solid #000;
-	font-family: sans-serif;
-}
-.v-debug-console-caption {
-	background: #000;
-	border-bottom: 1px solid grey;
-	color: white;
-	font-weight: bold;
-}
-.v-debug-console-content {
-	font-size: x-small;
-	overflow: auto;
-	white-space: pre;
-}
-.v-debug-console-content input {
-	font-size: xx-small;
-}
-/* Debug style */
-.v-app .invalidlayout,
-.v-app .invalidlayout * {
-	background: #f99 !important;
-}
-/* Fix for Liferay, issue #2384 */
-.v-app input[type="text"],
-.v-app input[type="password"],
-.v-app input[type="reset"],
-.v-app select,
-.v-app textarea ,
-.v-window input[type="text"],
-.v-window input[type="password"],
-.v-window input[type="reset"],
-.v-window select,
-.v-window textarea {
+
+.liferay.v-app input[type="text"], .liferay.v-app input[type="password"], .liferay.v-app input[type="reset"], .liferay.v-app select, .liferay.v-app textarea, .liferay .v-window input[type="text"], .liferay .v-window input[type="password"], .liferay .v-window input[type="reset"], .liferay .v-window select, .liferay .v-window textarea {
 	padding: 2px;
 }
 
-.v-drag-element {
+.liferay .v-drag-element {
 	z-index: 60000;
-	position: absolute;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    cursor: default;
+	position: absolute !important;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
 }
 
-.v-scrollable {
+.liferay .v-clip {
+	overflow: hidden;
+}
+
+.liferay .v-scrollable {
 	overflow: auto;
+	font-size: 0;
+	line-height: normal;
 }
 
-.v-csslayout {
-	overflow: hidden;
-}
-.v-csslayout-margin-top {
-	padding-top: 12px;	
-}
-.v-csslayout-margin-bottom {
-	padding-bottom: 12px;	
-}
-.v-csslayout-margin-left {
-	padding-left: 12px;	
-}
-.v-csslayout-margin-right {
-	padding-right: 12px;	
+.v-ios.v-sa6 .liferay .v-scrollable {
+	-webkit-overflow-scrolling: touch;
 }
 
-.v-customcomponent {
-	overflow: hidden;
+.liferay .v-vertical.v-margin-top, .liferay .v-horizontal.v-margin-top {
+	padding-top: 12px;
 }
 
-.v-customlayout {
-	overflow: hidden;
+.liferay .v-vertical.v-margin-right, .liferay .v-horizontal.v-margin-right {
+	padding-right: 12px;
 }
 
-.v-datefield {
+.liferay .v-vertical.v-margin-bottom, .liferay .v-horizontal.v-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.liferay .v-vertical.v-margin-left, .liferay .v-horizontal.v-margin-left {
+	padding-left: 12px;
+}
+
+.liferay .v-gridlayout.v-layout-margin-top {
+	padding-top: 24px;
+}
+
+.liferay .v-gridlayout, .liferay .v-verticallayout, .liferay .v-horizontallayout {
+	font-size: 0;
+	line-height: normal;
+}
+
+.liferay .v-gridlayout.v-layout-margin-bottom {
+	padding-bottom: 24px;
+}
+
+.liferay .v-gridlayout.v-layout-margin-left {
+	padding-left: 24px;
+}
+
+.liferay .v-gridlayout.v-layout-margin-right {
+	padding-right: 24px;
+}
+
+.liferay .v-gridlayout .v-layout-spacing-on {
+	padding-left: 12px;
+	padding-top: 12px;
+}
+
+.liferay .v-spacing {
+	width: 6px;
+	height: 6px;
+}
+
+.liferay .v-vertical, .liferay .v-horizontal {
+	display: inline-block;
+}
+
+.liferay div.v-layout.v-horizontal.v-widget {
 	white-space: nowrap;
-	float: left; /* Force minimum width */
 }
-.v-datefield-textfield {
+
+.liferay .v-layout.v-vertical > .v-expand, .liferay .v-layout.v-horizontal > .v-expand {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+}
+
+.liferay .v-slot, .liferay .v-spacing {
+	display: inline-block;
+	white-space: normal;
 	vertical-align: top;
 }
-.v-datefield-button {
-	cursor: pointer;
+
+.liferay .v-vertical > .v-slot:after {
+	display: inline-block;
+	clear: both;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	line-height: 0;
 }
-.v-datefield-prompt .v-datefield-textfield {
+
+.liferay .v-vertical > .v-slot, .liferay .v-vertical > .v-expand > .v-slot {
+	display: block;
+	clear: both;
+}
+
+.liferay .v-horizontal > .v-slot, .liferay .v-horizontal > .v-expand > .v-slot {
+	height: 100%;
+}
+
+.liferay .v-vertical > .v-spacing, .liferay .v-vertical > .v-expand > .v-spacing {
+	width: 0;
+	display: block;
+	clear: both;
+}
+
+.liferay .v-horizontal > .v-spacing, .liferay .v-horizontal > .v-expand > .v-spacing {
+	height: 0;
+}
+
+.liferay .v-align-middle:before, .liferay .v-align-bottom:before, .liferay .v-expand > .v-align-middle:before, .liferay .v-expand > .v-align-bottom:before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	width: 0;
+}
+
+.liferay .v-align-middle, .liferay .v-align-bottom {
+	white-space: nowrap;
+}
+
+.liferay .v-align-middle > .v-widget, .liferay .v-align-bottom > .v-widget {
+	display: inline-block;
+}
+
+.liferay .v-align-middle, .liferay .v-align-middle > .v-widget {
+	vertical-align: middle;
+}
+
+.liferay .v-align-bottom, .liferay .v-align-bottom > .v-widget {
+	vertical-align: bottom;
+}
+
+.liferay .v-align-center {
+	text-align: center;
+}
+
+.liferay .v-align-center > .v-widget {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.liferay .v-align-right {
+	text-align: right;
+}
+
+.liferay .v-align-right > .v-widget {
+	margin-left: auto;
+}
+
+.liferay .v-has-caption, .liferay .v-has-caption > .v-caption {
+	display: inline-block;
+}
+
+.liferay .v-caption {
+	overflow: visible;
+	vertical-align: middle;
+}
+
+.liferay .v-caption-on-left, .liferay .v-caption-on-right {
+	white-space: nowrap;
+}
+
+.liferay .v-caption-on-top > .v-caption, .liferay .v-caption-on-bottom > .v-caption {
+	display: block;
+}
+
+.liferay .v-caption-on-left > .v-caption {
+	padding-right: 0.5em;
+}
+
+.liferay .v-caption-on-right > .v-caption {
+	vertical-align: top;
+}
+
+.liferay .v-caption-on-left > .v-widget, .liferay .v-caption-on-right > .v-widget {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.liferay .v-has-caption.v-has-width > .v-widget {
+	width: 100% !important;
+}
+
+.liferay .v-has-caption.v-has-height > .v-widget {
+	height: 100% !important;
+}
+
+.liferay .v-errorindicator {
+	vertical-align: middle;
+}
+
+.liferay .v-csslayout {
+	overflow: hidden;
+}
+
+.liferay div.v-csslayout {
+	display: block;
+}
+
+.liferay .v-csslayout-margin, .liferay .v-csslayout-container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.liferay .v-has-width > .v-csslayout-margin, .liferay .v-has-width > .v-csslayout-margin > .v-csslayout-container {
+	width: 100%;
+}
+
+.liferay .v-has-height > .v-csslayout-margin, .liferay .v-has-height > .v-csslayout-margin > .v-csslayout-container {
+	height: 100%;
+}
+
+.liferay .v-csslayout-margin-top {
+	padding-top: 12px;
+}
+
+.liferay .v-csslayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.liferay .v-csslayout-margin-left {
+	padding-left: 12px;
+}
+
+.liferay .v-csslayout-margin-right {
+	padding-right: 12px;
+}
+
+.liferay .v-customcomponent {
+	overflow: hidden;
+}
+
+.liferay .v-customlayout {
+	overflow: hidden;
+}
+
+.liferay .v-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.liferay .v-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .liferay .v-datefield-button:after {
+	content: "\200B";
+}
+
+.liferay .v-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.liferay .v-has-width > input.v-datefield-textfield {
+	width: 100%;
+}
+
+.liferay .v-datefield-prompt .v-datefield-textfield {
 	color: #999;
 	font-style: italic;
 }
-.v-datefield .v-datefield-button-readonly {
+
+.liferay .v-datefield .v-datefield-button-readonly {
 	display: none;
 }
-.v-datefield-calendarpanel table {
+
+.liferay .v-datefield-calendarpanel table {
 	width: 100%;
 }
-.v-datefield-calendarpanel td {
+
+.liferay .v-datefield-calendarpanel td {
 	padding: 0;
 	margin: 0;
 }
-.v-datefield-calendarpanel:focus {
-	outline:none;	
+
+.liferay .v-datefield-calendarpanel:focus {
+	outline: none;
 }
-.v-datefield-calendarpanel-header td {
+
+.liferay .v-datefield-calendarpanel-header td {
 	text-align: center;
 }
-.v-datefield-calendarpanel-month {
+
+.liferay .v-datefield-calendarpanel-month {
 	text-align: center;
 	white-space: nowrap;
 }
-.v-datefield-calendarpanel-weeknumber {
+
+.liferay .v-datefield-calendarpanel-weeknumber {
 	color: #999;
 	border-right: 1px solid #ddd;
-	font-size: 0.9em;
+	font-size: 11.7px;
 }
-.v-datefield-calendarpanel-day,
-.v-datefield-calendarpanel-day-today {
+
+.liferay .v-datefield-calendarpanel-day, .liferay .v-datefield-calendarpanel-day-today {
 	cursor: pointer;
 }
-.v-datefield-calendarpanel-day-today {
+
+.liferay .v-datefield-calendarpanel-day-today {
 	border: 1px solid #ddd;
 }
-.v-disabled .v-datefield-calendarpanel-day,
-.v-disabled .v-datefield-calendarpanel-day-today {
+
+.liferay .v-disabled .v-datefield-calendarpanel-day, .liferay .v-disabled .v-datefield-calendarpanel-day-today {
 	cursor: default;
 }
-.v-datefield-calendarpanel-day-disabled {
+
+.liferay .v-datefield-calendarpanel-day-disabled {
 	cursor: default;
-	opacity: .5;
+	opacity: 0.5;
 }
-.v-datefield-calendarpanel-day-selected {
+
+.liferay .v-datefield-calendarpanel-day-selected {
 	cursor: default;
 	background: #333;
 	color: #fff;
 }
-.v-datefield-calendarpanel-day-focused {
+
+.liferay .v-datefield-calendarpanel-day-focused {
 	outline: 1px dotted black;
 }
-.v-datefield-calendarpanel-day-offmonth {
-    color: #666;
+
+.liferay .v-datefield-calendarpanel-day-offmonth {
+	color: #666;
 }
 
-.v-ie6 .v-datefield-calendarpanel-day,
-.v-ie7 .v-datefield-calendarpanel-day {
-	margin: 1px;
-}
-.v-ie6 .v-datefield-calendarpanel-day-focused,
-.v-ie7 .v-datefield-calendarpanel-day-focused {
-	border: 1px dotted black;
-	margin: 0px;
-}
-
-.v-datefield-time {
+.liferay .v-datefield-time {
 	white-space: nowrap;
 }
-.v-datefield-time .v-label {
+
+.liferay .v-datefield-time .v-label {
 	display: inline;
 }
-.v-datefield-popup {
+
+.liferay .v-datefield-popup {
 	background: #fff;
 }
-/* Disabled by default
-.v-datefield-error .v-textfield,
-.v-datefield-error .v-datefield-calendarpanel {
-	background: #ffe0e0;
-}
-*/
 
-/* Disabled by default
-.v-datefield-required .v-textfield,
-.v-datefield-required .v-datefield-calendarpanel {
-	background:transparent;
-	background-color: #ffe0e0;
-}
-*/
-/* IE somehow loses generic v-disabled alpha. See #1960 */
-.v-ie6 .v-disabled .v-datefield-button,
-.v-ie6 .v-disabled .v-datefield-textfield,
-.v-ie7 .v-disabled .v-datefield-button,
-.v-ie7 .v-disabled .v-datefield-textfield {
-	filter: alpha(opacity=30);
+.liferay .v-datefield-popupcalendar input.v-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.v-ddwrapper {
+.liferay .v-inline-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.liferay .v-inline-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .liferay .v-inline-datefield-button:after {
+	content: "\200B";
+}
+
+.liferay .v-inline-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.liferay .v-has-width > input.v-inline-datefield-textfield {
+	width: 100%;
+}
+
+.liferay .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #999;
+	font-style: italic;
+}
+
+.liferay .v-inline-datefield .v-inline-datefield-button-readonly {
+	display: none;
+}
+
+.liferay .v-inline-datefield-calendarpanel table {
+	width: 100%;
+}
+
+.liferay .v-inline-datefield-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+
+.liferay .v-inline-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.liferay .v-inline-datefield-calendarpanel-header td {
+	text-align: center;
+}
+
+.liferay .v-inline-datefield-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.liferay .v-inline-datefield-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 11.7px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day, .liferay .v-inline-datefield-calendarpanel-day-today {
+	cursor: pointer;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+
+.liferay .v-disabled .v-inline-datefield-calendarpanel-day, .liferay .v-disabled .v-inline-datefield-calendarpanel-day-today {
+	cursor: default;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-offmonth {
+	color: #666;
+}
+
+.liferay .v-inline-datefield-time {
+	white-space: nowrap;
+}
+
+.liferay .v-inline-datefield-time .v-label {
+	display: inline;
+}
+
+.liferay .v-inline-datefield-popup {
+	background: #fff;
+}
+
+.liferay .v-inline-datefield-popupcalendar input.v-inline-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.liferay .v-ddwrapper {
 	padding: 2px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	position: relative;
 }
-[draggable=true] {
+
+.liferay [draggable=true] {
 	-khtml-user-drag: element;
 	-webkit-user-drag: element;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 }
-.v-ie .v-ddwrapper a.drag-start {
+
+.v-ie .liferay .v-ddwrapper a.drag-start {
 	display: block;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-    left: 0;
+	left: 0;
 	right: 0;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	/* Some color needed to make it draggable */
-	background-color:cyan;
+	background-color: cyan;
 	filter: alpha(opacity=0);
 }
-.v-ddwrapper-over {
+
+.liferay .v-ddwrapper-over {
 	border: 2px solid #1d9dff;
 	background-color: #bcdcff;
 	padding: 0;
 }
-.v-ddwrapper-over {
-	background-color: rgba(169,209,255,.6);
+
+.liferay .v-ddwrapper-over {
+	background-color: rgba(169, 209, 255, 0.6);
 }
-.no-box-drag-hints .v-ddwrapper-over {
+
+.liferay .no-box-drag-hints .v-ddwrapper-over {
 	border: none;
 	background-color: transparent;
 	padding: 2px;
 }
-.v-app .v-ddwrapper-over-top,
-.v-window .v-ddwrapper-over-top,
-.v-popupview-popup .v-ddwrapper-over-top {
+
+.liferay.v-app .v-ddwrapper-over-top, .liferay .v-window .v-ddwrapper-over-top, .liferay .v-popupview-popup .v-ddwrapper-over-top {
 	border: none;
 	border-top: 2px solid #1d9dff;
 	background-color: transparent;
@@ -676,9 +1158,8 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-app .v-ddwrapper-over-bottom,
-.v-window .v-ddwrapper-over-bottom,
-.v-popupview-popup .v-ddwrapper-over-bottom {
+
+.liferay.v-app .v-ddwrapper-over-bottom, .liferay .v-window .v-ddwrapper-over-bottom, .liferay .v-popupview-popup .v-ddwrapper-over-bottom {
 	border: none;
 	border-bottom: 2px solid #1d9dff;
 	background-color: transparent;
@@ -688,9 +1169,8 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-app .v-ddwrapper-over-left,
-.v-window .v-ddwrapper-over-left,
-.v-popupview-popup .v-ddwrapper-over-left {
+
+.liferay.v-app .v-ddwrapper-over-left, .liferay .v-window .v-ddwrapper-over-left, .liferay .v-popupview-popup .v-ddwrapper-over-left {
 	border: none;
 	border-left: 2px solid #1d9dff;
 	background-color: transparent;
@@ -700,9 +1180,8 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-app .v-ddwrapper-over-right,
-.v-window .v-ddwrapper-over-right,
-.v-popupview-popup .v-ddwrapper-over-right {
+
+.liferay.v-app .v-ddwrapper-over-right, .liferay .v-window .v-ddwrapper-over-right, .liferay .v-popupview-popup .v-ddwrapper-over-right {
 	border: none;
 	border-right: 2px solid #1d9dff;
 	background-color: transparent;
@@ -712,29 +1191,13 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-ddwrapper,
-.v-ddwrapper-over,
-.v-app .v-ddwrapper-over-top,
-.v-window .v-ddwrapper-over-top,
-.v-popupview-popup .v-ddwrapper-over-top,
-.v-app .v-ddwrapper-over-bottom,
-.v-window .v-ddwrapper-over-bottom,
-.v-popupview-popup .v-ddwrapper-over-bottom,
-.v-app .v-ddwrapper-over-left,
-.v-window .v-ddwrapper-over-left,
-.v-popupview-popup .v-ddwrapper-over-left,
-.v-app .v-ddwrapper-over-right,
-.v-window .v-ddwrapper-over-right,
-.v-popupview-popup .v-ddwrapper-over-right {
-	border-color: rgba(0,109,232,.6);
+
+.liferay .v-ddwrapper, .liferay .v-ddwrapper-over, .liferay.v-app .v-ddwrapper-over-top, .liferay .v-window .v-ddwrapper-over-top, .liferay .v-popupview-popup .v-ddwrapper-over-top, .liferay.v-app .v-ddwrapper-over-bottom, .liferay .v-window .v-ddwrapper-over-bottom, .liferay .v-popupview-popup .v-ddwrapper-over-bottom, .liferay.v-app .v-ddwrapper-over-left, .liferay .v-window .v-ddwrapper-over-left, .liferay .v-popupview-popup .v-ddwrapper-over-left, .liferay.v-app .v-ddwrapper-over-right, .liferay .v-window .v-ddwrapper-over-right, .liferay .v-popupview-popup .v-ddwrapper-over-right {
+	border-color: rgba(0, 109, 232, 0.6);
 }
 
-.v-ddwrapper-over-top:before,
-.v-ddwrapper-over-bottom:after,
-.v-ddwrapper-over-left:before,
-.v-ddwrapper-over-right:before {
+.liferay .v-ddwrapper-over-top:before, .liferay .v-ddwrapper-over-bottom:after, .liferay .v-ddwrapper-over-left:before, .liferay .v-ddwrapper-over-right:before {
 	display: block;
-	content: "";
 	position: absolute;
 	width: 6px;
 	height: 6px;
@@ -742,16 +1205,18 @@ div.v-app-loading {
 	margin-left: -2px;
 	background: transparent url(../base/common/img/drag-slot-dot.png) no-repeat;
 }
-.v-ddwrapper-over-bottom:after {
+
+.liferay .v-ddwrapper-over-bottom:after {
 	margin-top: -2px;
 }
-.v-ddwrapper-over-left:before,
-.v-ddwrapper-over-right:before {
+
+.liferay .v-ddwrapper-over-left:before, .liferay .v-ddwrapper-over-right:before {
 	background-position: 0 -6px;
 	margin-top: -2px;
 	margin-left: -4px;
 }
-.v-ddwrapper-over-right:before {
+
+.liferay .v-ddwrapper-over-right:before {
 	position: relative;
 	margin-bottom: -4px;
 	margin-right: -4px;
@@ -760,144 +1225,177 @@ div.v-app-loading {
 	background-position: 100% -6px;
 }
 
-.no-horizontal-drag-hints .v-ddwrapper-over-left {
+.liferay .no-horizontal-drag-hints .v-ddwrapper-over-left {
 	padding-left: 2px;
 	border-left: none;
 }
-.no-horizontal-drag-hints .v-ddwrapper-over-right {
+
+.liferay .no-horizontal-drag-hints .v-ddwrapper-over-right {
 	padding-right: 2px;
 	border-right: none;
 }
-.no-vertical-drag-hints .v-ddwrapper-over-top {
+
+.liferay .no-vertical-drag-hints .v-ddwrapper-over-top {
 	padding-top: 2px;
 	border-top: none;
 }
-.no-vertical-drag-hints .v-ddwrapper-over-bottom {
+
+.liferay .no-vertical-drag-hints .v-ddwrapper-over-bottom {
 	padding-bottom: 2px;
 	border-bottom: none;
 }
-.no-horizontal-drag-hints .v-ddwrapper-over-left:before,
-.no-horizontal-drag-hints .v-ddwrapper-over-right:before,
-.no-vertical-drag-hints .v-ddwrapper-over-top:before,
-.no-vertical-drag-hints .v-ddwrapper-over-bottom:after {
+
+.liferay .no-horizontal-drag-hints .v-ddwrapper-over-left:before, .liferay .no-horizontal-drag-hints .v-ddwrapper-over-right:before, .liferay .no-vertical-drag-hints .v-ddwrapper-over-top:before, .liferay .no-vertical-drag-hints .v-ddwrapper-over-bottom:after {
 	display: none;
 }
 
-
-.v-table .v-embedded-image {
-    /* make embeddeds be centered in centered table cells. */
+.liferay .v-table .v-embedded-image {
 	display: inline-block;
 }
 
-.v-formlayout-cell .v-errorindicator {
+.liferay .v-formlayout.v-has-width > table {
+	width: 100%;
+}
+
+.liferay .v-formlayout.v-has-height > table {
+	height: 100%;
+}
+
+.liferay .v-formlayout-cell .v-errorindicator {
 	display: block;
 }
-.v-formlayout-error-indicator {
-	/* fix width so layout is not jumpy when error disappears */
+
+.liferay .v-formlayout-error-indicator {
 	width: 12px;
 }
-.v-formlayout-captioncell {
-	text-align:right;
+
+.liferay .v-formlayout-captioncell {
+	text-align: right;
 	white-space: nowrap;
 }
-.v-formlayout-captioncell .v-caption {
+
+.liferay .v-formlayout-errorcell, .liferay .v-formlayout-captioncell {
+	width: 1px;
+}
+
+.liferay .v-formlayout-captioncell .v-caption {
 	overflow: visible;
 }
-.v-formlayout-spacing .v-formlayout-row .v-formlayout-captioncell, 
-.v-formlayout-spacing .v-formlayout-row .v-formlayout-contentcell,
-.v-formlayout-spacing .v-formlayout-row .v-formlayout-errorcell {
+
+.liferay .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-captioncell, .liferay .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-contentcell, .liferay .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-errorcell {
 	padding-top: 6px;
 }
-.v-formlayout-spacing .v-formlayout-firstrow .v-formlayout-captioncell, 
-.v-formlayout-spacing .v-formlayout-firstrow .v-formlayout-contentcell,
-.v-formlayout-spacing .v-formlayout-firstrow .v-formlayout-errorcell {
+
+.liferay .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .liferay .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .liferay .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
 	padding-top: 0;
 }
-.v-formlayout-margin-top .v-formlayout-firstrow .v-formlayout-captioncell, 
-.v-formlayout-margin-top .v-formlayout-firstrow .v-formlayout-contentcell,
-.v-formlayout-margin-top .v-formlayout-firstrow .v-formlayout-errorcell {
+
+.liferay .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .liferay .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .liferay .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
 	padding-top: 12px;
 }
-.v-formlayout-margin-bottom .v-formlayout-lastrow .v-formlayout-captioncell,
-.v-formlayout-margin-bottom .v-formlayout-lastrow .v-formlayout-contentcell,
-.v-formlayout-margin-bottom .v-formlayout-lastrow .v-formlayout-errorcell {
+
+.liferay .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, .liferay .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, .liferay .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
 	padding-bottom: 12px;
 }
-.v-formlayout-margin-left .v-formlayout-captioncell {
+
+.liferay .v-formlayout-margin-left > tbody > .v-formlayout-row > .v-formlayout-captioncell {
 	padding-left: 12px;
-} 
-.v-formlayout-margin-right .v-formlayout-contentcell {
+}
+
+.liferay .v-formlayout-margin-right > tbody > .v-formlayout-row > .v-formlayout-contentcell {
 	padding-right: 12px;
 }
-.v-formlayout-captioncell .v-caption .v-required-field-indicator {
+
+.liferay .v-formlayout-captioncell .v-caption .v-required-field-indicator {
 	float: none;
 }
 
-.v-gridlayout-margin-top {
+.liferay .v-gridlayout {
+	position: relative;
+}
+
+.liferay .v-gridlayout-slot {
+	position: absolute;
+}
+
+.liferay .v-gridlayout-margin-top {
 	padding-top: 12px;
 }
-.v-gridlayout-margin-bottom {
+
+.liferay .v-gridlayout-margin-bottom {
 	padding-bottom: 12px;
 }
-.v-gridlayout-margin-left {
+
+.liferay .v-gridlayout-margin-left {
 	padding-left: 12px;
-} 
-.v-gridlayout-margin-right {
+}
+
+.liferay .v-gridlayout-margin-right {
 	padding-right: 12px;
 }
-.v-gridlayout-spacing-on {
+
+.liferay .v-gridlayout-spacing-on {
 	padding-left: 6px;
 	padding-top: 6px;
 	overflow: hidden;
 }
-.v-gridlayout-spacing,
-.v-gridlayout-spacing-off {
+
+.liferay .v-gridlayout-spacing, .liferay .v-gridlayout-spacing-off {
 	padding-left: 0;
 	padding-top: 0;
 }
-.v-gridlayout-spacing-off {
-	overflow: hidden;
-}
-/* Ensure that resizing gridlayout works in IE */
-.v-ie6 .v-gridlayout,
-.v-ie7 .v-gridlayout {
+
+.liferay .v-gridlayout-spacing-off {
 	overflow: hidden;
 }
 
-.v-link {
-	white-space: nowrap;	
+.liferay .v-label {
+	overflow: hidden;
 }
-.v-link a {
+
+.liferay .v-label.v-has-width {
+	white-space: normal;
+}
+
+.liferay .v-link {
+	white-space: nowrap;
+}
+
+.liferay .v-link a {
 	vertical-align: middle;
 	text-decoration: none;
 }
-.v-link span {
+
+.liferay .v-link span {
 	text-decoration: underline;
 	vertical-align: middle;
 }
-.v-disabled a {
+
+.liferay .v-disabled a {
 	cursor: default;
 }
-.v-link img {
+
+.liferay .v-link img {
 	vertical-align: middle;
-	border:none;
+	border: none;
 }
 
-.v-loginform {
+.liferay .v-loginform {
 	height: 140px;
 	width: 200px;
 }
 
-.v-app-loginpage .v-button,
-.v-app-loginpage .v-button {
-	float: left; /* Force minimum width for button */
+.liferay .v-app-loginpage .v-button, .liferay .v-app-loginpage .v-button {
+	float: left;
 }
 
-.v-menubar {
-	float: left; /* Force minimum width */
+.liferay .v-menubar {
+	display: inline-block;
 	white-space: nowrap;
+	overflow: hidden;
 }
-.v-menubar .v-menubar-menuitem {
+
+.liferay .v-menubar .v-menubar-menuitem {
 	cursor: default;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -905,57 +1403,63 @@ div.v-app-loading {
 	display: inline-block;
 	zoom: 1;
 }
-.v-menubar .v-menubar-menuitem-caption .v-icon {
+
+.liferay .v-menubar .v-menubar-menuitem-caption .v-icon {
 	vertical-align: middle;
 	white-space: nowrap;
 }
-.v-menubar-submenu {
+
+.liferay .v-menubar-submenu {
 	background: #fff;
 }
-.v-menubar-menuitem-selected {
+
+.liferay .v-menubar-menuitem-selected {
 	background: #333;
 	color: #fff;
 }
-.v-menubar-submenu .v-menubar-menuitem { 
+
+.liferay .v-menubar-submenu .v-menubar-menuitem {
 	cursor: default;
 	display: block;
 	position: relative;
 	padding-right: 1.5em;
 }
-.v-menubar-submenu .v-menubar-menuitem-caption {
+
+.liferay .v-menubar-submenu .v-menubar-menuitem-caption {
 	display: block;
 }
-.v-menubar-submenu .v-menubar-menuitem *,
-.v-menubar-submenu .v-menubar-menuitem-caption * {
+
+.liferay .v-menubar-submenu .v-menubar-menuitem *, .liferay .v-menubar-submenu .v-menubar-menuitem-caption * {
 	white-space: nowrap;
 }
-.v-menubar-submenu-indicator {
+
+.liferay .v-menubar-submenu-indicator {
 	display: none;
-	/* Arial has the most coverage for geometric entity characters */
 	font-family: arial, helvetica, sans-serif;
 }
-.v-menubar-submenu .v-menubar-submenu-indicator {
+
+.liferay .v-menubar-submenu .v-menubar-submenu-indicator {
 	display: block;
 	position: absolute;
 	right: 0;
 	width: 1em;
 	height: 1em;
-	font-size: 0.9em;
+	font-size: 11.7px;
 }
-.v-menubar-menuitem-disabled,
-.v-menubar span.v-menubar-menuitem-disabled:hover,
-.v-menubar span.v-menubar-menuitem-disabled:focus,
-.v-menubar span.v-menubar-menuitem-disabled:active {
+
+.liferay .v-menubar-menuitem-disabled, .liferay .v-menubar span.v-menubar-menuitem-disabled:hover, .liferay .v-menubar span.v-menubar-menuitem-disabled:focus, .liferay .v-menubar span.v-menubar-menuitem-disabled:active {
 	color: #999;
 }
-.v-menubar-more-menuitem {
-	/* Arial has the most coverage for geometric entity characters */
+
+.liferay .v-menubar-more-menuitem {
 	font-family: arial, helvetica, sans-serif;
 }
-.v-menubar-separator {
+
+.liferay .v-menubar-separator {
 	overflow: hidden;
 }
-.v-menubar-separator span {
+
+.liferay .v-menubar-separator span {
 	display: block;
 	text-indent: -9999px;
 	font-size: 1px;
@@ -964,457 +1468,470 @@ div.v-app-loading {
 	margin: 3px 0 2px;
 	overflow: hidden;
 }
-.v-menubar .v-icon,
-.v-menubar-submenu .v-icon {
+
+.liferay .v-menubar .v-icon, .liferay .v-menubar-submenu .v-icon {
 	margin-right: 3px;
 }
 
-.v-menubar:focus,
-.v-menubar-popup:focus,
-.v-menubar-popup .popupContent:focus,
-.v-menubar-popup .popupContent .v-menubar-submenu:focus{
-	outline: none;	
+.liferay .v-menubar:focus, .liferay .v-menubar-popup:focus, .liferay .v-menubar-popup .popupContent:focus, .liferay .v-menubar-popup .popupContent .v-menubar-submenu:focus {
+	outline: none;
 }
-/* Checkboxes for checkable/checked menu items */
-/* Checked/unchecked requires combined style selected-(un)checked for IE6 */
-.v-menubar-submenu-check-column .v-menubar-menuitem {
+
+.liferay .v-menubar-submenu-check-column .v-menubar-menuitem {
 	padding-left: 6px;
 }
-.v-menubar-submenu-check-column .v-menubar-menuitem-caption {
+
+.liferay .v-menubar-submenu-check-column .v-menubar-menuitem-caption {
 	padding-left: 18px;
 }
-.v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption { 
+
+.liferay .v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption {
 	background: transparent url(../base/menubar/img/check.gif) no-repeat left;
 }
 
-.v-Notification {
+.liferay .v-Notification {
 	background: #999;
 	color: #fff;
 	cursor: pointer;
 	overflow: hidden;
 	padding: 1em;
-	max-width:85%;
-	
+	max-width: 85%;
 }
-.v-Notification h1,
-.v-Notification p,
-.v-Notification-error h1,
-.v-Notification-error p,
-.v-Notification-warning h1,
-.v-Notification-warning p {
+
+.liferay .v-Notification h1, .liferay .v-Notification p, .liferay .v-Notification-error h1, .liferay .v-Notification-error p, .liferay .v-Notification-warning h1, .liferay .v-Notification-warning p {
 	display: inline;
 	margin: 0 0.5em 0 0;
 }
-.v-Notification-warning {
+
+.liferay .v-Notification-warning {
 	background: orange;
 }
-.v-Notification-error {
+
+.liferay .v-Notification-error {
 	background: red;
 }
-.v-Notification-tray h1 {
+
+.liferay .v-Notification-tray h1 {
 	display: block;
 }
-.v-Notification-tray p {
+
+.liferay .v-Notification-tray p {
 	display: block;
 }
-.v-Notification-system {
+
+.liferay .v-Notification-system {
 	background-color: red;
-	opacity: .7;
+	opacity: 0.7;
 	filter: alpha(opacity=70);
 }
-.v-Notification-system h1 {
+
+.liferay .v-Notification-system h1 {
 	display: block;
 	margin: 0;
 }
 
-.v-orderedlayout-margin-top,
-.v-horizontallayout-margin-top,
-.v-verticallayout-margin-top {
+.liferay .v-orderedlayout, .liferay .v-horizontallayout, .liferay .v-verticallayout {
+	position: relative;
+}
+
+.liferay .v-orderedlayout-margin-top, .liferay .v-horizontallayout-margin-top, .liferay .v-verticallayout-margin-top {
 	padding-top: 12px;
 }
-.v-orderedlayout-margin-right,
-.v-horizontallayout-margin-right,
-.v-verticallayout-margin-right {
+
+.liferay .v-orderedlayout-margin-right, .liferay .v-horizontallayout-margin-right, .liferay .v-verticallayout-margin-right {
 	padding-right: 12px;
 }
-.v-orderedlayout-margin-bottom,
-.v-horizontallayout-margin-bottom,
-.v-verticallayout-margin-bottom {
+
+.liferay .v-orderedlayout-margin-bottom, .liferay .v-horizontallayout-margin-bottom, .liferay .v-verticallayout-margin-bottom {
 	padding-bottom: 12px;
 }
-.v-orderedlayout-margin-left,
-.v-horizontallayout-margin-left,
-.v-verticallayout-margin-left {
+
+.liferay .v-orderedlayout-margin-left, .liferay .v-horizontallayout-margin-left, .liferay .v-verticallayout-margin-left {
 	padding-left: 12px;
 }
-.v-orderedlayout-spacing-on,
-.v-horizontallayout-spacing-on,
-.v-verticallayout-spacing-on {
+
+.liferay .v-orderedlayout-spacing-on, .liferay .v-horizontallayout-spacing-on, .liferay .v-verticallayout-spacing-on {
 	padding-top: 6px;
 	padding-left: 6px;
 }
-/* This can be used to define spacing if spacing is off server side */
-.v-orderedlayout-spacing-off,
-.v-horizontallayout-spacing-off,
-.v-verticallayout-spacing-off {
+
+.liferay .v-orderedlayout-spacing-off, .liferay .v-horizontallayout-spacing-off, .liferay .v-verticallayout-spacing-off {
 	padding-top: 0;
 	padding-left: 0;
 }
-/* To make sure IE don't expand elements larger than they should */
-.v-ie6 .v-orderedlayout,
-.v-ie6 .v-horizontallayout,
-.v-ie6 .v-verticallayout,
-.v-ie7 .v-orderedlayout,
-.v-ie7 .v-horizontallayout,
-.v-ie7 .v-verticallayout {
-	overflow: hidden;
+
+.liferay .v-horizontallayout-slot, .liferay .v-verticallayout-slot {
+	position: absolute;
 }
 
-.v-panel,
-.v-panel-caption,
-.v-panel-content,
-.v-panel-deco,
-.v-panel-light,
-.v-panel-caption-light,
-.v-panel-content-light,
-.v-panel-deco-light {
-	outline: none; /* Prevent selection outline which might break layouts or cause scrollbars */
-	text-align: left /* Force default alignment */
+.liferay .v-panel, .liferay .v-panel-caption, .liferay .v-panel-content, .liferay .v-panel-deco, .liferay .v-panel-light, .liferay .v-panel-caption-light, .liferay .v-panel-content-light, .liferay .v-panel-deco-light {
+	outline: none;
+	text-align: left;
 }
-.v-panel-caption .v-errorindicator {
+
+.liferay .v-panel-caption .v-errorindicator {
 	float: none;
 	display: inline;
 }
-.v-panel-caption .v-icon {
+
+.liferay .v-panel-caption .v-icon {
 	display: inline;
 	vertical-align: middle;
 }
-.v-panel-caption span {
+
+.liferay .v-panel-caption span {
 	vertical-align: middle;
 }
-.v-panel-caption {
+
+.liferay .v-panel-caption {
 	white-space: nowrap;
-	overflow:hidden;
+	overflow: hidden;
 	font-weight: bold;
 }
-.v-panel-nocaption {
+
+.liferay .v-panel-nocaption {
 	overflow: hidden;
 }
-.v-panel-content {
-}
-.v-panel-deco {
+
+.liferay .v-panel-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.v-popupview {
+.liferay .v-panel.v-has-width > .v-panel-content {
+	width: 100%;
+}
+
+.liferay .v-panel.v-has-height > .v-panel-content {
+	height: 100%;
+}
+
+.liferay .v-popupview {
 	cursor: pointer;
 	text-decoration: underline;
 	white-space: nowrap;
 }
-.v-popupview-popup {
+
+.liferay .v-popupview-popup {
 	overflow: auto;
 }
-.v-popupview-loading {
+
+.liferay .v-popupview-loading {
 	width: 30px;
 	height: 30px;
 	background: transparent url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
 }
 
-.v-progressindicator {
-	overflow: hidden; /* for IE6 */
+.liferay .v-progressindicator {
 	width: 150px;
 }
-.v-progressindicator-wrapper {
-	overflow: hidden; /* for IE6 */
+
+.liferay .v-progressindicator-wrapper {
 	height: 7px;
 	border: 1px solid #ddd;
 }
-.v-progressindicator-indicator {
+
+.liferay .v-progressindicator-indicator {
 	height: 7px;
-	overflow: hidden; /* for IE6 */
 	background: #ddd;
 }
-div.v-progressindicator-indeterminate {
+
+.liferay div.v-progressindicator-indeterminate {
 	height: 20px;
 	width: 20px;
-	overflow: hidden; /* for IE6 */
 	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 }
-/* Hide obsolete elements in indeterminate mode */
-.v-progressindicator-indeterminate .v-progressindicator-wrapper,
-.v-progressindicator-indeterminate .v-progressindicator-indicator,
-.v-progressindicator-indeterminate-disabled .v-progressindicator-wrapper,
-.v-progressindicator-indeterminate-disabled .v-progressindicator-indicator {
+
+.liferay .v-progressindicator-indeterminate .v-progressindicator-wrapper, .liferay .v-progressindicator-indeterminate .v-progressindicator-indicator, .liferay .v-progressindicator-indeterminate-disabled .v-progressindicator-wrapper, .liferay .v-progressindicator-indeterminate-disabled .v-progressindicator-indicator {
 	display: none;
 }
-div.v-progressindicator-indeterminate-disabled {
+
+.liferay div.v-progressindicator-indeterminate-disabled {
 	height: 20px;
 	width: 20px;
-	overflow: hidden; /* for IE6 */
 	background: transparent;
 }
 
-.v-select {
+.liferay .v-select {
 	text-align: left;
 }
-.v-select-optiongroup .v-select-option {
+
+.liferay .v-select-optiongroup .v-select-option {
 	display: block;
 	white-space: nowrap;
 }
-.v-select-optiongroup .v-icon {
+
+.liferay .v-select-optiongroup .v-icon {
 	vertical-align: middle;
 	white-space: nowrap;
-	margin: 0 2px;	
+	margin: 0 2px;
 }
-.v-ie .v-select-optiongroup .v-select-option {
+
+.v-ie .liferay .v-select-optiongroup .v-select-option {
 	zoom: 1;
 }
-.v-select-select {
+
+.liferay .v-select-select {
 	display: block;
 }
-.v-select-twincol {
+
+.liferay .v-select-twincol {
 	white-space: nowrap;
 }
-.v-select-twincol-options {
+
+.liferay .v-select-twincol-options {
 	float: left;
 }
-.v-select-twincol-caption-left {
+
+.liferay .v-select-twincol-caption-left {
 	float: left;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.v-select-twincol-selections {
+
+.liferay .v-select-twincol-selections {
 	font-weight: bold;
 }
-.v-select-twincol-caption-right {
+
+.liferay .v-select-twincol-caption-right {
 	float: right;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.v-select-twincol-buttons {
+
+.liferay .v-select-twincol-buttons {
 	float: left;
 	text-align: center;
 }
-.v-select-twincol-buttons .v-select-twincol-deco {
+
+.liferay .v-select-twincol-buttons .v-select-twincol-deco {
 	clear: both;
 }
-.v-select-twincol .v-textfield {
+
+.liferay .v-select-twincol .v-textfield {
 	display: block;
 	float: left;
 	clear: left;
 }
-.v-select-twincol .v-button {
+
+.liferay .v-select-twincol .v-button {
 	float: left;
 }
-.v-select-twincol-buttons .v-button {
+
+.liferay .v-select-twincol-buttons .v-button {
 	float: none;
 }
-.v-filterselect {
+
+.liferay .v-filterselect {
 	white-space: nowrap;
 	text-align: left;
+	display: inline-block;
+	padding-right: 1em;
 }
-.v-filterselect .v-icon {
+
+.liferay .v-filterselect .v-icon {
 	float: left;
 }
-.v-app .v-filterselect-input,
-.v-window .v-filterselect-input,
-.v-popupview-popup .v-filterselect-input {
+
+.liferay.v-app .v-filterselect-input, .liferay .v-window .v-filterselect-input, .liferay .v-popupview-popup .v-filterselect-input {
+	margin: 0;
 	float: left;
 	-webkit-border-radius: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.v-filterselect-prompt .v-filterselect-input {
+
+.liferay .v-filterselect-prompt .v-filterselect-input {
 	color: #999;
 	font-style: italic;
 }
-.v-filterselect-button {
-	float: right;
+
+.liferay .v-filterselect-button {
+	display: inline-block;
 	cursor: pointer;
 	width: 1em;
+	margin-right: -1em;
 	height: 1em;
 	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -8px;
 }
-.v-filterselect.v-readonly .v-filterselect-button {
+
+.liferay .v-filterselect.v-readonly .v-filterselect-button {
 	display: none;
 }
-.v-filterselect.v-readonly,
-.v-filterselect.v-readonly .v-filterselect-input {
+
+.liferay .v-filterselect.v-readonly, .liferay .v-filterselect.v-readonly .v-filterselect-input {
 	background: transparent;
 }
-.v-filterselect-suggestpopup {
+
+.liferay .v-filterselect-suggestpopup {
 	background: #fff;
 	border: 1px solid #eee;
 }
-.v-filterselect-suggestmenu table {
+
+.liferay .v-filterselect-suggestmenu table {
 	border-collapse: collapse;
 	border: none;
+	vertical-align: top;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem {
+
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem {
 	white-space: nowrap;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
 	margin-right: 3px;
 	vertical-align: middle;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem span {
+
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem span {
 	vertical-align: middle;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem-selected {
+
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem-selected {
 	background: #333;
 	color: #fff;
 }
-.v-filterselect-nextpage,
-.v-filterselect-nextpage-off,
-.v-filterselect-prevpage-off,
-.v-filterselect-prevpage {
+
+.liferay .v-filterselect-nextpage, .liferay .v-filterselect-nextpage-off, .liferay .v-filterselect-prevpage-off, .liferay .v-filterselect-prevpage {
 	width: 100%;
 	background: #aaa;
 	text-align: center;
 	overflow: hidden;
 	cursor: pointer;
 }
-.v-filterselect-nextpage-off,
-.v-filterselect-prevpage-off {
+
+.liferay .v-filterselect-nextpage-off, .liferay .v-filterselect-prevpage-off {
 	color: #666;
-	opacity: .5;
+	opacity: 0.5;
 	filter: alpha(opacity=50);
 	cursor: default;
 }
-.v-filterselect-nextpage-off span,
-.v-filterselect-prevpage-off span {
+
+.liferay .v-filterselect-nextpage-off span, .liferay .v-filterselect-prevpage-off span {
 	cursor: default;
 }
-.v-filterselect-status {
+
+.liferay .v-filterselect-status {
 	white-space: nowrap;
 	text-align: center;
 }
 
-.v-filterselect-no-input .v-filterselect-input {
+.liferay .v-filterselect-no-input .v-filterselect-input {
 	cursor: default;
 }
 
-/* Error styles (disabled by default)
-
-.v-filterselect-error .v-filterselect-input,
-.v-select-error .v-select-option,
-.v-select-error .v-select-select,
-.v-select-error .v-select-twincol-selections,
-.v-select-error .v-select-twincol-options {
-	background: #ffaaaa;
-}
-*/
-
-/*  Required field styles (disabled by default)
-   
-.v-filterselect-error .v-filterselect-input,
-.v-select-required .v-select-option,
-.v-select-required .v-select-select,
-.v-select-required .v-select-twincol-selections,
-.v-select-required .v-select-twincol-options {
-	background: #ffaaaa;
-}
-*/
-
-.v-shadow {
+.liferay .v-shadow {
 	position: absolute;
 }
 
-.v-shadow .top-left {
-    position: absolute; overflow: hidden;
-    top: -3px;             left: -5px;
-    width: 10px;         height: 10px;
-    background: transparent url(../base/shadow/img/top-left.png);
+.liferay .v-shadow .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-left.png);
 }
 
-.v-shadow .top {
-    position: absolute; overflow: hidden;
-    top: -3px;             left: 5px;
-    height: 10px;           right: 5px;
-    background: transparent url(../base/shadow/img/top.png);
+.liferay .v-shadow .top {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: 5px;
+	height: 10px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/top.png);
 }
 
-.v-shadow .top-right {
-    position: absolute; overflow: hidden;
-    top: -3px;             right: -5px;
-    width: 10px;         height: 10px;
-    background: transparent url(../base/shadow/img/top-right.png);
+.liferay .v-shadow .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-right.png);
 }
 
-.v-shadow .left {
-    position: absolute; overflow: hidden;
-    top: 7px;           left: -5px;
-    width: 10px;
-    bottom: 3px;
-    background: transparent url(../base/shadow/img/left.png);
+.liferay .v-shadow .left {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/left.png);
 }
 
-.v-shadow .center {
-    position: absolute; overflow: hidden;
-    top: 7px;           left: 5px;
-    bottom: 3px;        right: 5px;
-    background: transparent url(../base/shadow/img/center.png);
+.liferay .v-shadow .center {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: 5px;
+	bottom: 3px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/center.png);
 }
 
-.v-shadow .right {
-    position: absolute; overflow: hidden;
-    top: 7px;           right: -5px;
-    width: 10px;
-    bottom: 3px;
-    background: transparent url(../base/shadow/img/right.png);
+.liferay .v-shadow .right {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	right: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/right.png);
 }
 
-.v-shadow .bottom-left {
-    position: absolute; overflow: hidden;
-    bottom: -7px;           left: -5px;
-    width: 10px;          height: 10px;
-    background: transparent url(../base/shadow/img/bottom-left.png);
+.liferay .v-shadow .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-left.png);
 }
 
-.v-shadow .bottom {
-    position: absolute; overflow: hidden;
-    bottom: -7px;           left: 5px;
-    right: 5px;          height: 10px;
-    background: transparent url(../base/shadow/img/bottom.png);
+.liferay .v-shadow .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: 5px;
+	right: 5px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom.png);
 }
 
-.v-shadow .bottom-right {
-    position: absolute; overflow: hidden;
-    bottom: -7px;           right: -5px;
-    width: 10px;          height: 10px;
-    background: transparent url(../base/shadow/img/bottom-right.png);
+.liferay .v-shadow .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-right.png);
 }
 
-
-
-
-
-/* For IE6 (no transparent png's, we use a blur filter) */
-
-.v-ie6 .v-shadow * {
-	display: none;
-}
-
-.v-ie6 .v-shadow {
-	background: #000;
-	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2) alpha(opacity=20);
-	margin-top: -2px;
-	margin-left: -2px;
-}  
-
-.v-slider {
+.liferay .v-slider {
 	margin: 5px 0;
 }
-.v-slider-base {
-	/* changing the borders will require adjustments to ISlider.java */
+
+.liferay .v-slider-base {
 	height: 2px;
 	border-top: 1px solid #ddd;
 	background: #eee;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #eee;
-	
 }
-.v-slider-handle {
+
+.liferay .v-slider-handle {
 	background: #aaa;
 	width: 12px;
 	height: 12px;
@@ -1422,7 +1939,7 @@ div.v-progressindicator-indeterminate-disabled {
 	font-size: 0;
 }
 
-.v-slider-vertical {
+.liferay .v-slider-vertical {
 	width: 2px;
 	height: auto;
 	margin: 0 5px;
@@ -1430,19 +1947,21 @@ div.v-progressindicator-indeterminate-disabled {
 	border-left: 1px solid #cccfd0;
 	border-right: 1px solid #cccfd0;
 }
-.v-slider-vertical .v-slider-base {
+
+.liferay .v-slider-vertical .v-slider-base {
 	width: 2px;
 	border-bottom: 1px solid #eee;
 	border-right: none;
 }
-.v-slider-vertical .v-slider-handle {
+
+.liferay .v-slider-vertical .v-slider-handle {
 	width: 12px;
 	height: 12px;
 	font-size: 0;
 	margin-left: -5px;
 }
 
-.v-slider-feedback {
+.liferay .v-slider-feedback {
 	padding: 2px 5px;
 	background: #444;
 	color: #fff;
@@ -1457,40 +1976,16 @@ div.v-progressindicator-indeterminate-disabled {
 	text-shadow: 0 1px 0 #000;
 }
 
-/* Disabled by default
-.v-slider-error .v-slider-base {
-	background: #FFE0E0;
-}
-*/
-/* Disabled by default
-.v-slider-required .v-slider-base {
-	background: #FFE0E0;
-}
-*/
-
-/* IE specific styles */
-.v-ie6 .v-slider,
-.v-ie6 .v-slider-vertical {
-	margin: 0;
-}
-.v-ie6 .v-slider .v-slider-handle {
-	margin: -1px 0;
-}
-.v-ie6 .v-slider-vertical .v-slider-handle {
-	margin: 0 -1px;
-}
-
-.v-splitpanel-horizontal,
-.v-splitpanel-vertical {
+.liferay .v-splitpanel-horizontal, .liferay .v-splitpanel-vertical {
 	overflow: hidden;
 }
-.v-splitpanel-hsplitter {
+
+.liferay .v-splitpanel-hsplitter {
 	width: 6px;
-	font-size: 1px; /* for IE6 */
 }
-.v-splitpanel-hsplitter div {
+
+.liferay .v-splitpanel-hsplitter div {
 	width: 6px;
-	font-size: 1px; /* for IE6 */
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -1498,234 +1993,215 @@ div.v-progressindicator-indeterminate-disabled {
 	cursor: e-resize;
 	cursor: col-resize;
 }
-.v-disabled .v-splitpanel-hsplitter div {
+
+.liferay .v-disabled .v-splitpanel-hsplitter div {
 	cursor: default;
 }
-.v-splitpanel-vsplitter {
+
+.liferay .v-splitpanel-vsplitter {
 	height: 6px;
-	font-size: 1px; /* for IE6 */
 }
-.v-splitpanel-vsplitter div {
+
+.liferay .v-splitpanel-vsplitter div {
 	height: 6px;
-	font-size: 1px; /* for IE6 */
 	background: #ddd;
 	cursor: s-resize;
 	cursor: row-resize;
 }
-.v-disabled .v-splitpanel-vsplitter div {
+
+.liferay .v-disabled .v-splitpanel-vsplitter div {
 	cursor: default;
 }
-/* IE specific styles */
-.v-ie6 .v-splitpanel-hsplitter div {
-	height: 99%;
-}
-.v-ie6 .v-splitpanel-first-container,
-.v-ie6 .v-splitpanel-second-container,
-.v-ie7 .v-splitpanel-first-container,
-.v-ie7 .v-splitpanel-second-container {
-	position: relative;
+
+.liferay .v-table {
+	overflow: hidden;
+	text-align: left;
 }
 
-/* Table theme building instructions
- * 
- * Vaadin scroll table is very complex widget with dozens of features. These 
- * features set some limitations for theme builder. To keep things working, it
- * is safest to try to just override values used in default theme and comfort to
- * these instructions.
- * 
- * Borders in table header and in table body need to be same width
- * - specify vertical borders on .v-table-header-wrap and .v-table-body
- *
- * Table cells in body:
- *  - padding/border for cells is to be defined for td elements (class name: .v-table-cell-content)
- *  - in default theme there are no borders, but they should work. Just set border-right or border-bottom
- *  - no padding or border is allowed for div inside cells (class name: .v-table-cell-wrapper) element
- *  - background is allowed for both elements
- *
- * Table headers:
- *  - table cells in header contain .v-table-resizer and 
- *	  .v-table-caption-container div elements, which are both floated to right
- *  - to align header caption to body content resizer width + .v-table-caption-container
- *    padding right should be equal to content cells padding-right and border-right.
- *  - Possible cell border in header must be themed into column resizer.
- *
- */
-.v-table {
-	overflow: hidden;
-	text-align: left; /* Force default alignment */
-}
-.v-ie7 .v-table {
-	overflow: visible;
-}
-.v-table-header-wrap {
+.liferay .v-table-header-wrap {
 	overflow: hidden;
 	border: 1px solid #aaa;
 	border-bottom: none;
 	background: #efefef;
 }
-.v-table-header table,
-.v-table-table {
+
+.liferay .v-table-header table, .liferay .v-table-table {
 	border-spacing: 0;
 	border-collapse: separate;
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
-.v-table-header td {
+
+.liferay .v-table-table {
+	font-size: 11px;
+}
+
+.liferay .v-table-header td {
 	padding: 0;
 }
-.v-table-header-cell,
-.v-table-header-cell-asc,
-.v-table-header-cell-desc {
+
+.liferay .v-table-header-cell, .liferay .v-table-header-cell-asc, .liferay .v-table-header-cell-desc {
 	cursor: pointer;
 }
 
-.v-table.v-disabled .v-table-header-cell,
-.v-table.v-disabled .v-table-header-cell-asc,
-.v-table.v-disabled .v-table-header-cell-desc {
+.liferay .v-table.v-disabled .v-table-header-cell, .liferay .v-table.v-disabled .v-table-header-cell-asc, .liferay .v-table.v-disabled .v-table-header-cell-desc {
 	cursor: default;
 }
 
-.v-table-footer-wrap {
+.liferay .v-table-footer-wrap {
 	overflow: hidden;
 	border: 1px solid #aaa;
 	border-top: none;
 	background: #efefef;
 }
-.v-table-footer table {
+
+.liferay .v-table-footer table {
 	border-spacing: 0;
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
-.v-table-footer td {
+
+.liferay .v-table-footer td {
 	padding: 0;
 	border-right: 1px solid #aaa;
 }
-.v-table-footer-cell {
+
+.liferay .v-table-footer-cell {
 	cursor: pointer;
 }
-.v-table-footer-container {	
-	float:right;	
-	padding-right:6px;
-	overflow:hidden;
-	white-space:nowrap;
+
+.liferay .v-table-footer-container {
+	float: right;
+	padding-right: 6px;
+	overflow: hidden;
+	white-space: nowrap;
 }
-.v-table-resizer {
+
+.liferay .v-table-resizer {
 	display: block;
 	height: 1.2em;
 	float: right;
-	background: #aaa;	
-	cursor: e-resize;	/* Opera does not support col-resize, so use e-resize instead */
-	cursor: col-resize;	
+	background: #aaa;
+	cursor: e-resize;
+	cursor: col-resize;
 	width: 1px;
 	overflow: hidden;
 }
-.v-table.v-disabled .v-table-resizer {
-	cursor: default;	
+
+.liferay .v-table.v-disabled .v-table-resizer {
+	cursor: default;
 }
-.v-table-caption-container {
+
+.liferay .v-table-caption-container {
 	overflow: hidden;
 	white-space: nowrap;
 	margin-left: 6px;
 }
-.v-ie7 .v-table-caption-container-align-right {
-	margin-left: 0px;
-	padding-left: 6px;
-}
-.v-table-caption-container-align-right {
+
+.liferay .v-table-caption-container-align-right {
 	float: right;
 }
-.v-table-sort-indicator {
+
+.liferay .v-table-sort-indicator {
 	width: 0px;
 	height: 1.2em;
 	float: right;
 }
-.v-table-header-cell-asc .v-table-sort-indicator,
-.v-table-header-cell-desc .v-table-sort-indicator {
+
+.liferay .v-table-header-cell-asc .v-table-sort-indicator, .liferay .v-table-header-cell-desc .v-table-sort-indicator {
 	width: 16px;
 	height: 1.2em;
 	float: right;
-}		
-.v-table-header-cell-asc .v-table-sort-indicator {
+}
+
+.liferay .v-table-header-cell-asc .v-table-sort-indicator {
 	background: transparent url(../base/common/img/sprites.png) no-repeat right 6px;
 }
-.v-table-header-cell-desc .v-table-sort-indicator {
+
+.liferay .v-table-header-cell-desc .v-table-sort-indicator {
 	background: transparent url(../base/common/img/sprites.png) no-repeat right -10px;
 }
-.v-table-caption-container-align-center {
+
+.liferay .v-table-caption-container-align-center {
 	text-align: center;
 }
-.v-table-caption-container-align-right {
+
+.liferay .v-table-caption-container-align-right {
 	text-align: right;
 }
-.v-table-caption-container .v-icon,
-.v-table-header-drag .v-icon {
+
+.liferay .v-table-caption-container .v-icon, .liferay .v-table-header-drag .v-icon {
 	vertical-align: middle;
 }
-.v-table-body {
+
+.liferay .v-table-body {
 	border: 1px solid #aaa;
 }
-.v-table-row-spacer {
+
+.liferay .v-table-row-spacer {
 	height: 10px;
-	overflow: hidden; /* IE hack to allow < one line height divs */
+	overflow: hidden;
 }
-.v-table-row,
-.v-table-row-odd {
-    background: #fff;
+
+.liferay .v-table-row, .liferay .v-table-row-odd {
+	background: #fff;
 	border: 0;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
 }
 
-.v-table-generated-row {
-	   background: #efefef;
+.liferay .v-table-generated-row {
+	background: #efefef;
 }
 
-.v-table-body-noselection .v-table-row,
-.v-table-body-noselection .v-table-row-odd {
+.liferay .v-table-body-noselection .v-table-row, .liferay .v-table-body-noselection .v-table-row-odd {
 	cursor: default;
 }
-.v-table .v-selected {
+
+.liferay .v-table .v-selected {
 	background: #999;
 	color: #fff;
 }
-.v-table-cell-content {
+
+.liferay .v-table-cell-content {
 	white-space: nowrap;
 	overflow: hidden;
 	padding: 0 6px;
 	border-right: 1px solid #aaa;
 }
-.v-table-cell-wrapper {
-	/* Do not specify any margins, paddings or borders here */
+
+.liferay .v-table-cell-wrapper {
 	white-space: nowrap;
 	overflow: hidden;
 }
-.v-table-cell-wrapper-align-center {
+
+.liferay .v-table-cell-wrapper-align-center {
 	text-align: center;
 }
-.v-table-cell-wrapper-align-right {
+
+.liferay .v-table-cell-wrapper-align-right {
 	text-align: right;
 }
-.v-table-column-selector {
+
+.liferay .v-table-column-selector {
 	float: right;
 	background: transparent url(../base/common/img/sprites.png) no-repeat 4px -37px;
 	margin: -1.2em 0 0 0;
 	height: 1.2em;
 	width: 14px;
-	position: relative; /* hide this from IE, it works without it */
+	position: relative;
 	cursor: pointer;
 }
-.v-table.v-disabled .v-table-column-selector {
+
+.liferay .v-table.v-disabled .v-table-column-selector {
 	cursor: default;
 }
-.v-ie6 .v-table-column-selector,
-.v-ie7 .v-table-column-selector {
-	position: static;
-}
-.v-table-focus-slot-left {
+
+.liferay .v-table-focus-slot-left {
 	border-left: 2px solid #999;
 	float: none;
 	margin-bottom: -1.2em;
@@ -1733,11 +2209,13 @@ div.v-progressindicator-indeterminate-disabled {
 	background: transparent;
 	border-right: 1px solid #aaa;
 }
-.v-table-focus-slot-right {
+
+.liferay .v-table-focus-slot-right {
 	border-right: 2px solid #999;
 	margin-left: -2px;
 }
-.v-table-header-drag {
+
+.liferay .v-table-header-drag {
 	position: absolute;
 	background: #efefef;
 	border: 1px solid #eee;
@@ -1746,65 +2224,70 @@ div.v-progressindicator-indeterminate-disabled {
 	margin-top: 20px;
 	z-index: 30000;
 }
-.v-table-header-drag .v-icon {
+
+.liferay .v-table-header-drag .v-icon {
 	vertical-align: middle;
 }
-.v-table-scrollposition {
+
+.liferay .v-table-scrollposition {
 	width: 160px;
 	background: #eee;
 	border: 1px solid #aaa;
 }
-.v-table-scrollposition span {
+
+.liferay .v-table-scrollposition span {
 	display: block;
 	text-align: center;
 }
-.v-table-body:focus,
-.v-table-body-wrapper:focus {
+
+.liferay .v-table-body:focus, .liferay .v-table-body-wrapper:focus {
 	outline: none;
 }
-.v-table-body.focused {
+
+.liferay .v-table-body.focused {
 	border-color: #388ddd;
 }
-.v-table-focus .v-table-cell-content {
+
+.liferay .v-table-focus .v-table-cell-content {
 	border-top: 1px dotted #0066bd;
 	border-bottom: 1px dotted #0066bd;
 }
-.v-table-focus .v-table-cell-wrapper {
+
+.liferay .v-table-focus .v-table-cell-wrapper {
 	margin-top: -1px;
 	margin-bottom: -1px;
 }
-/* row in column selector */
-.v-on {
-	
-}
-.v-off {
+
+.liferay .v-off {
 	color: #ddd;
 }
-/*************************************
- * Drag'n'drop styles
- *************************************/
-.v-table-drag .v-table-body {
+
+.liferay .v-table-drag .v-table-body {
 	border-color: #1d9dff;
 }
-.v-table-row-drag-middle .v-table-cell-content {
+
+.liferay .v-table-row-drag-middle .v-table-cell-content {
 	background-color: #bcdcff;
 }
-.v-table-row-drag-top .v-table-cell-content {
+
+.liferay .v-table-row-drag-top .v-table-cell-content {
 	border-top: 2px solid #1d9dff;
 }
-.v-table-row-drag-top .v-table-cell-wrapper {
-	margin-top: -2px; /* compensate the space consumed by border hint */
+
+.liferay .v-table-row-drag-top .v-table-cell-wrapper {
+	margin-top: -2px;
 }
-.v-table-row-drag-bottom .v-table-cell-content {
+
+.liferay .v-table-row-drag-bottom .v-table-cell-content {
 	border-bottom: 2px solid #1d9dff;
 }
-.v-table-row-drag-bottom .v-table-cell-wrapper {
-	margin-bottom: -2px; /* compensate the space consumed by border hint */
+
+.liferay .v-table-row-drag-bottom .v-table-cell-wrapper {
+	margin-bottom: -2px;
 }
-.v-table-row-drag-top .v-table-cell-content:first-child:before,
-.v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+
+.liferay .v-table-row-drag-top .v-table-cell-content:first-child:before, .liferay .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
 	display: block;
-	content: "";
 	position: absolute;
 	width: 6px;
 	height: 6px;
@@ -1812,78 +2295,79 @@ div.v-progressindicator-indeterminate-disabled {
 	margin-left: -6px;
 	background: transparent url(../base/common/img/drag-slot-dot.png);
 }
-.v-ff .v-table-row-drag-bottom .v-table-cell-content:first-child:after,
-.v-ie .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+
+.v-ff .liferay .v-table-row-drag-bottom .v-table-cell-content:first-child:after, .v-ie .liferay .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
 	margin-top: -2px;
 }
 
-.v-tabsheet,
-.v-tabsheet-content,
-.v-tabsheet-deco {
-	outline: none; /* Prevent selection outline which might break layouts or cause scrollbars */
-	text-align: left /* Force default alignment */
+.liferay .v-tabsheet, .liferay .v-tabsheet-content, .liferay .v-tabsheet-deco {
+	outline: none;
+	text-align: left;
 }
-.v-tabsheet-tabs {
+
+.liferay .v-tabsheet-tabs {
 	empty-cells: hide;
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	width: 100%;
-	overflow:hidden;
+	overflow: hidden;
 }
-.v-tabsheet-tabitemcell:focus {
+
+.liferay .v-tabsheet-tabitemcell:focus {
 	outline: none;
 }
-.v-tabsheet-tabitemcell,
-.v-tabsheet-spacertd {
+
+.liferay .v-tabsheet-tabitemcell, .liferay .v-tabsheet-spacertd {
 	margin: 0;
 	padding: 0;
 	vertical-align: bottom;
 }
-.v-tabsheet-spacertd {
+
+.liferay .v-tabsheet-spacertd {
 	width: 100%;
 }
-.v-tabsheet-spacertd div {
+
+.liferay .v-tabsheet-spacertd div {
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	height: 1em;
 	padding: 0.2em 0;
 }
-.v-tabsheet-hidetabs .v-tabsheet-tabcontainer {
+
+.liferay .v-tabsheet-hidetabs > .v-tabsheet-tabcontainer {
 	display: none;
 }
-.v-tabsheet-scroller {
+
+.liferay .v-tabsheet-scroller {
 	white-space: nowrap;
 	text-align: right;
 	margin-top: -1em;
 }
-.v-ff2 .v-tabsheet-scroller {
-	position: relative;
-}
-.v-disabled .v-tabsheet-scroller {
+
+.liferay .v-disabled .v-tabsheet-scroller {
 	display: none;
 }
-.v-tabsheet-scrollerPrev,
-.v-tabsheet-scrollerNext,
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled {
+
+.liferay .v-tabsheet-scrollerPrev, .liferay .v-tabsheet-scrollerNext, .liferay .v-tabsheet-scrollerPrev-disabled, .liferay .v-tabsheet-scrollerNext-disabled {
 	border: 1px solid #aaa;
 	background: #fff;
 	width: 12px;
 	height: 1em;
 	cursor: pointer;
 }
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled {
+
+.liferay .v-tabsheet-scrollerPrev-disabled, .liferay .v-tabsheet-scrollerNext-disabled {
 	opacity: 0.5;
 	cursor: default;
 }
-.v-tabsheet-tabs .v-caption,
-.v-tabsheet-tabs .v-caption span {
+
+.liferay .v-tabsheet-tabs .v-caption, .liferay .v-tabsheet-tabs .v-caption span {
 	white-space: nowrap;
 }
-.v-tabsheet-caption-close {
+
+.liferay .v-tabsheet-caption-close {
 	display: inline;
 	display: inline-block;
 	zoom: 1;
@@ -1899,137 +2383,129 @@ div.v-progressindicator-indeterminate-disabled {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 }
-.v-tabsheet .v-disabled .v-tabsheet-caption-close {
+
+.liferay .v-tabsheet .v-disabled .v-tabsheet-caption-close {
 	cursor: default;
 	visibility: hidden;
 }
-.v-tabsheet-tabitem:hover .v-tabsheet-caption-close,
-.v-ie6 .v-tabsheet-caption-close {
+
+.liferay .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
 	visibility: visible;
 }
-.v-ie6 .v-tabsheet-caption-close {
-	float: right;
-}
-.v-tabsheet-tabitem {
+
+.liferay .v-tabsheet-tabitem {
 	border: 1px solid #aaa;
 	border-right: none;
 	cursor: pointer;
 	padding: 0.2em 0.5em;
 }
-.v-tabsheet-tabitem .v-caption {
+
+.liferay .v-tabsheet-tabitem .v-caption {
 	cursor: inherit;
 }
-.v-tabsheet.v-disabled .v-tabsheet-tabitem,
-.v-tabsheet-tabitemcell-disabled .v-tabsheet-tabitem {
+
+.liferay .v-tabsheet.v-disabled .v-tabsheet-tabitem, .liferay .v-tabsheet-tabitemcell-disabled .v-tabsheet-tabitem {
 	cursor: default;
 }
-.v-tabsheet-tabitem-selected {
+
+.liferay .v-tabsheet-tabitem-selected {
 	cursor: default;
 	border-bottom-color: #fff;
 }
-.v-tabsheet-tabitem-selected .v-caption {
+
+.liferay .v-tabsheet-tabitem-selected .v-caption {
 	cursor: default;
 }
-.v-tabsheet-content {
+
+.liferay .v-tabsheet-content {
 	border: 1px solid #aaa;
-	/* Vertical borders are not supported, use v-tabsheet-tabcontainer and v-tabsheet-deco to present these borders */
 	border-top: none;
 	border-bottom: none;
 	position: relative;
 }
-.v-ie6 .v-tabsheet-content,
-.v-ie7 .v-tabsheet-content {
-	zoom: 1;
-}
-.v-tabsheet-deco {
+
+.liferay .v-tabsheet-deco {
 	height: 1px;
 	background: #aaa;
 	overflow: hidden;
 }
-.v-tabsheet-hidetabs .v-tabsheet-content {
+
+.liferay .v-tabsheet-hidetabs .v-tabsheet-content {
 	border: none;
 }
-.v-tabsheet-hidetabs .v-tabsheet-deco {
+
+.liferay .v-tabsheet-hidetabs .v-tabsheet-deco {
 	height: 0;
 }
 
+.liferay .v-textfield {
+	text-align: left;
+}
 
-.v-textfield {
-	text-align: left /* Force default alignment */
-}
-.v-textarea {
+.liferay .v-textarea {
 	resize: none;
+	white-space: pre-wrap;
 }
-.v-textfield-focus,
-.v-textarea-focus {
-}
-input.v-textfield-prompt,
-textarea.v-textarea-prompt {
+
+.liferay input.v-textfield-prompt, .liferay textarea.v-textarea-prompt {
 	color: #999;
 	font-style: italic;
 }
-input.v-textfield-readonly,
-textarea.v-textarea-readonly {
+
+.liferay input.v-textfield-readonly, .liferay textarea.v-textarea-readonly {
 	background: transparent;
 	border: none;
 	resize: none;
 }
-input.v-disabled,
-textarea.v-disabled {
+
+.liferay input.v-disabled, .liferay textarea.v-disabled {
 	resize: none;
 }
-input.v-textfield-readonly:focus,
-textarea.v-textarea-readonly:focus {
+
+.liferay input.v-textfield-readonly:focus, .liferay textarea.v-textarea-readonly:focus {
 	outline: none;
 }
-/* Disabled by default
-.v-textarea-error,
-.v-textfield-error,
-.v-richtextarea-error iframe.gwt-RichTextArea {
-	background: #FFE0E0;	
-}
-*/
-/* Disabled by default
-.v-textarea-required,
-.v-textfield-required,
-.v-richtextarea-required iframe.gwt-RichTextArea {
-	background: #FFE0E0;	
-}
-*/
-/* Safari focus glow fix */
-.v-sa input:focus, 
-.v-sa textarea:focus {
+
+.v-sa .liferay input:focus, .v-sa .liferay textarea:focus {
 	outline-width: medium;
 }
 
-.v-richtextarea {
+.liferay .v-richtextarea {
 	border: 1px solid #aaa;
 	overflow: hidden;
 }
-.v-richtextarea .gwt-RichTextArea {
+
+.liferay .v-richtextarea .gwt-RichTextArea {
 	background: #fff;
 	border: none;
 }
 
-.v-richtextarea .gwt-RichTextToolbar {
+.liferay .v-richtextarea .gwt-HTML {
+	height: 100%;
+	font-size: 11px;
+}
+
+.liferay .v-richtextarea .gwt-RichTextToolbar {
 	white-space: nowrap;
 	background: #959595 url(../base/textfield/img/richtext-toolbar-bg.png) repeat-x 0 -42px;
 	border-bottom: 1px solid #7d7d7d;
 	padding: 2px;
 	overflow: hidden;
 }
-.v-richtextarea .gwt-RichTextToolbar-top {
+
+.liferay .v-richtextarea .gwt-RichTextToolbar-top {
 	padding-bottom: 1px;
 	overflow: hidden;
 	white-space: normal;
 }
-.v-richtextarea .gwt-RichTextToolbar-bottom {
+
+.liferay .v-richtextarea .gwt-RichTextToolbar-bottom {
 	clear: left;
 	overflow: hidden;
 	white-space: nowrap;
 }
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton {
+
+.liferay .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton, .liferay .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton {
 	float: left;
 	display: inline;
 	width: 22px;
@@ -2040,127 +2516,110 @@ textarea.v-textarea-readonly:focus {
 	margin-right: 2px;
 	text-align: center;
 }
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down,
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+
+.liferay .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down, .liferay .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down, .liferay .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering, .liferay .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering {
 	background-position: 0 -21px;
 }
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton img,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton img {
-	
-}
-.v-richtextarea .gwt-RichTextToolbar .gwt-ListBox {
+
+.liferay .v-richtextarea .gwt-RichTextToolbar .gwt-ListBox {
 	width: 24.5%;
 	margin-right: 2px;
 }
 
-.v-richtextarea-readonly {
+.liferay .v-richtextarea-readonly {
 	border: none;
 }
 
-
-.v-tree {
-	text-align: left; /* Force default alignment */
-	overflow: hidden;
+.liferay .v-tree {
+	text-align: left;
 	padding: 1px 0;
 	outline: none;
 }
-.v-tree-node {
+
+.liferay .v-tree-node {
 	background: transparent url(../base/common/img/sprites.png) no-repeat 5px -37px;
 	padding: 1px 0;
 }
-.v-tree-node-caption:focus {
+
+.liferay .v-tree-node-caption:focus {
 	outline: none;
 }
-div.v-tree-node-leaf {
+
+.liferay div.v-tree-node-leaf {
 	background: transparent;
 }
-.v-tree-node-expanded {
+
+.liferay .v-tree-node-expanded {
 	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -10px;
 }
-.v-tree-node-caption {
+
+.liferay .v-tree-node-caption {
 	margin-left: 1em;
 }
-.v-tree-node span {
+
+.liferay .v-tree-node span {
 	cursor: pointer;
 }
-.v-tree-node-caption div {
+
+.liferay .v-tree-node-caption div {
 	white-space: nowrap;
 }
-.v-tree-node-caption span,
-.v-tree-node-caption .v-icon {
+
+.liferay .v-tree-node-caption span, .liferay .v-tree-node-caption .v-icon {
 	vertical-align: middle;
 }
-.v-tree-node-selected span {
+
+.liferay .v-tree-node-selected span {
 	background: #999;
 	color: #fff;
 }
-.v-tree-node-children {
+
+.liferay .v-tree-node-children {
 	padding-left: 1em;
 }
-/* ie6compatnode is hidden from non ie6 browsers, for ie6 
- * uses weird hack to sink all events properly 
- */
-.v-tree-node-ie6compatnode {
-	display: none;
-}
-/* IMPORTANT keep the offsetWidth of this element the same as the margin-left of v-tree-node-caption */
-.v-ie6 .v-tree-node-ie6compatnode {
-	display: inline;
-	float: left;
-	background: orange;
-	margin: 0;
-	width: 0.8em;
-	height: 0.8em;
-	padding: 0.1em;
-	filter: alpha(opacity=0);
-}
-.v-ie6 .v-tree-node,
-.v-ie6 .v-tree-node-children {
-	clear: left;
-}
-/***************************************
- * Drag'n'drop styles
- ***************************************/
-.v-tree .v-tree-node-drag-top {
+
+.liferay .v-tree .v-tree-node-drag-top {
 	border-top: 2px solid #1d9dff;
 	margin-top: -1px;
 	padding-top: 0;
 }
-.v-tree .v-tree-node-drag-bottom {
+
+.liferay .v-tree .v-tree-node-drag-bottom {
 	border-bottom: 2px solid #1d9dff;
 	margin-bottom: -1px;
 	padding-bottom: 0;
 }
-.v-tree .v-tree-node-drag-top:before,
-.v-tree .v-tree-node-drag-bottom:after,
-.v-tree .v-tree-node-caption-drag-center:after {
+
+.liferay .v-tree .v-tree-node-drag-top:before, .liferay .v-tree .v-tree-node-drag-bottom:after, .liferay .v-tree .v-tree-node-caption-drag-center:after {
 	display: block;
-	content: "";
 	position: absolute;
 	width: 6px;
 	height: 6px;
 	margin-top: -4px;
 	background: transparent url(../base/common/img/drag-slot-dot.png);
 }
-.v-tree .v-tree-node-drag-bottom:after {
+
+.liferay .v-tree .v-tree-node-drag-bottom:after {
 	margin-top: -2px;
 }
-.v-tree .v-tree-node-caption-drag-center:after {
+
+.liferay .v-tree .v-tree-node-caption-drag-center:after {
 	margin-left: 14px;
 }
-.v-ff .v-tree .v-tree-node-caption-drag-center:after,
-.v-ie .v-tree .v-tree-node-caption-drag-center:after {
+
+.v-ff .liferay .v-tree .v-tree-node-caption-drag-center:after, .v-ie .liferay .v-tree .v-tree-node-caption-drag-center:after {
 	margin-top: -2px;
 }
-.v-tree .v-tree-node-drag-top {
+
+.liferay .v-tree .v-tree-node-drag-top {
 	background-position: 5px -38px;
 }
-.v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+
+.liferay .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
 	background-position: -5px -11px;
 }
-.v-tree .v-tree-node-caption-drag-center div {
+
+.liferay .v-tree .v-tree-node-caption-drag-center div {
 	border: 2px solid #1d9dff;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -2168,159 +2627,134 @@ div.v-tree-node-leaf {
 	margin: -2px 2px -2px -2px;
 	background-color: #bcdcff;
 }
-.v-ie6 .v-tree .v-tree-node-caption-drag-center div {
-	margin: -2px ;
-}
-.v-tree .v-tree-node-caption-drag-center div {
-	background-color: rgba(169,209,255,.6);
-}
-.v-tree .v-tree-node-caption-drag-center div,
-.v-tree .v-tree-node-drag-top,
-.v-tree .v-tree-node-drag-bottom {
-	border-color: rgba(0,109,232,.6);
+
+.liferay .v-tree .v-tree-node-caption-drag-center div {
+	background-color: rgba(169, 209, 255, 0.6);
 }
 
-/* Make item caption height an even number (so that the connector dots overlap nicely) */
-.v-tree-connectors .v-tree-node-caption {
+.liferay .v-tree .v-tree-node-caption-drag-center div, .liferay .v-tree .v-tree-node-drag-top, .liferay .v-tree .v-tree-node-drag-bottom {
+	border-color: rgba(0, 109, 232, 0.6);
+}
+
+.liferay .v-tree-connectors .v-tree-node-caption {
 	padding-top: 1px;
 }
-.v-tree-connectors .v-tree-node {
+
+.liferay .v-tree-connectors .v-tree-node {
 	background: transparent url(../base/tree/img/connector-expand.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-expanded {
+
+.liferay .v-tree-connectors .v-tree-node-expanded {
 	background: transparent url(../base/tree/img/connector-collapse.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-last {
+
+.liferay .v-tree-connectors .v-tree-node-last {
 	background: transparent url(../base/tree/img/connector-expand-last.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-expanded.v-tree-node-last {
+
+.liferay .v-tree-connectors .v-tree-node-expanded.v-tree-node-last {
 	background: transparent url(../base/tree/img/connector-collapse-last.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-leaf {
+
+.liferay .v-tree-connectors .v-tree-node-leaf {
 	background: transparent url(../base/tree/img/connector-leaf.png) repeat-y 2px 50%;
 }
-.v-tree-connectors .v-tree-node-leaf-last {
+
+.liferay .v-tree-connectors .v-tree-node-leaf-last {
 	background: transparent url(../base/tree/img/connector-leaf-last.png) repeat-y 2px 50%;
 }
-.v-tree-connectors .v-tree-node-children {
+
+.liferay .v-tree-connectors .v-tree-node-children {
 	background: transparent url(../base/tree/img/connector.png) repeat-y 2px 0;
 }
-.v-tree-connectors .v-tree-node-children-last {
+
+.liferay .v-tree-connectors .v-tree-node-children-last {
 	background: transparent;
 }
-.v-tree-connectors .v-tree-node-drag-top,
-.v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
+
+.liferay .v-tree-connectors .v-tree-node-drag-top, .liferay .v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
 	background-position: 2px -53px;
 }
-.v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
+
+.liferay .v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
 	background-position: 2px 50%;
 }
 
-/* IE6 */
-.v-ie6 .v-tree-connectors .v-tree-node {
-	background: transparent url(../base/tree/img/connector-expand-ie6.png) no-repeat 2px -52px;
-}
-.v-ie6 .v-tree-connectors .v-tree-node-expanded {
-	background: transparent url(../base/tree/img/connector-collapse-ie6.png) no-repeat 2px -52px;
-}
-.v-ie6 .v-tree-connectors .v-tree-node-last {
-	background: transparent url(../base/tree/img/connector-expand-last-ie6.png) no-repeat 2px -52px;
-}
-.v-ie6 .v-tree-connectors .v-tree-node-last.v-tree-node-expanded {
-	background: transparent url(../base/tree/img/connector-collapse-last-ie6.png) no-repeat 2px -52px;
+.liferay .v-treetable-treespacer {
+	display: inline-block;
+	background: transparent;
+	height: 10px;
+	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 5px;
 }
 
-.v-treetable-treespacer {
-    display: inline-block;
-    background: transparent;
-    height: 10px;
-    /* defines the amount of indent per level */
-    width: 18px;
-}
-.v-ie7 .v-treetable-treespacer{
-	height: 100%; /* #7388 */
+.liferay .v-treetable-node-closed {
+	background: url(../base/treetable/img/arrow-right.png) right top no-repeat;
 }
 
-.v-treetable-node-closed {
-    background: url(../base/treetable/img/arrow-right.png) right center no-repeat;
+.liferay .v-treetable-node-open {
+	background: url(../base/treetable/img/arrow-down.png) right top no-repeat;
 }
 
-.v-ie6 .v-treetable-node-closed {
-	background-image: url(../base/treetable/img/arrow-right.gif); 
-} 
-
-.v-treetable-node-open {
-    background: url(../base/treetable/img/arrow-down.png) right center no-repeat;
-}
-
-.v-ie6 .v-treetable-node-open {
-	background-image: url(../base/treetable/img/arrow-down.gif); 
-} 
-
-.v-treetable .v-checkbox {
+.liferay .v-treetable .v-checkbox {
 	display: inline-block;
 	padding-bottom: 4px;
 }
 
-.v-treetable .v-table-row .v-table-cell-content,
-.v-treetable .v-table-row-odd .v-table-cell-content {
-    position: relative;
-    z-index: 10;
+.liferay .v-treetable .v-table-row .v-table-cell-content, .liferay .v-treetable .v-table-row-odd .v-table-cell-content {
+	position: relative;
+	z-index: 10;
 }
 
-.v-treetable .v-table-body .v-table-table .v-table-row-animating {
-	zoom:1;
-	z-index:1;
+.liferay .v-treetable .v-table-cell-wrapper {
+	position: relative;
 }
 
-.v-treetable .v-table-body .v-table-table .v-table-row-animating,
-.v-treetable .v-table-body .v-table-table .v-table-row-animating .v-table-cell-content {
-    background:transparent;
+.liferay .v-treetable .v-table-body .v-table-table .v-table-row-animating {
+	zoom: 1;
+	z-index: 1;
 }
 
-.v-treetable-animation-clone {
+.liferay .v-treetable .v-table-body .v-table-table .v-table-row-animating, .liferay .v-treetable .v-table-body .v-table-table .v-table-row-animating .v-table-cell-content {
+	background: transparent;
+}
+
+.liferay .v-treetable-animation-clone {
 	border-spacing: 0;
-	zoom:1;
+	zoom: 1;
 }
 
-div.v-treetable-animation-clone-wrapper {
+.liferay div.v-treetable-animation-clone-wrapper {
 	position: absolute;
-    z-index: 2;
-    background-color:#fff;
+	z-index: 2;
+	background-color: #fff;
 }
 
-div.v-treetable-animation-clone-wrapper table.v-treetable-animation-clone {
-    background-color:#fff;
+.liferay div.v-treetable-animation-clone-wrapper table.v-treetable-animation-clone {
+	background-color: #fff;
 }
 
-div table.v-treetable-animation-clone tr.v-table-row,
-div table.v-treetable-animation-clone tr.v-table-row-odd,
-div table.v-treetable-animation-clone tr.v-table-row td.v-table-cell-content,
-div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content {
+.liferay div table.v-treetable-animation-clone tr.v-table-row, .liferay div table.v-treetable-animation-clone tr.v-table-row-odd, .liferay div table.v-treetable-animation-clone tr.v-table-row td.v-table-cell-content, .liferay div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content {
 	visibility: visible;
 }
 
-.v-upload {
+.liferay .v-upload {
 	white-space: nowrap;
 }
 
-.v-ie6 .v-upload,
-.v-ie7 .v-upload {
-	margin:0;
-}
-
-.v-upload-immediate {
+.liferay .v-upload-immediate {
 	position: relative;
 	margin: 0;
 	overflow: hidden;
 }
 
-.v-ff .v-upload-immediate,
-.v-op .v-upload-immediate {
+.v-ff .liferay .v-upload-immediate, .v-op .liferay .v-upload-immediate {
 	display: inline-block;
 }
 
-.v-upload-immediate input {
+.liferay .v-upload-immediate input {
 	opacity: 0;
 	filter: alpha(opacity=0);
 	z-index: 2;
@@ -2332,65 +2766,74 @@ div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content
 	background: transparent;
 }
 
-.v-upload-immediate button {
+.liferay .v-upload-immediate button {
 	position: relative;
 	left: 0;
 	top: 0;
 	width: 100%;
 	text-align: left;
 }
-  
 
-.v-window {
+.liferay .v-window {
 	background: #fff;
 }
-.v-window-outerheader {
+
+.liferay .v-window-contents {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.liferay .v-window.v-has-width > div.popupContent, .liferay .v-window.v-has-width .v-window-wrap, .liferay .v-window.v-has-width .v-window-contents, .liferay .v-window.v-has-width .v-window-contents > div {
+	width: 100%;
+}
+
+.liferay .v-window.v-has-height > div.popupContent, .liferay .v-window.v-has-height .v-window-wrap, .liferay .v-window.v-has-height .v-window-contents, .liferay .v-window.v-has-height .v-window-contents > div {
+	height: 100%;
+}
+
+.liferay .v-window-outerheader {
 	padding: 0.3em 1em;
-	height: 1em;
+	height: 1.6em;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.v-window-outerheader,
-.v-window-draggingCurtain {
- 	cursor: move;	
+.liferay .v-window-outerheader, .liferay .v-window-draggingCurtain {
+	cursor: move;
 }
 
-.v-window-header {
+.liferay .v-window-header {
 	font-weight: bold;
 }
-/* A more specific selector to make sure padding isn't so easily overridden */
-div.v-window-header {
+
+.liferay div.v-window-header {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	-ms-text-overflow: ellipsis;
 	overflow: hidden;
 	padding: 0;
 }
-.v-ie6 .v-window-header {
-	width: 100%;
+
+.liferay .v-window-header .v-icon {
+	vertical-align: middle;
 }
-.v-window-header .v-icon {
-	vertical-align: middle; /* This has to be 'middle', not 'bottom', to allow larger icons than 16px */
-}
-/* Partial fix for bug #1106 */
-/* Target Firefox 2 (somehow this will force almost all window borders on top of a Flash object) */
-.v-window-contents, x:-moz-any-link {
-	overflow: hidden;
-}
-/* Target Firefox 3 (it doesn't need any trickery, so revert the previous) */
-.v-window-contents, x:-moz-any-link, x:default {
-	overflow: visible;
-}
-.v-window-contents > div {
+
+.liferay .v-window-contents > div {
 	outline: none;
 }
-.v-window-footer {
+
+.liferay .v-window-footer {
 	overflow: hidden;
 	zoom: 1;
 	height: 10px;
 	position: relative;
 	cursor: move;
 }
-.v-window-resizebox {
+
+.liferay .v-window-resizebox {
 	width: 10px;
 	height: 10px;
 	background: #ddd;
@@ -2399,19 +2842,20 @@ div.v-window-header {
 	right: 0;
 }
 
-.v-window-resizebox,
-.v-window-resizingCurtain {
+.liferay .v-window-resizebox, .liferay .v-window-resizingCurtain {
 	cursor: se-resize;
 }
 
-.v-window div.v-window-footer-noresize {
+.liferay .v-window div.v-window-footer-noresize {
 	height: 0;
 }
-.v-window-resizebox-disabled {
+
+.liferay .v-window-resizebox-disabled {
 	cursor: default;
 	display: none;
 }
-.v-window-closebox {
+
+.liferay .v-window-closebox {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -2421,7 +2865,8 @@ div.v-window-header {
 	cursor: pointer;
 	overflow: hidden;
 }
-.v-window-modalitycurtain {
+
+.liferay .v-window-modalitycurtain {
 	top: 0;
 	left: 0;
 	background: #999;
@@ -2431,99 +2876,111 @@ div.v-window-header {
 	height: 100%;
 	filter: alpha(opacity=50);
 }
-/* IE6 workaround for position:fixed; */
-.v-ie6 .v-window-modalitycurtain { 
-	position: absolute;
-	top: expression(document.documentElement.scrollTop + "px"); 
-}
-/* min-width for IE6 */
-.v-ie6 .v-window {
-	width: 0; /*  */
-}
-/* Shadow for window */
-.v-shadow-window {
-	position: absolute;
-}
-.v-shadow-window .top-left {
-    position: absolute; overflow: hidden;
-    top: -10px;             left: -15px;
-    width: 28px;         height: 28px;
-    background: transparent url(../base/window/img/shadow/top-left.png);
-}
-.v-shadow-window .top {
-    position: absolute; overflow: hidden;
-    top: -10px;             left: 13px;
-    height: 28px;
-    right: 13px;
-    background: transparent url(../base/window/img/shadow/top.png);
-}
-.v-shadow-window .top-right {
-    position: absolute; overflow: hidden;
-    top: -10px;             right: -15px;
-    width: 28px;         height: 28px;
-    background: transparent url(../base/window/img/shadow/top-right.png);
-}
-.v-shadow-window .left {
-    position: absolute; overflow: hidden;
-    top: 18px;           left: -15px;
-    width: 28px;
-    bottom: 10px;
-    background: transparent url(../base/window/img/shadow/left.png);
-}
-.v-shadow-window .center {
-    position: absolute; overflow: hidden;
-    top: 18px;           left: 13px;
-    bottom: 10px;        right: 13px;
-    background: transparent url(../base/window/img/shadow/center.png);
-}
-.v-shadow-window .right {
-    position: absolute; overflow: hidden;
-    top: 18px;           right: -15px;
-    width: 28px;
-    bottom: 10px;
-    background: transparent url(../base/window/img/shadow/right.png);
-}
-.v-shadow-window .bottom-left {
-    position: absolute; overflow: hidden;
-    bottom: -18px;           left: -15px;
-    width: 28px;          height: 28px;
-    background: transparent url(../base/window/img/shadow/bottom-left.png);
-}
-.v-shadow-window .bottom {
-    position: absolute; overflow: hidden;
-    bottom: -18px;           left: 13px;
-    right: 13px;          height: 28px;
-    background: transparent url(../base/window/img/shadow/bottom.png);
-}
-.v-shadow-window .bottom-right {
-    position: absolute; overflow: hidden;
-    bottom: -18px;           right: -15px;
-    width: 28px;          height: 28px;
-    background: transparent url(../base/window/img/shadow/bottom-right.png);
-}
-/* For IE6 (no transparent png's, we use a blur filter) */
-.v-ie6 .v-shadow-window * {
-	display: none;
-}
-.v-ie6 .v-shadow-window {
-	background: #000;
-	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5) alpha(opacity=20);
-	margin-top: 2px;
-	margin-left: 2px;
-}
-/* Automatically compiled css file from subdirectories. */
 
-.v-accordion {
+.liferay .v-shadow-window {
+	position: absolute;
+}
+
+.liferay .v-shadow-window .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-left.png);
+}
+
+.liferay .v-shadow-window .top {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: 13px;
+	height: 28px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/top.png);
+}
+
+.liferay .v-shadow-window .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-right.png);
+}
+
+.liferay .v-shadow-window .left {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/left.png);
+}
+
+.liferay .v-shadow-window .center {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: 13px;
+	bottom: 10px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/center.png);
+}
+
+.liferay .v-shadow-window .right {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	right: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/right.png);
+}
+
+.liferay .v-shadow-window .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-left.png);
+}
+
+.liferay .v-shadow-window .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: 13px;
+	right: 13px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom.png);
+}
+
+.liferay .v-shadow-window .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-right.png);
+}
+
+.liferay .v-accordion {
 	border: 1px solid #999;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-.v-accordion-item-caption {
+.liferay .v-accordion-item-caption {
 	color: #222;
 	text-shadow: 1px 1px #FFFFFF;
-	font-size: 12px;
 	font-weight: bold;
 	background: #c0c2c5 url(/html/themes/classic/images/application/panel_header_bg.png) repeat-x scroll 0 0;
 	border-top: 1px solid #999;
@@ -2531,44 +2988,48 @@ div.v-window-header {
 	padding: 4px 5px 5px 5px;
 }
 
-.v-accordion-item-first .v-accordion-item-caption {
+.liferay .v-accordion-item-caption .v-caption {
+	font-size: 12px;
+}
+
+.liferay .v-accordion-item-first .v-accordion-item-caption {
 	border-top: none;
 	-webkit-border-radius: 4px 4px 0 0;
 	-moz-border-radius: 4px 4px 0 0;
 	border-radius: 4px 4px 0 0;
 }
 
-.v-accordion-item-open .v-accordion-item-caption {
+.liferay .v-accordion-item-open .v-accordion-item-caption {
 	border-bottom: 1px solid #999;
 }
 
-.v-button:focus {
+.liferay .v-button:focus {
 	outline: none;
 }
 
-.v-button:hover .v-button-wrap {
+.liferay .v-button:hover .v-button-wrap {
 	background: #b9ced9 url(/html/themes/classic/images/application/state_hover_bg.png) repeat-x 0 0;
 	border-color: #627782;
 	color: #369;
 }
 
-.v-button:active .v-button-wrap,
-.v-button.v-pressed .v-button-wrap,
-.v-button:focus .v-button-wrap {
+.liferay .v-button:active .v-button-wrap, .liferay .v-button.v-pressed .v-button-wrap, .liferay .v-button:focus .v-button-wrap {
 	background: #ebebeb url(/html/themes/classic/images/application/state_active_bg.png) repeat-x 0 0;
 	border-color: #555;
 }
 
-.v-button {
+.liferay .v-button {
 	padding: 0;
 	border: none;
 	height: 26px;
 	overflow: hidden;
 }
 
+.liferay .v-nativebutton {
+	font-size: 11px;
+}
 
-.v-button .v-button-wrap,
-.v-disabled.v-button .v-button-wrap {
+.liferay .v-button .v-button-wrap, .liferay .v-disabled.v-button .v-button-wrap {
 	display: block;
 	font-size: 11px;
 	font-weight: bold;
@@ -2590,39 +3051,18 @@ div.v-window-header {
 	height: 20px;
 }
 
-.v-button-caption {
-	line-height: 16px;	
+.liferay .v-button-caption {
+	line-height: 16px;
 }
 
-.v-ie6 .v-button .v-button-wrap {
-	display: inline;
-	zoom: 1;
-}
-
-/* Link style button */
-.v-button-link,
-.v-disabled.v-button-link,
-.v-button-link:focus,
-.v-button-link:active,
-.v-button-link:hover,
-.v-button-link-pressed,
-button.v-nativebutton-link,
-.v-disabled.v-nativebutton-link,
-button.v-nativebutton-link:focus,
-button.v-nativebutton-link:active,
-button.v-nativebutton-link:hover,
-button.v-nativebutton-link-pressed,
-.v-button.v-button-link .v-button-wrap,
-.v-button.v-button-link:focus .v-button-wrap,
-.v-button.v-button-link:active .v-button-wrap,
-.v-disabled.v-button.v-button-link .v-button-wrap {
+.liferay .v-button-link, .liferay .v-disabled.v-button-link, .liferay .v-button-link:focus, .liferay .v-button-link:active, .liferay .v-button-link:hover, .liferay .v-button-link-pressed, .liferay button.v-nativebutton-link, .liferay .v-disabled.v-nativebutton-link, .liferay button.v-nativebutton-link:focus, .liferay button.v-nativebutton-link:active, .liferay button.v-nativebutton-link:hover, .liferay button.v-nativebutton-link-pressed, .liferay .v-button.v-button-link .v-button-wrap, .liferay .v-button.v-button-link:focus .v-button-wrap, .liferay .v-button.v-button-link:active .v-button-wrap, .liferay .v-disabled.v-button.v-button-link .v-button-wrap {
 	color: #5B677D;
 	font-weight: normal;
 	border: none;
 	border-style: none;
 	background: transparent;
 	padding: 0;
-	font-size: inherit;
+	font-size: 11px;
 	-webkit-box-shadow: none;
 	-mox-box-shadow: none;
 	-webkit-border-radius: 0;
@@ -2632,67 +3072,81 @@ button.v-nativebutton-link-pressed,
 	height: auto;
 }
 
-.v-button-link:hover {
+.liferay .v-button-link:hover {
 	color: #0066cc;
 	text-decoration: none;
 }
 
-.v-button-link:focus,
-.v-sa .v-button-link:focus {
+.liferay .v-button-link:focus, .v-sa .liferay .v-button-link:focus {
 	outline: 1px dotted #1b699f;
 	outline-offset: -1px;
 }
 
-.v-sa .v-button-link:focus {
+.v-sa .liferay .v-button-link:focus {
 	outline-offset: -1px;
 }
 
-/* CheckBox */
-.v-checkbox input {
-	margin-right: 3px;	
+.liferay .v-checkbox input {
+	margin-right: 3px;
 }
 
-div.v-app {
+.liferay .v-colorpicker-button-color {
+	border: 1px solid #999999;
+}
+
+.liferay .v-colorpicker-popup {
+	width: 252px;
+}
+
+.liferay .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 312px;
+}
+
+.liferay .v-colorpicker-popup .v-filterselect {
+	padding-right: 24px;
+}
+
+body .liferay.v-app {
 	background-color: transparent;
 }
 
-.v-caption {
+.liferay .v-caption {
 	font-weight: bold;
 }
 
-.v-tooltip {
+.liferay .v-tooltip {
 	background-color: #fffcdd;
 	border: 1px solid #b8b295;
 	font-size: 11px;
 	color: #222;
 }
-.v-tooltip-text {
+
+.liferay .v-tooltip-text {
 	padding: 2px 4px;
 }
-.v-tooltip .v-errormessage {
+
+.liferay .v-tooltip .v-errormessage {
 	padding: 3px 4px;
 	background: #ffecc6;
 	color: #b74100;
 	border: none;
 	border-top: 1px solid #fff3dc;
 }
-.v-tooltip .v-errormessage h2 {
+
+.liferay .v-tooltip .v-errormessage h2 {
 	font-size: 16px;
 	font-weight: normal;
 	color: #ab3101;
 	margin: 2px 0 8px 0;
 }
-.v-tooltip .v-errormessage h3 {
+
+.liferay .v-tooltip .v-errormessage h3 {
 	font-size: 13px;
 	font-weight: bold;
 	margin: 1px 0 4px 0;
 }
 
-.v-ie6 .v-view {
-	border-top: none;
-}
-
-.v-contextmenu {
+.liferay .v-contextmenu {
 	background: #ccc9c9 url(/html/themes/classic/images/application/menu_bg.png) repeat-x 0 0;
 	border: 1px solid;
 	border-color: #aeafb1 #777879 #777879 #aeafb1;
@@ -2701,11 +3155,11 @@ div.v-app {
 	border-radius: 4px;
 }
 
-.v-contextmenu table {
-	border-collapse: separate;	
+.liferay .v-contextmenu table {
+	border-collapse: separate;
 }
 
-.v-contextmenu .gwt-MenuItem {
+.liferay .v-contextmenu .gwt-MenuItem {
 	padding: 3px 8px 2px 8px;
 	height: 16px;
 	color: #2c2f34;
@@ -2715,75 +3169,73 @@ div.v-app {
 	border-top: 1px solid #eee;
 }
 
-.v-contextmenu tr:last-child .gwt-MenuItem {
-	border-bottom-width: 0;	
+.liferay .v-contextmenu tr:last-child .gwt-MenuItem {
+	border-bottom-width: 0;
 }
 
-.v-contextmenu .gwt-MenuItem img {
-	margin-right: 4px;	
+.liferay .v-contextmenu .gwt-MenuItem img {
+	margin-right: 4px;
 }
 
-.v-contextmenu .gwt-MenuItem-selected {
+.liferay .v-contextmenu .gwt-MenuItem-selected {
 	background-color: #5b677d;
 	color: #FFF;
-	text-shadow: -1px -1px #2c2f34;	
+	text-shadow: -1px -1px #2c2f34;
 }
 
-.v-contextmenu .gwt-MenuItem-selected div {
-	background: transparent;	
+.liferay .v-contextmenu .gwt-MenuItem-selected div {
+	background: transparent;
 }
 
-.v-datefield-popup {
+.liferay .v-datefield-popup {
 	padding: 3px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-.v-datefield-calendarpanel-header {
-	height: 28px;	
+.liferay .v-datefield-calendarpanel-header {
+	height: 28px;
 }
 
-.v-datefield-calendarpanel:focus {
-	outline: none;	
+.liferay .v-datefield-calendarpanel:focus {
+	outline: none;
 }
 
-.v-datefield-calendarpanel-body {
+.liferay .v-datefield-calendarpanel-body {
 	text-align: right;
 	vertical-align: top;
 }
 
-.v-datefield-popupcalendar .v-datefield-button {
+.liferay .v-datefield-popupcalendar .v-datefield-button {
 	background: transparent url(common/buttons_sprites.png) no-repeat 0 -48px;
 	width: 24px;
 	height: 24px;
 	border: none;
 }
 
-.v-datefield-popupcalendar .v-datefield-button:hover {
+.liferay .v-datefield-popupcalendar .v-datefield-button:hover {
 	background-position: 0px -72px;
 }
 
-.v-datefield-popupcalendar .v-datefield-button:focus {
+.liferay .v-datefield-popupcalendar .v-datefield-button:focus {
 	background-position: 0px -96px;
 }
 
-.v-datefield-month .v-datefield-calendarpanel-month,
-.v-datefield-day .v-datefield-calendarpanel-month,
-.v-datefield-full .v-datefield-calendarpanel-month {
+.liferay .v-datefield-month .v-datefield-calendarpanel-month, .liferay .v-datefield-day .v-datefield-calendarpanel-month, .liferay .v-datefield-full .v-datefield-calendarpanel-month {
 	width: 124px;
 }
 
-.v-datefield-year .v-datefield-calendarpanel-month {
+.liferay .v-datefield-year .v-datefield-calendarpanel-month {
 	width: 35px;
 }
 
-.v-datefield-calendarpanel-month {
+.liferay .v-datefield-calendarpanel-month {
 	background: transparent url(datefield/datefield_sprites.png) repeat-x 0 -112px;
 	font-weight: bold;
 }
 
-span.v-datefield-calendarpanel-month {
+.liferay span.v-datefield-calendarpanel-month {
 	display: block;
 	text-align: center;
 	background: transparent;
@@ -2791,22 +3243,18 @@ span.v-datefield-calendarpanel-month {
 	padding: 1px 3px 0;
 }
 
-.v-datefield-calendarpanel-prevyear,
-.v-datefield-calendarpanel-nextyear {
-	width: 22px;	
+.liferay .v-datefield-calendarpanel-prevyear, .liferay .v-datefield-calendarpanel-nextyear {
+	width: 22px;
 }
-	
-.v-datefield-calendarpanel-prevyear button,
-.v-datefield-calendarpanel-prevmonth button,
-.v-datefield-calendarpanel-nextmonth button,
-.v-datefield-calendarpanel-nextyear button {
+
+.liferay .v-datefield-calendarpanel-prevyear button, .liferay .v-datefield-calendarpanel-prevmonth button, .liferay .v-datefield-calendarpanel-nextmonth button, .liferay .v-datefield-calendarpanel-nextyear button {
 	width: 22px;
 	height: 28px;
 	border: none;
 	background: transparent;
 	background-repeat: no-repeat;
 	background-image: url(datefield/datefield_sprites.png);
-  	background-position: 0 0;
+	background-position: 0 0;
 	overflow: hidden;
 	padding: 0;
 	text-indent: -9999px;
@@ -2816,49 +3264,39 @@ span.v-datefield-calendarpanel-month {
 	border-radius: 0;
 }
 
-.v-ie .v-datefield-calendarpanel-prevyear button,
-.v-ie .v-datefield-calendarpanel-nextyear button,
-.v-ie .v-datefield-calendarpanel-prevmonth button,
-.v-ie .v-datefield-calendarpanel-nextmonth button {
+.v-ie .liferay .v-datefield-calendarpanel-prevyear button, .v-ie .liferay .v-datefield-calendarpanel-nextyear button, .v-ie .liferay .v-datefield-calendarpanel-prevmonth button, .v-ie .liferay .v-datefield-calendarpanel-nextmonth button {
 	text-indent: 0;
 	font-size: 1px;
 }
 
-.v-datefield-calendarpanel-prevmonth button {
+.liferay .v-datefield-calendarpanel-prevmonth button {
 	background-position: 0 -56px;
 }
 
-.v-datefield-calendarpanel-prevmonth {
+.liferay .v-datefield-calendarpanel-prevmonth {
 	background: transparent url(datefield/datefield_sprites.png) repeat-x 0 -112px;
 }
 
-.v-datefield-calendarpanel-nextyear button {
+.liferay .v-datefield-calendarpanel-nextyear button {
 	background-position: 0 -28px;
 	width: 100%;
 	min-width: 22px;
 }
 
-.v-datefield-calendarpanel-nextmonth button {
+.liferay .v-datefield-calendarpanel-nextmonth button {
 	background-position: 0 -84px;
 }
 
-.v-datefield-calendarpanel-nextmonth {
+.liferay .v-datefield-calendarpanel-nextmonth {
 	background: transparent url(datefield/datefield_sprites.png) repeat-x 0 -112px;
 }
 
-.v-datefield-calendarpanel-prevyear button {
+.liferay .v-datefield-calendarpanel-prevyear button {
 	width: 100%;
 	min-width: 22px;
 }
 
-.v-ie6 .v-datefield-calendarpanel-prevyear button,
-.v-ie6 .v-datefield-calendarpanel-nextyear button,
-.v-ie7 .v-datefield-calendarpanel-prevyear button,
-.v-ie7 .v-datefield-calendarpanel-nextyear button {
-	width: 22px;
-}
-
-.v-datefield-calendarpanel-day {
+.liferay .v-datefield-calendarpanel-day {
 	display: block;
 	width: 22px;
 	margin: 0 0 3px 3px;
@@ -2872,55 +3310,217 @@ span.v-datefield-calendarpanel-month {
 	border-radius: 4px;
 }
 
-.v-datefield-calendarpanel-day-today {
+.liferay .v-datefield-calendarpanel-day-today {
 	font-weight: bold;
 }
 
-.v-datefield-calendarpanel-day-selected {
+.liferay .v-datefield-calendarpanel-day-selected {
 	background: #b5b5b5 url(/html/themes/classic/images/application/state_active_bg.png) repeat-x 0 0;
 	color: #000;
 	border-color: #555;
 }
 
-.v-datefield-calendarpanel-day-focused {
+.liferay .v-datefield-calendarpanel-day-focused {
 	outline: 1px dotted #555;
 }
 
-
-.v-datefield-calendarpanel-weekdays {
+.liferay .v-datefield-calendarpanel-weekdays {
 	text-align: center;
 }
 
-.v-datefield-calendarpanel-weekdays strong {
+.liferay .v-datefield-calendarpanel-weekdays strong {
 	font-weight: normal;
 }
 
-.v-datefield-calendarpanel-weeknumber {
+.liferay .v-datefield-calendarpanel-weeknumber {
 	display: block;
 	border: none;
 	padding: 2px 0 2px 0;
 	margin: 0;
+	font-size: 9.9px;
 }
 
-.v-datefield-calendarpanel-body table {
+.liferay .v-datefield-calendarpanel-body table {
 	margin: 0 auto;
-	width: 200px;	
+	width: 200px;
 }
 
-.v-formlayout .v-caption {
+.liferay .v-inline-datefield-popup {
+	padding: 3px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-header {
+	height: 28px;
+}
+
+.liferay .v-inline-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.liferay .v-inline-datefield-calendarpanel-body {
+	text-align: right;
+	vertical-align: top;
+}
+
+.liferay .v-inline-datefield-popupcalendar .v-inline-datefield-button {
+	background: transparent url(common/buttons_sprites.png) no-repeat 0 -48px;
+	width: 24px;
+	height: 24px;
+	border: none;
+}
+
+.liferay .v-inline-datefield-popupcalendar .v-inline-datefield-button:hover {
+	background-position: 0px -72px;
+}
+
+.liferay .v-inline-datefield-popupcalendar .v-inline-datefield-button:focus {
+	background-position: 0px -96px;
+}
+
+.liferay .v-inline-datefield-month .v-inline-datefield-calendarpanel-month, .liferay .v-inline-datefield-day .v-inline-datefield-calendarpanel-month, .liferay .v-inline-datefield-full .v-inline-datefield-calendarpanel-month {
+	width: 124px;
+}
+
+.liferay .v-inline-datefield-year .v-inline-datefield-calendarpanel-month {
+	width: 35px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-month {
+	background: transparent url(datefield/datefield_sprites.png) repeat-x 0 -112px;
+	font-weight: bold;
+}
+
+.liferay span.v-inline-datefield-calendarpanel-month {
+	display: block;
+	text-align: center;
+	background: transparent;
+	overflow: hidden;
+	padding: 1px 3px 0;
+}
+
+.liferay .v-inline-datefield-calendarpanel-prevyear, .liferay .v-inline-datefield-calendarpanel-nextyear {
+	width: 22px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-prevyear button, .liferay .v-inline-datefield-calendarpanel-prevmonth button, .liferay .v-inline-datefield-calendarpanel-nextmonth button, .liferay .v-inline-datefield-calendarpanel-nextyear button {
+	width: 22px;
+	height: 28px;
+	border: none;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-image: url(datefield/datefield_sprites.png);
+	background-position: 0 0;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	outline: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.v-ie .liferay .v-inline-datefield-calendarpanel-prevyear button, .v-ie .liferay .v-inline-datefield-calendarpanel-nextyear button, .v-ie .liferay .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .liferay .v-inline-datefield-calendarpanel-nextmonth button {
+	text-indent: 0;
+	font-size: 1px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-prevmonth button {
+	background-position: 0 -56px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-prevmonth {
+	background: transparent url(datefield/datefield_sprites.png) repeat-x 0 -112px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-nextyear button {
+	background-position: 0 -28px;
+	width: 100%;
+	min-width: 22px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-nextmonth button {
+	background-position: 0 -84px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-nextmonth {
+	background: transparent url(datefield/datefield_sprites.png) repeat-x 0 -112px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-prevyear button {
+	width: 100%;
+	min-width: 22px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day {
+	display: block;
+	width: 22px;
+	margin: 0 0 3px 3px;
+	text-align: center;
+	background: #d4d4d4 url(/html/themes/classic/images/application/state_default_bg.png) repeat-x 0 0;
+	border-color: #c8c9ca #9e9e9e #9e9e9e #c8c9ca;
+	border-style: solid;
+	border-width: 1px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-today {
+	font-weight: bold;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-selected {
+	background: #b5b5b5 url(/html/themes/classic/images/application/state_active_bg.png) repeat-x 0 0;
+	color: #000;
+	border-color: #555;
+}
+
+.liferay .v-inline-datefield-calendarpanel-day-focused {
+	outline: 1px dotted #555;
+}
+
+.liferay .v-inline-datefield-calendarpanel-weekdays {
+	text-align: center;
+}
+
+.liferay .v-inline-datefield-calendarpanel-weekdays strong {
 	font-weight: normal;
 }
 
-.v-menubar {
+.liferay .v-inline-datefield-calendarpanel-weeknumber {
+	display: block;
+	border: none;
+	padding: 2px 0 2px 0;
+	margin: 0;
+	font-size: 9.9px;
+}
+
+.liferay .v-inline-datefield-calendarpanel-body table {
+	margin: 0 auto;
+	width: 200px;
+}
+
+.liferay .v-inline-datefield {
+	line-height: 19px;
+}
+
+.liferay .v-formlayout .v-caption {
+	font-weight: normal;
+}
+
+.liferay .v-menubar {
 	background: #97A1AE url(/html/themes/classic/images/dockbar/dockbar_bg.png) repeat-x 0 0;
 	border-bottom: 1px solid #636364;
 }
 
-.v-menubar-separator span {
+.liferay .v-menubar-separator span {
 	display: none;
 }
 
-.v-menubar-menuitem {
+.liferay .v-menubar-menuitem {
 	padding: 3px 8px;
 	line-height: 16px;
 	font-weight: bold;
@@ -2928,12 +3528,12 @@ span.v-datefield-calendarpanel-month {
 	text-shadow: -1px -1px #FFF;
 }
 
-.v-menubar-menuitem-selected {
+.liferay .v-menubar-menuitem-selected {
 	color: #FFF;
 	text-shadow: -1px -1px #2c2f34;
 }
 
-.v-menubar-submenu {
+.liferay .v-menubar-submenu {
 	background: #CCC9C9 url(/html/themes/classic/images/application/menu_bg.png) repeat-x 0 0;
 	border: 1px solid;
 	border-color: #aeafb1 #777879 #777879 #aeafb1;
@@ -2943,7 +3543,11 @@ span.v-datefield-calendarpanel-month {
 	padding: 2px 0;
 }
 
-.v-menubar-submenu .v-menubar-menuitem {
+.liferay .v-menubar-submenu .v-menubar-submenu-indicator {
+	font-size: 9.9px;
+}
+
+.liferay .v-menubar-submenu .v-menubar-menuitem {
 	color: #2c2f34;
 	font-weight: bold;
 	text-shadow: 1px 1px #fff;
@@ -2953,30 +3557,25 @@ span.v-datefield-calendarpanel-month {
 	border-top: 1px solid #eee;
 }
 
-.v-menubar-submenu .v-menubar-menuitem:last-child {
+.liferay .v-menubar-submenu .v-menubar-menuitem:last-child {
 	border-bottom-width: 0;
 }
 
-.v-menubar-submenu .v-menubar-menuitem-caption * { 
+.liferay .v-menubar-submenu .v-menubar-menuitem-caption * {
 	vertical-align: middle;
 }
 
-.v-menubar .v-menubar-menuitem-selected,
-.v-menubar-submenu .v-menubar-menuitem-selected {
+.liferay .v-menubar .v-menubar-menuitem-selected, .liferay .v-menubar-submenu .v-menubar-menuitem-selected {
 	color: #fff;
 	text-shadow: 1px 1px #000;
 	background-color: #5b677d;
 }
 
-.v-menubar-menuitem-disabled,
-.v-menubar-submenu .v-menubar-menuitem-disabled,
-.v-menubar span.v-menubar-menuitem-disabled:hover,
-.v-menubar span.v-menubar-menuitem-disabled:focus,
-.v-menubar span.v-menubar-menuitem-disabled:active {
+.liferay .v-menubar-menuitem-disabled, .liferay .v-menubar-submenu .v-menubar-menuitem-disabled, .liferay .v-menubar span.v-menubar-menuitem-disabled:hover, .liferay .v-menubar span.v-menubar-menuitem-disabled:focus, .liferay .v-menubar span.v-menubar-menuitem-disabled:active {
 	color: #999;
 }
 
-.v-Notification {
+.liferay .v-Notification {
 	background: #dff4ff;
 	color: #34404F;
 	font-weight: bold;
@@ -2987,50 +3586,50 @@ span.v-datefield-calendarpanel-month {
 	border: 1px solid #a7cedf;
 }
 
-.v-Notification h1,
-.v-Notification p,
-.v-Notification-error h1,
-.v-Notification-error p,
-.v-Notification-warning h1,
-.v-Notification-warning p {
+.liferay .v-Notification h1, .liferay .v-Notification p, .liferay .v-Notification-error h1, .liferay .v-Notification-error p, .liferay .v-Notification-warning h1, .liferay .v-Notification-warning p {
 	display: inline;
 	margin: 0 0.5em 0 0;
 }
-.v-Notification-warning {
+
+.liferay .v-Notification-warning {
 	background: #ffc;
 	border-color: #fc0;
 }
-.v-Notification-error {
+
+.liferay .v-Notification-error {
 	background-color: #ffdddd;
 	border-color: #ff0000;
 }
 
-.v-Notification-tray {
+.liferay .v-Notification-tray {
 	color: #111111;
 	background-color: #e5e5e5;
 	border-color: #b5b5b5;
 }
-.v-Notification-tray h1 {
+
+.liferay .v-Notification-tray h1 {
 	display: block;
 }
-.v-Notification-tray p {
+
+.liferay .v-Notification-tray p {
 	display: block;
 }
-.v-Notification-system {
+
+.liferay .v-Notification-system {
 	background-color: #ffdddd;
 	border-color: #ff0000;
 }
-.v-Notification-system h1 {
+
+.liferay .v-Notification-system h1 {
 	display: block;
 	margin: 0;
 }
 
-.v-panel {
+.liferay .v-panel {
 	background: transparent url(panel/top-left.png) no-repeat;
 }
 
-.v-panel-caption,
-.v-panel-nocaption {
+.liferay .v-panel-caption, .liferay .v-panel-nocaption {
 	text-shadow: 1px 1px #fff;
 	font-size: 12px;
 	color: #222;
@@ -3040,57 +3639,54 @@ span.v-datefield-calendarpanel-month {
 	height: 12px;
 }
 
-.v-panel-caption .v-icon { 
+.liferay .v-panel-caption .v-icon {
 	padding-right: 2px;
 }
 
-.v-panel-content {
+.liferay .v-panel-content {
 	border: 1px solid #999;
 	-webkit-border-radius: 0 0 4px 4px;
 	-moz-border-radius: 0 0 4px 4px;
 	border-radius: 0 0 4px 4px;
 }
 
-/* Light style Panel */
-
-.v-panel-light {
+.liferay .v-panel-light {
 	background: transparent;
 }
 
-.v-panel-caption-light,
-.v-panel-nocaption-light {
+.liferay .v-panel-caption-light, .liferay .v-panel-nocaption-light {
 	margin: 0;
 	border: none;
 	background: none;
 }
 
-.v-panel-caption-light {
+.liferay .v-panel-caption-light {
 	border-bottom: 1px solid #999;
 }
 
-.v-panel-nocaption-light {
+.liferay .v-panel-nocaption-light {
 	padding: 0;
 	height: 0;
 }
 
-.v-panel-content-light {
+.liferay .v-panel-content-light {
 	border: none;
 }
-.v-panel-content-light > div {
+
+.liferay .v-panel-content-light > div {
 	background: transparent;
 }
 
-.v-panel-deco {
+.liferay .v-panel-deco {
 	height: 0;
 	overflow: hidden;
 }
 
-/* IE specific rules */
-.v-ie .v-panel {
+.v-ie .liferay .v-panel {
 	background: transparent;
 }
-.v-ie .v-panel-caption,
-.v-ie .v-panel-nocaption {
+
+.v-ie .liferay .v-panel-caption, .v-ie .liferay .v-panel-nocaption {
 	border: 1px solid #999;
 	border-bottom: none;
 	background: #c0c2c5 url(/html/themes/classic/images/application/panel_header_bg.png) repeat-x 0 0;
@@ -3098,81 +3694,74 @@ span.v-datefield-calendarpanel-month {
 	padding-left: 5px;
 }
 
-.v-ie .v-panel-caption-light,
-.v-ie .v-panel-nocaption-light {
+.v-ie .liferay .v-panel-caption-light, .v-ie .liferay .v-panel-nocaption-light {
 	border: none;
 	background: transparent;
 }
 
-.v-ie .v-panel-caption-light {
+.v-ie .liferay .v-panel-caption-light {
 	border-bottom: 1px solid #999;
 }
 
-.v-popupview-popup {
+.liferay .v-popupview-popup {
 	background: #d4d4d4 url(/html/themes/classic/images/application/state_default_bg.png) repeat-x 0 0;
 	padding: 8px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 	border: 1px solid #c8c9ca;
-	border-color :#c8c9ca #9e9e9e #9e9e9e #c8c9ca; 
+	border-color: #c8c9ca #9e9e9e #9e9e9e #c8c9ca;
 }
 
-.v-progressindicator-wrapper {
+.liferay .v-progressindicator-wrapper {
 	background: #dfe2e4 url(../reindeer/progressindicator/img/base.gif) repeat-x;
 	border: 1px solid #bfbfbf;
 }
 
-.v-disabled .v-progressindicator-wrapper {
+.liferay .v-disabled .v-progressindicator-wrapper {
 	background-image: url(../reindeer/progressindicator/img/disabled.gif);
 }
 
-.v-progressindicator-indicator {
+.liferay .v-progressindicator-indicator {
 	background: #f7f9f9 url(../reindeer/progressindicator/img/progress.png);
 }
 
-.v-app select,
-.v-window select {
-	padding: 1px;	
+.liferay.v-app select, .liferay .v-window select {
+	padding: 1px;
 }
 
-select {
-	background-color: #fff;	
+.liferay select {
+	background-color: #fff;
 }
 
-.v-ie6 select { 
-	font-size: 1em;
+.liferay .v-filterselect {
+	padding-right: 24px;
 }
 
-.v-filterselect-button {
+.liferay .v-filterselect-button {
 	width: 24px;
+	margin-right: -24px;
 	height: 24px;
 	background: transparent url(common/buttons_sprites.png) no-repeat 0 0;
 }
 
-.v-filterselect-button:hover {
+.liferay .v-filterselect-button:hover {
 	background-position: 0px -24px;
 }
 
-.v-filterselect-suggestpopup {
-	border: 1px solid #98C0F4;	
+.liferay .v-filterselect-suggestpopup {
+	border: 1px solid #98C0F4;
 }
 
-.v-filterselect-suggestmenu {
-	min-height: 2px;	
+.liferay .v-filterselect-suggestmenu {
+	min-height: 2px;
 }
 
-.v-filterselect-prevpage,
-.v-filterselect-prevpage-off,
-.v-filterselect-nextpage,
-.v-filterselect-nextpage-off {
+.liferay .v-filterselect-prevpage, .liferay .v-filterselect-prevpage-off, .liferay .v-filterselect-nextpage, .liferay .v-filterselect-nextpage-off {
 	background-color: #fff;
 }
 
-.v-filterselect-prevpage span,
-.v-filterselect-prevpage-off span,
-.v-filterselect-nextpage span,
-.v-filterselect-nextpage-off span {
+.liferay .v-filterselect-prevpage span, .liferay .v-filterselect-prevpage-off span, .liferay .v-filterselect-nextpage span, .liferay .v-filterselect-nextpage-off span {
 	display: block;
 	height: 8px;
 	width: 16px;
@@ -3181,170 +3770,153 @@ select {
 	text-indent: -99999px;
 }
 
-.v-filterselect-prevpage span, .v-filterselect-nextpage span {
+.liferay .v-filterselect-prevpage span, .liferay .v-filterselect-nextpage span {
 	background: transparent no-repeat 0 -4px;
-  	background-image: url(/html/themes/classic/images/aui/icon_sprite.png);
+	background-image: url(/html/themes/classic/images/aui/icon_sprite.png);
 }
 
-.v-filterselect-nextpage span {
+.liferay .v-filterselect-nextpage span {
 	background-position: -65px -4px;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem span {
+
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem span {
 	display: block;
 	width: 100%;
 	height: 18px;
 	border: 1px solid #fff;
 	border-style: solid none;
-	
 }
 
-.v-filterselect-suggestmenu .gwt-MenuItem-selected span {
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem-selected span {
 	color: #000;
 	background: #dfe8f6;
 	border-color: #a3bae9;
 }
 
-.v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+.liferay .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
 	float: left;
 }
 
-.v-select-twincol-buttons .v-button-wrap { 
+.liferay .v-select-twincol-buttons .v-button-wrap {
 	padding-left: 11px;
 	padding-right: 11px;
 }
 
-.v-slider {
+.liferay .v-slider {
 	border: 1px solid #9e9e9e;
 	border-right: 1px solid #c8c9ca;
 	border-bottom: 1px solid #c8c9ca;
 	margin: 4px 0;
 }
 
-.v-slider-base {
+.liferay .v-slider-base {
 	height: 1px;
 }
 
-.v-slider-vertical {
+.liferay .v-slider-vertical {
 	margin: 0 5px;
-	width: 2px;	
+	width: 2px;
 }
 
-.v-slider-vertical .v-slider-base {
+.liferay .v-slider-vertical .v-slider-base {
 	width: 1px;
 }
 
-.v-slider-handle {
+.liferay .v-slider-handle {
 	background: transparent url(/html/themes/classic/images/aui/icon_sprite.png) no-repeat -115px -147px;
 	width: 10px;
 	height: 10px;
 }
 
-.v-slider-feedback {
-	background: #33;
-}
-
-.v-splitpanel-hsplitter, 
-.v-splitpanel-hsplitter-locked {
+.liferay .v-splitpanel-hsplitter, .liferay .v-splitpanel-hsplitter-locked {
 	font-size: 1px;
 	width: 3px;
 	background-color: #c8c9ca;
 }
 
-.v-splitpanel-hsplitter div {
+.liferay .v-splitpanel-hsplitter div {
 	font-size: 1px;
 	width: 3px;
 	background: transparent;
 	background-repeat: no-repeat;
-  	background-image: url(splitpanel/hsplit.png);
-  	background-position: center;
+	background-image: url(splitpanel/hsplit.png);
+	background-position: center;
 }
 
-.v-splitpanel-hsplitter-locked div {
+.liferay .v-splitpanel-hsplitter-locked div {
 	font-size: 1px;
 	width: 3px;
 }
 
-.v-splitpanel-vsplitter,
-.v-splitpanel-vsplitter-locked {
+.liferay .v-splitpanel-vsplitter, .liferay .v-splitpanel-vsplitter-locked {
 	font-size: 1px;
 	height: 3px;
 }
 
-.v-splitpanel-vsplitter div {
+.liferay .v-splitpanel-vsplitter div {
 	font-size: 1px;
 	height: 3px;
 	background: transparent;
 	background-color: #c8c9ca;
 	background-repeat: no-repeat;
-  	background-image: url(splitpanel/vsplit.png);
-  	background-position: center;
+	background-image: url(splitpanel/vsplit.png);
+	background-position: center;
 }
 
-.v-splitpanel-vsplitter-locked,
-.v-splitpanel-vsplitter-locked div {
+.liferay .v-splitpanel-vsplitter-locked, .liferay .v-splitpanel-vsplitter-locked div {
 	font-size: 1px;
 	height: 3px;
 	background-color: #c8c9ca;
 }
 
-/* Small SplitPanel */
-
-.v-splitpanel-hsplitter-small,
-.v-splitpanel-hsplitter-small div,
-.v-splitpanel-hsplitter-small-locked,
-.v-splitpanel-hsplitter-small-locked div {
+.liferay .v-splitpanel-hsplitter-small, .liferay .v-splitpanel-hsplitter-small div, .liferay .v-splitpanel-hsplitter-small-locked, .liferay .v-splitpanel-hsplitter-small-locked div {
 	font-size: 1px;
 	width: 1px;
 	background: #c8c9ca;
 }
 
-.v-splitpanel-vsplitter-small,
-.v-splitpanel-vsplitter-small div,
-.v-splitpanel-vsplitter-small-locked,
-.v-splitpanel-vsplitter-small-locked div {
+.liferay .v-splitpanel-vsplitter-small, .liferay .v-splitpanel-vsplitter-small div, .liferay .v-splitpanel-vsplitter-small-locked, .liferay .v-splitpanel-vsplitter-small-locked div {
 	font-size: 1px;
 	height: 1px;
 	background: #c8c9ca;
 }
 
-.v-table-body {
+.liferay .v-table-body {
 	border: 1px solid #999;
 }
 
-.v-table-body:focus,
-.v-table-body-wrapper:focus {
+.liferay .v-table-body:focus, .liferay .v-table-body-wrapper:focus {
 	outline: none;
 }
 
-.v-table-body.focused {
+.liferay .v-table-body.focused {
 	border-color: #555;
 }
 
-.v-table-focus .v-table-cell-content {
+.liferay .v-table-focus .v-table-cell-content {
 	border-top: 1px dotted #555;
 	border-bottom: 1px dotted #555;
 }
 
-.v-table-header-wrap,
-.v-table-footer-wrap {
+.liferay .v-table-header-wrap, .liferay .v-table-footer-wrap {
 	border-color: #999;
 	background: #c0c2c5 url(/html/themes/classic/images/application/panel_header_bg.png) repeat-x 0 0;
 	height: 26px;
 }
 
-.v-table-footer-wrap {
+.liferay .v-table-footer-wrap {
 	border: 1px solid #999;
 	border-top: none;
 }
 
-.v-table-footer td {
+.liferay .v-table-footer td {
 	height: 100%;
 	border-right: 1px solid #999;
 	padding-bottom: 5px;
 	padding-top: 5px;
 }
 
-.v-table-footer-container {
+.liferay .v-table-footer-container {
 	height: 16px;
 	float: right;
 	padding-right: 7px;
@@ -3352,7 +3924,7 @@ select {
 	white-space: nowrap;
 }
 
-.v-table-caption-container {
+.liferay .v-table-caption-container {
 	color: #336699;
 	font-weight: bold;
 	font-size: 11px;
@@ -3360,136 +3932,136 @@ select {
 	padding-top: 6px;
 }
 
-.v-table-caption-container-align-right {
+.liferay .v-table-caption-container-align-right {
 	margin-left: 0;
 	margin-right: 6px;
 	padding-left: 0;
 }
 
-.v-table-caption-container .v-icon {
+.liferay .v-table-caption-container .v-icon {
 	height: 16px;
 	margin: -4px 3px 0 0;
 }
 
-.v-ie .v-table-caption-container .v-icon {
+.v-ie .liferay .v-table-caption-container .v-icon {
 	margin-top: -2px;
 }
 
-.v-table-header-cell-asc .v-table-sort-indicator {
+.liferay .v-table-header-cell-asc .v-table-sort-indicator {
 	background: transparent url(/html/themes/control_panel/images/arrows/05_up.png) no-repeat right 8px;
 	height: 26px;
 }
 
-.v-table-header-cell-desc .v-table-sort-indicator {
+.liferay .v-table-header-cell-desc .v-table-sort-indicator {
 	background: transparent url(/html/themes/control_panel/images/arrows/05_down.png) no-repeat right 10px;
 	height: 26px;
 }
 
-.v-table-resizer {
+.liferay .v-table-resizer {
 	height: 26px;
 	background: #999;
 }
 
-.v-table-focus-slot-left {
+.liferay .v-table-focus-slot-left {
 	margin-bottom: -26px;
 	background: transparent;
 }
 
-.v-table-column-selector {
+.liferay .v-table-column-selector {
 	background: transparent url(table/columnselect.png);
 	width: 16px;
 	height: 26px;
 	margin: -26px 0 0;
 }
 
-.v-table-row-odd {
+.liferay .v-table-row-odd {
 	background: #dde1e6;
 }
 
-.v-table-row {
+.liferay .v-table-row {
 	background: #eef0f2;
 }
 
-.v-table-generated-row {
-    color: #336699;
-    font-weight: bold;
-    font-size: 11px;
-    padding-left: 0px;
-    padding-top: 6px;
-    background: #c0c2c5;
+.liferay .v-table-generated-row {
+	color: #336699;
+	font-weight: bold;
+	font-size: 11px;
+	padding-left: 0px;
+	padding-top: 6px;
+	background: #c0c2c5;
 }
 
-.v-table .v-selected {
+.liferay .v-table .v-selected {
 	background-color: #5B677D;
 	color: #FFF;
-	text-shadow: -1px -1px #2C2F34;	
+	text-shadow: -1px -1px #2C2F34;
 }
 
-.v-table-cell-wrapper {
+.liferay .v-table-cell-wrapper {
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
 
-.v-table-cell-content {
+.liferay .v-table-cell-content {
 	border-right: 1px solid #999;
 	padding: 0 6px;
 }
 
-.v-table-cell-content:last-child {
+.liferay .v-table-cell-content:last-child {
 	border-right-color: transparent;
 }
 
-.v-off {
+.liferay .v-off {
 	color: #999;
 }
 
-.v-tabsheet-content {
+.liferay .v-tabsheet-content {
 	border: none;
 }
 
-.v-tabsheet-deco {
+.liferay .v-tabsheet-deco {
 	background: transparent;
 }
 
-.v-tabsheet-tabitem {
+.liferay .v-tabsheet-tabitem {
 	border: none;
 }
 
-.v-tabsheet-tabitem .v-caption {
+.liferay .v-tabsheet-tabitem .v-caption {
 	height: 14px;
 	padding: 3px 10px;
 }
 
-.v-tabsheet-tabitem .v-captiontext {
+.liferay .v-tabsheet-tabitem .v-captiontext {
 	color: #336699;
 	font-size: 11px;
 	font-weight: bold;
 	text-decoration: underline;
 }
 
-.v-tabsheet-tabitem-selected .v-caption {
+.liferay .v-tabsheet-tabitem-selected .v-caption {
 	background: none repeat scroll 0 0 #333;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-.v-tabsheet-tabitem-selected .v-captiontext {
+.liferay .v-tabsheet-tabitem-selected .v-captiontext {
 	color: #fff;
 	text-decoration: none;
 	text-shadow: -1px -1px #000;
 }
 
-.v-tabsheet-tabitem-selected {
+.liferay .v-tabsheet-tabitem-selected {
 	position: relative;
 }
 
-.v-tabsheet-tabitem-selected:after {
+.liferay .v-tabsheet-tabitem-selected:after {
 	border: 10px solid;
 	border-bottom-width: 0;
 	border-color: #333 transparent transparent;
 	bottom: -6px;
-	content: '-';
+	content: "-";
 	display: block;
 	height: 0;
 	left: 50%;
@@ -3499,27 +4071,26 @@ select {
 	width: 0;
 }
 
-.v-tabsheet-tabs {
+.liferay .v-tabsheet-tabs {
 	height: 35px;
 }
 
-.v-tabsheet-tabcontainer,
-.v-tabsheet-tabs {
+.liferay .v-tabsheet-tabcontainer, .liferay .v-tabsheet-tabs {
 	overflow: visible !important;
 }
 
-.v-tabsheet-tabitemcell-first .v-tabsheet-tabitem {
+.liferay .v-tabsheet-tabitemcell-first .v-tabsheet-tabitem {
 	border-left: 1px solid #c8c9ca;
 	-webkit-border-radius: 4px 0 0 4px;
 	-moz-border-radius: 4px 0 0 4px;
 	border-radius: 4px 0 0 4px;
 }
 
-.v-tabsheet-tabitemcell, .v-tabsheet-spacertd {
+.liferay .v-tabsheet-tabitemcell, .liferay .v-tabsheet-spacertd {
 	vertical-align: top;
 }
 
-.v-tabsheet-spacertd div {
+.liferay .v-tabsheet-spacertd div {
 	height: 28px;
 	border: 1px solid #c8c9ca;
 	border-left: none;
@@ -3529,14 +4100,14 @@ select {
 	padding: 0;
 }
 
-.v-tabsheet-tabitem {
+.liferay .v-tabsheet-tabitem {
 	height: 20px;
 	border-top: 1px solid #c8c9ca;
 	border-bottom: 1px solid #c8c9ca;
 	padding: 4px;
 }
 
-.v-tabsheet-scroller {
+.liferay .v-tabsheet-scroller {
 	float: right;
 	width: 33px;
 	height: 28px;
@@ -3549,35 +4120,31 @@ select {
 	border-radius: 0 4px 4px 0;
 	position: relative;
 }
-	
-.v-tabsheet-scroller button {
+
+.liferay .v-tabsheet-scroller button {
 	padding: 0;
 	margin-top: 6px;
 	width: 16px;
 	height: 16px;
 	border: none;
-	background: transparent;	
+	background: transparent;
 }
 
-.v-tabsheet-scroller .v-tabsheet-scrollerPrev,
-.v-tabsheet-scroller .v-tabsheet-scrollerPrev-disabled {
+.liferay .v-tabsheet-scroller .v-tabsheet-scrollerPrev, .liferay .v-tabsheet-scroller .v-tabsheet-scrollerPrev-disabled {
 	background: transparent url(/html/themes/classic/images/aui/icon_sprite.png) no-repeat -80px -192px;
 }
 
-.v-tabsheet-scroller .v-tabsheet-scrollerNext,
-.v-tabsheet-scroller .v-tabsheet-scrollerNext-disabled {
+.liferay .v-tabsheet-scroller .v-tabsheet-scrollerNext, .liferay .v-tabsheet-scroller .v-tabsheet-scrollerNext-disabled {
 	background: transparent url(/html/themes/classic/images/aui/icon_sprite.png) no-repeat -48px -192px;
 }
 
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled {
+.liferay .v-tabsheet-scrollerPrev-disabled, .liferay .v-tabsheet-scrollerNext-disabled {
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
 
-.v-tabsheet-caption-close {
+.liferay .v-tabsheet-caption-close {
 	background: transparent url(tabsheet/close.png) no-repeat right top;
-	-background-image: url(tabsheet/close-ie6.png);
 	cursor: default;
 	float: right;
 	margin: 3px -1px 0;
@@ -3587,61 +4154,60 @@ select {
 	height: 9px;
 }
 
-.v-app input[type="text"],
-.v-app input[type="password"],
-.v-app input[type="reset"],
-.v-app textarea ,
-.v-window input[type="text"],
-.v-window input[type="password"],
-.v-window input[type="reset"],
-.v-window textarea {
+.v-ff .liferay .v-tabsheet-caption-close {
+	margin-top: -10px;
+}
+
+.v-ff .liferay .v-tabsheet-caption-close:only-child {
+	margin-top: -1px;
+}
+
+.liferay.v-app input[type="text"], .liferay.v-app input[type="password"], .liferay.v-app input[type="reset"], .liferay.v-app textarea, .liferay .v-window input[type="text"], .liferay .v-window input[type="password"], .liferay .v-window input[type="reset"], .liferay .v-window textarea {
 	padding: 5px 1px;
 }
 
-input.v-textfield-prompt, 
-textarea.v-textarea-prompt {
-	font-style: normal;	
+.liferay input.v-textfield-prompt, .liferay textarea.v-textarea-prompt {
+	font-style: normal;
 }
 
-.v-tree-node {
+.liferay .v-tree-node {
 	background: transparent url(tree/arrows_sprites.png) no-repeat -42px 1px;
-	-background: transparent url(tree/arrows_sprites-ie6.png) no-repeat -42px 1px;
 }
 
-.v-tree-node span {
+.liferay .v-tree-node span {
 	color: #336699;
 	padding: 1px 2px;
 	display: inline-block;
 }
 
-.v-tree-node:hover {
+.liferay .v-tree-node:hover {
 	background-position: -14px -30px;
 }
 
-.v-tree-node-expanded {
+.liferay .v-tree-node-expanded {
 	background-position: -28px -14px;
 }
 
-.v-tree-node-expanded:hover {
+.liferay .v-tree-node-expanded:hover {
 	background-position: 0 -47px;
 }
 
-.v-tree .v-tree-node-drag-top {
+.liferay .v-tree .v-tree-node-drag-top {
 	background-position: -42px 0px;
 }
 
-.v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+.liferay .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
 	background-position: -28px -15px;
 }
 
-.v-tree-node-selected {
+.liferay .v-tree-node-selected {
 	background: #333;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-.v-tree-node-selected span {
+.liferay .v-tree-node-selected span {
 	display: inline-block;
 	background: transparent;
 	color: #fff;
@@ -3649,25 +4215,25 @@ textarea.v-textarea-prompt {
 	padding: 1px 2px;
 }
 
-.v-tree-node-caption {
+.liferay .v-tree-node-caption {
 	margin-left: 14px;
 	padding: 1px;
 }
 
-.v-tree-node-focused {
+.liferay .v-tree-node-focused {
 	border: 1px dotted #555;
 	padding: 0;
 }
 
-.v-tree-node-children {
+.liferay .v-tree-node-children {
 	padding-left: 14px;
 }
 
-.v-window {
+.liferay .v-window {
 	background: transparent;
 }
 
-.v-window-wrap {
+.liferay .v-window-wrap {
 	border: 1px solid #c8c9ca;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -3675,52 +4241,36 @@ textarea.v-textarea-prompt {
 	background: #fff url(window/top-left.png) no-repeat;
 }
 
-.v-ie6 .v-window-wrap,
-.v-ie7 .v-window-wrap {
-	background-position: 1px 1px;
-}
-
-.v-ie6 .v-window-wrap {
-	border-bottom: none;
-}
-
-.v-ie6 .v-window-footer {
-	border-bottom: 1px solid #c8c9ca;
-	margin-top: -1px;
-	padding-top: 1px;
-}
-
-.v-window-outerheader {
-	height: 16px;
+.liferay .v-window-outerheader {
+	height: 38px;
 	margin-left: 9px;
 	padding: 10px 40px 12px 2px;
 	background: transparent url(window/top-right.png) no-repeat right top;
-	
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-.v-window-header {
+.liferay .v-window-header {
 	color: #000;
 	font-size: 12px;
-	text-shadow: 1px 1px #fff;	
+	text-shadow: 1px 1px #fff;
 }
 
-.v-window-contents {
+.liferay .v-window-contents {
 	padding: 0 5px 0 5px;
 }
 
-.v-window-footer {
+.liferay .v-window-footer {
 	height: 5px;
 	overflow: visible;
 }
 
-.v-window div.v-window-footer-noresize {
+.liferay .v-window div.v-window-footer-noresize {
 	height: 5px;
 }
 
-.v-window-closebox {
+.liferay .v-window-closebox {
 	background: url(window/closebutton_sprites.png) no-repeat scroll 0 0 transparent;
 	position: absolute;
 	width: 24px;
@@ -3729,17 +4279,17 @@ textarea.v-textarea-prompt {
 	top: 8px;
 }
 
-.v-window-closebox:hover {
-	background-position: 0 -24px;	
+.liferay .v-window-closebox:hover {
+	background-position: 0 -24px;
 }
 
-.v-window-closebox:active {
-	background-position: 0 -48px;	
+.liferay .v-window-closebox:active {
+	background-position: 0 -48px;
 }
 
-.v-window-resizebox {
+.liferay .v-window-resizebox {
 	background: transparent url(/html/themes/classic/images/aui/icon_sprite.png) no-repeat scroll -69px -229px;
 	width: 10px;
 	height: 10px;
-	bottom: 0;	
+	bottom: 0;
 }

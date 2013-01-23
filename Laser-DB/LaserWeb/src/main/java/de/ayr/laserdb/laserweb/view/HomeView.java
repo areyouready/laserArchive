@@ -1,10 +1,14 @@
 package de.ayr.laserdb.laserweb.view;
 
+import javax.annotation.PostConstruct;
+
+import com.vaadin.cdi.VaadinView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
+@VaadinView
 public class HomeView extends AbstractLaserView {
     
     private VerticalLayout vLayout = new VerticalLayout();;
@@ -12,14 +16,14 @@ public class HomeView extends AbstractLaserView {
     
     public HomeView() {
         
+        
+    }
+
+    @PostConstruct
+    private void initUI() {
         vLayout.setSizeFull();
         setCompositionRoot(vLayout);
         setStyleName("HomeView-Style");
-        
-        initUI();
-    }
-
-    private void initUI() {
          
         welcomeLbl = new Label("Willkommen");
         

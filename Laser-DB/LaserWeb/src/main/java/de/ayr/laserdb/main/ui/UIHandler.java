@@ -6,8 +6,10 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 
+import com.vaadin.cdi.VaadinView;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.laserweb.view.HomeView;
@@ -16,9 +18,10 @@ import de.ayr.laserdb.laserweb.view.NewDiscView;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
 @SessionScoped
-public class UIHandler extends CustomComponent {
+@VaadinView
+public class UIHandler extends VerticalLayout {
 
-    private final VerticalLayout vLayout = new VerticalLayout();
+//    private final VerticalLayout vLayout = new VerticalLayout();
     private HorizontalSplitPanel menuHoSplit;
 
 
@@ -45,10 +48,10 @@ public class UIHandler extends CustomComponent {
 
     @PostConstruct
     private void initUI() {
-        vLayout.setSizeFull();
-        setCompositionRoot(vLayout);
-        setSizeFull();
+//        setCompositionRoot(vLayout);
+//        vLayout.setSizeFull();
         setStyleName("UIHandler-Style");
+        setSizeFull();
 
         viewList.put("Home", homeView);
         viewList.put("Discs anzeigen", laserView);
@@ -56,14 +59,16 @@ public class UIHandler extends CustomComponent {
 
         
         menuHoSplit = new HorizontalSplitPanel();
-        menuHoSplit.setHeight(100, UNITS_PERCENTAGE);
-        menuHoSplit.setSplitPosition(200, UNITS_PIXELS);
+//        menuHoSplit.setHeight(100, UNITS_PERCENTAGE);
+        menuHoSplit.setSizeFull();
+        menuHoSplit.setSplitPosition(200, Unit.PIXELS);
         menuHoSplit.setFirstComponent(menu);
         menuHoSplit.setSecondComponent(homeView);
 
-        vLayout.addComponent(header);
-        vLayout.addComponent(menuHoSplit);
-        vLayout.setExpandRatio(menuHoSplit, 1);
+        addComponent(header);
+        addComponent(menuHoSplit);
+        setExpandRatio(menuHoSplit, 1);
+        
 
     }
 
@@ -77,6 +82,11 @@ public class UIHandler extends CustomComponent {
         
         menuHoSplit.setSecondComponent(abstractLaserView);
         
+    }
+    
+    public void show() {
+        
+        UI.getCurrent().setContent(this);
     }
 
 }

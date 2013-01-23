@@ -16,11 +16,12 @@ import de.ayr.laserdb.main.controller.MainController;
 import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;
 
+//@Theme("reindeer")
 @Theme("lasertheme")
 @Title("LaserDisc Database")
 @PreserveOnRefresh
+@Root
 @VaadinUI
-//@Root
 public class LaserWeb extends UI implements Serializable {
 
     private MainController mainController;
@@ -38,10 +39,8 @@ public class LaserWeb extends UI implements Serializable {
     protected void init(VaadinRequest request) {
         setSizeFull();
         
-//        mainWindow.setSizeFull();
-//        
-//        setContent(mainWindow);
-        setContent(uiHandler);
+        uiHandler.show();
+        
         
         
     }

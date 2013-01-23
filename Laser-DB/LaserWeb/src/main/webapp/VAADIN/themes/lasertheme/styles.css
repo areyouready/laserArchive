@@ -1,4 +1,4 @@
-@import url(../reindeer/styles.css);
+@import url(../reindeer/legacy-styles.css);
 
 .menuTree-style {
 	font-size: 14px;
@@ -7,6 +7,11 @@
 	cursor: pointer;
 }
 
+.Header-Style {
+	height: 66px;
+	background-color: white;
+
+	}
 .Menu-Style {
 	background-color: lightGoldenRodYellow;
 }

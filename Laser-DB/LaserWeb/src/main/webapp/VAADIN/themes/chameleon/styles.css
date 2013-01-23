@@ -1,55 +1,121 @@
-.v-theme-version:after {content:"6_8_0";}
-.v-theme-version-6_8_0 {display: none;}
-/* Automatically compiled css file from subdirectories. */
+.v-theme-version:after {content:"7_0_0_rc1";}
+.v-theme-version-7_0_0_rc1 {display: none;}
+.v-generated-body {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+}
 
-.v-absolutelayout-wrapper {
+.v-debug-console {
+	background: #fff;
+	opacity: 0.9;
+	border: 1px solid #000;
+	font-family: sans-serif;
+}
+
+.v-debug-console-caption {
+	background: #000;
+	border-bottom: 1px solid grey;
+	color: white;
+	font-weight: bold;
+}
+
+.v-debug-console-content {
+	font-size: x-small;
+	overflow: auto;
+	white-space: pre;
+}
+
+.v-debug-console-content input {
+	font-size: xx-small;
+}
+
+.v-app .invalidlayout, .v-app .invalidlayout * {
+	background: #f99 !important;
+}
+
+.chameleon .v-widget {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: bottom;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.chameleon .v-absolutelayout-wrapper {
 	position: absolute;
 	overflow: hidden;
 }
 
-.v-accordion {
+.chameleon .v-absolutelayout-margin, .chameleon .v-absolutelayout-canvas {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.chameleon .v-absolutelayout.v-has-height > div, .chameleon .v-absolutelayout.v-has-height > div > div {
+	height: 100%;
+}
+
+.chameleon .v-absolutelayout.v-has-width > div, .chameleon .v-absolutelayout.v-has-width > div > div {
+	width: 100%;
+}
+
+.chameleon .v-accordion {
 	position: relative;
 	outline: none;
-	overflow: hidden;
-	text-align: left /* Force default alignment */
+	overflow: visible;
+	text-align: left;
+	font-size: 0;
 }
-.v-accordion-item {
+
+.chameleon .v-accordion-item {
 	position: relative;
-	zoom: 1;
+	display: inline-block;
+	width: 100%;
 }
-.v-accordion-item-caption {
-	overflow: hidden;
+
+.chameleon .v-accordion-item-caption {
+	overflow: visible;
 	white-space: nowrap;
 	background: #eee;
 	border-bottom: 1px solid #ddd;
 }
-.v-accordion-item-caption .v-caption {
+
+.chameleon .v-accordion-item-caption .v-caption {
 	cursor: pointer;
+	font-size: 13px;
 }
-.v-accordion-item-open .v-accordion-item-caption .v-caption {
+
+.chameleon .v-accordion-item-open .v-accordion-item-caption .v-caption {
 	cursor: default;
 }
-.v-accordion-item-content {
+
+.chameleon .v-accordion-item-content {
 	position: absolute;
 	width: 100%;
 }
 
-/*
- * Default button (more customizable)
- * -------------------------------------- */
-.v-button {
+.chameleon .v-button {
 	display: inline-block;
 	zoom: 1;
-	text-align: center;
+	text-align: center !important;
 	text-decoration: none;
 	border: 2px outset #ddd;
 	background: #eee;
 	cursor: pointer;
 	white-space: nowrap;
 	margin: 0;
-	padding: .2em 1em;
+	padding: 0.2em 1em;
 	color: inherit;
 	font: inherit;
+	font-size: 13px;
 	line-height: normal;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -57,51 +123,37 @@
 	user-select: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.v-button.v-disabled {
+.chameleon .v-button.v-disabled {
 	cursor: default;
 }
 
-.v-ie6 .v-button {
-	display: inline;
-}
-
-.v-ie7 .v-button {
-   display: inline;
-}
-
-.v-button-wrap,
-.v-button-caption {
-	vertical-align: middle;
+.chameleon .v-button-wrap, .chameleon .v-button-caption {
+	vertical-align: baseline;
 	white-space: nowrap;
 	font: inherit;
 	color: inherit;
 	line-height: normal;
-	}
+}
 
-.v-button .v-icon,
-.v-nativebutton .v-icon {
+.chameleon .v-button .v-icon {
 	vertical-align: middle;
 	margin-right: 3px;
 	border: none;
-	}
+}
 
-.v-button .v-errorindicator,
-.v-nativebutton .v-errorindicator {
+.chameleon .v-button .v-errorindicator {
 	display: inline-block;
 	zoom: 1;
 	vertical-align: middle;
 	float: none;
 }
 
-/* Link style (we really should deprecate this) */
-.v-button-link,
-.v-nativebutton-link {
+.chameleon .v-button-link {
 	border: none;
-	text-align: left;
+	text-align: left !important;
 	background: transparent;
 	padding: 0;
 	color: inherit;
@@ -111,320 +163,459 @@
 	user-select: text;
 }
 
-/* Inset Safari focus outline a bit */
-.v-sa .v-button-link:focus{
+.v-sa .chameleon .v-button-link:focus {
 	outline-offset: -3px;
-	}
+}
 
-.v-button-link .v-button-caption,
-.v-nativebutton-link .v-nativebutton-caption {
+.chameleon .v-button-link .v-button-caption {
 	text-decoration: underline;
 	color: inherit;
 	text-align: left;
-	}
+}
 
+.chameleon .v-nativebutton .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+	border: none;
+}
 
-/*
- * NativeButton styles (html button element)
- * -------------------------------------- */
-.v-nativebutton {
-	text-align: center;
+.chameleon .v-nativebutton .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	float: none;
+}
+
+.chameleon .v-nativebutton-link {
+	border: none;
+	text-align: left !important;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ie-user-select: text;
+	user-select: text;
+}
+
+.chameleon .v-nativebutton-link .v-nativebutton-caption {
+	text-decoration: underline;
+	color: inherit;
+	text-align: left;
+}
+
+.chameleon .v-nativebutton {
+	text-align: center !important;
 	cursor: pointer;
 	white-space: nowrap;
 	margin: 0;
 	color: inherit;
 	font: inherit;
 	line-height: normal;
-	}
-.v-nativebutton .v-nativebutton-caption {
+}
+
+.chameleon .v-nativebutton .v-nativebutton-caption {
 	vertical-align: middle;
 	white-space: nowrap;
 	font: inherit;
 	color: inherit;
-	}
+}
 
-.v-nativebutton .v-icon {
+.chameleon .v-nativebutton .v-icon {
 	vertical-align: middle;
 	margin-right: 3px;
-	}
+}
 
-.v-nativebutton .v-errorindicator {
+.chameleon .v-nativebutton .v-errorindicator {
 	display: inline-block;
 	zoom: 1;
 	float: none;
 }
-/* Fixes streched buttons in IE6 and IE7*/
-.v-ie6 .v-nativebutton {
-	width: 1px;
-}
-.v-ie .v-nativebutton {
+
+.v-ie .chameleon .v-nativebutton {
 	overflow: visible;
 	padding-left: 1em;
 	padding-right: 1em;
 }
 
-.v-ie .v-nativebutton-link {
+.v-ie .chameleon .v-nativebutton-link {
 	padding: 0;
 }
 
-/*
- * Checkbox styles
- * -------------------------------------- */
- 
- .v-checkbox {
- 	display: block;
- }
+.chameleon .v-checkbox {
+	display: block;
+}
 
-.v-checkbox,
-.v-checkbox label,
-.v-checkbox input,
-.v-checkbox .v-icon {
+.chameleon .v-checkbox, .chameleon .v-checkbox label, .chameleon .v-checkbox input, .chameleon .v-checkbox .v-icon {
 	vertical-align: middle;
 	white-space: nowrap;
 }
 
-/* Fix for IE6/IE7 issue where checkbox moves 1 pixel down after selection (#4636) */
-.v-ie6 .v-checkbox,
-.v-ie7 .v-checkbox {
-	vertical-align: baseline;
-}
-
-.v-checkbox .v-icon {
+.chameleon .v-checkbox .v-icon {
 	margin: 0 2px;
 }
-.v-checkbox .v-errorindicator {
+
+.chameleon .v-checkbox .v-errorindicator {
 	float: none;
 	display: inline;
 	display: inline-block;
 	zoom: 1;
 }
 
+.chameleon .v-captionwrapper {
+	text-align: left;
+}
 
-/* Disabled by default
-.v-checkbox-error {
-	background: #ffe0e0;
-}
-*/
-/* Disabled by default
-.v-checkbox-required {
-	background: #ffe0e0;
-}
-*/
-
-.v-captionwrapper {
-	text-align: left; /* Force default alignment */
-}
-.v-caption {
+.chameleon .v-caption {
 	overflow: hidden;
 	white-space: nowrap;
+	font-size: 13px;
 }
-.v-errorindicator {
-	float: left;
+
+.chameleon .v-errorindicator {
+	display: inline-block;
 }
-.v-caption .v-icon {
-	float: left;
+
+.chameleon .v-caption .v-icon {
+	display: inline-block;
 	padding-right: 2px;
 	vertical-align: middle;
 }
-.v-caption .v-captiontext {
-	float: left;
+
+.chameleon .v-caption .v-captiontext {
+	display: inline-block;
 	overflow: hidden;
 	vertical-align: middle;
 }
-.v-caption .v-required-field-indicator {
+
+.chameleon .v-caption .v-required-field-indicator {
+	display: inline-block;
+}
+
+.chameleon .v-colorpicker {
+	text-align: center;
+}
+
+.chameleon .v-colorpicker-button-color {
+	border: 1px solid silver;
 	float: left;
+	width: 10px;
+	height: 10px;
+	margin-top: 2px;
+	margin-right: 5px;
 }
 
-.v-caption-clearelem {
-	clear: both;
-	width: 0;
-	height: 0;
-	overflow: hidden;
+.chameleon .v-colorpicker-area {
+	border: 1px solid silver;
+	margin: 1px auto;
 }
 
-/* Fix IE6 "double-float-margin-bug" */
-.v-ie6 .v-errorindicator,
-.v-ie6 .v-icon,
-.v-ie6 .v-captiontext,
-.v-ie6 .v-required-field-indicator {
-	display: inline;
+.chameleon .v-colorpicker-history {
+	margin: 5px;
 }
 
-.v-ie9 .v-gridlayout-margin>div>div>.v-caption,
-.v-ie9 .v-verticallayout>div>div>.v-caption,
-.v-ie9 .v-horizontallayout>div>div>.v-caption {
-	/* Fix possible sub pixel rounding errors that cause error indicators to drop */
-	margin-right:-0.5px;
+.chameleon .v-colorpicker-history td {
+	border: 1px solid silver !important;
 }
 
-/* References the BODY tag generated by Vaadin application servlet */
-.v-generated-body {
+.chameleon .v-colorpicker-history td {
+	line-height: 15px;
+}
+
+.chameleon .v-colorpicker-popup {
+	width: 244px;
+}
+
+.chameleon .v-colorpicker-popup .v-scrollable {
+	background-color: #dddddd;
+}
+
+.chameleon .v-colorpicker-popup .v-tabsheet-content .v-scrollable {
+	background-color: #eaeaea;
+}
+
+.chameleon .v-colorpicker-popup .v-tabsheet-content .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.chameleon .v-colorpicker-popup .resize-button {
+	border: 0px solid silver;
+	background: url(../base/colorpicker/images/resizebg.png);
+	margin-top: 5px;
+}
+
+.chameleon .v-colorpicker-popup .resize-button-caption {
+	display: none;
+}
+
+.chameleon .v-colorpicker-popup .resize-button:hover {
+	background: url(../base/colorpicker/images/resizebg-selected.png);
+}
+
+.chameleon .v-colorpicker-popup .resize-button:focus {
+	outline: none;
+}
+
+.chameleon .v-colorpicker-gradient {
+	width: 220px;
+	height: 220px;
+	padding-left: 10px;
+	margin-top: 0px;
+}
+
+.chameleon .v-colorpicker-gradient .v-colorpicker-gradient-clicklayer {
+	background-color: white;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+}
+
+.chameleon .v-colorpicker-popup .rgb-gradient .v-colorpicker-gradient-background {
+	width: 220px;
+	height: 220px;
+	background: url(../base/colorpicker/images/gradient2.png);
+}
+
+.chameleon .v-colorpicker-popup .hsv-gradient .v-colorpicker-gradient-foreground {
+	background: url(../base/colorpicker/images/gradient.png);
+}
+
+.chameleon .v-colorpicker-popup .v-colorpicker-gradient-lowerbox {
+	border-right: 1px solid white;
+	border-top: 1px solid white;
+}
+
+.chameleon .v-colorpicker-popup .v-colorpicker-gradient-higherbox {
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.chameleon .v-colorpicker-popup .rgb-sliders {
+	width: 227px;
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.chameleon .v-colorpicker-popup .rgb-sliders .red .v-slider-base {
+	background-color: red;
+}
+
+.chameleon .v-colorpicker-popup .rgb-sliders .green .v-slider-base {
+	background-color: green;
+}
+
+.chameleon .v-colorpicker-popup .rgb-sliders .blue .v-slider-base {
+	background-color: blue;
+}
+
+.chameleon .v-colorpicker-popup .hsv-sliders {
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.chameleon .v-colorpicker-popup .hue-slider {
+	height: 10px;
+	border: 0px solid silver;
+	background-image: url(../base/colorpicker/images/slider_hue_bg.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	margin-top: 0px;
+}
+
+.chameleon .v-colorpicker-popup .hue-slider .v-slider-handle {
+	margin-top: -2px;
+}
+
+.chameleon .v-colorpicker-popup .hue-slider .v-slider-base {
+	border: 0px none;
+	height: 0px;
+	background-color: transparent;
+}
+
+.chameleon .v-colorpicker-popup .v-colorpicker-preview {
+	margin-top: 5px;
+	padding-left: 11px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+}
+
+.chameleon .v-colorpicker-popup .v-absolutelayout-wrapper {
 	width: 100%;
 	height: 100%;
-	border: 0;
-	margin: 0;
-	overflow: hidden;
 }
-.v-app {
+
+.chameleon .v-colorpicker-popup .v-colorpicker-preview-textfield {
+	background: none;
+	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.chameleon .v-colorpicker-popup .v-textfield-dark {
+	color: #FFFFFF;
+}
+
+.chameleon .v-colorpicker-popup .v-textfield-light {
+	color: #000000;
+}
+
+.chameleon .v-colorpicker-popup .colorselect {
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.chameleon .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 319px;
+}
+
+.chameleon .v-colorpicker-popup .colorselect td {
+	line-height: 15px;
+}
+
+.chameleon .v-colorpicker-popup .v-filterselect {
+	padding-right: 16px;
+}
+
+.chameleon.v-app {
 	height: 100%;
 }
-/* Force arrow cursor for all elements inside the app */
-.v-app,
-.v-window,
-.v-popupview-popup,
-.v-label,
-.v-caption {
+
+.chameleon.v-app, .chameleon .v-window, .chameleon .v-popupview-popup, .chameleon .v-label, .chameleon .v-caption {
 	cursor: default;
 }
-div.v-app-loading {
-	/* You can use this to provide indication for the user that the application is loading. */
-	/* It is applied to the same element as .v-app */
+
+body .chameleon.v-app-loading {
 	background-image: url(../base/common/img/loading-indicator.gif);
 	background-repeat: no-repeat;
 	background-position: 50%;
 	width: 100%;
 	height: 100%;
 }
-.v-view {
+
+.chameleon .v-ui {
 	height: 100%;
 	width: 100%;
-	/* avoid scrollbars with margins in root layout */
 	outline: none;
-	margin-top: -1px;
-	border-top: 1px solid transparent;
 	position: relative;
 }
-/**
- * Try to handle printing somehow. Reasonable printing support 
- * needs application specific planning and CSS tuning.
- */
-@media print {
-	.v-generated-body {
-		height: auto;
-		min-height: 20cm;
-		overflow: visible;
-	}
-	.v-app {
-		height: auto;
-		min-height: 20cm;
-	}
-	.v-view {
-		overflow: visible;
-	}
-	.v-gridlayout {
-		overflow: visible !important;
-	}
+
+.chameleon .v-ui.v-ui-embedded {
+	margin-top: -1px;
+	border-top: 1px solid transparent;
 }
-.v-view:active,
-.v-view:focus {
+
+.chameleon .v-ui:active, .chameleon .v-ui:focus {
 	outline: none;
 }
-.v-app select,
-.v-window select {
+
+.chameleon.v-app select, .chameleon .v-window select {
 	margin: 0;
 }
-.v-disabled {
-	opacity: .3;
+
+.chameleon .v-disabled {
+	opacity: 0.3;
 	filter: alpha(opacity=30);
 	cursor: default;
 }
-.v-disabled * {
+
+.chameleon .v-disabled * {
 	cursor: default;
 }
-* html .v-disabled {
+
+* html .chameleon .v-disabled {
 	zoom: 1;
 }
-*+html .v-disabled {
+
+* + html .chameleon .v-disabled {
 	zoom: 1;
 }
-.v-disabled .v-disabled {
+
+.chameleon .v-disabled .v-disabled {
 	opacity: 1;
 }
-.v-required-field-indicator {
+
+.chameleon .v-required-field-indicator {
 	padding-left: 2px;
 	color: red;
 }
-.v-form fieldset {
+
+.chameleon .v-form fieldset {
 	border: none;
 	padding: 0;
 	margin: 0;
+	height: 100%;
 }
-/* Field modified */ /* Disabled by default
-.v-modified,
-.v-richtextarea.v-modified iframe.gwt-RichTextArea,
-.v-checkbox.v-modified,
-.v-modified .v-select-option,
-.v-modified .v-textfield,
-.v-modified .v-datefield-calendarpanel,
-.v-modified .v-select-select,
-.v-modified .v-select-twincol-selections,
-.v-modified .v-select-twincol-options,
-.v-modified .v-slider-base {
-	background: #ffffe0;
+
+.chameleon .v-form-content {
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-*/
-.v-tooltip {
+
+.chameleon .v-tooltip {
 	cursor: default;
 	background: #fff;
 }
-.v-tooltip-text {
+
+.chameleon .v-tooltip-text {
 	overflow: auto;
 }
-.v-tooltip .v-errormessage {
+
+.chameleon .v-tooltip .v-errormessage {
 	overflow: auto;
 }
-.v-contextmenu {
+
+.chameleon .v-contextmenu {
 	background: #fff;
 }
-.v-contextmenu .gwt-MenuItem {
+
+.chameleon .v-contextmenu .gwt-MenuItem {
 	cursor: pointer;
 	vertical-align: middle;
 	padding: 0;
 	border: 0;
 	margin: 0;
 }
-.v-contextmenu .gwt-MenuItem div {
+
+.chameleon .v-contextmenu .gwt-MenuItem div {
 	cursor: pointer;
 	vertical-align: middle;
 	white-space: nowrap;
 }
-.v-contextmenu .gwt-MenuItem-selected div {
+
+.chameleon .v-contextmenu .gwt-MenuItem-selected div {
 	background: #aaa;
 	color: #fff;
 }
-.v-contextmenu table {
+
+.chameleon .v-contextmenu table {
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 }
-.v-contextmenu .gwt-MenuItem img {
+
+.chameleon .v-contextmenu .gwt-MenuItem img {
 	margin-right: 1em;
 	vertical-align: middle;
 }
-/* Margins are not supported within Label */
-.v-label pre {
+
+.chameleon .v-label pre {
 	margin: 0;
 }
-/* A label with undefined width is always considered to be on one line */
-.v-label-undef-w {
+
+.chameleon .v-label-undef-w {
 	white-space: nowrap;
 }
-/* Revert line-height for heading elements inside labels */
-.v-label h1,
-.v-label h2,
-.v-label h3,
-.v-label h4,
-.v-label h5,
-.v-label h6 {
+
+.chameleon .v-label h1, .chameleon .v-label h2, .chameleon .v-label h3, .chameleon .v-label h4, .chameleon .v-label h5, .chameleon .v-label h6 {
 	line-height: normal;
-} 
-/* Loading indicator states
- * Note: client side expects that loading indicator has a height. It depends on
- * this css property to ensure browsers have applied all required styles.
- */
-.v-loading-indicator,
-.v-loading-indicator-delay,
-.v-loading-indicator-wait {
+}
+
+.chameleon .v-loading-indicator, .chameleon .v-loading-indicator-delay, .chameleon .v-loading-indicator-wait {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -435,238 +626,529 @@ div.v-app-loading {
 	margin-right: 5px;
 	margin-top: 5px;
 }
-.v-loading-indicator-delay {
+
+.chameleon .v-loading-indicator-delay {
 	background-image: url(../base/common/img/loading-indicator-delay.gif);
 }
-.v-loading-indicator-wait {
+
+.chameleon .v-loading-indicator-wait {
 	background-image: url(../base/common/img/loading-indicator-wait.gif);
 }
-/* Debug dialog */
-.v-debug-console {
-	background: #fff;
-	opacity: .9;
-	border: 1px solid #000;
-	font-family: sans-serif;
-}
-.v-debug-console-caption {
-	background: #000;
-	border-bottom: 1px solid grey;
-	color: white;
-	font-weight: bold;
-}
-.v-debug-console-content {
-	font-size: x-small;
-	overflow: auto;
-	white-space: pre;
-}
-.v-debug-console-content input {
-	font-size: xx-small;
-}
-/* Debug style */
-.v-app .invalidlayout,
-.v-app .invalidlayout * {
-	background: #f99 !important;
-}
-/* Fix for Liferay, issue #2384 */
-.v-app input[type="text"],
-.v-app input[type="password"],
-.v-app input[type="reset"],
-.v-app select,
-.v-app textarea ,
-.v-window input[type="text"],
-.v-window input[type="password"],
-.v-window input[type="reset"],
-.v-window select,
-.v-window textarea {
+
+.chameleon.v-app input[type="text"], .chameleon.v-app input[type="password"], .chameleon.v-app input[type="reset"], .chameleon.v-app select, .chameleon.v-app textarea, .chameleon .v-window input[type="text"], .chameleon .v-window input[type="password"], .chameleon .v-window input[type="reset"], .chameleon .v-window select, .chameleon .v-window textarea {
 	padding: 2px;
 }
 
-.v-drag-element {
+.chameleon .v-drag-element {
 	z-index: 60000;
-	position: absolute;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    cursor: default;
+	position: absolute !important;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
 }
 
-.v-scrollable {
+.chameleon .v-clip {
+	overflow: hidden;
+}
+
+.chameleon .v-scrollable {
 	overflow: auto;
+	font-size: 0;
+	line-height: normal;
 }
 
-.v-csslayout {
-	overflow: hidden;
-}
-.v-csslayout-margin-top {
-	padding-top: 12px;	
-}
-.v-csslayout-margin-bottom {
-	padding-bottom: 12px;	
-}
-.v-csslayout-margin-left {
-	padding-left: 12px;	
-}
-.v-csslayout-margin-right {
-	padding-right: 12px;	
+.v-ios.v-sa6 .chameleon .v-scrollable {
+	-webkit-overflow-scrolling: touch;
 }
 
-.v-customcomponent {
-	overflow: hidden;
+.chameleon .v-vertical.v-margin-top, .chameleon .v-horizontal.v-margin-top {
+	padding-top: 12px;
 }
 
-.v-customlayout {
-	overflow: hidden;
+.chameleon .v-vertical.v-margin-right, .chameleon .v-horizontal.v-margin-right {
+	padding-right: 12px;
 }
 
-.v-datefield {
+.chameleon .v-vertical.v-margin-bottom, .chameleon .v-horizontal.v-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.chameleon .v-vertical.v-margin-left, .chameleon .v-horizontal.v-margin-left {
+	padding-left: 12px;
+}
+
+.chameleon .v-gridlayout.v-layout-margin-top {
+	padding-top: 24px;
+}
+
+.chameleon .v-gridlayout, .chameleon .v-verticallayout, .chameleon .v-horizontallayout {
+	font-size: 0;
+	line-height: normal;
+}
+
+.chameleon .v-gridlayout.v-layout-margin-bottom {
+	padding-bottom: 24px;
+}
+
+.chameleon .v-gridlayout.v-layout-margin-left {
+	padding-left: 24px;
+}
+
+.chameleon .v-gridlayout.v-layout-margin-right {
+	padding-right: 24px;
+}
+
+.chameleon .v-gridlayout .v-layout-spacing-on {
+	padding-left: 12px;
+	padding-top: 12px;
+}
+
+.chameleon .v-spacing {
+	width: 6px;
+	height: 6px;
+}
+
+.chameleon .v-vertical, .chameleon .v-horizontal {
+	display: inline-block;
+}
+
+.chameleon div.v-layout.v-horizontal.v-widget {
 	white-space: nowrap;
-	float: left; /* Force minimum width */
 }
-.v-datefield-textfield {
+
+.chameleon .v-layout.v-vertical > .v-expand, .chameleon .v-layout.v-horizontal > .v-expand {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+}
+
+.chameleon .v-slot, .chameleon .v-spacing {
+	display: inline-block;
+	white-space: normal;
 	vertical-align: top;
 }
-.v-datefield-button {
-	cursor: pointer;
+
+.chameleon .v-vertical > .v-slot:after {
+	display: inline-block;
+	clear: both;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	line-height: 0;
 }
-.v-datefield-prompt .v-datefield-textfield {
+
+.chameleon .v-vertical > .v-slot, .chameleon .v-vertical > .v-expand > .v-slot {
+	display: block;
+	clear: both;
+}
+
+.chameleon .v-horizontal > .v-slot, .chameleon .v-horizontal > .v-expand > .v-slot {
+	height: 100%;
+}
+
+.chameleon .v-vertical > .v-spacing, .chameleon .v-vertical > .v-expand > .v-spacing {
+	width: 0;
+	display: block;
+	clear: both;
+}
+
+.chameleon .v-horizontal > .v-spacing, .chameleon .v-horizontal > .v-expand > .v-spacing {
+	height: 0;
+}
+
+.chameleon .v-align-middle:before, .chameleon .v-align-bottom:before, .chameleon .v-expand > .v-align-middle:before, .chameleon .v-expand > .v-align-bottom:before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	width: 0;
+}
+
+.chameleon .v-align-middle, .chameleon .v-align-bottom {
+	white-space: nowrap;
+}
+
+.chameleon .v-align-middle > .v-widget, .chameleon .v-align-bottom > .v-widget {
+	display: inline-block;
+}
+
+.chameleon .v-align-middle, .chameleon .v-align-middle > .v-widget {
+	vertical-align: middle;
+}
+
+.chameleon .v-align-bottom, .chameleon .v-align-bottom > .v-widget {
+	vertical-align: bottom;
+}
+
+.chameleon .v-align-center {
+	text-align: center;
+}
+
+.chameleon .v-align-center > .v-widget {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chameleon .v-align-right {
+	text-align: right;
+}
+
+.chameleon .v-align-right > .v-widget {
+	margin-left: auto;
+}
+
+.chameleon .v-has-caption, .chameleon .v-has-caption > .v-caption {
+	display: inline-block;
+}
+
+.chameleon .v-caption {
+	overflow: visible;
+	vertical-align: middle;
+}
+
+.chameleon .v-caption-on-left, .chameleon .v-caption-on-right {
+	white-space: nowrap;
+}
+
+.chameleon .v-caption-on-top > .v-caption, .chameleon .v-caption-on-bottom > .v-caption {
+	display: block;
+}
+
+.chameleon .v-caption-on-left > .v-caption {
+	padding-right: 0.5em;
+}
+
+.chameleon .v-caption-on-right > .v-caption {
+	vertical-align: top;
+}
+
+.chameleon .v-caption-on-left > .v-widget, .chameleon .v-caption-on-right > .v-widget {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.chameleon .v-has-caption.v-has-width > .v-widget {
+	width: 100% !important;
+}
+
+.chameleon .v-has-caption.v-has-height > .v-widget {
+	height: 100% !important;
+}
+
+.chameleon .v-errorindicator {
+	vertical-align: middle;
+}
+
+.chameleon .v-csslayout {
+	overflow: hidden;
+}
+
+.chameleon div.v-csslayout {
+	display: block;
+}
+
+.chameleon .v-csslayout-margin, .chameleon .v-csslayout-container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.chameleon .v-has-width > .v-csslayout-margin, .chameleon .v-has-width > .v-csslayout-margin > .v-csslayout-container {
+	width: 100%;
+}
+
+.chameleon .v-has-height > .v-csslayout-margin, .chameleon .v-has-height > .v-csslayout-margin > .v-csslayout-container {
+	height: 100%;
+}
+
+.chameleon .v-csslayout-margin-top {
+	padding-top: 12px;
+}
+
+.chameleon .v-csslayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.chameleon .v-csslayout-margin-left {
+	padding-left: 12px;
+}
+
+.chameleon .v-csslayout-margin-right {
+	padding-right: 12px;
+}
+
+.chameleon .v-customcomponent {
+	overflow: hidden;
+}
+
+.chameleon .v-customlayout {
+	overflow: hidden;
+}
+
+.chameleon .v-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.chameleon .v-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .chameleon .v-datefield-button:after {
+	content: "\200B";
+}
+
+.chameleon .v-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.chameleon .v-has-width > input.v-datefield-textfield {
+	width: 100%;
+}
+
+.chameleon .v-datefield-prompt .v-datefield-textfield {
 	color: #999;
 	font-style: italic;
 }
-.v-datefield .v-datefield-button-readonly {
+
+.chameleon .v-datefield .v-datefield-button-readonly {
 	display: none;
 }
-.v-datefield-calendarpanel table {
+
+.chameleon .v-datefield-calendarpanel table {
 	width: 100%;
 }
-.v-datefield-calendarpanel td {
+
+.chameleon .v-datefield-calendarpanel td {
 	padding: 0;
 	margin: 0;
 }
-.v-datefield-calendarpanel:focus {
-	outline:none;	
+
+.chameleon .v-datefield-calendarpanel:focus {
+	outline: none;
 }
-.v-datefield-calendarpanel-header td {
+
+.chameleon .v-datefield-calendarpanel-header td {
 	text-align: center;
 }
-.v-datefield-calendarpanel-month {
+
+.chameleon .v-datefield-calendarpanel-month {
 	text-align: center;
 	white-space: nowrap;
 }
-.v-datefield-calendarpanel-weeknumber {
+
+.chameleon .v-datefield-calendarpanel-weeknumber {
 	color: #999;
 	border-right: 1px solid #ddd;
-	font-size: 0.9em;
+	font-size: 11.7px;
 }
-.v-datefield-calendarpanel-day,
-.v-datefield-calendarpanel-day-today {
+
+.chameleon .v-datefield-calendarpanel-day, .chameleon .v-datefield-calendarpanel-day-today {
 	cursor: pointer;
 }
-.v-datefield-calendarpanel-day-today {
+
+.chameleon .v-datefield-calendarpanel-day-today {
 	border: 1px solid #ddd;
 }
-.v-disabled .v-datefield-calendarpanel-day,
-.v-disabled .v-datefield-calendarpanel-day-today {
+
+.chameleon .v-disabled .v-datefield-calendarpanel-day, .chameleon .v-disabled .v-datefield-calendarpanel-day-today {
 	cursor: default;
 }
-.v-datefield-calendarpanel-day-disabled {
+
+.chameleon .v-datefield-calendarpanel-day-disabled {
 	cursor: default;
-	opacity: .5;
+	opacity: 0.5;
 }
-.v-datefield-calendarpanel-day-selected {
+
+.chameleon .v-datefield-calendarpanel-day-selected {
 	cursor: default;
 	background: #333;
 	color: #fff;
 }
-.v-datefield-calendarpanel-day-focused {
+
+.chameleon .v-datefield-calendarpanel-day-focused {
 	outline: 1px dotted black;
 }
-.v-datefield-calendarpanel-day-offmonth {
-    color: #666;
+
+.chameleon .v-datefield-calendarpanel-day-offmonth {
+	color: #666;
 }
 
-.v-ie6 .v-datefield-calendarpanel-day,
-.v-ie7 .v-datefield-calendarpanel-day {
-	margin: 1px;
-}
-.v-ie6 .v-datefield-calendarpanel-day-focused,
-.v-ie7 .v-datefield-calendarpanel-day-focused {
-	border: 1px dotted black;
-	margin: 0px;
-}
-
-.v-datefield-time {
+.chameleon .v-datefield-time {
 	white-space: nowrap;
 }
-.v-datefield-time .v-label {
+
+.chameleon .v-datefield-time .v-label {
 	display: inline;
 }
-.v-datefield-popup {
+
+.chameleon .v-datefield-popup {
 	background: #fff;
 }
-/* Disabled by default
-.v-datefield-error .v-textfield,
-.v-datefield-error .v-datefield-calendarpanel {
-	background: #ffe0e0;
-}
-*/
 
-/* Disabled by default
-.v-datefield-required .v-textfield,
-.v-datefield-required .v-datefield-calendarpanel {
-	background:transparent;
-	background-color: #ffe0e0;
-}
-*/
-/* IE somehow loses generic v-disabled alpha. See #1960 */
-.v-ie6 .v-disabled .v-datefield-button,
-.v-ie6 .v-disabled .v-datefield-textfield,
-.v-ie7 .v-disabled .v-datefield-button,
-.v-ie7 .v-disabled .v-datefield-textfield {
-	filter: alpha(opacity=30);
+.chameleon .v-datefield-popupcalendar input.v-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.v-ddwrapper {
+.chameleon .v-inline-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.chameleon .v-inline-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .chameleon .v-inline-datefield-button:after {
+	content: "\200B";
+}
+
+.chameleon .v-inline-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.chameleon .v-has-width > input.v-inline-datefield-textfield {
+	width: 100%;
+}
+
+.chameleon .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #999;
+	font-style: italic;
+}
+
+.chameleon .v-inline-datefield .v-inline-datefield-button-readonly {
+	display: none;
+}
+
+.chameleon .v-inline-datefield-calendarpanel table {
+	width: 100%;
+}
+
+.chameleon .v-inline-datefield-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+
+.chameleon .v-inline-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-header td {
+	text-align: center;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 11.7px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day, .chameleon .v-inline-datefield-calendarpanel-day-today {
+	cursor: pointer;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+
+.chameleon .v-disabled .v-inline-datefield-calendarpanel-day, .chameleon .v-disabled .v-inline-datefield-calendarpanel-day-today {
+	cursor: default;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-offmonth {
+	color: #666;
+}
+
+.chameleon .v-inline-datefield-time {
+	white-space: nowrap;
+}
+
+.chameleon .v-inline-datefield-time .v-label {
+	display: inline;
+}
+
+.chameleon .v-inline-datefield-popup {
+	background: #fff;
+}
+
+.chameleon .v-inline-datefield-popupcalendar input.v-inline-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.chameleon .v-ddwrapper {
 	padding: 2px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	position: relative;
 }
-[draggable=true] {
+
+.chameleon [draggable=true] {
 	-khtml-user-drag: element;
 	-webkit-user-drag: element;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 }
-.v-ie .v-ddwrapper a.drag-start {
+
+.v-ie .chameleon .v-ddwrapper a.drag-start {
 	display: block;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-    left: 0;
+	left: 0;
 	right: 0;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	/* Some color needed to make it draggable */
-	background-color:cyan;
+	background-color: cyan;
 	filter: alpha(opacity=0);
 }
-.v-ddwrapper-over {
+
+.chameleon .v-ddwrapper-over {
 	border: 2px solid #1d9dff;
 	background-color: #bcdcff;
 	padding: 0;
 }
-.v-ddwrapper-over {
-	background-color: rgba(169,209,255,.6);
+
+.chameleon .v-ddwrapper-over {
+	background-color: rgba(169, 209, 255, 0.6);
 }
-.no-box-drag-hints .v-ddwrapper-over {
+
+.chameleon .no-box-drag-hints .v-ddwrapper-over {
 	border: none;
 	background-color: transparent;
 	padding: 2px;
 }
-.v-app .v-ddwrapper-over-top,
-.v-window .v-ddwrapper-over-top,
-.v-popupview-popup .v-ddwrapper-over-top {
+
+.chameleon.v-app .v-ddwrapper-over-top, .chameleon .v-window .v-ddwrapper-over-top, .chameleon .v-popupview-popup .v-ddwrapper-over-top {
 	border: none;
 	border-top: 2px solid #1d9dff;
 	background-color: transparent;
@@ -676,9 +1158,8 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-app .v-ddwrapper-over-bottom,
-.v-window .v-ddwrapper-over-bottom,
-.v-popupview-popup .v-ddwrapper-over-bottom {
+
+.chameleon.v-app .v-ddwrapper-over-bottom, .chameleon .v-window .v-ddwrapper-over-bottom, .chameleon .v-popupview-popup .v-ddwrapper-over-bottom {
 	border: none;
 	border-bottom: 2px solid #1d9dff;
 	background-color: transparent;
@@ -688,9 +1169,8 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-app .v-ddwrapper-over-left,
-.v-window .v-ddwrapper-over-left,
-.v-popupview-popup .v-ddwrapper-over-left {
+
+.chameleon.v-app .v-ddwrapper-over-left, .chameleon .v-window .v-ddwrapper-over-left, .chameleon .v-popupview-popup .v-ddwrapper-over-left {
 	border: none;
 	border-left: 2px solid #1d9dff;
 	background-color: transparent;
@@ -700,9 +1180,8 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-app .v-ddwrapper-over-right,
-.v-window .v-ddwrapper-over-right,
-.v-popupview-popup .v-ddwrapper-over-right {
+
+.chameleon.v-app .v-ddwrapper-over-right, .chameleon .v-window .v-ddwrapper-over-right, .chameleon .v-popupview-popup .v-ddwrapper-over-right {
 	border: none;
 	border-right: 2px solid #1d9dff;
 	background-color: transparent;
@@ -712,29 +1191,13 @@ div.v-app-loading {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.v-ddwrapper,
-.v-ddwrapper-over,
-.v-app .v-ddwrapper-over-top,
-.v-window .v-ddwrapper-over-top,
-.v-popupview-popup .v-ddwrapper-over-top,
-.v-app .v-ddwrapper-over-bottom,
-.v-window .v-ddwrapper-over-bottom,
-.v-popupview-popup .v-ddwrapper-over-bottom,
-.v-app .v-ddwrapper-over-left,
-.v-window .v-ddwrapper-over-left,
-.v-popupview-popup .v-ddwrapper-over-left,
-.v-app .v-ddwrapper-over-right,
-.v-window .v-ddwrapper-over-right,
-.v-popupview-popup .v-ddwrapper-over-right {
-	border-color: rgba(0,109,232,.6);
+
+.chameleon .v-ddwrapper, .chameleon .v-ddwrapper-over, .chameleon.v-app .v-ddwrapper-over-top, .chameleon .v-window .v-ddwrapper-over-top, .chameleon .v-popupview-popup .v-ddwrapper-over-top, .chameleon.v-app .v-ddwrapper-over-bottom, .chameleon .v-window .v-ddwrapper-over-bottom, .chameleon .v-popupview-popup .v-ddwrapper-over-bottom, .chameleon.v-app .v-ddwrapper-over-left, .chameleon .v-window .v-ddwrapper-over-left, .chameleon .v-popupview-popup .v-ddwrapper-over-left, .chameleon.v-app .v-ddwrapper-over-right, .chameleon .v-window .v-ddwrapper-over-right, .chameleon .v-popupview-popup .v-ddwrapper-over-right {
+	border-color: rgba(0, 109, 232, 0.6);
 }
 
-.v-ddwrapper-over-top:before,
-.v-ddwrapper-over-bottom:after,
-.v-ddwrapper-over-left:before,
-.v-ddwrapper-over-right:before {
+.chameleon .v-ddwrapper-over-top:before, .chameleon .v-ddwrapper-over-bottom:after, .chameleon .v-ddwrapper-over-left:before, .chameleon .v-ddwrapper-over-right:before {
 	display: block;
-	content: "";
 	position: absolute;
 	width: 6px;
 	height: 6px;
@@ -742,16 +1205,18 @@ div.v-app-loading {
 	margin-left: -2px;
 	background: transparent url(../base/common/img/drag-slot-dot.png) no-repeat;
 }
-.v-ddwrapper-over-bottom:after {
+
+.chameleon .v-ddwrapper-over-bottom:after {
 	margin-top: -2px;
 }
-.v-ddwrapper-over-left:before,
-.v-ddwrapper-over-right:before {
+
+.chameleon .v-ddwrapper-over-left:before, .chameleon .v-ddwrapper-over-right:before {
 	background-position: 0 -6px;
 	margin-top: -2px;
 	margin-left: -4px;
 }
-.v-ddwrapper-over-right:before {
+
+.chameleon .v-ddwrapper-over-right:before {
 	position: relative;
 	margin-bottom: -4px;
 	margin-right: -4px;
@@ -760,144 +1225,177 @@ div.v-app-loading {
 	background-position: 100% -6px;
 }
 
-.no-horizontal-drag-hints .v-ddwrapper-over-left {
+.chameleon .no-horizontal-drag-hints .v-ddwrapper-over-left {
 	padding-left: 2px;
 	border-left: none;
 }
-.no-horizontal-drag-hints .v-ddwrapper-over-right {
+
+.chameleon .no-horizontal-drag-hints .v-ddwrapper-over-right {
 	padding-right: 2px;
 	border-right: none;
 }
-.no-vertical-drag-hints .v-ddwrapper-over-top {
+
+.chameleon .no-vertical-drag-hints .v-ddwrapper-over-top {
 	padding-top: 2px;
 	border-top: none;
 }
-.no-vertical-drag-hints .v-ddwrapper-over-bottom {
+
+.chameleon .no-vertical-drag-hints .v-ddwrapper-over-bottom {
 	padding-bottom: 2px;
 	border-bottom: none;
 }
-.no-horizontal-drag-hints .v-ddwrapper-over-left:before,
-.no-horizontal-drag-hints .v-ddwrapper-over-right:before,
-.no-vertical-drag-hints .v-ddwrapper-over-top:before,
-.no-vertical-drag-hints .v-ddwrapper-over-bottom:after {
+
+.chameleon .no-horizontal-drag-hints .v-ddwrapper-over-left:before, .chameleon .no-horizontal-drag-hints .v-ddwrapper-over-right:before, .chameleon .no-vertical-drag-hints .v-ddwrapper-over-top:before, .chameleon .no-vertical-drag-hints .v-ddwrapper-over-bottom:after {
 	display: none;
 }
 
-
-.v-table .v-embedded-image {
-    /* make embeddeds be centered in centered table cells. */
+.chameleon .v-table .v-embedded-image {
 	display: inline-block;
 }
 
-.v-formlayout-cell .v-errorindicator {
+.chameleon .v-formlayout.v-has-width > table {
+	width: 100%;
+}
+
+.chameleon .v-formlayout.v-has-height > table {
+	height: 100%;
+}
+
+.chameleon .v-formlayout-cell .v-errorindicator {
 	display: block;
 }
-.v-formlayout-error-indicator {
-	/* fix width so layout is not jumpy when error disappears */
+
+.chameleon .v-formlayout-error-indicator {
 	width: 12px;
 }
-.v-formlayout-captioncell {
-	text-align:right;
+
+.chameleon .v-formlayout-captioncell {
+	text-align: right;
 	white-space: nowrap;
 }
-.v-formlayout-captioncell .v-caption {
+
+.chameleon .v-formlayout-errorcell, .chameleon .v-formlayout-captioncell {
+	width: 1px;
+}
+
+.chameleon .v-formlayout-captioncell .v-caption {
 	overflow: visible;
 }
-.v-formlayout-spacing .v-formlayout-row .v-formlayout-captioncell, 
-.v-formlayout-spacing .v-formlayout-row .v-formlayout-contentcell,
-.v-formlayout-spacing .v-formlayout-row .v-formlayout-errorcell {
+
+.chameleon .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-captioncell, .chameleon .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-contentcell, .chameleon .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-errorcell {
 	padding-top: 6px;
 }
-.v-formlayout-spacing .v-formlayout-firstrow .v-formlayout-captioncell, 
-.v-formlayout-spacing .v-formlayout-firstrow .v-formlayout-contentcell,
-.v-formlayout-spacing .v-formlayout-firstrow .v-formlayout-errorcell {
+
+.chameleon .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .chameleon .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .chameleon .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
 	padding-top: 0;
 }
-.v-formlayout-margin-top .v-formlayout-firstrow .v-formlayout-captioncell, 
-.v-formlayout-margin-top .v-formlayout-firstrow .v-formlayout-contentcell,
-.v-formlayout-margin-top .v-formlayout-firstrow .v-formlayout-errorcell {
+
+.chameleon .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .chameleon .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .chameleon .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
 	padding-top: 12px;
 }
-.v-formlayout-margin-bottom .v-formlayout-lastrow .v-formlayout-captioncell,
-.v-formlayout-margin-bottom .v-formlayout-lastrow .v-formlayout-contentcell,
-.v-formlayout-margin-bottom .v-formlayout-lastrow .v-formlayout-errorcell {
+
+.chameleon .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, .chameleon .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, .chameleon .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
 	padding-bottom: 12px;
 }
-.v-formlayout-margin-left .v-formlayout-captioncell {
+
+.chameleon .v-formlayout-margin-left > tbody > .v-formlayout-row > .v-formlayout-captioncell {
 	padding-left: 12px;
-} 
-.v-formlayout-margin-right .v-formlayout-contentcell {
+}
+
+.chameleon .v-formlayout-margin-right > tbody > .v-formlayout-row > .v-formlayout-contentcell {
 	padding-right: 12px;
 }
-.v-formlayout-captioncell .v-caption .v-required-field-indicator {
+
+.chameleon .v-formlayout-captioncell .v-caption .v-required-field-indicator {
 	float: none;
 }
 
-.v-gridlayout-margin-top {
+.chameleon .v-gridlayout {
+	position: relative;
+}
+
+.chameleon .v-gridlayout-slot {
+	position: absolute;
+}
+
+.chameleon .v-gridlayout-margin-top {
 	padding-top: 12px;
 }
-.v-gridlayout-margin-bottom {
+
+.chameleon .v-gridlayout-margin-bottom {
 	padding-bottom: 12px;
 }
-.v-gridlayout-margin-left {
+
+.chameleon .v-gridlayout-margin-left {
 	padding-left: 12px;
-} 
-.v-gridlayout-margin-right {
+}
+
+.chameleon .v-gridlayout-margin-right {
 	padding-right: 12px;
 }
-.v-gridlayout-spacing-on {
+
+.chameleon .v-gridlayout-spacing-on {
 	padding-left: 6px;
 	padding-top: 6px;
 	overflow: hidden;
 }
-.v-gridlayout-spacing,
-.v-gridlayout-spacing-off {
+
+.chameleon .v-gridlayout-spacing, .chameleon .v-gridlayout-spacing-off {
 	padding-left: 0;
 	padding-top: 0;
 }
-.v-gridlayout-spacing-off {
-	overflow: hidden;
-}
-/* Ensure that resizing gridlayout works in IE */
-.v-ie6 .v-gridlayout,
-.v-ie7 .v-gridlayout {
+
+.chameleon .v-gridlayout-spacing-off {
 	overflow: hidden;
 }
 
-.v-link {
-	white-space: nowrap;	
+.chameleon .v-label {
+	overflow: hidden;
 }
-.v-link a {
+
+.chameleon .v-label.v-has-width {
+	white-space: normal;
+}
+
+.chameleon .v-link {
+	white-space: nowrap;
+}
+
+.chameleon .v-link a {
 	vertical-align: middle;
 	text-decoration: none;
 }
-.v-link span {
+
+.chameleon .v-link span {
 	text-decoration: underline;
 	vertical-align: middle;
 }
-.v-disabled a {
+
+.chameleon .v-disabled a {
 	cursor: default;
 }
-.v-link img {
+
+.chameleon .v-link img {
 	vertical-align: middle;
-	border:none;
+	border: none;
 }
 
-.v-loginform {
+.chameleon .v-loginform {
 	height: 140px;
 	width: 200px;
 }
 
-.v-app-loginpage .v-button,
-.v-app-loginpage .v-button {
-	float: left; /* Force minimum width for button */
+.chameleon .v-app-loginpage .v-button, .chameleon .v-app-loginpage .v-button {
+	float: left;
 }
 
-.v-menubar {
-	float: left; /* Force minimum width */
+.chameleon .v-menubar {
+	display: inline-block;
 	white-space: nowrap;
+	overflow: hidden;
 }
-.v-menubar .v-menubar-menuitem {
+
+.chameleon .v-menubar .v-menubar-menuitem {
 	cursor: default;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -905,57 +1403,63 @@ div.v-app-loading {
 	display: inline-block;
 	zoom: 1;
 }
-.v-menubar .v-menubar-menuitem-caption .v-icon {
+
+.chameleon .v-menubar .v-menubar-menuitem-caption .v-icon {
 	vertical-align: middle;
 	white-space: nowrap;
 }
-.v-menubar-submenu {
+
+.chameleon .v-menubar-submenu {
 	background: #fff;
 }
-.v-menubar-menuitem-selected {
+
+.chameleon .v-menubar-menuitem-selected {
 	background: #333;
 	color: #fff;
 }
-.v-menubar-submenu .v-menubar-menuitem { 
+
+.chameleon .v-menubar-submenu .v-menubar-menuitem {
 	cursor: default;
 	display: block;
 	position: relative;
 	padding-right: 1.5em;
 }
-.v-menubar-submenu .v-menubar-menuitem-caption {
+
+.chameleon .v-menubar-submenu .v-menubar-menuitem-caption {
 	display: block;
 }
-.v-menubar-submenu .v-menubar-menuitem *,
-.v-menubar-submenu .v-menubar-menuitem-caption * {
+
+.chameleon .v-menubar-submenu .v-menubar-menuitem *, .chameleon .v-menubar-submenu .v-menubar-menuitem-caption * {
 	white-space: nowrap;
 }
-.v-menubar-submenu-indicator {
+
+.chameleon .v-menubar-submenu-indicator {
 	display: none;
-	/* Arial has the most coverage for geometric entity characters */
 	font-family: arial, helvetica, sans-serif;
 }
-.v-menubar-submenu .v-menubar-submenu-indicator {
+
+.chameleon .v-menubar-submenu .v-menubar-submenu-indicator {
 	display: block;
 	position: absolute;
 	right: 0;
 	width: 1em;
 	height: 1em;
-	font-size: 0.9em;
+	font-size: 11.7px;
 }
-.v-menubar-menuitem-disabled,
-.v-menubar span.v-menubar-menuitem-disabled:hover,
-.v-menubar span.v-menubar-menuitem-disabled:focus,
-.v-menubar span.v-menubar-menuitem-disabled:active {
+
+.chameleon .v-menubar-menuitem-disabled, .chameleon .v-menubar span.v-menubar-menuitem-disabled:hover, .chameleon .v-menubar span.v-menubar-menuitem-disabled:focus, .chameleon .v-menubar span.v-menubar-menuitem-disabled:active {
 	color: #999;
 }
-.v-menubar-more-menuitem {
-	/* Arial has the most coverage for geometric entity characters */
+
+.chameleon .v-menubar-more-menuitem {
 	font-family: arial, helvetica, sans-serif;
 }
-.v-menubar-separator {
+
+.chameleon .v-menubar-separator {
 	overflow: hidden;
 }
-.v-menubar-separator span {
+
+.chameleon .v-menubar-separator span {
 	display: block;
 	text-indent: -9999px;
 	font-size: 1px;
@@ -964,457 +1468,470 @@ div.v-app-loading {
 	margin: 3px 0 2px;
 	overflow: hidden;
 }
-.v-menubar .v-icon,
-.v-menubar-submenu .v-icon {
+
+.chameleon .v-menubar .v-icon, .chameleon .v-menubar-submenu .v-icon {
 	margin-right: 3px;
 }
 
-.v-menubar:focus,
-.v-menubar-popup:focus,
-.v-menubar-popup .popupContent:focus,
-.v-menubar-popup .popupContent .v-menubar-submenu:focus{
-	outline: none;	
+.chameleon .v-menubar:focus, .chameleon .v-menubar-popup:focus, .chameleon .v-menubar-popup .popupContent:focus, .chameleon .v-menubar-popup .popupContent .v-menubar-submenu:focus {
+	outline: none;
 }
-/* Checkboxes for checkable/checked menu items */
-/* Checked/unchecked requires combined style selected-(un)checked for IE6 */
-.v-menubar-submenu-check-column .v-menubar-menuitem {
+
+.chameleon .v-menubar-submenu-check-column .v-menubar-menuitem {
 	padding-left: 6px;
 }
-.v-menubar-submenu-check-column .v-menubar-menuitem-caption {
+
+.chameleon .v-menubar-submenu-check-column .v-menubar-menuitem-caption {
 	padding-left: 18px;
 }
-.v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption { 
+
+.chameleon .v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption {
 	background: transparent url(../base/menubar/img/check.gif) no-repeat left;
 }
 
-.v-Notification {
+.chameleon .v-Notification {
 	background: #999;
 	color: #fff;
 	cursor: pointer;
 	overflow: hidden;
 	padding: 1em;
-	max-width:85%;
-	
+	max-width: 85%;
 }
-.v-Notification h1,
-.v-Notification p,
-.v-Notification-error h1,
-.v-Notification-error p,
-.v-Notification-warning h1,
-.v-Notification-warning p {
+
+.chameleon .v-Notification h1, .chameleon .v-Notification p, .chameleon .v-Notification-error h1, .chameleon .v-Notification-error p, .chameleon .v-Notification-warning h1, .chameleon .v-Notification-warning p {
 	display: inline;
 	margin: 0 0.5em 0 0;
 }
-.v-Notification-warning {
+
+.chameleon .v-Notification-warning {
 	background: orange;
 }
-.v-Notification-error {
+
+.chameleon .v-Notification-error {
 	background: red;
 }
-.v-Notification-tray h1 {
+
+.chameleon .v-Notification-tray h1 {
 	display: block;
 }
-.v-Notification-tray p {
+
+.chameleon .v-Notification-tray p {
 	display: block;
 }
-.v-Notification-system {
+
+.chameleon .v-Notification-system {
 	background-color: red;
-	opacity: .7;
+	opacity: 0.7;
 	filter: alpha(opacity=70);
 }
-.v-Notification-system h1 {
+
+.chameleon .v-Notification-system h1 {
 	display: block;
 	margin: 0;
 }
 
-.v-orderedlayout-margin-top,
-.v-horizontallayout-margin-top,
-.v-verticallayout-margin-top {
+.chameleon .v-orderedlayout, .chameleon .v-horizontallayout, .chameleon .v-verticallayout {
+	position: relative;
+}
+
+.chameleon .v-orderedlayout-margin-top, .chameleon .v-horizontallayout-margin-top, .chameleon .v-verticallayout-margin-top {
 	padding-top: 12px;
 }
-.v-orderedlayout-margin-right,
-.v-horizontallayout-margin-right,
-.v-verticallayout-margin-right {
+
+.chameleon .v-orderedlayout-margin-right, .chameleon .v-horizontallayout-margin-right, .chameleon .v-verticallayout-margin-right {
 	padding-right: 12px;
 }
-.v-orderedlayout-margin-bottom,
-.v-horizontallayout-margin-bottom,
-.v-verticallayout-margin-bottom {
+
+.chameleon .v-orderedlayout-margin-bottom, .chameleon .v-horizontallayout-margin-bottom, .chameleon .v-verticallayout-margin-bottom {
 	padding-bottom: 12px;
 }
-.v-orderedlayout-margin-left,
-.v-horizontallayout-margin-left,
-.v-verticallayout-margin-left {
+
+.chameleon .v-orderedlayout-margin-left, .chameleon .v-horizontallayout-margin-left, .chameleon .v-verticallayout-margin-left {
 	padding-left: 12px;
 }
-.v-orderedlayout-spacing-on,
-.v-horizontallayout-spacing-on,
-.v-verticallayout-spacing-on {
+
+.chameleon .v-orderedlayout-spacing-on, .chameleon .v-horizontallayout-spacing-on, .chameleon .v-verticallayout-spacing-on {
 	padding-top: 6px;
 	padding-left: 6px;
 }
-/* This can be used to define spacing if spacing is off server side */
-.v-orderedlayout-spacing-off,
-.v-horizontallayout-spacing-off,
-.v-verticallayout-spacing-off {
+
+.chameleon .v-orderedlayout-spacing-off, .chameleon .v-horizontallayout-spacing-off, .chameleon .v-verticallayout-spacing-off {
 	padding-top: 0;
 	padding-left: 0;
 }
-/* To make sure IE don't expand elements larger than they should */
-.v-ie6 .v-orderedlayout,
-.v-ie6 .v-horizontallayout,
-.v-ie6 .v-verticallayout,
-.v-ie7 .v-orderedlayout,
-.v-ie7 .v-horizontallayout,
-.v-ie7 .v-verticallayout {
-	overflow: hidden;
+
+.chameleon .v-horizontallayout-slot, .chameleon .v-verticallayout-slot {
+	position: absolute;
 }
 
-.v-panel,
-.v-panel-caption,
-.v-panel-content,
-.v-panel-deco,
-.v-panel-light,
-.v-panel-caption-light,
-.v-panel-content-light,
-.v-panel-deco-light {
-	outline: none; /* Prevent selection outline which might break layouts or cause scrollbars */
-	text-align: left /* Force default alignment */
+.chameleon .v-panel, .chameleon .v-panel-caption, .chameleon .v-panel-content, .chameleon .v-panel-deco, .chameleon .v-panel-light, .chameleon .v-panel-caption-light, .chameleon .v-panel-content-light, .chameleon .v-panel-deco-light {
+	outline: none;
+	text-align: left;
 }
-.v-panel-caption .v-errorindicator {
+
+.chameleon .v-panel-caption .v-errorindicator {
 	float: none;
 	display: inline;
 }
-.v-panel-caption .v-icon {
+
+.chameleon .v-panel-caption .v-icon {
 	display: inline;
 	vertical-align: middle;
 }
-.v-panel-caption span {
+
+.chameleon .v-panel-caption span {
 	vertical-align: middle;
 }
-.v-panel-caption {
+
+.chameleon .v-panel-caption {
 	white-space: nowrap;
-	overflow:hidden;
+	overflow: hidden;
 	font-weight: bold;
 }
-.v-panel-nocaption {
+
+.chameleon .v-panel-nocaption {
 	overflow: hidden;
 }
-.v-panel-content {
-}
-.v-panel-deco {
+
+.chameleon .v-panel-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.v-popupview {
+.chameleon .v-panel.v-has-width > .v-panel-content {
+	width: 100%;
+}
+
+.chameleon .v-panel.v-has-height > .v-panel-content {
+	height: 100%;
+}
+
+.chameleon .v-popupview {
 	cursor: pointer;
 	text-decoration: underline;
 	white-space: nowrap;
 }
-.v-popupview-popup {
+
+.chameleon .v-popupview-popup {
 	overflow: auto;
 }
-.v-popupview-loading {
+
+.chameleon .v-popupview-loading {
 	width: 30px;
 	height: 30px;
 	background: transparent url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
 }
 
-.v-progressindicator {
-	overflow: hidden; /* for IE6 */
+.chameleon .v-progressindicator {
 	width: 150px;
 }
-.v-progressindicator-wrapper {
-	overflow: hidden; /* for IE6 */
+
+.chameleon .v-progressindicator-wrapper {
 	height: 7px;
 	border: 1px solid #ddd;
 }
-.v-progressindicator-indicator {
+
+.chameleon .v-progressindicator-indicator {
 	height: 7px;
-	overflow: hidden; /* for IE6 */
 	background: #ddd;
 }
-div.v-progressindicator-indeterminate {
+
+.chameleon div.v-progressindicator-indeterminate {
 	height: 20px;
 	width: 20px;
-	overflow: hidden; /* for IE6 */
 	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 }
-/* Hide obsolete elements in indeterminate mode */
-.v-progressindicator-indeterminate .v-progressindicator-wrapper,
-.v-progressindicator-indeterminate .v-progressindicator-indicator,
-.v-progressindicator-indeterminate-disabled .v-progressindicator-wrapper,
-.v-progressindicator-indeterminate-disabled .v-progressindicator-indicator {
+
+.chameleon .v-progressindicator-indeterminate .v-progressindicator-wrapper, .chameleon .v-progressindicator-indeterminate .v-progressindicator-indicator, .chameleon .v-progressindicator-indeterminate-disabled .v-progressindicator-wrapper, .chameleon .v-progressindicator-indeterminate-disabled .v-progressindicator-indicator {
 	display: none;
 }
-div.v-progressindicator-indeterminate-disabled {
+
+.chameleon div.v-progressindicator-indeterminate-disabled {
 	height: 20px;
 	width: 20px;
-	overflow: hidden; /* for IE6 */
 	background: transparent;
 }
 
-.v-select {
+.chameleon .v-select {
 	text-align: left;
 }
-.v-select-optiongroup .v-select-option {
+
+.chameleon .v-select-optiongroup .v-select-option {
 	display: block;
 	white-space: nowrap;
 }
-.v-select-optiongroup .v-icon {
+
+.chameleon .v-select-optiongroup .v-icon {
 	vertical-align: middle;
 	white-space: nowrap;
-	margin: 0 2px;	
+	margin: 0 2px;
 }
-.v-ie .v-select-optiongroup .v-select-option {
+
+.v-ie .chameleon .v-select-optiongroup .v-select-option {
 	zoom: 1;
 }
-.v-select-select {
+
+.chameleon .v-select-select {
 	display: block;
 }
-.v-select-twincol {
+
+.chameleon .v-select-twincol {
 	white-space: nowrap;
 }
-.v-select-twincol-options {
+
+.chameleon .v-select-twincol-options {
 	float: left;
 }
-.v-select-twincol-caption-left {
+
+.chameleon .v-select-twincol-caption-left {
 	float: left;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.v-select-twincol-selections {
+
+.chameleon .v-select-twincol-selections {
 	font-weight: bold;
 }
-.v-select-twincol-caption-right {
+
+.chameleon .v-select-twincol-caption-right {
 	float: right;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.v-select-twincol-buttons {
+
+.chameleon .v-select-twincol-buttons {
 	float: left;
 	text-align: center;
 }
-.v-select-twincol-buttons .v-select-twincol-deco {
+
+.chameleon .v-select-twincol-buttons .v-select-twincol-deco {
 	clear: both;
 }
-.v-select-twincol .v-textfield {
+
+.chameleon .v-select-twincol .v-textfield {
 	display: block;
 	float: left;
 	clear: left;
 }
-.v-select-twincol .v-button {
+
+.chameleon .v-select-twincol .v-button {
 	float: left;
 }
-.v-select-twincol-buttons .v-button {
+
+.chameleon .v-select-twincol-buttons .v-button {
 	float: none;
 }
-.v-filterselect {
+
+.chameleon .v-filterselect {
 	white-space: nowrap;
 	text-align: left;
+	display: inline-block;
+	padding-right: 1em;
 }
-.v-filterselect .v-icon {
+
+.chameleon .v-filterselect .v-icon {
 	float: left;
 }
-.v-app .v-filterselect-input,
-.v-window .v-filterselect-input,
-.v-popupview-popup .v-filterselect-input {
+
+.chameleon.v-app .v-filterselect-input, .chameleon .v-window .v-filterselect-input, .chameleon .v-popupview-popup .v-filterselect-input {
+	margin: 0;
 	float: left;
 	-webkit-border-radius: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.v-filterselect-prompt .v-filterselect-input {
+
+.chameleon .v-filterselect-prompt .v-filterselect-input {
 	color: #999;
 	font-style: italic;
 }
-.v-filterselect-button {
-	float: right;
+
+.chameleon .v-filterselect-button {
+	display: inline-block;
 	cursor: pointer;
 	width: 1em;
+	margin-right: -1em;
 	height: 1em;
 	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -8px;
 }
-.v-filterselect.v-readonly .v-filterselect-button {
+
+.chameleon .v-filterselect.v-readonly .v-filterselect-button {
 	display: none;
 }
-.v-filterselect.v-readonly,
-.v-filterselect.v-readonly .v-filterselect-input {
+
+.chameleon .v-filterselect.v-readonly, .chameleon .v-filterselect.v-readonly .v-filterselect-input {
 	background: transparent;
 }
-.v-filterselect-suggestpopup {
+
+.chameleon .v-filterselect-suggestpopup {
 	background: #fff;
 	border: 1px solid #eee;
 }
-.v-filterselect-suggestmenu table {
+
+.chameleon .v-filterselect-suggestmenu table {
 	border-collapse: collapse;
 	border: none;
+	vertical-align: top;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem {
+
+.chameleon .v-filterselect-suggestmenu .gwt-MenuItem {
 	white-space: nowrap;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+
+.chameleon .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
 	margin-right: 3px;
 	vertical-align: middle;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem span {
+
+.chameleon .v-filterselect-suggestmenu .gwt-MenuItem span {
 	vertical-align: middle;
 }
-.v-filterselect-suggestmenu .gwt-MenuItem-selected {
+
+.chameleon .v-filterselect-suggestmenu .gwt-MenuItem-selected {
 	background: #333;
 	color: #fff;
 }
-.v-filterselect-nextpage,
-.v-filterselect-nextpage-off,
-.v-filterselect-prevpage-off,
-.v-filterselect-prevpage {
+
+.chameleon .v-filterselect-nextpage, .chameleon .v-filterselect-nextpage-off, .chameleon .v-filterselect-prevpage-off, .chameleon .v-filterselect-prevpage {
 	width: 100%;
 	background: #aaa;
 	text-align: center;
 	overflow: hidden;
 	cursor: pointer;
 }
-.v-filterselect-nextpage-off,
-.v-filterselect-prevpage-off {
+
+.chameleon .v-filterselect-nextpage-off, .chameleon .v-filterselect-prevpage-off {
 	color: #666;
-	opacity: .5;
+	opacity: 0.5;
 	filter: alpha(opacity=50);
 	cursor: default;
 }
-.v-filterselect-nextpage-off span,
-.v-filterselect-prevpage-off span {
+
+.chameleon .v-filterselect-nextpage-off span, .chameleon .v-filterselect-prevpage-off span {
 	cursor: default;
 }
-.v-filterselect-status {
+
+.chameleon .v-filterselect-status {
 	white-space: nowrap;
 	text-align: center;
 }
 
-.v-filterselect-no-input .v-filterselect-input {
+.chameleon .v-filterselect-no-input .v-filterselect-input {
 	cursor: default;
 }
 
-/* Error styles (disabled by default)
-
-.v-filterselect-error .v-filterselect-input,
-.v-select-error .v-select-option,
-.v-select-error .v-select-select,
-.v-select-error .v-select-twincol-selections,
-.v-select-error .v-select-twincol-options {
-	background: #ffaaaa;
-}
-*/
-
-/*  Required field styles (disabled by default)
-   
-.v-filterselect-error .v-filterselect-input,
-.v-select-required .v-select-option,
-.v-select-required .v-select-select,
-.v-select-required .v-select-twincol-selections,
-.v-select-required .v-select-twincol-options {
-	background: #ffaaaa;
-}
-*/
-
-.v-shadow {
+.chameleon .v-shadow {
 	position: absolute;
 }
 
-.v-shadow .top-left {
-    position: absolute; overflow: hidden;
-    top: -3px;             left: -5px;
-    width: 10px;         height: 10px;
-    background: transparent url(../base/shadow/img/top-left.png);
+.chameleon .v-shadow .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-left.png);
 }
 
-.v-shadow .top {
-    position: absolute; overflow: hidden;
-    top: -3px;             left: 5px;
-    height: 10px;           right: 5px;
-    background: transparent url(../base/shadow/img/top.png);
+.chameleon .v-shadow .top {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: 5px;
+	height: 10px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/top.png);
 }
 
-.v-shadow .top-right {
-    position: absolute; overflow: hidden;
-    top: -3px;             right: -5px;
-    width: 10px;         height: 10px;
-    background: transparent url(../base/shadow/img/top-right.png);
+.chameleon .v-shadow .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-right.png);
 }
 
-.v-shadow .left {
-    position: absolute; overflow: hidden;
-    top: 7px;           left: -5px;
-    width: 10px;
-    bottom: 3px;
-    background: transparent url(../base/shadow/img/left.png);
+.chameleon .v-shadow .left {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/left.png);
 }
 
-.v-shadow .center {
-    position: absolute; overflow: hidden;
-    top: 7px;           left: 5px;
-    bottom: 3px;        right: 5px;
-    background: transparent url(../base/shadow/img/center.png);
+.chameleon .v-shadow .center {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: 5px;
+	bottom: 3px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/center.png);
 }
 
-.v-shadow .right {
-    position: absolute; overflow: hidden;
-    top: 7px;           right: -5px;
-    width: 10px;
-    bottom: 3px;
-    background: transparent url(../base/shadow/img/right.png);
+.chameleon .v-shadow .right {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	right: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/right.png);
 }
 
-.v-shadow .bottom-left {
-    position: absolute; overflow: hidden;
-    bottom: -7px;           left: -5px;
-    width: 10px;          height: 10px;
-    background: transparent url(../base/shadow/img/bottom-left.png);
+.chameleon .v-shadow .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-left.png);
 }
 
-.v-shadow .bottom {
-    position: absolute; overflow: hidden;
-    bottom: -7px;           left: 5px;
-    right: 5px;          height: 10px;
-    background: transparent url(../base/shadow/img/bottom.png);
+.chameleon .v-shadow .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: 5px;
+	right: 5px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom.png);
 }
 
-.v-shadow .bottom-right {
-    position: absolute; overflow: hidden;
-    bottom: -7px;           right: -5px;
-    width: 10px;          height: 10px;
-    background: transparent url(../base/shadow/img/bottom-right.png);
+.chameleon .v-shadow .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-right.png);
 }
 
-
-
-
-
-/* For IE6 (no transparent png's, we use a blur filter) */
-
-.v-ie6 .v-shadow * {
-	display: none;
-}
-
-.v-ie6 .v-shadow {
-	background: #000;
-	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2) alpha(opacity=20);
-	margin-top: -2px;
-	margin-left: -2px;
-}  
-
-.v-slider {
+.chameleon .v-slider {
 	margin: 5px 0;
 }
-.v-slider-base {
-	/* changing the borders will require adjustments to ISlider.java */
+
+.chameleon .v-slider-base {
 	height: 2px;
 	border-top: 1px solid #ddd;
 	background: #eee;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #eee;
-	
 }
-.v-slider-handle {
+
+.chameleon .v-slider-handle {
 	background: #aaa;
 	width: 12px;
 	height: 12px;
@@ -1422,7 +1939,7 @@ div.v-progressindicator-indeterminate-disabled {
 	font-size: 0;
 }
 
-.v-slider-vertical {
+.chameleon .v-slider-vertical {
 	width: 2px;
 	height: auto;
 	margin: 0 5px;
@@ -1430,19 +1947,21 @@ div.v-progressindicator-indeterminate-disabled {
 	border-left: 1px solid #cccfd0;
 	border-right: 1px solid #cccfd0;
 }
-.v-slider-vertical .v-slider-base {
+
+.chameleon .v-slider-vertical .v-slider-base {
 	width: 2px;
 	border-bottom: 1px solid #eee;
 	border-right: none;
 }
-.v-slider-vertical .v-slider-handle {
+
+.chameleon .v-slider-vertical .v-slider-handle {
 	width: 12px;
 	height: 12px;
 	font-size: 0;
 	margin-left: -5px;
 }
 
-.v-slider-feedback {
+.chameleon .v-slider-feedback {
 	padding: 2px 5px;
 	background: #444;
 	color: #fff;
@@ -1457,40 +1976,16 @@ div.v-progressindicator-indeterminate-disabled {
 	text-shadow: 0 1px 0 #000;
 }
 
-/* Disabled by default
-.v-slider-error .v-slider-base {
-	background: #FFE0E0;
-}
-*/
-/* Disabled by default
-.v-slider-required .v-slider-base {
-	background: #FFE0E0;
-}
-*/
-
-/* IE specific styles */
-.v-ie6 .v-slider,
-.v-ie6 .v-slider-vertical {
-	margin: 0;
-}
-.v-ie6 .v-slider .v-slider-handle {
-	margin: -1px 0;
-}
-.v-ie6 .v-slider-vertical .v-slider-handle {
-	margin: 0 -1px;
-}
-
-.v-splitpanel-horizontal,
-.v-splitpanel-vertical {
+.chameleon .v-splitpanel-horizontal, .chameleon .v-splitpanel-vertical {
 	overflow: hidden;
 }
-.v-splitpanel-hsplitter {
+
+.chameleon .v-splitpanel-hsplitter {
 	width: 6px;
-	font-size: 1px; /* for IE6 */
 }
-.v-splitpanel-hsplitter div {
+
+.chameleon .v-splitpanel-hsplitter div {
 	width: 6px;
-	font-size: 1px; /* for IE6 */
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -1498,234 +1993,215 @@ div.v-progressindicator-indeterminate-disabled {
 	cursor: e-resize;
 	cursor: col-resize;
 }
-.v-disabled .v-splitpanel-hsplitter div {
+
+.chameleon .v-disabled .v-splitpanel-hsplitter div {
 	cursor: default;
 }
-.v-splitpanel-vsplitter {
+
+.chameleon .v-splitpanel-vsplitter {
 	height: 6px;
-	font-size: 1px; /* for IE6 */
 }
-.v-splitpanel-vsplitter div {
+
+.chameleon .v-splitpanel-vsplitter div {
 	height: 6px;
-	font-size: 1px; /* for IE6 */
 	background: #ddd;
 	cursor: s-resize;
 	cursor: row-resize;
 }
-.v-disabled .v-splitpanel-vsplitter div {
+
+.chameleon .v-disabled .v-splitpanel-vsplitter div {
 	cursor: default;
 }
-/* IE specific styles */
-.v-ie6 .v-splitpanel-hsplitter div {
-	height: 99%;
-}
-.v-ie6 .v-splitpanel-first-container,
-.v-ie6 .v-splitpanel-second-container,
-.v-ie7 .v-splitpanel-first-container,
-.v-ie7 .v-splitpanel-second-container {
-	position: relative;
+
+.chameleon .v-table {
+	overflow: hidden;
+	text-align: left;
 }
 
-/* Table theme building instructions
- * 
- * Vaadin scroll table is very complex widget with dozens of features. These 
- * features set some limitations for theme builder. To keep things working, it
- * is safest to try to just override values used in default theme and comfort to
- * these instructions.
- * 
- * Borders in table header and in table body need to be same width
- * - specify vertical borders on .v-table-header-wrap and .v-table-body
- *
- * Table cells in body:
- *  - padding/border for cells is to be defined for td elements (class name: .v-table-cell-content)
- *  - in default theme there are no borders, but they should work. Just set border-right or border-bottom
- *  - no padding or border is allowed for div inside cells (class name: .v-table-cell-wrapper) element
- *  - background is allowed for both elements
- *
- * Table headers:
- *  - table cells in header contain .v-table-resizer and 
- *	  .v-table-caption-container div elements, which are both floated to right
- *  - to align header caption to body content resizer width + .v-table-caption-container
- *    padding right should be equal to content cells padding-right and border-right.
- *  - Possible cell border in header must be themed into column resizer.
- *
- */
-.v-table {
-	overflow: hidden;
-	text-align: left; /* Force default alignment */
-}
-.v-ie7 .v-table {
-	overflow: visible;
-}
-.v-table-header-wrap {
+.chameleon .v-table-header-wrap {
 	overflow: hidden;
 	border: 1px solid #aaa;
 	border-bottom: none;
 	background: #efefef;
 }
-.v-table-header table,
-.v-table-table {
+
+.chameleon .v-table-header table, .chameleon .v-table-table {
 	border-spacing: 0;
 	border-collapse: separate;
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
-.v-table-header td {
+
+.chameleon .v-table-table {
+	font-size: 13px;
+}
+
+.chameleon .v-table-header td {
 	padding: 0;
 }
-.v-table-header-cell,
-.v-table-header-cell-asc,
-.v-table-header-cell-desc {
+
+.chameleon .v-table-header-cell, .chameleon .v-table-header-cell-asc, .chameleon .v-table-header-cell-desc {
 	cursor: pointer;
 }
 
-.v-table.v-disabled .v-table-header-cell,
-.v-table.v-disabled .v-table-header-cell-asc,
-.v-table.v-disabled .v-table-header-cell-desc {
+.chameleon .v-table.v-disabled .v-table-header-cell, .chameleon .v-table.v-disabled .v-table-header-cell-asc, .chameleon .v-table.v-disabled .v-table-header-cell-desc {
 	cursor: default;
 }
 
-.v-table-footer-wrap {
+.chameleon .v-table-footer-wrap {
 	overflow: hidden;
 	border: 1px solid #aaa;
 	border-top: none;
 	background: #efefef;
 }
-.v-table-footer table {
+
+.chameleon .v-table-footer table {
 	border-spacing: 0;
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
-.v-table-footer td {
+
+.chameleon .v-table-footer td {
 	padding: 0;
 	border-right: 1px solid #aaa;
 }
-.v-table-footer-cell {
+
+.chameleon .v-table-footer-cell {
 	cursor: pointer;
 }
-.v-table-footer-container {	
-	float:right;	
-	padding-right:6px;
-	overflow:hidden;
-	white-space:nowrap;
+
+.chameleon .v-table-footer-container {
+	float: right;
+	padding-right: 6px;
+	overflow: hidden;
+	white-space: nowrap;
 }
-.v-table-resizer {
+
+.chameleon .v-table-resizer {
 	display: block;
 	height: 1.2em;
 	float: right;
-	background: #aaa;	
-	cursor: e-resize;	/* Opera does not support col-resize, so use e-resize instead */
-	cursor: col-resize;	
+	background: #aaa;
+	cursor: e-resize;
+	cursor: col-resize;
 	width: 1px;
 	overflow: hidden;
 }
-.v-table.v-disabled .v-table-resizer {
-	cursor: default;	
+
+.chameleon .v-table.v-disabled .v-table-resizer {
+	cursor: default;
 }
-.v-table-caption-container {
+
+.chameleon .v-table-caption-container {
 	overflow: hidden;
 	white-space: nowrap;
 	margin-left: 6px;
 }
-.v-ie7 .v-table-caption-container-align-right {
-	margin-left: 0px;
-	padding-left: 6px;
-}
-.v-table-caption-container-align-right {
+
+.chameleon .v-table-caption-container-align-right {
 	float: right;
 }
-.v-table-sort-indicator {
+
+.chameleon .v-table-sort-indicator {
 	width: 0px;
 	height: 1.2em;
 	float: right;
 }
-.v-table-header-cell-asc .v-table-sort-indicator,
-.v-table-header-cell-desc .v-table-sort-indicator {
+
+.chameleon .v-table-header-cell-asc .v-table-sort-indicator, .chameleon .v-table-header-cell-desc .v-table-sort-indicator {
 	width: 16px;
 	height: 1.2em;
 	float: right;
-}		
-.v-table-header-cell-asc .v-table-sort-indicator {
+}
+
+.chameleon .v-table-header-cell-asc .v-table-sort-indicator {
 	background: transparent url(../base/common/img/sprites.png) no-repeat right 6px;
 }
-.v-table-header-cell-desc .v-table-sort-indicator {
+
+.chameleon .v-table-header-cell-desc .v-table-sort-indicator {
 	background: transparent url(../base/common/img/sprites.png) no-repeat right -10px;
 }
-.v-table-caption-container-align-center {
+
+.chameleon .v-table-caption-container-align-center {
 	text-align: center;
 }
-.v-table-caption-container-align-right {
+
+.chameleon .v-table-caption-container-align-right {
 	text-align: right;
 }
-.v-table-caption-container .v-icon,
-.v-table-header-drag .v-icon {
+
+.chameleon .v-table-caption-container .v-icon, .chameleon .v-table-header-drag .v-icon {
 	vertical-align: middle;
 }
-.v-table-body {
+
+.chameleon .v-table-body {
 	border: 1px solid #aaa;
 }
-.v-table-row-spacer {
+
+.chameleon .v-table-row-spacer {
 	height: 10px;
-	overflow: hidden; /* IE hack to allow < one line height divs */
+	overflow: hidden;
 }
-.v-table-row,
-.v-table-row-odd {
-    background: #fff;
+
+.chameleon .v-table-row, .chameleon .v-table-row-odd {
+	background: #fff;
 	border: 0;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
 }
 
-.v-table-generated-row {
-	   background: #efefef;
+.chameleon .v-table-generated-row {
+	background: #efefef;
 }
 
-.v-table-body-noselection .v-table-row,
-.v-table-body-noselection .v-table-row-odd {
+.chameleon .v-table-body-noselection .v-table-row, .chameleon .v-table-body-noselection .v-table-row-odd {
 	cursor: default;
 }
-.v-table .v-selected {
+
+.chameleon .v-table .v-selected {
 	background: #999;
 	color: #fff;
 }
-.v-table-cell-content {
+
+.chameleon .v-table-cell-content {
 	white-space: nowrap;
 	overflow: hidden;
 	padding: 0 6px;
 	border-right: 1px solid #aaa;
 }
-.v-table-cell-wrapper {
-	/* Do not specify any margins, paddings or borders here */
+
+.chameleon .v-table-cell-wrapper {
 	white-space: nowrap;
 	overflow: hidden;
 }
-.v-table-cell-wrapper-align-center {
+
+.chameleon .v-table-cell-wrapper-align-center {
 	text-align: center;
 }
-.v-table-cell-wrapper-align-right {
+
+.chameleon .v-table-cell-wrapper-align-right {
 	text-align: right;
 }
-.v-table-column-selector {
+
+.chameleon .v-table-column-selector {
 	float: right;
 	background: transparent url(../base/common/img/sprites.png) no-repeat 4px -37px;
 	margin: -1.2em 0 0 0;
 	height: 1.2em;
 	width: 14px;
-	position: relative; /* hide this from IE, it works without it */
+	position: relative;
 	cursor: pointer;
 }
-.v-table.v-disabled .v-table-column-selector {
+
+.chameleon .v-table.v-disabled .v-table-column-selector {
 	cursor: default;
 }
-.v-ie6 .v-table-column-selector,
-.v-ie7 .v-table-column-selector {
-	position: static;
-}
-.v-table-focus-slot-left {
+
+.chameleon .v-table-focus-slot-left {
 	border-left: 2px solid #999;
 	float: none;
 	margin-bottom: -1.2em;
@@ -1733,11 +2209,13 @@ div.v-progressindicator-indeterminate-disabled {
 	background: transparent;
 	border-right: 1px solid #aaa;
 }
-.v-table-focus-slot-right {
+
+.chameleon .v-table-focus-slot-right {
 	border-right: 2px solid #999;
 	margin-left: -2px;
 }
-.v-table-header-drag {
+
+.chameleon .v-table-header-drag {
 	position: absolute;
 	background: #efefef;
 	border: 1px solid #eee;
@@ -1746,65 +2224,70 @@ div.v-progressindicator-indeterminate-disabled {
 	margin-top: 20px;
 	z-index: 30000;
 }
-.v-table-header-drag .v-icon {
+
+.chameleon .v-table-header-drag .v-icon {
 	vertical-align: middle;
 }
-.v-table-scrollposition {
+
+.chameleon .v-table-scrollposition {
 	width: 160px;
 	background: #eee;
 	border: 1px solid #aaa;
 }
-.v-table-scrollposition span {
+
+.chameleon .v-table-scrollposition span {
 	display: block;
 	text-align: center;
 }
-.v-table-body:focus,
-.v-table-body-wrapper:focus {
+
+.chameleon .v-table-body:focus, .chameleon .v-table-body-wrapper:focus {
 	outline: none;
 }
-.v-table-body.focused {
+
+.chameleon .v-table-body.focused {
 	border-color: #388ddd;
 }
-.v-table-focus .v-table-cell-content {
+
+.chameleon .v-table-focus .v-table-cell-content {
 	border-top: 1px dotted #0066bd;
 	border-bottom: 1px dotted #0066bd;
 }
-.v-table-focus .v-table-cell-wrapper {
+
+.chameleon .v-table-focus .v-table-cell-wrapper {
 	margin-top: -1px;
 	margin-bottom: -1px;
 }
-/* row in column selector */
-.v-on {
-	
-}
-.v-off {
+
+.chameleon .v-off {
 	color: #ddd;
 }
-/*************************************
- * Drag'n'drop styles
- *************************************/
-.v-table-drag .v-table-body {
+
+.chameleon .v-table-drag .v-table-body {
 	border-color: #1d9dff;
 }
-.v-table-row-drag-middle .v-table-cell-content {
+
+.chameleon .v-table-row-drag-middle .v-table-cell-content {
 	background-color: #bcdcff;
 }
-.v-table-row-drag-top .v-table-cell-content {
+
+.chameleon .v-table-row-drag-top .v-table-cell-content {
 	border-top: 2px solid #1d9dff;
 }
-.v-table-row-drag-top .v-table-cell-wrapper {
-	margin-top: -2px; /* compensate the space consumed by border hint */
+
+.chameleon .v-table-row-drag-top .v-table-cell-wrapper {
+	margin-top: -2px;
 }
-.v-table-row-drag-bottom .v-table-cell-content {
+
+.chameleon .v-table-row-drag-bottom .v-table-cell-content {
 	border-bottom: 2px solid #1d9dff;
 }
-.v-table-row-drag-bottom .v-table-cell-wrapper {
-	margin-bottom: -2px; /* compensate the space consumed by border hint */
+
+.chameleon .v-table-row-drag-bottom .v-table-cell-wrapper {
+	margin-bottom: -2px;
 }
-.v-table-row-drag-top .v-table-cell-content:first-child:before,
-.v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+
+.chameleon .v-table-row-drag-top .v-table-cell-content:first-child:before, .chameleon .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
 	display: block;
-	content: "";
 	position: absolute;
 	width: 6px;
 	height: 6px;
@@ -1812,78 +2295,79 @@ div.v-progressindicator-indeterminate-disabled {
 	margin-left: -6px;
 	background: transparent url(../base/common/img/drag-slot-dot.png);
 }
-.v-ff .v-table-row-drag-bottom .v-table-cell-content:first-child:after,
-.v-ie .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+
+.v-ff .chameleon .v-table-row-drag-bottom .v-table-cell-content:first-child:after, .v-ie .chameleon .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
 	margin-top: -2px;
 }
 
-.v-tabsheet,
-.v-tabsheet-content,
-.v-tabsheet-deco {
-	outline: none; /* Prevent selection outline which might break layouts or cause scrollbars */
-	text-align: left /* Force default alignment */
+.chameleon .v-tabsheet, .chameleon .v-tabsheet-content, .chameleon .v-tabsheet-deco {
+	outline: none;
+	text-align: left;
 }
-.v-tabsheet-tabs {
+
+.chameleon .v-tabsheet-tabs {
 	empty-cells: hide;
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	width: 100%;
-	overflow:hidden;
+	overflow: hidden;
 }
-.v-tabsheet-tabitemcell:focus {
+
+.chameleon .v-tabsheet-tabitemcell:focus {
 	outline: none;
 }
-.v-tabsheet-tabitemcell,
-.v-tabsheet-spacertd {
+
+.chameleon .v-tabsheet-tabitemcell, .chameleon .v-tabsheet-spacertd {
 	margin: 0;
 	padding: 0;
 	vertical-align: bottom;
 }
-.v-tabsheet-spacertd {
+
+.chameleon .v-tabsheet-spacertd {
 	width: 100%;
 }
-.v-tabsheet-spacertd div {
+
+.chameleon .v-tabsheet-spacertd div {
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	height: 1em;
 	padding: 0.2em 0;
 }
-.v-tabsheet-hidetabs .v-tabsheet-tabcontainer {
+
+.chameleon .v-tabsheet-hidetabs > .v-tabsheet-tabcontainer {
 	display: none;
 }
-.v-tabsheet-scroller {
+
+.chameleon .v-tabsheet-scroller {
 	white-space: nowrap;
 	text-align: right;
 	margin-top: -1em;
 }
-.v-ff2 .v-tabsheet-scroller {
-	position: relative;
-}
-.v-disabled .v-tabsheet-scroller {
+
+.chameleon .v-disabled .v-tabsheet-scroller {
 	display: none;
 }
-.v-tabsheet-scrollerPrev,
-.v-tabsheet-scrollerNext,
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled {
+
+.chameleon .v-tabsheet-scrollerPrev, .chameleon .v-tabsheet-scrollerNext, .chameleon .v-tabsheet-scrollerPrev-disabled, .chameleon .v-tabsheet-scrollerNext-disabled {
 	border: 1px solid #aaa;
 	background: #fff;
 	width: 12px;
 	height: 1em;
 	cursor: pointer;
 }
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled {
+
+.chameleon .v-tabsheet-scrollerPrev-disabled, .chameleon .v-tabsheet-scrollerNext-disabled {
 	opacity: 0.5;
 	cursor: default;
 }
-.v-tabsheet-tabs .v-caption,
-.v-tabsheet-tabs .v-caption span {
+
+.chameleon .v-tabsheet-tabs .v-caption, .chameleon .v-tabsheet-tabs .v-caption span {
 	white-space: nowrap;
 }
-.v-tabsheet-caption-close {
+
+.chameleon .v-tabsheet-caption-close {
 	display: inline;
 	display: inline-block;
 	zoom: 1;
@@ -1899,137 +2383,129 @@ div.v-progressindicator-indeterminate-disabled {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 }
-.v-tabsheet .v-disabled .v-tabsheet-caption-close {
+
+.chameleon .v-tabsheet .v-disabled .v-tabsheet-caption-close {
 	cursor: default;
 	visibility: hidden;
 }
-.v-tabsheet-tabitem:hover .v-tabsheet-caption-close,
-.v-ie6 .v-tabsheet-caption-close {
+
+.chameleon .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
 	visibility: visible;
 }
-.v-ie6 .v-tabsheet-caption-close {
-	float: right;
-}
-.v-tabsheet-tabitem {
+
+.chameleon .v-tabsheet-tabitem {
 	border: 1px solid #aaa;
 	border-right: none;
 	cursor: pointer;
 	padding: 0.2em 0.5em;
 }
-.v-tabsheet-tabitem .v-caption {
+
+.chameleon .v-tabsheet-tabitem .v-caption {
 	cursor: inherit;
 }
-.v-tabsheet.v-disabled .v-tabsheet-tabitem,
-.v-tabsheet-tabitemcell-disabled .v-tabsheet-tabitem {
+
+.chameleon .v-tabsheet.v-disabled .v-tabsheet-tabitem, .chameleon .v-tabsheet-tabitemcell-disabled .v-tabsheet-tabitem {
 	cursor: default;
 }
-.v-tabsheet-tabitem-selected {
+
+.chameleon .v-tabsheet-tabitem-selected {
 	cursor: default;
 	border-bottom-color: #fff;
 }
-.v-tabsheet-tabitem-selected .v-caption {
+
+.chameleon .v-tabsheet-tabitem-selected .v-caption {
 	cursor: default;
 }
-.v-tabsheet-content {
+
+.chameleon .v-tabsheet-content {
 	border: 1px solid #aaa;
-	/* Vertical borders are not supported, use v-tabsheet-tabcontainer and v-tabsheet-deco to present these borders */
 	border-top: none;
 	border-bottom: none;
 	position: relative;
 }
-.v-ie6 .v-tabsheet-content,
-.v-ie7 .v-tabsheet-content {
-	zoom: 1;
-}
-.v-tabsheet-deco {
+
+.chameleon .v-tabsheet-deco {
 	height: 1px;
 	background: #aaa;
 	overflow: hidden;
 }
-.v-tabsheet-hidetabs .v-tabsheet-content {
+
+.chameleon .v-tabsheet-hidetabs .v-tabsheet-content {
 	border: none;
 }
-.v-tabsheet-hidetabs .v-tabsheet-deco {
+
+.chameleon .v-tabsheet-hidetabs .v-tabsheet-deco {
 	height: 0;
 }
 
+.chameleon .v-textfield {
+	text-align: left;
+}
 
-.v-textfield {
-	text-align: left /* Force default alignment */
-}
-.v-textarea {
+.chameleon .v-textarea {
 	resize: none;
+	white-space: pre-wrap;
 }
-.v-textfield-focus,
-.v-textarea-focus {
-}
-input.v-textfield-prompt,
-textarea.v-textarea-prompt {
+
+.chameleon input.v-textfield-prompt, .chameleon textarea.v-textarea-prompt {
 	color: #999;
 	font-style: italic;
 }
-input.v-textfield-readonly,
-textarea.v-textarea-readonly {
+
+.chameleon input.v-textfield-readonly, .chameleon textarea.v-textarea-readonly {
 	background: transparent;
 	border: none;
 	resize: none;
 }
-input.v-disabled,
-textarea.v-disabled {
+
+.chameleon input.v-disabled, .chameleon textarea.v-disabled {
 	resize: none;
 }
-input.v-textfield-readonly:focus,
-textarea.v-textarea-readonly:focus {
+
+.chameleon input.v-textfield-readonly:focus, .chameleon textarea.v-textarea-readonly:focus {
 	outline: none;
 }
-/* Disabled by default
-.v-textarea-error,
-.v-textfield-error,
-.v-richtextarea-error iframe.gwt-RichTextArea {
-	background: #FFE0E0;	
-}
-*/
-/* Disabled by default
-.v-textarea-required,
-.v-textfield-required,
-.v-richtextarea-required iframe.gwt-RichTextArea {
-	background: #FFE0E0;	
-}
-*/
-/* Safari focus glow fix */
-.v-sa input:focus, 
-.v-sa textarea:focus {
+
+.v-sa .chameleon input:focus, .v-sa .chameleon textarea:focus {
 	outline-width: medium;
 }
 
-.v-richtextarea {
+.chameleon .v-richtextarea {
 	border: 1px solid #aaa;
 	overflow: hidden;
 }
-.v-richtextarea .gwt-RichTextArea {
+
+.chameleon .v-richtextarea .gwt-RichTextArea {
 	background: #fff;
 	border: none;
 }
 
-.v-richtextarea .gwt-RichTextToolbar {
+.chameleon .v-richtextarea .gwt-HTML {
+	height: 100%;
+	font-size: 13px;
+}
+
+.chameleon .v-richtextarea .gwt-RichTextToolbar {
 	white-space: nowrap;
 	background: #959595 url(../base/textfield/img/richtext-toolbar-bg.png) repeat-x 0 -42px;
 	border-bottom: 1px solid #7d7d7d;
 	padding: 2px;
 	overflow: hidden;
 }
-.v-richtextarea .gwt-RichTextToolbar-top {
+
+.chameleon .v-richtextarea .gwt-RichTextToolbar-top {
 	padding-bottom: 1px;
 	overflow: hidden;
 	white-space: normal;
 }
-.v-richtextarea .gwt-RichTextToolbar-bottom {
+
+.chameleon .v-richtextarea .gwt-RichTextToolbar-bottom {
 	clear: left;
 	overflow: hidden;
 	white-space: nowrap;
 }
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton {
+
+.chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton, .chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton {
 	float: left;
 	display: inline;
 	width: 22px;
@@ -2040,127 +2516,110 @@ textarea.v-textarea-readonly:focus {
 	margin-right: 2px;
 	text-align: center;
 }
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down,
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+
+.chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down, .chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down, .chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering, .chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering {
 	background-position: 0 -21px;
 }
-.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton img,
-.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton img {
-	
-}
-.v-richtextarea .gwt-RichTextToolbar .gwt-ListBox {
+
+.chameleon .v-richtextarea .gwt-RichTextToolbar .gwt-ListBox {
 	width: 24.5%;
 	margin-right: 2px;
 }
 
-.v-richtextarea-readonly {
+.chameleon .v-richtextarea-readonly {
 	border: none;
 }
 
-
-.v-tree {
-	text-align: left; /* Force default alignment */
-	overflow: hidden;
+.chameleon .v-tree {
+	text-align: left;
 	padding: 1px 0;
 	outline: none;
 }
-.v-tree-node {
+
+.chameleon .v-tree-node {
 	background: transparent url(../base/common/img/sprites.png) no-repeat 5px -37px;
 	padding: 1px 0;
 }
-.v-tree-node-caption:focus {
+
+.chameleon .v-tree-node-caption:focus {
 	outline: none;
 }
-div.v-tree-node-leaf {
+
+.chameleon div.v-tree-node-leaf {
 	background: transparent;
 }
-.v-tree-node-expanded {
+
+.chameleon .v-tree-node-expanded {
 	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -10px;
 }
-.v-tree-node-caption {
+
+.chameleon .v-tree-node-caption {
 	margin-left: 1em;
 }
-.v-tree-node span {
+
+.chameleon .v-tree-node span {
 	cursor: pointer;
 }
-.v-tree-node-caption div {
+
+.chameleon .v-tree-node-caption div {
 	white-space: nowrap;
 }
-.v-tree-node-caption span,
-.v-tree-node-caption .v-icon {
+
+.chameleon .v-tree-node-caption span, .chameleon .v-tree-node-caption .v-icon {
 	vertical-align: middle;
 }
-.v-tree-node-selected span {
+
+.chameleon .v-tree-node-selected span {
 	background: #999;
 	color: #fff;
 }
-.v-tree-node-children {
+
+.chameleon .v-tree-node-children {
 	padding-left: 1em;
 }
-/* ie6compatnode is hidden from non ie6 browsers, for ie6 
- * uses weird hack to sink all events properly 
- */
-.v-tree-node-ie6compatnode {
-	display: none;
-}
-/* IMPORTANT keep the offsetWidth of this element the same as the margin-left of v-tree-node-caption */
-.v-ie6 .v-tree-node-ie6compatnode {
-	display: inline;
-	float: left;
-	background: orange;
-	margin: 0;
-	width: 0.8em;
-	height: 0.8em;
-	padding: 0.1em;
-	filter: alpha(opacity=0);
-}
-.v-ie6 .v-tree-node,
-.v-ie6 .v-tree-node-children {
-	clear: left;
-}
-/***************************************
- * Drag'n'drop styles
- ***************************************/
-.v-tree .v-tree-node-drag-top {
+
+.chameleon .v-tree .v-tree-node-drag-top {
 	border-top: 2px solid #1d9dff;
 	margin-top: -1px;
 	padding-top: 0;
 }
-.v-tree .v-tree-node-drag-bottom {
+
+.chameleon .v-tree .v-tree-node-drag-bottom {
 	border-bottom: 2px solid #1d9dff;
 	margin-bottom: -1px;
 	padding-bottom: 0;
 }
-.v-tree .v-tree-node-drag-top:before,
-.v-tree .v-tree-node-drag-bottom:after,
-.v-tree .v-tree-node-caption-drag-center:after {
+
+.chameleon .v-tree .v-tree-node-drag-top:before, .chameleon .v-tree .v-tree-node-drag-bottom:after, .chameleon .v-tree .v-tree-node-caption-drag-center:after {
 	display: block;
-	content: "";
 	position: absolute;
 	width: 6px;
 	height: 6px;
 	margin-top: -4px;
 	background: transparent url(../base/common/img/drag-slot-dot.png);
 }
-.v-tree .v-tree-node-drag-bottom:after {
+
+.chameleon .v-tree .v-tree-node-drag-bottom:after {
 	margin-top: -2px;
 }
-.v-tree .v-tree-node-caption-drag-center:after {
+
+.chameleon .v-tree .v-tree-node-caption-drag-center:after {
 	margin-left: 14px;
 }
-.v-ff .v-tree .v-tree-node-caption-drag-center:after,
-.v-ie .v-tree .v-tree-node-caption-drag-center:after {
+
+.v-ff .chameleon .v-tree .v-tree-node-caption-drag-center:after, .v-ie .chameleon .v-tree .v-tree-node-caption-drag-center:after {
 	margin-top: -2px;
 }
-.v-tree .v-tree-node-drag-top {
+
+.chameleon .v-tree .v-tree-node-drag-top {
 	background-position: 5px -38px;
 }
-.v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+
+.chameleon .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
 	background-position: -5px -11px;
 }
-.v-tree .v-tree-node-caption-drag-center div {
+
+.chameleon .v-tree .v-tree-node-caption-drag-center div {
 	border: 2px solid #1d9dff;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -2168,159 +2627,134 @@ div.v-tree-node-leaf {
 	margin: -2px 2px -2px -2px;
 	background-color: #bcdcff;
 }
-.v-ie6 .v-tree .v-tree-node-caption-drag-center div {
-	margin: -2px ;
-}
-.v-tree .v-tree-node-caption-drag-center div {
-	background-color: rgba(169,209,255,.6);
-}
-.v-tree .v-tree-node-caption-drag-center div,
-.v-tree .v-tree-node-drag-top,
-.v-tree .v-tree-node-drag-bottom {
-	border-color: rgba(0,109,232,.6);
+
+.chameleon .v-tree .v-tree-node-caption-drag-center div {
+	background-color: rgba(169, 209, 255, 0.6);
 }
 
-/* Make item caption height an even number (so that the connector dots overlap nicely) */
-.v-tree-connectors .v-tree-node-caption {
+.chameleon .v-tree .v-tree-node-caption-drag-center div, .chameleon .v-tree .v-tree-node-drag-top, .chameleon .v-tree .v-tree-node-drag-bottom {
+	border-color: rgba(0, 109, 232, 0.6);
+}
+
+.chameleon .v-tree-connectors .v-tree-node-caption {
 	padding-top: 1px;
 }
-.v-tree-connectors .v-tree-node {
+
+.chameleon .v-tree-connectors .v-tree-node {
 	background: transparent url(../base/tree/img/connector-expand.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-expanded {
+
+.chameleon .v-tree-connectors .v-tree-node-expanded {
 	background: transparent url(../base/tree/img/connector-collapse.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-last {
+
+.chameleon .v-tree-connectors .v-tree-node-last {
 	background: transparent url(../base/tree/img/connector-expand-last.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-expanded.v-tree-node-last {
+
+.chameleon .v-tree-connectors .v-tree-node-expanded.v-tree-node-last {
 	background: transparent url(../base/tree/img/connector-collapse-last.png) no-repeat 2px -52px;
 }
-.v-tree-connectors .v-tree-node-leaf {
+
+.chameleon .v-tree-connectors .v-tree-node-leaf {
 	background: transparent url(../base/tree/img/connector-leaf.png) repeat-y 2px 50%;
 }
-.v-tree-connectors .v-tree-node-leaf-last {
+
+.chameleon .v-tree-connectors .v-tree-node-leaf-last {
 	background: transparent url(../base/tree/img/connector-leaf-last.png) repeat-y 2px 50%;
 }
-.v-tree-connectors .v-tree-node-children {
+
+.chameleon .v-tree-connectors .v-tree-node-children {
 	background: transparent url(../base/tree/img/connector.png) repeat-y 2px 0;
 }
-.v-tree-connectors .v-tree-node-children-last {
+
+.chameleon .v-tree-connectors .v-tree-node-children-last {
 	background: transparent;
 }
-.v-tree-connectors .v-tree-node-drag-top,
-.v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
+
+.chameleon .v-tree-connectors .v-tree-node-drag-top, .chameleon .v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
 	background-position: 2px -53px;
 }
-.v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
+
+.chameleon .v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
 	background-position: 2px 50%;
 }
 
-/* IE6 */
-.v-ie6 .v-tree-connectors .v-tree-node {
-	background: transparent url(../base/tree/img/connector-expand-ie6.png) no-repeat 2px -52px;
-}
-.v-ie6 .v-tree-connectors .v-tree-node-expanded {
-	background: transparent url(../base/tree/img/connector-collapse-ie6.png) no-repeat 2px -52px;
-}
-.v-ie6 .v-tree-connectors .v-tree-node-last {
-	background: transparent url(../base/tree/img/connector-expand-last-ie6.png) no-repeat 2px -52px;
-}
-.v-ie6 .v-tree-connectors .v-tree-node-last.v-tree-node-expanded {
-	background: transparent url(../base/tree/img/connector-collapse-last-ie6.png) no-repeat 2px -52px;
+.chameleon .v-treetable-treespacer {
+	display: inline-block;
+	background: transparent;
+	height: 10px;
+	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 5px;
 }
 
-.v-treetable-treespacer {
-    display: inline-block;
-    background: transparent;
-    height: 10px;
-    /* defines the amount of indent per level */
-    width: 18px;
-}
-.v-ie7 .v-treetable-treespacer{
-	height: 100%; /* #7388 */
+.chameleon .v-treetable-node-closed {
+	background: url(../base/treetable/img/arrow-right.png) right top no-repeat;
 }
 
-.v-treetable-node-closed {
-    background: url(../base/treetable/img/arrow-right.png) right center no-repeat;
+.chameleon .v-treetable-node-open {
+	background: url(../base/treetable/img/arrow-down.png) right top no-repeat;
 }
 
-.v-ie6 .v-treetable-node-closed {
-	background-image: url(../base/treetable/img/arrow-right.gif); 
-} 
-
-.v-treetable-node-open {
-    background: url(../base/treetable/img/arrow-down.png) right center no-repeat;
-}
-
-.v-ie6 .v-treetable-node-open {
-	background-image: url(../base/treetable/img/arrow-down.gif); 
-} 
-
-.v-treetable .v-checkbox {
+.chameleon .v-treetable .v-checkbox {
 	display: inline-block;
 	padding-bottom: 4px;
 }
 
-.v-treetable .v-table-row .v-table-cell-content,
-.v-treetable .v-table-row-odd .v-table-cell-content {
-    position: relative;
-    z-index: 10;
+.chameleon .v-treetable .v-table-row .v-table-cell-content, .chameleon .v-treetable .v-table-row-odd .v-table-cell-content {
+	position: relative;
+	z-index: 10;
 }
 
-.v-treetable .v-table-body .v-table-table .v-table-row-animating {
-	zoom:1;
-	z-index:1;
+.chameleon .v-treetable .v-table-cell-wrapper {
+	position: relative;
 }
 
-.v-treetable .v-table-body .v-table-table .v-table-row-animating,
-.v-treetable .v-table-body .v-table-table .v-table-row-animating .v-table-cell-content {
-    background:transparent;
+.chameleon .v-treetable .v-table-body .v-table-table .v-table-row-animating {
+	zoom: 1;
+	z-index: 1;
 }
 
-.v-treetable-animation-clone {
+.chameleon .v-treetable .v-table-body .v-table-table .v-table-row-animating, .chameleon .v-treetable .v-table-body .v-table-table .v-table-row-animating .v-table-cell-content {
+	background: transparent;
+}
+
+.chameleon .v-treetable-animation-clone {
 	border-spacing: 0;
-	zoom:1;
+	zoom: 1;
 }
 
-div.v-treetable-animation-clone-wrapper {
+.chameleon div.v-treetable-animation-clone-wrapper {
 	position: absolute;
-    z-index: 2;
-    background-color:#fff;
+	z-index: 2;
+	background-color: #fff;
 }
 
-div.v-treetable-animation-clone-wrapper table.v-treetable-animation-clone {
-    background-color:#fff;
+.chameleon div.v-treetable-animation-clone-wrapper table.v-treetable-animation-clone {
+	background-color: #fff;
 }
 
-div table.v-treetable-animation-clone tr.v-table-row,
-div table.v-treetable-animation-clone tr.v-table-row-odd,
-div table.v-treetable-animation-clone tr.v-table-row td.v-table-cell-content,
-div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content {
+.chameleon div table.v-treetable-animation-clone tr.v-table-row, .chameleon div table.v-treetable-animation-clone tr.v-table-row-odd, .chameleon div table.v-treetable-animation-clone tr.v-table-row td.v-table-cell-content, .chameleon div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content {
 	visibility: visible;
 }
 
-.v-upload {
+.chameleon .v-upload {
 	white-space: nowrap;
 }
 
-.v-ie6 .v-upload,
-.v-ie7 .v-upload {
-	margin:0;
-}
-
-.v-upload-immediate {
+.chameleon .v-upload-immediate {
 	position: relative;
 	margin: 0;
 	overflow: hidden;
 }
 
-.v-ff .v-upload-immediate,
-.v-op .v-upload-immediate {
+.v-ff .chameleon .v-upload-immediate, .v-op .chameleon .v-upload-immediate {
 	display: inline-block;
 }
 
-.v-upload-immediate input {
+.chameleon .v-upload-immediate input {
 	opacity: 0;
 	filter: alpha(opacity=0);
 	z-index: 2;
@@ -2332,65 +2766,74 @@ div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content
 	background: transparent;
 }
 
-.v-upload-immediate button {
+.chameleon .v-upload-immediate button {
 	position: relative;
 	left: 0;
 	top: 0;
 	width: 100%;
 	text-align: left;
 }
-  
 
-.v-window {
+.chameleon .v-window {
 	background: #fff;
 }
-.v-window-outerheader {
+
+.chameleon .v-window-contents {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.chameleon .v-window.v-has-width > div.popupContent, .chameleon .v-window.v-has-width .v-window-wrap, .chameleon .v-window.v-has-width .v-window-contents, .chameleon .v-window.v-has-width .v-window-contents > div {
+	width: 100%;
+}
+
+.chameleon .v-window.v-has-height > div.popupContent, .chameleon .v-window.v-has-height .v-window-wrap, .chameleon .v-window.v-has-height .v-window-contents, .chameleon .v-window.v-has-height .v-window-contents > div {
+	height: 100%;
+}
+
+.chameleon .v-window-outerheader {
 	padding: 0.3em 1em;
-	height: 1em;
+	height: 1.6em;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.v-window-outerheader,
-.v-window-draggingCurtain {
- 	cursor: move;	
+.chameleon .v-window-outerheader, .chameleon .v-window-draggingCurtain {
+	cursor: move;
 }
 
-.v-window-header {
+.chameleon .v-window-header {
 	font-weight: bold;
 }
-/* A more specific selector to make sure padding isn't so easily overridden */
-div.v-window-header {
+
+.chameleon div.v-window-header {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	-ms-text-overflow: ellipsis;
 	overflow: hidden;
 	padding: 0;
 }
-.v-ie6 .v-window-header {
-	width: 100%;
+
+.chameleon .v-window-header .v-icon {
+	vertical-align: middle;
 }
-.v-window-header .v-icon {
-	vertical-align: middle; /* This has to be 'middle', not 'bottom', to allow larger icons than 16px */
-}
-/* Partial fix for bug #1106 */
-/* Target Firefox 2 (somehow this will force almost all window borders on top of a Flash object) */
-.v-window-contents, x:-moz-any-link {
-	overflow: hidden;
-}
-/* Target Firefox 3 (it doesn't need any trickery, so revert the previous) */
-.v-window-contents, x:-moz-any-link, x:default {
-	overflow: visible;
-}
-.v-window-contents > div {
+
+.chameleon .v-window-contents > div {
 	outline: none;
 }
-.v-window-footer {
+
+.chameleon .v-window-footer {
 	overflow: hidden;
 	zoom: 1;
 	height: 10px;
 	position: relative;
 	cursor: move;
 }
-.v-window-resizebox {
+
+.chameleon .v-window-resizebox {
 	width: 10px;
 	height: 10px;
 	background: #ddd;
@@ -2399,19 +2842,20 @@ div.v-window-header {
 	right: 0;
 }
 
-.v-window-resizebox,
-.v-window-resizingCurtain {
+.chameleon .v-window-resizebox, .chameleon .v-window-resizingCurtain {
 	cursor: se-resize;
 }
 
-.v-window div.v-window-footer-noresize {
+.chameleon .v-window div.v-window-footer-noresize {
 	height: 0;
 }
-.v-window-resizebox-disabled {
+
+.chameleon .v-window-resizebox-disabled {
 	cursor: default;
 	display: none;
 }
-.v-window-closebox {
+
+.chameleon .v-window-closebox {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -2421,7 +2865,8 @@ div.v-window-header {
 	cursor: pointer;
 	overflow: hidden;
 }
-.v-window-modalitycurtain {
+
+.chameleon .v-window-modalitycurtain {
 	top: 0;
 	left: 0;
 	background: #999;
@@ -2431,388 +2876,292 @@ div.v-window-header {
 	height: 100%;
 	filter: alpha(opacity=50);
 }
-/* IE6 workaround for position:fixed; */
-.v-ie6 .v-window-modalitycurtain { 
-	position: absolute;
-	top: expression(document.documentElement.scrollTop + "px"); 
-}
-/* min-width for IE6 */
-.v-ie6 .v-window {
-	width: 0; /*  */
-}
-/* Shadow for window */
-.v-shadow-window {
+
+.chameleon .v-shadow-window {
 	position: absolute;
 }
-.v-shadow-window .top-left {
-    position: absolute; overflow: hidden;
-    top: -10px;             left: -15px;
-    width: 28px;         height: 28px;
-    background: transparent url(../base/window/img/shadow/top-left.png);
-}
-.v-shadow-window .top {
-    position: absolute; overflow: hidden;
-    top: -10px;             left: 13px;
-    height: 28px;
-    right: 13px;
-    background: transparent url(../base/window/img/shadow/top.png);
-}
-.v-shadow-window .top-right {
-    position: absolute; overflow: hidden;
-    top: -10px;             right: -15px;
-    width: 28px;         height: 28px;
-    background: transparent url(../base/window/img/shadow/top-right.png);
-}
-.v-shadow-window .left {
-    position: absolute; overflow: hidden;
-    top: 18px;           left: -15px;
-    width: 28px;
-    bottom: 10px;
-    background: transparent url(../base/window/img/shadow/left.png);
-}
-.v-shadow-window .center {
-    position: absolute; overflow: hidden;
-    top: 18px;           left: 13px;
-    bottom: 10px;        right: 13px;
-    background: transparent url(../base/window/img/shadow/center.png);
-}
-.v-shadow-window .right {
-    position: absolute; overflow: hidden;
-    top: 18px;           right: -15px;
-    width: 28px;
-    bottom: 10px;
-    background: transparent url(../base/window/img/shadow/right.png);
-}
-.v-shadow-window .bottom-left {
-    position: absolute; overflow: hidden;
-    bottom: -18px;           left: -15px;
-    width: 28px;          height: 28px;
-    background: transparent url(../base/window/img/shadow/bottom-left.png);
-}
-.v-shadow-window .bottom {
-    position: absolute; overflow: hidden;
-    bottom: -18px;           left: 13px;
-    right: 13px;          height: 28px;
-    background: transparent url(../base/window/img/shadow/bottom.png);
-}
-.v-shadow-window .bottom-right {
-    position: absolute; overflow: hidden;
-    bottom: -18px;           right: -15px;
-    width: 28px;          height: 28px;
-    background: transparent url(../base/window/img/shadow/bottom-right.png);
-}
-/* For IE6 (no transparent png's, we use a blur filter) */
-.v-ie6 .v-shadow-window * {
-	display: none;
-}
-.v-ie6 .v-shadow-window {
-	background: #000;
-	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5) alpha(opacity=20);
-	margin-top: 2px;
-	margin-left: 2px;
-}
-/* Automatically compiled css file from subdirectories. */
 
-/*
- * Base theme is automatically included in the compiled theme.
- * @import "../../base/styles.css";
- */
+.chameleon .v-shadow-window .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-left.png);
+}
 
-/*******************************************************************************
- * App background & tooltip
- ******************************************************************************/
+.chameleon .v-shadow-window .top {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: 13px;
+	height: 28px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/top.png);
+}
 
-.v-app {
+.chameleon .v-shadow-window .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-right.png);
+}
+
+.chameleon .v-shadow-window .left {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/left.png);
+}
+
+.chameleon .v-shadow-window .center {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: 13px;
+	bottom: 10px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/center.png);
+}
+
+.chameleon .v-shadow-window .right {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	right: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/right.png);
+}
+
+.chameleon .v-shadow-window .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-left.png);
+}
+
+.chameleon .v-shadow-window .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: 13px;
+	right: 13px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom.png);
+}
+
+.chameleon .v-shadow-window .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-right.png);
+}
+
+.chameleon.v-app {
 	background: transparent;
 	overflow: hidden;
-	}
+}
 
-.v-view {
+.chameleon .v-ui {
 	margin-top: 0;
 	border-top: none;
-	}
+}
 
-.v-tooltip {
+.chameleon .v-tooltip {
 	background: #fdfdee;
 	border: 1px solid #c0c0b9;
 	padding: 1px 5px;
 	color: #222;
-	font-size: 0.9em;
+	font-size: 11.7px;
 	line-height: normal;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	}
+}
 
-.v-sa .v-tooltip,
-.v-ff3 .v-tooltip {
-	outline: 1px solid rgba(0,0,0,.2);
+.v-sa .chameleon .v-tooltip {
+	outline: 1px solid rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border: none;
-	}
+}
 
-
-/*******************************************************************************
- * Global fonts
- ******************************************************************************/
-
-/* First all the containers that have other components inside them, and are 
- * possibly overlay elements (which reside inside the BODY element, not the .v-app element)
- */
-/* Then come all other overlay elements, that do not have other arbitrary 
- * components inside them (from v-filterselect-suggestpopup onwards) */
-.v-app,
-.v-window,
-.v-popupview-popup,
-.v-tooltip,
-.v-app input,
-.v-app select,
-.v-app button,
-.v-app textarea,
-.v-window input,
-.v-window select,
-.v-window button,
-.v-window textarea,
-.v-popupview-popup input,
-.v-popupview-popup select,
-.v-popupview-popup button,
-.v-popupview-popup textarea,
-.v-filterselect-suggestpopup,
-.v-datefield-popup,
-.v-contextmenu,
-.v-Notification,
-.v-menubar-submenu,
-.v-table-header-drag,
-.v-menubar-submenu,
-.v-drag-element {
+.chameleon.v-app, .chameleon .v-window, .chameleon .v-popupview-popup, .chameleon .v-tooltip, .chameleon.v-app input, .chameleon.v-app select, .chameleon.v-app button, .chameleon.v-app textarea, .chameleon .v-window input, .chameleon .v-window select, .chameleon .v-window button, .chameleon .v-window textarea, .chameleon .v-popupview-popup input, .chameleon .v-popupview-popup select, .chameleon .v-popupview-popup button, .chameleon .v-popupview-popup textarea, .chameleon .v-filterselect-suggestpopup, .chameleon .v-datefield-popup, .chameleon .v-contextmenu, .chameleon .v-Notification, .chameleon .v-menubar-submenu, .chameleon .v-table-header-drag, .chameleon .v-menubar-submenu, .chameleon .v-drag-element {
 	font-family: Arial, Helvetica, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;
 	font-size: 13px;
 	line-height: 1.4;
 	color: #222;
-	}
+}
 
-
-
-/*******************************************************************************
- * Generic overlay elements
- ******************************************************************************/
-.v-window,
-.v-popupview-popup,
-.v-filterselect-suggestpopup,
-.v-datefield-popup,
-.v-contextmenu,
-.v-Notification,
-.v-menubar-submenu {
+.chameleon .v-window, .chameleon .v-popupview-popup, .chameleon .v-filterselect-suggestpopup, .chameleon .v-datefield-popup, .chameleon .v-contextmenu, .chameleon .v-Notification, .chameleon .v-menubar-submenu {
 	background: #fff url(img/grad-light-top.png) repeat-x;
-	background-color: rgba(255,255,255,.85);
+	background-color: rgba(255, 255, 255, 0.85);
 	border: 1px solid #adadad;
-	border-color: rgba(0,0,0,.4);
+	border-color: rgba(0, 0, 0, 0.4);
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	overflow: hidden;
-	}
+}
 
-.v-ie6 .v-window,
-.v-ie6 .v-popupview-popup,
-.v-ie6 .v-filterselect-suggestpopup,
-.v-ie6 .v-datefield-popup,
-.v-ie6 .v-contextmenu,
-.v-ie6 .v-Notification,
-.v-ie6 .v-menubar-submenu {
-	background-image: none;
-	}
-
-.v-filterselect-suggestpopup,
-.v-contextmenu,
-.v-menubar-submenu {
+.chameleon .v-filterselect-suggestpopup, .chameleon .v-contextmenu, .chameleon .v-menubar-submenu {
 	padding: 3px 0;
-	}
+}
 
-.v-contextmenu .gwt-MenuItem,
-.v-filterselect-suggestpopup .gwt-MenuItem,
-.v-menubar-submenu .v-menubar-menuitem {
-	padding: .05em .7em;
+.chameleon .v-contextmenu .gwt-MenuItem, .chameleon .v-filterselect-suggestpopup .gwt-MenuItem, .chameleon .v-menubar-submenu .v-menubar-menuitem {
+	padding: 0.05em 0.7em;
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	cursor: default;
-	}
+}
 
-.v-contextmenu td.gwt-MenuItem-selected div,
-.v-filterselect-suggestpopup td.gwt-MenuItem-selected,
-.v-table .v-table-body .v-selected,
-.v-menubar-submenu span.v-menubar-menuitem-selected {
+.chameleon .v-contextmenu td.gwt-MenuItem-selected div, .chameleon .v-filterselect-suggestpopup td.gwt-MenuItem-selected, .chameleon .v-table .v-table-body .v-selected, .chameleon .v-menubar-submenu span.v-menubar-menuitem-selected {
 	text-shadow: none;
-	}
+}
 
-.v-contextmenu .gwt-MenuItem-selected,
-.v-filterselect-suggestpopup .gwt-MenuItem-selected,
-.v-table .v-selected,
-.v-menubar-submenu .v-menubar-menuitem-selected {
+.chameleon .v-contextmenu .gwt-MenuItem-selected, .chameleon .v-filterselect-suggestpopup .gwt-MenuItem-selected, .chameleon .v-table .v-selected, .chameleon .v-menubar-submenu .v-menubar-menuitem-selected {
 	background-color: #333;
-	}
+}
 
-.v-contextmenu .gwt-MenuItem-selected div {
+.chameleon .v-contextmenu .gwt-MenuItem-selected div {
 	background: transparent;
-	}
+}
 
-
-/*******************************************************************************
- * Misc. generics
- ******************************************************************************/
-.v-errorindicator {
-	width: 13px;
-	height: 1.4em;
-	background: transparent url(img/error-indicator.png) no-repeat right 50%;
-	}
-
-.v-caption-small .v-errorindicator {
-	height: 1.2em;
-	}
-
-.v-caption-big .v-errorindicator {
-	height: 1.8em;
-	}
-
-.v-tooltip .v-errormessage {
+.chameleon .v-tooltip .v-errormessage {
 	color: #b2320b;
 	padding-left: 14px;
 	background: transparent url(img/error-indicator.png) no-repeat 0 50%;
-	}
+}
 
+.chameleon .v-errorindicator {
+	width: 13px;
+	height: 1.4em;
+	background: transparent url(img/error-indicator.png) no-repeat right 50%;
+}
 
-.v-accordion {
+.chameleon .v-caption-small .v-errorindicator {
+	height: 1.2em;
+}
+
+.chameleon .v-caption-big .v-errorindicator {
+	height: 1.8em;
+}
+
+.chameleon .v-accordion {
 	border: 1px solid #b3b3b3;
-	}
+}
 
-.v-accordion-item-open {
+.chameleon .v-accordion-item-open {
 	border-bottom: 1px solid #b3b3be;
-	}
+}
 
-.v-accordion-item-caption,
-.v-accordion-item-open .v-accordion-item-caption:active {
+.chameleon .v-accordion-item-caption, .chameleon .v-accordion-item-open .v-accordion-item-caption:active {
 	padding: 0;
 	background: transparent url(img/grad-light-top.png) repeat-x;
 	border-width: 0 0 1px 0;
 	border-style: solid none;
-	}
-	
-.v-ie6 .v-accordion-item-caption {
-	background-image: none;
-	}
+}
 
-div.v-accordion-item-caption,
-div.v-accordion-item-open .v-accordion-item-caption:active {
+.chameleon div.v-accordion-item-caption, .chameleon div.v-accordion-item-open .v-accordion-item-caption:active {
 	background-color: transparent;
-	}
+}
 
-.v-accordion-item-caption .v-caption {
-	padding: .2em .9em;
-	}
+.chameleon .v-accordion-item-caption .v-caption {
+	padding: 0.2em 0.9em;
+}
 
-.v-accordion-item-caption:active {
+.chameleon .v-accordion-item-caption:active {
 	background-image: url(img/grad-dark-bottom.png);
 	background-position: left bottom;
-	}
+}
 
-/*******************************************************************************
- * Opaque
- ******************************************************************************/
-.v-accordion-opaque {
+.chameleon .v-accordion-opaque {
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	}
+}
 
-.v-accordion-opaque .v-accordion-item-caption,
-.v-accordion-opaque .v-accordion-item-open {
-	border-none;
-	}
+.chameleon .v-accordion-opaque .v-accordion-item-caption, .chameleon .v-accordion-opaque .v-accordion-item-open {
+	border: none;
+}
 
-.v-accordion-opaque .v-accordion-item-caption,
-.v-accordion-opaque .v-accordion-item-open .v-accordion-item-caption:active {
+.chameleon .v-accordion-opaque .v-accordion-item-caption, .chameleon .v-accordion-opaque .v-accordion-item-open .v-accordion-item-caption:active {
 	background-color: #b8b8b8;
-	}
+}
 
-.v-accordion-opaque .v-accordion-item-open {
+.chameleon .v-accordion-opaque .v-accordion-item-open {
 	background-color: #fff;
-	}
+}
 
-.v-accordion-opaque .v-accordion-item-first,
-.v-accordion-opaque .v-accordion-item-first .v-accordion-item-caption {
+.chameleon .v-accordion-opaque .v-accordion-item-first, .chameleon .v-accordion-opaque .v-accordion-item-first .v-accordion-item-caption {
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
 	-moz-border-radius-topleft: 3px;
 	-moz-border-radius-topright: 3px;
 	overflow: hidden;
-	}
+}
 
-
-/*******************************************************************************
- * Borderless
- ******************************************************************************/
-.v-accordion-borderless {
+.chameleon .v-accordion-borderless {
 	border: none;
-	}
+}
 
-.v-accordion-opaque.borderless,
-.v-accordion-opaque.borderless .v-accordion-item-first .v-accordion-item-caption {
+.chameleon .v-accordion-opaque.borderless, .chameleon .v-accordion-opaque.borderless .v-accordion-item-first .v-accordion-item-caption {
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
-	}
+}
 
-.v-button:active,
-.v-ie7 .v-pressed.v-button,
-.v-ie8 .v-pressed.v-button,
-div.v-button-down {
+.chameleon .v-button:active, .v-ie8 .chameleon .v-pressed.v-button, .chameleon div.v-button-down {
 	background-image: url(img/grad-dark-bottom2.png);
 	background-color: #afafaf;
-	}
+}
 
-.v-button:active .v-button-wrap,
-.v-ie7 .v-pressed.v-button .v-button-wrap,
-.v-ie8 .v-pressed.v-button .v-button-wrap,
-.v-button-down .v-button-wrap {
+.chameleon .v-button:active .v-button-wrap, .v-ie8 .chameleon .v-pressed.v-button .v-button-wrap, .chameleon .v-button-down .v-button-wrap {
 	background-image: url(img/grad-dark-top2.png);
 	border: 1px solid #888;
 	padding: 3px 12px;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	}
+}
 
-div.v-button-down .v-button-wrap {
+.chameleon div.v-button-down .v-button-wrap {
 	background-image: url(img/grad-dark-top2.png);
-	}
+}
 
-.v-ie6 div.v-button-down .v-button-wrap {
-	background-image: none;
-	}
-
-.v-button {
+.chameleon .v-button {
 	overflow: hidden;
-	}
+}
 
-.v-button,
-.v-disabled.v-button:focus,
-.v-disabled.v-button:active {
+.chameleon .v-button, .chameleon .v-disabled.v-button:focus, .chameleon .v-disabled.v-button:active {
 	border: 1px solid #8b8b8b;
 	background: #c9c9c9;
 	border-radius: 3px;
 	background: #c9c9c9 url(img/grad-dark-bottom.png) repeat-x left bottom;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.2);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.2);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 	text-shadow: 0 1px 0 #fff;
 	padding: 0;
-	}
+}
 
-.v-button-wrap,
-.v-disabled:active .v-button-wrap {
+.chameleon .v-button-wrap, .chameleon .v-disabled:active .v-button-wrap {
 	display: block;
 	padding: 4px 13px;
 	border: none;
@@ -2823,127 +3172,71 @@ div.v-button-down .v-button-wrap {
 	height: 100%;
 	text-overflow: ellipsis;
 	-ms-text-overflow: ellipsis;
-	}
+}
 
-.v-sa .v-button,
-.v-sa .v-button-wrap,
-.v-ff .v-button,
-.v-ff .v-button-wrap {
+.v-sa .chameleon .v-button, .v-sa .chameleon .v-button-wrap, .v-ff .chameleon .v-button, .v-ff .chameleon .v-button-wrap {
 	overflow: hidden;
-	}
-	
-body.v-ie6 .v-button {
-	background-image: none;
-	}
+}
 
-body.v-ie6 .v-button .v-button-wrap {
-	background-image: none;
-	display: inline;
-	zoom: 1;
-	}
-
-.v-button:focus {
+.chameleon .v-button:focus {
 	outline: none;
-	}
+}
 
-.v-button .v-icon {
+.chameleon .v-button .v-icon {
 	margin-left: -0.5em;
-	}
+}
 
-.v-button .v-button-caption {
+.chameleon .v-button .v-button-caption {
 	line-height: 1.26;
-	}
+}
 
+.chameleon .v-button-big {
+	font-size: 15.6px;
+}
 
-/*******************************************************************************
- * Big
- ******************************************************************************/
-.v-button-big {
-	font-size: 1.2em;
-	}
-
-
-/*******************************************************************************
- * Small
- ******************************************************************************/
-.v-button-small {
-	font-size: 0.85em;
+.chameleon .v-button-small {
+	font-size: 11.05px;
 	font-weight: normal;
-	}
+}
 
-.v-button-small .v-button-wrap {
+.chameleon .v-button-small .v-button-wrap {
 	padding: 3px 11px;
-	}
+}
 
-.v-button-small:active .v-button-wrap,
-.v-ie7 .v-button-small.v-pressed .v-button-wrap,
-.v-ie8 .v-button-small.v-pressed .v-button-wrap,
-.v-button-down.small .v-button-wrap {
+.chameleon .v-button-small:active .v-button-wrap, .v-ie8 .chameleon .v-button-small.v-pressed .v-button-wrap, .chameleon .v-button-down.small .v-button-wrap {
 	padding: 2px 10px;
-	}
+}
 
-.v-button-small .v-icon {
+.chameleon .v-button-small .v-icon {
 	margin-top: -4px;
 	margin-bottom: -4px;
-	}
+}
 
-
-/*******************************************************************************
- * Wide
- ******************************************************************************/
-.v-button-wide .v-button-wrap {
+.chameleon .v-button-wide .v-button-wrap {
 	padding-left: 26px;
 	padding-right: 26px;
-	}
+}
 
-.v-button-wide:active .v-button-wrap,
-.v-ie7 .v-button-wide.v-pressed .v-button-wrap,
-.v-ie8 .v-button-wide.v-pressed .v-button-wrap {
+.chameleon .v-button-wide:active .v-button-wrap, .v-ie8 .chameleon .v-button-wide.v-pressed .v-button-wrap {
 	padding-left: 25px;
 	padding-right: 25px;
-	}
+}
 
-
-/*******************************************************************************
- * Tall
- ******************************************************************************/
-.v-button-tall .v-button-wrap {
+.chameleon .v-button-tall .v-button-wrap {
 	padding-top: 13px;
 	padding-bottom: 13px;
-	}
+}
 
-.v-button-tall:active .v-button-wrap,
-.v-ie7 .v-button-tall.v-pressed .v-button-wrap,
-.v-ie8 .v-button-tall.v-pressed .v-button-wrap {
+.chameleon .v-button-tall:active .v-button-wrap, .v-ie8 .chameleon .v-button-tall.v-pressed .v-button-wrap {
 	padding-top: 12px;
 	padding-bottom: 12px;
-	}
+}
 
-
-/*******************************************************************************
- * Default
- ******************************************************************************/
-.v-button-default,
-.v-disabled.v-button-default:focus {
+.chameleon .v-button-default, .chameleon .v-disabled.v-button-default:focus {
 	font-weight: bold;
-	}
+}
 
-
-/*******************************************************************************
- * Link & borderless
- ******************************************************************************/
-div.v-button-link,
-div.v-button-link:focus,
-.v-button-link:active,
-div.v-disabled.v-button-link,
-div.v-disabled.v-button-link:focus,
-body.v-ie .v-pressed.v-button-link,
-div.v-button-borderless,
-div.v-button-borderless:focus,
-.v-button-borderless:active,
-div.v-disabled.v-button-borderless,
-div.v-disabled.v-button-borderless:focus,
-body.v-ie .v-pressed.v-button-borderless {
+.chameleon div.v-button-link, .chameleon div.v-button-link:focus, .chameleon .v-button-link:active, .chameleon div.v-disabled.v-button-link, .chameleon div.v-disabled.v-button-link:focus, body.v-ie .chameleon .v-pressed.v-button-link, .chameleon div.v-button-borderless, .chameleon div.v-button-borderless:focus, .chameleon .v-button-borderless:active, .chameleon div.v-disabled.v-button-borderless, .chameleon div.v-disabled.v-button-borderless:focus, body.v-ie .chameleon .v-pressed.v-button-borderless {
 	background: transparent;
 	font-weight: normal;
 	text-shadow: none;
@@ -2951,25 +3244,13 @@ body.v-ie .v-pressed.v-button-borderless {
 	margin: 1px;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
-	}
+}
 
-.v-button-link .v-button-wrap,
-.v-button-borderless .v-button-wrap {
+.chameleon .v-button-link .v-button-wrap, .chameleon .v-button-borderless .v-button-wrap {
 	display: inline;
-	}
+}
 
-div.v-button-link .v-button-wrap,
-div.v-button-link:focus .v-button-wrap,
-.v-button-link:active .v-button-wrap,
-div.v-disabled.v-button-link .v-button-wrap,
-div.v-disabled.v-button-link:focus .v-button-wrap,
-body.v-ie .v-pressed.v-button-link .v-button-wrap,
-div.v-button-borderless .v-button-wrap,
-div.v-button-borderless:focus .v-button-wrap,
-.v-button-borderless:active .v-button-wrap,
-div.v-disabled.v-button-borderless .v-button-wrap,
-div.v-disabled.v-button-borderless:focus .v-button-wrap,
-body.v-ie .v-pressed.v-button-borderless .v-button-wrap {
+.chameleon div.v-button-link .v-button-wrap, .chameleon div.v-button-link:focus .v-button-wrap, .chameleon .v-button-link:active .v-button-wrap, .chameleon div.v-disabled.v-button-link .v-button-wrap, .chameleon div.v-disabled.v-button-link:focus .v-button-wrap, body.v-ie .chameleon .v-pressed.v-button-link .v-button-wrap, .chameleon div.v-button-borderless .v-button-wrap, .chameleon div.v-button-borderless:focus .v-button-wrap, .chameleon .v-button-borderless:active .v-button-wrap, .chameleon div.v-disabled.v-button-borderless .v-button-wrap, .chameleon div.v-disabled.v-button-borderless:focus .v-button-wrap, body.v-ie .chameleon .v-pressed.v-button-borderless .v-button-wrap {
 	background: transparent;
 	font-weight: normal;
 	text-shadow: none;
@@ -2977,285 +3258,217 @@ body.v-ie .v-pressed.v-button-borderless .v-button-wrap {
 	padding: 1px;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
-	}
+}
 
-.v-button-link:focus .v-button-caption,
-.v-button-borderless:focus .v-button-caption {
+.chameleon .v-button-link:focus .v-button-caption, .chameleon .v-button-borderless:focus .v-button-caption {
 	border: 1px dotted gray;
 	margin: -1px;
-	}
+}
 
-.v-button-link:active .v-button-caption,
-.v-button-borderless:active .v-button-caption {
+.chameleon .v-button-link:active .v-button-caption, .chameleon .v-button-borderless:active .v-button-caption {
 	border: none;
 	margin: 0;
-	}
+}
 
-.v-button-borderless:active .v-icon {
-	opacity: .6;
-	}
+.chameleon .v-button-borderless:active .v-icon {
+	opacity: 0.6;
+}
 
-.v-button-link .v-icon,
-.v-button-borderless .v-icon {
+.chameleon .v-button-link .v-icon, .chameleon .v-button-borderless .v-icon {
 	margin-left: 0;
-	}
+}
 
-
-/*******************************************************************************
- * Icon-on-top
- ******************************************************************************/
-.v-button-icon-on-top.v-button-borderless:focus .v-button-caption {
+.chameleon .v-button-icon-on-top.v-button-borderless:focus .v-button-caption {
 	margin-top: 1px;
-	}
+}
 
-.v-button-icon-on-top .v-button-caption,
-.v-button-icon-on-top:focus .v-button-caption,
-.v-button-icon-on-top.v-button-borderless:active .v-button-caption {
+.chameleon .v-button-icon-on-top .v-button-caption, .chameleon .v-button-icon-on-top:focus .v-button-caption, .chameleon .v-button-icon-on-top.v-button-borderless:active .v-button-caption {
 	display: block;
 	margin-top: 2px;
-	}
+}
 
-.v-button-icon-on-top .v-icon {
+.chameleon .v-button-icon-on-top .v-icon {
 	margin: 0;
-	}
+}
 
-
-/*******************************************************************************
- * Icon-on-right
- ******************************************************************************/
-.v-button-icon-on-right .v-icon {
+.chameleon .v-button-icon-on-right .v-icon {
 	float: right;
 	margin-left: 3px;
 	margin-right: -0.5em;
-	}
-	
-.v-ie6 .v-button-icon-on-right,
-.v-ie7 .v-button-icon-on-right {
-	position: relative;
-	}
+}
 
-.v-ie6 .v-button-icon-on-right .v-button-caption,
-.v-ie7 .v-button-icon-on-right .v-button-caption {
-	padding-right: 14px;
-	}
-
-.v-ie6 .v-button-icon-on-right .v-icon,
-.v-ie7 .v-button-icon-on-right .v-icon {
-	position: absolute;
-	right: 0;
-	margin: 0;
-	}
-
-/*******************************************************************************
- * Icon-only
- ******************************************************************************/
-.v-button-icon-only .v-button-caption {
+.chameleon .v-button-icon-only .v-button-caption {
 	display: none;
-	}
+}
 
-.v-button-icon-only .v-icon {
-	margin-right: -.5em;
-	}
+.chameleon .v-button-icon-only .v-icon {
+	margin-right: -0.5em;
+}
 
-/*******************************************************************************
- * Different headers
- ******************************************************************************/
-.v-label-h1,
-.v-label h1,
-.v-label-h2,
-.v-label h2,
-.v-label-h3,
-.v-label h3,
-.v-label-h4,
-.v-label h4 {
+.chameleon .v-colorpicker-button-color {
+	border: 1px solid #8B8B8B;
+}
+
+.chameleon .v-colorpicker-popup {
+	width: 248px;
+}
+
+.chameleon .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 308px;
+}
+
+.chameleon .v-label-h1, .chameleon .v-label h1, .chameleon .v-label-h2, .chameleon .v-label h2, .chameleon .v-label-h3, .chameleon .v-label h3, .chameleon .v-label-h4, .chameleon .v-label h4 {
 	margin: 0;
 	font-weight: bold;
-	}
+}
 
-.v-label-h1,
-.v-label h1 {
-	padding: .75em 0 .5em 0;
-	font-size: 1.85em;
-	}
+.chameleon .v-label-h1, .chameleon .v-label h1 {
+	padding: 0.75em 0 0.5em 0;
+	font-size: 24.05px;
+}
 
-.v-label-h2,
-.v-label h2 {
-	padding: .67em 0 .33em 0;
-	font-size: 1.4em;
-	}
+.chameleon .v-label-h2, .chameleon .v-label h2 {
+	padding: 0.67em 0 0.33em 0;
+	font-size: 18.2px;
+}
 
-.v-label-h3,
-.v-label h3 {
-	margin: .71em 0 .29em 0;
-	font-size: 1.1em;
-	}
+.chameleon .v-label-h3, .chameleon .v-label h3 {
+	margin: 0.71em 0 0.29em 0;
+	font-size: 14.3px;
+}
 
-.v-label-h4,
-.v-label h4 {
-	padding: .23em 0;
-	font-size: 1em;
-	}
+.chameleon .v-label-h4, .chameleon .v-label h4 {
+	padding: 0.23em 0;
+	font-size: 13px;
+}
 
+.chameleon .v-label-big {
+	font-size: 15.6px;
+}
 
-/*******************************************************************************
- * Big
- ******************************************************************************/
-.v-label-big {
-	font-size: 1.2em;
-	}
-
-
-/*******************************************************************************
- * Small
- ******************************************************************************/
-.v-label-small {
-	font-size: 0.9em;
+.chameleon .v-label-small {
+	font-size: 11.7px;
 	line-height: 1.3;
-	opacity: .8;
+	opacity: 0.8;
 	filter: alpha(opacity=80);
-	}
+}
 
-
-/*******************************************************************************
- * Tiny
- ******************************************************************************/
-.v-label-tiny {
-	font-size: 0.85em;
+.chameleon .v-label-tiny {
+	font-size: 11.05px;
 	line-height: 1.2;
-	opacity: .7;
+	opacity: 0.7;
 	filter: alpha(opacity=70);
-	}
+}
 
-
-/*******************************************************************************
- * Warning & error
- ******************************************************************************/
-body .v-label-warning,
-body .v-label-error {
+.chameleon.v-app .v-label-warning, .chameleon.v-app .v-label-error {
 	color: #574734;
-	background: #fffec8 url(img/label-warning-icon.png) no-repeat .2em 50%;
+	background: #fffec8 url(img/label-warning-icon.png) no-repeat 0.2em 50%;
 	white-space: nowrap;
-	padding: .3em 1em .3em 2.4em;
+	padding: 0.3em 1em 0.3em 2.4em;
 	overflow: hidden;
 	width: auto !important;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	text-shadow: none;
-	}
+}
 
-body .v-label-error {
+.chameleon.v-app .v-label-error {
 	color: #fff;
 	font-weight: bold;
-	background: #c22f24 url(img/label-error-icon.png) no-repeat .2em 50%;
+	background: #c22f24 url(img/label-error-icon.png) no-repeat 0.2em 50%;
 	text-shadow: 0 1px 0 #8f2e27;
-	}
+}
 
-
-/*******************************************************************************
- * Big warning & big error
- ******************************************************************************/
-.v-label-big.v-label-warning,
-.v-label-big.v-label-error {
+.chameleon .v-label-big.v-label-warning, .chameleon .v-label-big.v-label-error {
 	background-image: url(img/label-warning-icon-big.png);
 	background-position: 0 50%;
-	padding: .5em 1em .5em 3em;
-	}
+	padding: 0.5em 1em 0.5em 3em;
+}
 
-.v-label-big.v-label-error {
+.chameleon .v-label-big.v-label-error {
 	background-image: url(img/label-error-icon-big.png);
-	}
+}
 
-
-/*******************************************************************************
- * Loading
- ******************************************************************************/
-body .v-label-loading {
+.chameleon.v-app .v-label-loading {
 	height: 32px;
 	line-height: 32px;
 	background-image: url(../base/common/img/loading-indicator.gif);
 	background-repeat: no-repeat;
 	background-position: 0 50%;
 	white-space: nowrap;
-	padding: .3em 1em .3em 36px;
+	padding: 0.3em 1em 0.3em 36px;
 	overflow: hidden;
 	width: auto !important;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	}
+}
 
-.v-menubar {
-	padding: 0 .4em;
+.chameleon .v-menubar {
+	padding: 0 0.4em;
 	background: #c9c9c9 url(img/grad-light-top.png) repeat-x;
 	border: 1px solid #b3b3b3;
 	border-width: 1px 0;
-	}
+}
 
-.v-ie6 .v-menubar {
-	background-image: none;
-	}
-
-.v-menubar .v-menubar-menuitem {
-	padding: .2em .5em;
+.chameleon .v-menubar .v-menubar-menuitem {
+	padding: 0.2em 0.5em;
 	line-height: normal;
-	}
+}
 
-.v-menubar-submenu .v-menubar-menuitem {
-	padding-right:1.5em;
-	}
+.chameleon .v-menubar-submenu .v-menubar-menuitem {
+	padding-right: 1.5em;
+}
 
-.v-menubar-submenu .v-menubar-submenu-indicator {
-	margin-top: .1em;
-	}
+.chameleon .v-menubar-submenu .v-menubar-submenu-indicator {
+	margin-top: 0.1em;
+	font-size: 11.7px;
+}
 
-.v-menubar-submenu .v-menubar-menuitem-selected {
+.chameleon .v-menubar-submenu .v-menubar-menuitem-selected {
 	background-image: url(img/grad-light-top2.png);
 	background-position: 0 -1px;
-	}
+}
 
-.v-ie6 .v-menubar-submenu .v-menubar-menuitem-selected {
-	background-image: none;
-	}
-
-div.v-Notification {
+.chameleon div.v-Notification {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
-	font-size: 100%;
-	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,.7);
-	-moz-box-shadow: 0 2px 5px rgba(0,0,0,.7);
-	box-shadow: 0 2px 5px rgba(0,0,0,.7);
-	}
+	font-size: 16px;
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
 
-.v-Notification p {
+.chameleon .v-Notification p {
 	line-height: 1.3;
-	}
+}
 
-div.v-Notification-warning {
+.chameleon div.v-Notification-warning {
 	background-color: #fffec8;
 	color: #574734;
 	border: 2px solid #fee3af;
-	}
+}
 
-div.v-Notification-warning h1 {
+.chameleon div.v-Notification-warning h1 {
 	padding-left: 44px;
 	background: transparent url(img/label-warning-icon-big.png) no-repeat 0 50%;
-	}
+}
 
-div.v-Notification-error {
+.chameleon div.v-Notification-error {
 	color: #fff;
-	text-shadow: 0 1px 2px rgba(0,0,0,.3);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 	background: #c22f24 url(img/error-close.png) no-repeat right top;
 	border: 2px solid #ca3030;
-	}
+}
 
-div.v-Notification-error h1 {
+.chameleon div.v-Notification-error h1 {
 	padding-left: 44px;
 	background: transparent url(img/label-error-icon-big.png) no-repeat 0 50%;
-	}
+}
 
-div.v-Notification-tray {
+.chameleon div.v-Notification-tray {
 	color: #fff;
 	margin: 0 5px 5px 0;
 	background: #3b3b3b url(img/grad-light-top2.png) repeat-x;
@@ -3264,91 +3477,73 @@ div.v-Notification-tray {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	text-shadow: 0 1px 1px rgba(0,0,0,.5);
-	}
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
 
-.v-ie6 .v-Notification-tray {
-	background-image: none;
-	}
-
-.v-Notification-tray h1 {
+.chameleon .v-Notification-tray h1 {
 	font-size: 14px;
 	line-height: 18px;
-	}
+}
 
-.v-Notification-tray p {
+.chameleon .v-Notification-tray p {
 	font-size: 12px;
 	font-weight: normal;
-	}
+}
 
-div.v-Notification-system {
+.chameleon div.v-Notification-system {
 	color: #fff;
 	border: none;
 	background-color: #b40000;
-	}
+}
 
-.v-panel-caption {
+.chameleon .v-panel-caption {
 	background: #b9dcff;
-	font-size: 1.2em;
+	font-size: 15.6px;
 	border: 1px solid #b3b3b3;
 	border-bottom: none;
-	padding: .2em .6em;
-	}
+	padding: 0.2em 0.6em;
+}
 
-.v-panel-nocaption {
+.chameleon .v-panel-nocaption {
 	padding: 0;
 	height: 0;
 	overflow: hidden;
 	border-top: 1px solid #b3b3b3;
-	}
+}
 
-.v-panel-content {
+.chameleon .v-panel-content {
 	background: #fff;
 	border: 1px solid #b3b3b3;
 	border-top: none;
 	border-bottom: none;
-	}
+}
 
-.v-panel-deco {
+.chameleon .v-panel-deco {
 	height: 0;
 	overflow: hidden;
 	border-top: 1px solid #b3b3b3;
-	}
+}
 
-
-/*******************************************************************************
- * Borderless
- ******************************************************************************/
-div.v-panel-caption-borderless {
+.chameleon div.v-panel-caption-borderless {
 	border: none;
-	}
+}
 
-div.v-panel-nocaption-borderless,
-div.v-panel-content-borderless,
-div.v-panel-deco-borderless {
+.chameleon div.v-panel-nocaption-borderless, .chameleon div.v-panel-content-borderless, .chameleon div.v-panel-deco-borderless {
 	border: none;
 	background: transparent;
-	}
+}
 
-
-/*******************************************************************************
- * Light
- ******************************************************************************/
-.v-panel-light .v-panel-caption-light {
+.chameleon .v-panel-light .v-panel-caption-light {
 	background: transparent;
 	font-weight: normal;
 	border-bottom: 1px solid #b3b3b3;
-	}
+}
 
-div.v-panel-content-light {
+.chameleon div.v-panel-content-light {
 	background: transparent;
-	}
+}
 
-
-/*******************************************************************************
- * Bubble
- ******************************************************************************/
-.v-panel-bubble .v-panel-captionwrap {
+.chameleon .v-panel-bubble .v-panel-captionwrap {
 	border: 1px solid #b3b3b3;
 	border-bottom: none;
 	background: #fff;
@@ -3358,35 +3553,31 @@ div.v-panel-content-light {
 	-moz-border-radius-topright: 4px;
 	padding: 1px 2px;
 	overflow: hidden;
-	}
+}
 
-.v-panel-bubble .v-panel-caption-bubble {
+.chameleon .v-panel-bubble .v-panel-caption-bubble {
 	border: none;
 	background-image: url(img/grad-light-top.png);
 	background-repeat: repeat-x;
 	background-position: 0 -1px;
 	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.4);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	margin: 1px 0;
-	font-size: 1em;
+	font-size: 13px;
 	line-height: 1.2;
-	padding: .3em .6em;
-	}
+	padding: 0.3em 0.6em;
+}
 
-.v-ie6 .v-panel-bubble .v-panel-caption-bubble {
-	background-image: none;
-	}
-
-.v-panel-nocaption-bubble {
+.chameleon .v-panel-nocaption-bubble {
 	padding: 0;
 	margin: 0;
 	border: none;
-	}
+}
 
-.v-panel-deco-bubble {
+.chameleon .v-panel-deco-bubble {
 	height: 2px;
 	border: 1px solid #b3b3b3;
 	border-top: none;
@@ -3395,28 +3586,23 @@ div.v-panel-content-light {
 	-webkit-border-bottom-right-radius: 4px;
 	-moz-border-radius-bottomleft: 4px;
 	-moz-border-radius-bottomright: 4px;
-	}
+}
 
-
-/*******************************************************************************
- * Borderless Bubble
- ******************************************************************************/
-div.v-panel-borderless .v-panel-captionwrap,
-div.v-panel-borderless .v-panel-deco-bubble {
+.chameleon div.v-panel-borderless .v-panel-captionwrap, .chameleon div.v-panel-borderless .v-panel-deco-bubble {
 	border: none;
 	padding: 0;
 	background: transparent;
-	}
+}
 
-div.v-panel-borderless .v-panel-content-bubble {
+.chameleon div.v-panel-borderless .v-panel-content-bubble {
 	background: transparent;
-	}
+}
 
-.v-popupview-popup {
-	padding: .3em .4em;
-	}
+.chameleon .v-popupview-popup {
+	padding: 0.3em 0.4em;
+}
 
-.v-progressindicator-wrapper {
+.chameleon .v-progressindicator-wrapper {
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -3424,9 +3610,9 @@ div.v-panel-borderless .v-panel-content-bubble {
 	overflow: visible;
 	font-size: 1px;
 	line-height: 1px;
-	}
+}
 
-.v-progressindicator-indicator {
+.chameleon .v-progressindicator-indicator {
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -3434,88 +3620,69 @@ div.v-panel-borderless .v-panel-content-bubble {
 	margin: -1px;
 	height: 7px;
 	border: 1px solid #b3b3b3;
-	}
+}
 
-.v-ie6 .v-progressindicator-wrapper,
-.v-ie6 .v-progressindicator-indicator {
-	background-image: none;
-	}
-
-
-/*******************************************************************************
- * Small
- ******************************************************************************/
-.v-progressindicator-small {
+.chameleon .v-progressindicator-small {
 	width: 110px;
-	}
+}
 
-.v-progressindicator-small .v-progressindicator-wrapper,
-.v-progressindicator-small .v-progressindicator-indicator {
+.chameleon .v-progressindicator-small .v-progressindicator-wrapper, .chameleon .v-progressindicator-small .v-progressindicator-indicator {
 	height: 2px;
 	border-radius: 1px;
 	-webkit-border-radius: 1px;
 	-moz-border-radius: 1px;
-	}
+}
 
-
-/*******************************************************************************
- * Big
- ******************************************************************************/
-.v-progressindicator-big {
+.chameleon .v-progressindicator-big {
 	width: 250px;
-	}
+}
 
-.v-progressindicator-big .v-progressindicator-wrapper,
-.v-progressindicator-big .v-progressindicator-indicator {
+.chameleon .v-progressindicator-big .v-progressindicator-wrapper, .chameleon .v-progressindicator-big .v-progressindicator-indicator {
 	height: 14px;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	}
+}
 
-
-/*******************************************************************************
- * Indeterminates
- ******************************************************************************/
-.v-progressindicator-indeterminate.v-progressindicator-big {
+.chameleon .v-progressindicator-indeterminate.v-progressindicator-big {
 	width: 42px;
 	height: 42px;
 	background: #fff url(../base/common/img/ajax-loader-big.gif) no-repeat 50%;
-	}
+}
 
-.v-progressindicator-indeterminate.v-disabled {
+.chameleon .v-progressindicator-indeterminate.v-disabled {
 	display: none;
-	}
+}
 
-.v-progressindicator-indeterminate.v-progressindicator-bar {
+.chameleon .v-progressindicator-indeterminate.v-progressindicator-bar {
 	display: block;
 	width: 150px;
 	height: 9px;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	}
+}
 
-.v-progressindicator-indeterminate.bar.v-progressindicator-small {
+.chameleon .v-progressindicator-indeterminate.bar.v-progressindicator-small {
 	width: 110px;
 	height: 4px;
-	}
+}
 
-.v-progressindicator-indeterminate.bar.v-progressindicator-big {
+.chameleon .v-progressindicator-indeterminate.bar.v-progressindicator-big {
 	width: 200px;
 	height: 16px;
-	}
+}
 
-.v-progressindicator-indeterminate.bar .v-progressindicator-wrapper {
+.chameleon .v-progressindicator-indeterminate.bar .v-progressindicator-wrapper {
 	display: block;
 	background: #fff url(img/indeterminate-progress.gif);
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	overflow: hidden;
-	}
+}
 
-.v-progressindicator-indeterminate.bar .v-progressindicator-indicator {
+.chameleon .v-progressindicator-indeterminate.bar .v-progressindicator-indicator {
 	display: block;
 	background: transparent url(img/grad-light-top.png) repeat-x;
 	border: none;
@@ -3524,26 +3691,26 @@ div.v-panel-borderless .v-panel-content-bubble {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	overflow: hidden;
-	}
+}
 
-.v-progressindicator-indeterminate.bar.v-progressindicator-small .v-progressindicator-indicator {
+.chameleon .v-progressindicator-indeterminate.bar.v-progressindicator-small .v-progressindicator-indicator {
 	background: transparent;
-	}
+}
 
-.v-progressindicator-indeterminate.bar.v-disabled .v-progressindicator-indicator {
+.chameleon .v-progressindicator-indeterminate.bar.v-disabled .v-progressindicator-indicator {
 	background: #fff;
-	}
+}
 
-.v-slider {
+.chameleon .v-slider {
 	border-top: 1px solid #9a9c9e;
 	border-bottom: 1px solid #bdbfc1;
 	margin: 3px 0;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	}
+}
 
-.v-slider-base {
+.chameleon .v-slider-base {
 	height: 4px;
 	background: #e0e2e2 url(img/grad-dark-top2.png) repeat-x;
 	border-top: 1px solid #adb0b1;
@@ -3552,9 +3719,9 @@ div.v-panel-borderless .v-panel-content-bubble {
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	}
+}
 
-.v-slider-handle {
+.chameleon .v-slider-handle {
 	background: #c9c9c9 url(img/grad-dark-bottom2.png) repeat-x left bottom;
 	border: 1px solid #b3b3b3;
 	width: 10px;
@@ -3563,160 +3730,117 @@ div.v-panel-borderless .v-panel-content-bubble {
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.5);
-	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	cursor: pointer;
-	}
+}
 
-.v-slider-handle-active {
+.chameleon .v-slider-handle-active {
 	background-color: #afafaf;
-	}
+}
 
-.v-slider-vertical {
+.chameleon .v-slider-vertical {
 	width: auto;
 	margin: 0 4px;
 	border-width: 0 1px;
-	}
+}
 
-.v-ie6 .v-slider-vertical {
-	width: 6px;
-	}
-
-.v-slider-vertical .v-slider-base {
+.chameleon .v-slider-vertical .v-slider-base {
 	background-image: none;
 	width: 4px;
 	border-width: 1px 1px 0;
-	}
+}
 
-.v-slider-vertical .v-slider-handle {
+.chameleon .v-slider-vertical .v-slider-handle {
 	width: 10px;
 	height: 10px;
 	margin: 0;
 	margin-left: -5px;
-	}
+}
 
-.v-ie6 .v-slider-base,
-.v-ie6 .v-slider-handle {
-	background-image: none;
-	}
-
-.v-splitpanel-hsplitter div,
-.v-splitpanel-vsplitter div {
+.chameleon .v-splitpanel-hsplitter div, .chameleon .v-splitpanel-vsplitter div {
 	background: transparent url(img/split-handle.png) no-repeat 2px 50%;
 	margin: 0 -1px;
 	width: 9px;
-	}
+}
 
-.v-ie6 .v-splitpanel-hsplitter div,
-.v-ie6 .v-splitpanel-vsplitter div {
-	background-image: url(img/split-handle-ie6.png);
-	}
-
-.v-splitpanel-vsplitter div {
+.chameleon .v-splitpanel-vsplitter div {
 	background-position: 50% 2px;
 	margin: -1px 0;
 	width: auto;
 	height: 9px;
-	}
+}
 
-.v-splitpanel-hsplitter,
-.v-splitpanel-hsplitter-locked {
+.chameleon .v-splitpanel-hsplitter, .chameleon .v-splitpanel-hsplitter-locked {
 	border-style: solid;
 	border-width: 0 1px;
 	border-color: #b0b0b0;
 	width: 7px;
 	background: #b3b3b3 url(img/grad-light-left.png) repeat-y;
-	}
+}
 
-.v-splitpanel-vsplitter,
-.v-splitpanel-vsplitter-locked {
+.chameleon .v-splitpanel-vsplitter, .chameleon .v-splitpanel-vsplitter-locked {
 	border-style: solid;
 	border-width: 1px 0;
 	border-color: #b0b0b0;
 	height: 7px;
 	background: #b3b3b3 url(img/grad-light-top.png) repeat-x;
-	}
+}
 
-.v-ie6 .v-splitpanel-hsplitter,
-.v-ie6 .v-splitpanel-hsplitter-locked,
-.v-ie6 .v-splitpanel-vsplitter,
-.v-ie6 .v-splitpanel-vsplitter-locked {
-	background-image: none;
-	}
-
-/*******************************************************************************
- * Small
- ******************************************************************************/
-body .v-splitpanel-hsplitter-small,
-body .v-splitpanel-hsplitter-small-locked {
+.chameleon.v-app .v-splitpanel-hsplitter-small, .chameleon.v-app .v-splitpanel-hsplitter-small-locked {
 	width: 1px;
 	border: none;
 	background-image: none;
-	}
+}
 
-body .v-splitpanel-vsplitter-small,
-body .v-splitpanel-vsplitter-small-locked {
+.chameleon.v-app .v-splitpanel-vsplitter-small, .chameleon.v-app .v-splitpanel-vsplitter-small-locked {
 	height: 1px;
 	border: none;
 	background-image: none;
 	font-size: 1px;
 	line-height: 1px;
-	}
+}
 
-body.v-ie6 .v-splitpanel-vsplitter-small,
-body.v-ie6 .v-splitpanel-vsplitter-small-locked {
-	overflow: hidden;
-	}
-
-.v-splitpanel-hsplitter-small div {
+.chameleon .v-splitpanel-hsplitter-small div {
 	width: 7px;
 	margin-left: -2px;
 	background: transparent;
-	}
+}
 
-.v-splitpanel-vsplitter-small div {
+.chameleon .v-splitpanel-vsplitter-small div {
 	height: 7px;
 	margin-top: -2px;
 	background: transparent;
 	overflow: hidden;
-	}
+}
 
-.v-ie6 .v-splitpanel-hsplitter-small div,
-.v-ie6 .v-splitpanel-vsplitter-small div {
-	background-image: none;
-	}
+.chameleon .v-table-table {
+	line-height: 1.4;
+}
 
-.v-table-header-wrap,
-.v-table-header-drag {
+.chameleon .v-table-header-wrap, .chameleon .v-table-header-drag {
 	background: #c9c9c9 url(img/grad-light-top.png) repeat-x;
 	height: 1.4em;
 	line-height: normal;
-	}
+}
 
-.v-ie6 .v-table-header-wrap,
-.v-ie6 .v-table-header-drag {
-	background-image: none;
-	}
-
-.v-table-caption-container,
-.v-table-header-drag {
-	padding-top: .2em;
+.chameleon .v-table-caption-container, .chameleon .v-table-header-drag {
+	padding-top: 0.2em;
 	padding-right: 4px;
-	}
+}
 
-.v-table-header-drag {
-	padding-left: .3em;
-	}
+.chameleon .v-table-header-drag {
+	padding-left: 0.3em;
+}
 
-.v-table-resizer {
+.chameleon .v-table-resizer {
 	background: transparent;
 	border-right: 1px solid #b3b3b3;
 	padding-left: 1px;
 	height: 1.4em;
-	}
+}
 
-/* Targets the same element as .v-table-resizer */
-div.v-table-focus-slot-left {
+.chameleon div.v-table-focus-slot-left {
 	background: transparent;
 	border-left: 2px solid #b3b3b3;
 	border-right: none;
@@ -3724,273 +3848,201 @@ div.v-table-focus-slot-left {
 	padding-right: 1px;
 	float: left;
 	margin: 0;
-	}
+}
 
-.v-table-row,
-.v-table-row-odd {
+.chameleon .v-table-row, .chameleon .v-table-row-odd {
 	background: transparent;
-	}
+}
 
-.v-table-generated-row {
-    background: #c9c9c9;
-    }
+.chameleon .v-table-generated-row {
+	background: #c9c9c9;
+}
 
-.v-table tr.v-selected {
+.chameleon .v-table tr.v-selected {
 	background-image: url(img/grad-light-top2.png);
 	background-position: 0 -1px;
-	}
+}
 
-.v-ie6 .v-table tr.v-selected {
-	background-image: none;
-	}
-
-div.v-table-focus-slot-right {
+.chameleon div.v-table-focus-slot-right {
 	background: transparent;
 	border-right: 2px solid #b3b3b3;
 	padding-left: 0;
 	margin: 0;
-	}
+}
 
-.v-table-column-selector {
+.chameleon .v-table-column-selector {
 	margin-top: -1.35em;
-	}
+}
 
-.v-table-cell-content {
+.chameleon .v-table-cell-content {
 	border-right: none;
 	padding-right: 7px;
-	}
-	
-.v-table-caption-container .v-icon {
+}
+
+.chameleon .v-table-caption-container .v-icon {
 	vertical-align: middle;
 	margin: -0.37em 2px 0 0;
-	}
+}
 
-.v-table-header-drag .v-icon {
+.chameleon .v-table-header-drag .v-icon {
 	vertical-align: middle;
-	}
+}
 
-/* column selector */
-.v-contextmenu .v-on,
-.v-contextmenu .v-off {
+.chameleon .v-contextmenu .v-on, .chameleon .v-contextmenu .v-off {
 	display: block;
 	background: transparent url(icons/bullet.png) no-repeat 0 4px;
 	padding-left: 12px;
-	}
+}
 
-.v-contextmenu .v-off {
+.chameleon .v-contextmenu .v-off {
 	background-image: none;
 	color: #666;
-	}
+}
 
-.v-contextmenu .gwt-MenuItem-selected .v-on {
+.chameleon .v-contextmenu .gwt-MenuItem-selected .v-on {
 	background-image: url(icons/bullet-white.png);
-	}
+}
 
-.v-table-scrollposition {
-	font-size: 0.9em;
-	opacity: .85;
+.chameleon .v-table-scrollposition {
+	font-size: 11.7px;
+	opacity: 0.85;
 	filter: alpha(opacity=85);
-	}
+}
 
-/*******************************************************************************
- * Small
- ******************************************************************************/
-.v-table-small .v-table-caption-container,
-.v-table-small .v-table-body {
-	font-size: 0.85em;
-	}
+.chameleon .v-table-small .v-table-caption-container, .chameleon .v-table-small .v-table-body {
+	font-size: 11.05px;
+}
 
-.v-table-small .v-table-resizer, 
-.v-table-small .v-table-header-wrap {
+.chameleon .v-table-small .v-table-resizer, .chameleon .v-table-small .v-table-header-wrap {
 	height: 1.2em;
-	}
+}
 
-.v-table-small .v-table-column-selector {
+.chameleon .v-table-small .v-table-column-selector {
 	margin-top: -1.2em;
-	}
+}
 
+.chameleon .v-table-big .v-table-caption-container, .chameleon .v-table-big .v-table-body {
+	font-size: 15.6px;
+}
 
-/*******************************************************************************
- * Big
- ******************************************************************************/
-.v-table-big .v-table-caption-container,
-.v-table-big .v-table-body {
-	font-size: 1.2em;
-	}
+.chameleon .v-table-big .v-table-caption-container {
+	padding-top: 0.3em;
+}
 
-.v-table-big .v-table-caption-container {
-	padding-top: .3em;
-	}
-
-.v-table-big .v-table-resizer, 
-.v-table-big .v-table-header-wrap {
+.chameleon .v-table-big .v-table-resizer, .chameleon .v-table-big .v-table-header-wrap {
 	height: 1.8em;
-	}
+}
 
-.v-table-big .v-table-column-selector {
+.chameleon .v-table-big .v-table-column-selector {
 	margin-top: -1.5em;
-	}
+}
 
-/*******************************************************************************
- * Striped
- ******************************************************************************/
-.v-table-striped .v-table-row-odd {
+.chameleon .v-table-striped .v-table-row-odd {
 	background-color: #e6e6e6;
-	}
+}
 
-
-/*******************************************************************************
- * Strong
- ******************************************************************************/
-.v-table-strong .v-table-caption-container {
+.chameleon .v-table-strong .v-table-caption-container {
 	font-weight: bold;
-	}
+}
 
-
-/*******************************************************************************
- * Borderless
- ******************************************************************************/
-.v-table-borderless .v-table-header-wrap,
-.v-table-borderless .v-table-body {
+.chameleon .v-table-borderless .v-table-header-wrap, .chameleon .v-table-borderless .v-table-body {
 	border: none;
-	}
+}
 
-div.v-table-borderless .v-table-body {
+.chameleon div.v-table-borderless .v-table-body {
 	background: transparent;
-	}
+}
 
-input.v-textfield,
-textarea.v-textarea,
-.v-filterselect {
+.chameleon input.v-textfield, .chameleon textarea.v-textarea, .chameleon .v-filterselect {
 	line-height: normal;
 	border: 1px solid #b3b3b3;
 	border-top-color: #808080;
-	border-color: rgba(0,0,0,.3);
-	border-top-color: rgba(0,0,0,.5);
+	border-color: rgba(0, 0, 0, 0.3);
+	border-top-color: rgba(0, 0, 0, 0.5);
 	background: #fff url(img/input-bg.png) repeat-x;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.2);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.2);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 	margin: 0;
-	}
+}
 
-input.v-textfield[type="text"],
-textarea.v-textarea,
-.v-filterselect {
-	padding: .2em;
-	}
+.chameleon input.v-textfield[type="text"], .chameleon textarea.v-textarea, .chameleon .v-filterselect {
+	padding: 0.2em;
+}
 
-input.v-textfield[type="text"],
-.v-filterselect {
+.chameleon input.v-textfield[type="text"] {
 	height: 1.2em;
-	}
+}
 
-body input.v-textfield,
-body textarea.v-textarea,
-body input.v-filterselect-input {
+.chameleon input.v-widget.v-textfield[type="text"], .chameleon .v-filterselect {
+	height: 1.6em;
+}
+
+.chameleon.v-app input.v-textfield, .chameleon.v-app textarea.v-textarea, .chameleon.v-app input.v-filterselect-input {
 	color: #222;
-	}
+}
 
-.v-ie input.v-textfield,
-.v-ie textarea.v-textarea,
-.v-ie .v-filterselect {
+.v-ie .chameleon input.v-textfield, .v-ie .chameleon textarea.v-textarea, .v-ie .chameleon .v-filterselect {
 	border-top-color: #808080;
-	}
+}
 
-body input.v-textfield-prompt,
-body textarea.v-textarea-prompt {
+.chameleon.v-app input.v-textfield-prompt, .chameleon.v-app textarea.v-textarea-prompt {
 	font-style: normal;
 	color: #999;
-	}
+}
 
-input.v-textfield-focus,
-textarea.v-textarea-focus {
+.chameleon input.v-textfield-focus, .chameleon textarea.v-textarea-focus {
 	background-color: #fffce1;
-	}
+}
 
-
-/*******************************************************************************
- * Readonly
- ******************************************************************************/
-input.v-textfield-readonly,
-textarea.v-textarea-readonly {
+.chameleon input.v-textfield-readonly, .chameleon textarea.v-textarea-readonly {
 	border: none;
 	background: transparent;
-	}
+}
 
+.chameleon.v-app input.v-textfield-small, .chameleon.v-app textarea.v-textarea-small, .chameleon .v-filterselect-small .v-filterselect-input {
+	font-size: 11.05px;
+}
 
-/*******************************************************************************
- * Small
- ******************************************************************************/
-body input.v-textfield-small,
-body textarea.v-textarea-small,
-.v-datefield-small .v-datefield-textfield,
-.v-datefield-small .v-datefield-button,
-.v-filterselect-small .v-filterselect-input {
-	font-size: 0.85em;
-	}
+.chameleon.v-app input.v-textfield-big, .chameleon.v-app textarea.v-textarea-big, .chameleon .v-filterselect-big .v-filterselect-input {
+	font-size: 15.6px;
+}
 
+.chameleon input.v-textfield-big[type=text], .chameleon .v-datefield-big input.v-datefield-textfield[type=text] {
+	padding: 0.3em;
+}
 
-/*******************************************************************************
- * Big (and big search)
- ******************************************************************************/
-body input.v-textfield-big,
-body textarea.v-textarea-big,
-.v-datefield-big .v-datefield-textfield,
-.v-datefield-big .v-datefield-button,
-.v-filterselect-big .v-filterselect-input {
-	font-size: 1.2em;
-	}
+.chameleon textarea.v-textarea, .chameleon .v-filterselect-big {
+	padding: 0.3em;
+}
 
-input.v-textfield-big[type=text],
-.v-datefield-big input.v-datefield-textfield[type=text] {
-	padding: .3em;
-	}
-
-textarea.v-textarea,
-.v-filterselect-big {
-	padding: .3em;
-	}
-
-input.v-textfield-big.v-textfield-search,
-.v-filterselect-search.v-filterselect-big {
+.chameleon input.v-textfield-big.v-textfield-search, .chameleon .v-filterselect-search.v-filterselect-big {
 	background-image: url(img/magnifier-big.png);
 	background-repeat: no-repeat;
 	background-position: 4px 50%;
-	}
+}
 
-input.v-textfield-big.v-textfield-search[type=text] {
+.chameleon input.v-textfield-big.v-textfield-search[type=text] {
 	padding-left: 26px;
-	}
+}
 
-.v-filterselect-search.v-filterselect-big {
+.chameleon .v-filterselect-search.v-filterselect-big {
 	padding-left: 26px;
-	}
+}
 
-
-/*******************************************************************************
- * Search
- ******************************************************************************/
-input.v-textfield-search,
-.v-filterselect-search {
+.chameleon input.v-textfield-search, .chameleon .v-filterselect-search {
 	background-image: url(img/magnifier.png);
 	background-repeat: no-repeat;
 	background-position: 3px 50%;
-	}
+}
 
-input.v-textfield-search[type=text],
-.v-filterselect-search {
+.chameleon input.v-textfield-search[type=text], .chameleon .v-filterselect-search {
 	padding-left: 17px;
-	}
+}
 
-.v-ie6 input.v-textfield-search {
-	/* Compensate for big style as well, since IE6 doesn't handle the selector */
-	padding-left: 21px;
-	}
-
-.v-datefield-button {
+.chameleon .v-datefield-button {
 	background: #dadada url(img/date-btn.png) repeat-x 50% 0;
 	border: 1px solid gray;
 	-webkit-border-top-right-radius: 3px;
@@ -3998,384 +4050,577 @@ input.v-textfield-search[type=text],
 	-moz-border-radius-topright: 3px;
 	-moz-border-radius-bottomright: 3px;
 	width: 25px;
-	height: 1.2em;
-	padding: .2em 0;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	-ms-box-sizing: content-box;
-	box-sizing: content-box;
-	}
+	margin-right: -25px;
+	height: 1.7em;
+	padding: 0.2em 0;
+}
 
-.v-datefield-small .v-datefield-button {
-	height: 1.2em;
-	}
-
-.v-datefield-big .v-datefield-button {
-	padding: .3em 0;
-	height: 1.2em;
-	}
-
-.v-ie6 .v-datefield-button,
-.v-ie7 .v-datefield-button {
-	height: 1.55em;
-	margin-top: 1px;
-	padding: 0;
-	}
-
-.v-ie7 .v-datefield-button {
-	height: 1.85em;
-	}
-
-.v-ie7 .v-datefield-small .v-datefield-button {
-	height: 1.75em;
-	}
-
-.v-ie7 .v-datefield-big .v-datefield-button {
-	height: 2em;
-	}
-
-.v-ie8 .v-datefield-button {
-	height: 1.6em;
-	padding: 0;
-	}
-
-.v-ie8 .v-datefield-big .v-datefield-button {
-	height: 1.8em;
-	}
-
-input.v-datefield-textfield {
+.chameleon input.v-datefield-textfield[type="text"] {
 	border-right: none;
 	-webkit-border-top-right-radius: 0;
 	-webkit-border-bottom-right-radius: 0;
 	-moz-border-radius-topright: 0;
 	-moz-border-radius-bottomright: 0;
-	}
+	height: 1.7em;
+}
 
-
-/*******************************************************************************
- * Big
- ******************************************************************************/
-.v-datefield-big .v-datefield-button {
+.chameleon .v-datefield-big .v-datefield-button {
+	padding: 0.3em 0;
+	height: 1.9em;
 	width: 32px;
 	background-image: url(img/date-btn-big.png);
-	}
+	font-size: 15.6px;
+}
 
+.chameleon .v-datefield-big input.v-datefield-textfield[type="text"] {
+	height: 1.9em;
+	font-size: 15.6px;
+}
 
-/*******************************************************************************
- * Small
- ******************************************************************************/
-.v-datefield-small .v-datefield-button {
+.chameleon .v-datefield-small .v-datefield-button {
+	height: 1.6em;
 	width: 19px;
 	background-position: 50% -2px;
-	}
+	font-size: 11.05px;
+}
 
+.chameleon .v-datefield-small input.v-datefield-textfield[type="text"] {
+	height: 1.6em;
+	font-size: 11.05px;
+}
 
-/*******************************************************************************
- * Calendar panel
- ******************************************************************************/
-.v-datefield-calendarpanel {
+.chameleon .v-datefield-calendarpanel {
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 	height: auto !important;
-	font-size: 0.9em;
-	}
+	font-size: 11.7px;
+}
 
-.v-datefield-month .v-datefield-textfield {
-	width: 6em;
-	}
+.chameleon .v-datefield-month .v-datefield-textfield {
+	width: 6.4em;
+}
 
-.v-datefield-year .v-datefield-textfield {
-	width: 4em;
-	}
+.chameleon .v-datefield-year .v-datefield-textfield {
+	width: 4.4em;
+}
 
-.v-datefield-year .v-datefield-calendarpanel-prevmonth,
-.v-datefield-year .v-datefield-calendarpanel-nextmonth {
+.chameleon .v-datefield-year .v-datefield-calendarpanel-prevmonth, .chameleon .v-datefield-year .v-datefield-calendarpanel-nextmonth {
 	display: none;
-	}
+}
 
-.v-datefield-calendarpanel-header td {
+.chameleon .v-datefield-calendarpanel-header td {
 	border-bottom: 1px solid #666;
-	}
+}
 
-.v-datefield-year .v-datefield-calendarpanel-header td,
-.v-datefield-month .v-datefield-calendarpanel-header td {
+.chameleon .v-datefield-year .v-datefield-calendarpanel-header td, .chameleon .v-datefield-month .v-datefield-calendarpanel-header td {
 	border-bottom: none;
-	}
+}
 
-td.v-datefield-calendarpanel-month {
+.chameleon td.v-datefield-calendarpanel-month {
 	background: #c9c9c9 url(img/grad-light-top.png) repeat-x 0 -1px;
-	text-shadow: 0 1px 0 rgba(255,255,255,.7);
-	}
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
 
-.v-ie6 td.v-datefield-calendarpanel-month {
-	background-image: none;
-	}
-
-span.v-datefield-calendarpanel-month {
+.chameleon span.v-datefield-calendarpanel-month {
 	display: block;
 	text-align: center;
 	overflow: hidden;
 	line-height: 2em;
 	height: 1.8em;
-	}
+}
 
-.v-datefield-year .v-datefield-calendarpanel-month {
-	width: 5em;
-	}
+.chameleon .v-datefield-year .v-datefield-calendarpanel-month {
+	width: 5.4em;
+}
 
-.v-datefield-month .v-datefield-calendarpanel-month,
-.v-datefield-day .v-datefield-calendarpanel-month,
-.v-datefield-full .v-datefield-calendarpanel-month {
-	width: 9em;
-	}
+.chameleon .v-datefield-month .v-datefield-calendarpanel-month, .chameleon .v-datefield-day .v-datefield-calendarpanel-month, .chameleon .v-datefield-full .v-datefield-calendarpanel-month {
+	width: 9.4em;
+}
 
-.v-datefield-popupcalendar {
+.chameleon .v-datefield-popupcalendar {
 	min-width: 0;
-	}
+	padding-right: 25px;
+}
 
-.v-datefield-year .v-datefield-calendarpanel {
-	width: 8em;
-	}
+.chameleon .v-datefield-year .v-datefield-calendarpanel {
+	width: 8.4em;
+}
 
-td.v-datefield-calendarpanel-prevyear {
+.chameleon td.v-datefield-calendarpanel-prevyear {
 	text-align: right;
-	}
+}
 
-td.v-datefield-calendarpanel-nextyear {
+.chameleon td.v-datefield-calendarpanel-nextyear {
 	text-align: left;
-	}
+}
 
-.v-datefield-calendarpanel-header button {
-	font-size: 1em;
+.chameleon .v-datefield-calendarpanel-header button {
+	font-size: 13px;
 	line-height: normal;
 	width: 100%;
-	padding: 0 .8em;
+	padding: 0 0.8em;
 	height: 1.8em;
 	border: none;
 	background: #c9c9c9 url(img/grad-light-top.png) repeat-x 0 -1px;
 	overflow: hidden;
 	outline: none;
 	cursor: pointer;
-	}
+}
 
-.v-datefield-popup .v-datefield-calendarpanel-month,
-.v-datefield-popup .v-datefield-calendarpanel-header button {
+.chameleon .v-datefield-popup .v-datefield-calendarpanel-month, .chameleon .v-datefield-popup .v-datefield-calendarpanel-header button {
 	background-position: 0 0;
-	}
+}
 
-.v-ie6 .v-datefield-calendarpanel-header button {
-	background-image: none;
-	}
-
-.v-datefield-calendarpanel-header button:active {
+.chameleon .v-datefield-calendarpanel-header button:active {
 	background-image: url(img/grad-dark-top2.png);
-	}
+}
 
-.v-datefield-calendarpanel-prevyear button {
+.chameleon .v-datefield-calendarpanel-prevyear button {
 	-webkit-border-top-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
-	}
+}
 
-.v-datefield-calendarpanel-nextyear button {
+.chameleon .v-datefield-calendarpanel-nextyear button {
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-radius-topright: 4px;
-	}
+}
 
-.v-datefield-year .v-datefield-calendarpanel-prevyear button,
-.v-datefield-month .v-datefield-calendarpanel-prevyear button {
+.chameleon .v-datefield-year .v-datefield-calendarpanel-prevyear button, .chameleon .v-datefield-month .v-datefield-calendarpanel-prevyear button {
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomleft: 3px;
-	}
+}
 
-.v-datefield-year .v-datefield-calendarpanel-nextyear button,
-.v-datefield-month .v-datefield-calendarpanel-nextyear button {
+.chameleon .v-datefield-year .v-datefield-calendarpanel-nextyear button, .chameleon .v-datefield-month .v-datefield-calendarpanel-nextyear button {
 	-webkit-border-bottom-right-radius: 3px;
 	-moz-border-radius-bottomright: 3px;
-	}
+}
 
-.v-datefield-calendarpanel-body,
-.v-datefield-calendarpanel-time {
+.chameleon .v-datefield-calendarpanel-body, .chameleon .v-datefield-calendarpanel-time {
 	text-align: center;
 	vertical-align: top;
-	}
+}
 
-.v-datefield-calendarpanel-body table {
+.chameleon .v-datefield-calendarpanel-body table {
 	border-collapse: collapse;
 	margin: 0;
 	padding: 0;
 	margin: 0 auto;
-	}
+}
 
-.v-datefield-calendarpanel-weekdays td {
+.chameleon .v-datefield-calendarpanel-weekdays td {
 	width: 14.2%;
 	overflow: hidden;
 	line-height: normal;
 	text-transform: uppercase;
 	vertical-align: top;
-	}
-	
-.v-datefield-calendarpanel-weeknumbers td {
-	width: 12.5%;
-	}
+}
 
-.v-datefield-calendarpanel-weekdays strong {
+.chameleon .v-datefield-calendarpanel-weeknumbers td {
+	width: 12.5%;
+}
+
+.chameleon .v-datefield-calendarpanel-weekdays strong {
 	display: block;
 	text-align: right;
-	font-size: 0.8em;
-	padding: .3em .5em .35em 0;
+	font-size: 10.4px;
+	padding: 0.3em 0.5em 0.35em 0;
 	height: 1.1em;
 	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 	background: #c9c9c9 url(img/grad-dark-top2.png) repeat-x;
 	margin-bottom: 2px;
-	}
+}
 
-.v-ie6 .v-datefield-calendarpanel-weekdays strong {
-	background-image: none;
-	}
-
-.v-datefield-calendarpanel .v-first strong {
+.chameleon .v-datefield-calendarpanel .v-first strong {
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomleft: 3px;
-	}
+}
 
-.v-datefield-calendarpanel .v-last strong {
+.chameleon .v-datefield-calendarpanel .v-last strong {
 	-webkit-border-bottom-right-radius: 3px;
 	-moz-border-radius-bottomright: 3px;
-	}
+}
 
-.v-datefield-popup .v-datefield-calendarpanel .v-first strong,
-.v-datefield-popup .v-datefield-calendarpanel .v-last strong {
+.chameleon .v-datefield-popup .v-datefield-calendarpanel .v-first strong, .chameleon .v-datefield-popup .v-datefield-calendarpanel .v-last strong {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
-	}
+}
 
-.v-datefield-calendarpanel-body td {
+.chameleon .v-datefield-calendarpanel-body td {
 	text-align: right;
 	height: 1.6em;
-	}
+}
 
-.v-datefield-calendarpanel-weeknumber {
-	padding: .5em .5em .35em 0;
-	}
+.chameleon .v-datefield-calendarpanel-weeknumber {
+	padding: 0.5em 0.5em 0.35em 0;
+	font-size: 11.7px;
+}
 
-.v-datefield-calendarpanel-day,
-.v-datefield-calendarpanel-day-today {
-	padding: .15em .5em .15em 0;
+.chameleon .v-datefield-calendarpanel-day, .chameleon .v-datefield-calendarpanel-day-today {
+	padding: 0.15em 0.5em 0.15em 0;
 	display: block;
-	margin: 1px 1px 1px .3em;
+	margin: 1px 1px 1px 0.3em;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	}
+}
 
-.v-datefield-calendarpanel-day-focused,
-.v-datefield-calendarpanel-day:hover {
-	margin: 0 0 0 .2em;
+.chameleon .v-datefield-calendarpanel-day-focused, .chameleon .v-datefield-calendarpanel-day:hover {
+	margin: 0 0 0 0.2em;
 	border: 1px solid #b3b3b3;
 	outline: none;
-	}
+}
 
-.v-datefield-calendarpanel-day-today {
+.chameleon .v-datefield-calendarpanel-day-today {
 	border: none;
 	background: transparent url(img/grad-dark-top2.png) repeat-x;
-	margin: 0 0 0 .2em;
+	margin: 0 0 0 0.2em;
 	font-weight: bold;
 	border: 1px solid #c9c9c9;
-	}
+}
 
-.v-ie6 .v-datefield-calendarpanel-day-today {
-	background-image: none;
-	}
-
-.v-datefield-calendarpanel-day-selected,
-.v-datefield-calendarpanel-day-selected:hover {
-	margin: 0 0 0 .3em;
+.chameleon .v-datefield-calendarpanel-day-selected, .chameleon .v-datefield-calendarpanel-day-selected:hover {
+	margin: 0 0 0 0.3em;
 	border: none;
-	}
+}
 
-.v-datefield-calendarpanel-time select {
+.chameleon .v-datefield-calendarpanel-time select {
 	padding: 0;
-	font-size: 0.9em;
+	font-size: 11.7px;
 	margin: 0;
-	}
+}
 
-.v-filterselect {
+.chameleon .v-inline-datefield-button {
+	background: #dadada url(img/date-btn.png) repeat-x 50% 0;
+	border: 1px solid gray;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	width: 25px;
+	margin-right: -25px;
+	height: 1.7em;
+	padding: 0.2em 0;
+}
+
+.chameleon input.v-inline-datefield-textfield[type="text"] {
+	border-right: none;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	height: 1.7em;
+}
+
+.chameleon .v-inline-datefield-big .v-inline-datefield-button {
+	padding: 0.3em 0;
+	height: 1.9em;
+	width: 32px;
+	background-image: url(img/date-btn-big.png);
+	font-size: 15.6px;
+}
+
+.chameleon .v-inline-datefield-big input.v-inline-datefield-textfield[type="text"] {
+	height: 1.9em;
+	font-size: 15.6px;
+}
+
+.chameleon .v-inline-datefield-small .v-inline-datefield-button {
+	height: 1.6em;
+	width: 19px;
+	background-position: 50% -2px;
+	font-size: 11.05px;
+}
+
+.chameleon .v-inline-datefield-small input.v-inline-datefield-textfield[type="text"] {
+	height: 1.6em;
+	font-size: 11.05px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	height: auto !important;
+	font-size: 11.7px;
+}
+
+.chameleon .v-inline-datefield-month .v-inline-datefield-textfield {
+	width: 6.4em;
+}
+
+.chameleon .v-inline-datefield-year .v-inline-datefield-textfield {
+	width: 4.4em;
+}
+
+.chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel-prevmonth, .chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel-nextmonth {
+	display: none;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-header td {
+	border-bottom: 1px solid #666;
+}
+
+.chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel-header td, .chameleon .v-inline-datefield-month .v-inline-datefield-calendarpanel-header td {
+	border-bottom: none;
+}
+
+.chameleon td.v-inline-datefield-calendarpanel-month {
+	background: #c9c9c9 url(img/grad-light-top.png) repeat-x 0 -1px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.chameleon span.v-inline-datefield-calendarpanel-month {
+	display: block;
+	text-align: center;
 	overflow: hidden;
-	}
+	line-height: 2em;
+	height: 1.8em;
+}
 
-body input.v-filterselect-input {
+.chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel-month {
+	width: 5.4em;
+}
+
+.chameleon .v-inline-datefield-month .v-inline-datefield-calendarpanel-month, .chameleon .v-inline-datefield-day .v-inline-datefield-calendarpanel-month, .chameleon .v-inline-datefield-full .v-inline-datefield-calendarpanel-month {
+	width: 9.4em;
+}
+
+.chameleon .v-inline-datefield-popupcalendar {
+	min-width: 0;
+	padding-right: 25px;
+}
+
+.chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel {
+	width: 8.4em;
+}
+
+.chameleon td.v-inline-datefield-calendarpanel-prevyear {
+	text-align: right;
+}
+
+.chameleon td.v-inline-datefield-calendarpanel-nextyear {
+	text-align: left;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-header button {
+	font-size: 13px;
+	line-height: normal;
+	width: 100%;
+	padding: 0 0.8em;
+	height: 1.8em;
+	border: none;
+	background: #c9c9c9 url(img/grad-light-top.png) repeat-x 0 -1px;
+	overflow: hidden;
+	outline: none;
+	cursor: pointer;
+}
+
+.chameleon .v-inline-datefield-popup .v-inline-datefield-calendarpanel-month, .chameleon .v-inline-datefield-popup .v-inline-datefield-calendarpanel-header button {
+	background-position: 0 0;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-header button:active {
+	background-image: url(img/grad-dark-top2.png);
+}
+
+.chameleon .v-inline-datefield-calendarpanel-prevyear button {
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-nextyear button {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+.chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel-prevyear button, .chameleon .v-inline-datefield-month .v-inline-datefield-calendarpanel-prevyear button {
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+}
+
+.chameleon .v-inline-datefield-year .v-inline-datefield-calendarpanel-nextyear button, .chameleon .v-inline-datefield-month .v-inline-datefield-calendarpanel-nextyear button {
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-body, .chameleon .v-inline-datefield-calendarpanel-time {
+	text-align: center;
+	vertical-align: top;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-body table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-weekdays td {
+	width: 14.2%;
+	overflow: hidden;
+	line-height: normal;
+	text-transform: uppercase;
+	vertical-align: top;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-weeknumbers td {
+	width: 12.5%;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-weekdays strong {
+	display: block;
+	text-align: right;
+	font-size: 10.4px;
+	padding: 0.3em 0.5em 0.35em 0;
+	height: 1.1em;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	background: #c9c9c9 url(img/grad-dark-top2.png) repeat-x;
+	margin-bottom: 2px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel .v-first strong {
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel .v-last strong {
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+}
+
+.chameleon .v-inline-datefield-popup .v-inline-datefield-calendarpanel .v-first strong, .chameleon .v-inline-datefield-popup .v-inline-datefield-calendarpanel .v-last strong {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-body td {
+	text-align: right;
+	height: 1.6em;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-weeknumber {
+	padding: 0.5em 0.5em 0.35em 0;
+	font-size: 11.7px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day, .chameleon .v-inline-datefield-calendarpanel-day-today {
+	padding: 0.15em 0.5em 0.15em 0;
+	display: block;
+	margin: 1px 1px 1px 0.3em;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-focused, .chameleon .v-inline-datefield-calendarpanel-day:hover {
+	margin: 0 0 0 0.2em;
+	border: 1px solid #b3b3b3;
+	outline: none;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-today {
+	border: none;
+	background: transparent url(img/grad-dark-top2.png) repeat-x;
+	margin: 0 0 0 0.2em;
+	font-weight: bold;
+	border: 1px solid #c9c9c9;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-day-selected, .chameleon .v-inline-datefield-calendarpanel-day-selected:hover {
+	margin: 0 0 0 0.3em;
+	border: none;
+}
+
+.chameleon .v-inline-datefield-calendarpanel-time select {
+	padding: 0;
+	font-size: 11.7px;
+	margin: 0;
+}
+
+.chameleon .v-inline-datefield, .chameleon .v-inline-datefield-calendarpanel-day {
+	line-height: 16px;
+}
+
+.chameleon .v-filterselect {
+	overflow: hidden;
+	padding-right: 16px;
+}
+
+.chameleon.v-app input.v-filterselect-input {
 	margin: 0;
 	padding: 0;
 	border: none;
 	background: transparent;
 	line-height: normal;
-	}
+}
 
-body input.v-filterselect-input[type=text] {
+.chameleon.v-app input.v-filterselect-input[type=text] {
 	padding: 0;
-	}
+}
 
-.v-filterselect-focus .v-filterselect-input,
-.v-filterselect .v-filterselect-input:focus {
+.chameleon .v-filterselect-focus .v-filterselect-input, .chameleon .v-filterselect .v-filterselect-input:focus {
 	outline: none;
-	}
+}
 
-.v-filterselect-big.v-filterselect-search {
+.chameleon .v-filterselect-big.v-filterselect-search {
 	padding-left: 22px;
-	}
+}
 
-.v-filterselect-button {
+.chameleon .v-filterselect-button {
 	width: 16px;
+	margin-right: -16px;
 	height: 1.2em;
 	background-position: -5px -11px;
-	opacity: .4;
-	}
+	opacity: 0.4;
+}
 
-.v-filterselect-button:hover {
-	opacity: .7;
-	}
+.chameleon .v-filterselect-button:hover {
+	opacity: 0.7;
+}
 
-.v-filterselect-button:active {
+.chameleon .v-filterselect-button:active {
 	opacity: 1;
-	}
+}
 
-.v-filterselect-small .v-filterselect-button {
+.chameleon .v-filterselect-small .v-filterselect-button {
 	height: 0.95em;
 	background-position: -5px -12px;
-	}
+}
 
-.v-filterselect-suggestpopup {
-	margin-top: .4em;
-	}
+.chameleon .v-filterselect-suggestpopup {
+	margin-top: 0.4em;
+}
 
-body .v-filterselect-suggestpopup-small td {
-	font-size: .85em;
-	}
+.chameleon .v-filterselect-suggestmenu tr {
+	line-height: 1.4em;
+}
 
-body .v-filterselect-suggestpopup-big td {
-	font-size: 1.1em;
-	}
+.chameleon.v-app .v-filterselect-suggestpopup-small td {
+	font-size: 11.05px;
+}
 
-.v-filterselect-big .v-filterselect-button {
+.chameleon.v-app .v-filterselect-suggestpopup-big td {
+	font-size: 14.3px;
+}
+
+.chameleon .v-filterselect-big .v-filterselect-button {
 	height: 1.4em;
 	background-position: -5px -9px;
-	}
+}
 
-.v-filterselect-search .v-filterselect-button {
+.chameleon .v-filterselect-search .v-filterselect-button {
 	width: 0;
 	overflow: hidden;
-	}
+}
 
-.v-filterselect-prompt .v-filterselect-input {
+.chameleon .v-filterselect-prompt .v-filterselect-input {
 	font-style: normal;
-	}
+}
 
-.v-filterselect-prevpage-off,
-.v-filterselect-nextpage-off,
-.v-filterselect-prevpage,
-.v-filterselect-nextpage {
+.chameleon .v-filterselect-prevpage-off, .chameleon .v-filterselect-nextpage-off, .chameleon .v-filterselect-prevpage, .chameleon .v-filterselect-nextpage {
 	border-style: solid;
 	border-width: 1px 0;
 	border-color: #b3b3b3;
@@ -4385,126 +4630,95 @@ body .v-filterselect-suggestpopup-big td {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	}
+}
 
-.v-ie6 .v-filterselect-prevpage-off,
-.v-ie6 .v-filterselect-nextpage-off,
-.v-ie6 .v-filterselect-prevpage,
-.v-ie6 .v-filterselect-nextpage {
-	background-image: none;
-	}
-
-.v-filterselect-prevpage:active,
-.v-filterselect-nextpage:active {
-	background-image: (../../img/grad-dark-bottom2.png);
+.chameleon .v-filterselect-prevpage:active, .chameleon .v-filterselect-nextpage:active {
+	background-image: #c9c9c9 url(img/grad-dark-bottom2.png);
 	background-position: left bottom;
-	}
+}
 
-.v-filterselect-prevpage-off span,
-.v-filterselect-nextpage-off span,
-.v-filterselect-prevpage span,
-.v-filterselect-nextpage span {
+.chameleon .v-filterselect-prevpage-off span, .chameleon .v-filterselect-nextpage-off span, .chameleon .v-filterselect-prevpage span, .chameleon .v-filterselect-nextpage span {
 	display: block;
 	text-indent: -9999px;
 	height: 12px;
 	background: transparent url(../base/common/img/sprites.png) no-repeat 50% 3px;
-	}
+}
 
-.v-filterselect-nextpage-off span,
-.v-filterselect-nextpage span {
+.chameleon .v-filterselect-nextpage-off span, .chameleon .v-filterselect-nextpage span {
 	background-position: 50% -12px;
-	}
+}
 
-.v-filterselect-status {
-	font-size: .85em;
+.chameleon .v-filterselect-status {
+	font-size: 11.05px;
 	margin: 1px 0 -3px;
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	}
+}
 
-.v-filterselect-suggestmenu .gwt-menuItem-selected {
+.chameleon .v-filterselect-suggestmenu .gwt-menuItem-selected {
 	background-image: url(img/grad-light-top2.png);
 	background-position: 0 -1px;
-	}
+}
 
-.v-ie6 .v-filterselect-suggestmenu .gwt-menuItem-selected {
-	background-image: none;
-	}
+.chameleon .v-filterselect-suggestpopup-small .v-filterselect-status {
+	font-size: 10.4px;
+}
 
-.v-filterselect-suggestpopup-small .v-filterselect-status {
-	font-size: .8em;
-	}
+.chameleon .v-filterselect-suggestpopup-big .v-filterselect-status {
+	font-size: 11.7px;
+}
 
-.v-filterselect-suggestpopup-big .v-filterselect-status {
-	font-size: .9em;
-	}
+.chameleon .v-select-small .v-select-select {
+	font-size: 10.4px;
+}
 
-.v-select-small .v-select-select {
-	font-size: 0.8em;
-	}
+.chameleon .v-select-big .v-select-select {
+	font-size: 15.6px;
+}
 
-.v-select-big .v-select-select {
-	font-size: 1.2em;
-	}
-
-
-/*******************************************************************************
- * Non-editable combobox (i.e. themable select)
- ******************************************************************************/
-.v-filterselect-select-button {
+.chameleon .v-filterselect-select-button {
 	background: #c9c9c9 url(img/grad-light-top.png) repeat-x;
 	position: relative;
-	padding: .3em .5em;
-	}
+	padding: 0.3em 0.5em;
+}
 
-.v-ie6 .v-filterselect-select-button {
-	background-image: none;
-	}
-
-.v-filterselect-select-button .v-filterselect-input {
+.chameleon .v-filterselect-select-button .v-filterselect-input {
 	display: block;
 	width: 100% !important;
 	user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
-	}
+}
 
-.v-filterselect-select-button .v-filterselect-button {
+.chameleon .v-filterselect-select-button .v-filterselect-button {
 	position: absolute;
 	width: 100%;
 	top: 0;
 	left: 0;
 	height: 100%;
 	background-position: 100% -8px;
-	}
+}
 
-.v-ie6 .v-filterselect-select-button .v-filterselect-button {
-	float: none;
-	position: relative;
-	margin: -1.8em -.5em -.3em -.5em;
-	padding: .3em .5em;
-	}
-
-.v-tabsheet-spacertd div {
+.chameleon .v-tabsheet-spacertd div {
 	border-color: #b3b3b3;
 	border-left: none;
-	}
+}
 
-.v-tabsheet-tabitem {
+.chameleon .v-tabsheet-tabitem {
 	border: none;
 	border-bottom: 1px solid #b3b3b3;
 	padding: 0;
-	}
+}
 
-.v-tabsheet-tabitem .v-caption {
-	padding: .2em .8em;
+.chameleon .v-tabsheet-tabitem .v-caption {
+	padding: 0.2em 0.8em;
 	margin: 1px;
 	margin-bottom: 0;
-	}
+}
 
-.v-tabsheet-tabitem-selected {
+.chameleon .v-tabsheet-tabitem-selected {
 	background-color: #c9c9c9;
 	border: 1px solid #b3b3b3;
 	border-bottom: none;
@@ -4513,60 +4727,49 @@ body .v-filterselect-suggestpopup-big td {
 	-moz-border-radius-topleft: 3px;
 	-moz-border-radius-topright: 3px;
 	overflow: hidden;
-	}
+}
 
-.v-tabsheet-tabitem-selected .v-caption {
+.chameleon .v-tabsheet-tabitem-selected .v-caption {
 	background: transparent url(img/grad-light-top.png) repeat-x;
 	margin: 0;
-	padding-bottom: .25em;
+	padding-bottom: 0.25em;
 	-webkit-border-top-left-radius: 2px;
 	-webkit-border-top-right-radius: 2px;
 	-moz-border-radius-topleft: 2px;
 	-moz-border-radius-topright: 2px;
-	}
+}
 
-.v-ie6 .v-tabsheet-tabitem-selected .v-caption {
-	background-image: none;
-	}
-
-.v-tabsheet-content {
+.chameleon .v-tabsheet-content {
 	background: #fff;
 	border-color: #b3b3b3;
-	}
+}
 
-.v-tabsheet-deco {
+.chameleon .v-tabsheet-deco {
 	height: 0;
 	background: transparent;
 	border-top: 1px solid #b3b3b3;
-	}
+}
 
-.v-tabsheet-caption-close {
+.chameleon .v-tabsheet-caption-close {
 	width: 14px;
 	height: 15px;
 	overflow: hidden;
 	text-indent: -50px;
-	background: transparent url(img/close-btn.png) no-repeat .5em 0;
+	background: transparent url(img/close-btn.png) no-repeat 0.5em 0;
 	vertical-align: middle;
-	padding: 0 0 0 .5em;
-	margin: .2em 0 0 0;
-	}
+	padding: 0 0 0 0.5em;
+	margin: 0.2em 0 0 0;
+}
 
-.v-ie6 .v-tabsheet-caption-close {
-	background-image: url(img/close-btn-ie6.png);
-	}
+.chameleon .v-tabsheet-caption-close:hover {
+	background-position: 0.5em -25px;
+}
 
-.v-tabsheet-caption-close:hover {
-	background-position: .5em -25px;
-	}
+.chameleon .v-tabsheet-caption-close:active {
+	background-position: 0.5em -50px;
+}
 
-.v-tabsheet-caption-close:active {
-	background-position: .5em -50px;
-	}
-
-/*******************************************************************************
- * Scroller
- ******************************************************************************/
-.v-tabsheet-scroller {
+.chameleon .v-tabsheet-scroller {
 	height: 14px;
 	margin-top: -1.6em;
 	position: relative;
@@ -4576,119 +4779,85 @@ body .v-filterselect-suggestpopup-big td {
 	border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
-	}
+}
 
-.v-ie6 .v-tabsheet-scroller {
-	background-image: none;
-	}
-
-.v-tabsheet-scrollerPrev,
-.v-tabsheet-scrollerNext,
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled,
-.v-tabsheet-scrollerPrev-disabled:active,
-.v-tabsheet-scrollerNext-disabled:active {
+.chameleon .v-tabsheet-scrollerPrev, .chameleon .v-tabsheet-scrollerNext, .chameleon .v-tabsheet-scrollerPrev-disabled, .chameleon .v-tabsheet-scrollerNext-disabled, .chameleon .v-tabsheet-scrollerPrev-disabled:active, .chameleon .v-tabsheet-scrollerNext-disabled:active {
 	border: 1px solid #b3b3b3;
 	border-width: 0;
 	background: transparent url(img/tab-arrows.png) no-repeat 6px 50%;
 	width: 16px;
 	height: 14px;
 	overflow: hidden;
-	opacity: .5;
+	opacity: 0.5;
 	filter: alpha(opacity=50);
-	}
+}
 
-.v-ie6 .v-tabsheet-scrollerPrev,
-.v-ie6 .v-tabsheet-scrollerNext,
-.v-ie6 .v-tabsheet-scrollerPrev-disabled,
-.v-ie6 .v-tabsheet-scrollerNext-disabled{
-	background-image: url(img/tab-arrows-ie6.png);
-	}
-
-.v-tabsheet-scroller button::-moz-focus-inner {
+.chameleon .v-tabsheet-scroller button::-moz-focus-inner {
 	border: none;
 	padding: 0;
-	}
+}
 
-.v-tabsheet-scrollerNext,
-.v-tabsheet-scrollerNext-disabled,
-.v-tabsheet-scrollerNext-disabled:active {
+.chameleon .v-tabsheet-scrollerNext, .chameleon .v-tabsheet-scrollerNext-disabled, .chameleon .v-tabsheet-scrollerNext-disabled:active {
 	background-position: -10px 50%;
 	border-left-width: 1px;
-	}
+}
 
-.v-tabsheet-scrollerPrev:hover,
-.v-tabsheet-scrollerNext:hover {
-	opacity: .75;
+.chameleon .v-tabsheet-scrollerPrev:hover, .chameleon .v-tabsheet-scrollerNext:hover {
+	opacity: 0.75;
 	filter: alpha(opacity=75);
-	}
+}
 
-.v-tabsheet-scrollerPrev:active,
-.v-tabsheet-scrollerNext:active {
+.chameleon .v-tabsheet-scrollerPrev:active, .chameleon .v-tabsheet-scrollerNext:active {
 	opacity: 1;
 	filter: none;
-	}
+}
 
-.v-tabsheet-scrollerPrev-disabled,
-.v-tabsheet-scrollerNext-disabled,
-.v-tabsheet-scrollerPrev-disabled:active,
-.v-tabsheet-scrollerNext-disabled:active {
-	opacity: .1;
+.chameleon .v-tabsheet-scrollerPrev-disabled, .chameleon .v-tabsheet-scrollerNext-disabled, .chameleon .v-tabsheet-scrollerPrev-disabled:active, .chameleon .v-tabsheet-scrollerNext-disabled:active {
+	opacity: 0.1;
 	filter: alpha(opacity=10);
-	}
+}
 
-
-
-/*******************************************************************************
- * open-only-closable
- ******************************************************************************/
-.v-tabsheet-open-only-closable .v-tabsheet-caption-close {
+.chameleon .v-tabsheet-open-only-closable .v-tabsheet-caption-close {
 	visibility: hidden;
-	}
+}
 
-.v-tabsheet-open-only-closable .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
+.chameleon .v-tabsheet-open-only-closable .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
 	visibility: visible;
-	}
+}
 
-
-/*******************************************************************************
- * Borderless
- ******************************************************************************/
-.v-tabsheet-borderless .v-tabsheet-content-borderless,
-.v-tabsheet-deco-borderless {
+.chameleon .v-tabsheet-borderless .v-tabsheet-content-borderless, .chameleon .v-tabsheet-deco-borderless {
 	border: none;
 	background: transparent;
-	}
+}
 
-.v-tabsheet-tabs-borderless .v-tabsheet-tabitem-selected,
-.v-tabsheet-tabs-borderless .v-tabsheet-tabitem-selected .v-caption {
+.chameleon .v-tabsheet-tabs-borderless .v-tabsheet-tabitem-selected, .chameleon .v-tabsheet-tabs-borderless .v-tabsheet-tabitem-selected .v-caption {
 	background-color: transparent;
-	}
+}
 
-.v-tree-node-caption {
+.chameleon .v-tree-node-caption {
 	margin-left: 16px;
-	}
+}
 
-.v-tree-node span {
-	padding: .1em .3em;
+.chameleon .v-tree-node span {
+	padding: 0.1em 0.3em;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	}
+}
 
-.v-tree-node-children {
+.chameleon .v-tree-node-children {
 	padding-left: 16px;
-	}
+}
 
-.v-tree-node-selected span {
+.chameleon .v-tree-node-selected span {
 	background-color: #333;
-	}
+}
 
-.v-tree-connectors .v-tree-node-caption {
+.chameleon .v-tree-connectors .v-tree-node-caption {
 	padding-bottom: 1px;
-	}
+}
 
-.v-window-closebox {
+.chameleon .v-window-closebox {
 	width: 14px;
 	height: 15px;
 	overflow: hidden;
@@ -4696,129 +4865,70 @@ body .v-filterselect-suggestpopup-big td {
 	background: transparent url(img/close-btn.png) no-repeat;
 	vertical-align: middle;
 	margin: 0;
-	top: .3em;
-	right: .4em;
+	top: 0.3em;
+	right: 0.4em;
 	z-index: 2;
-	}
+}
 
-.v-ie6 .v-window-closebox {
-	background-image: url(img/close-btn-ie6.png);
-	}
-
-.v-window-closebox:hover {
+.chameleon .v-window-closebox:hover {
 	background-position: 0 -25px;
-	}
+}
 
-.v-window-closebox:active {
+.chameleon .v-window-closebox:active {
 	background-position: 0 -50px;
-	}
+}
 
-.v-window {
+.chameleon .v-window {
 	background-image: none;
-	}
+}
 
-.v-window-wrap {
+.chameleon .v-window-wrap {
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	background-image: url(img/grad-light-top.png);
 	background-repeat: repeat-x;
-	}
+}
 
-.v-ie6 .v-window-wrap {
-	background: transparent !important;
-	}
-
-.v-window-outerheader {
-	padding: .2em 1.7em .5em 1.2em;
+.chameleon .v-window-outerheader {
+	padding: 0.2em 1.7em 0.5em 1.2em;
 	height: auto;
 	text-align: center;
-	}
+}
 
-.v-window-header {
+.chameleon .v-window-header {
 	font-weight: normal;
-	}
+}
 
-.v-window-footer {
+.chameleon .v-window-footer {
 	height: 0;
 	position: static;
-	}
+}
 
-.v-window-resizebox {
+.chameleon .v-window-resizebox {
 	background: transparent url(img/resize.png) no-repeat;
 	width: 14px;
 	height: 14px;
 	bottom: 0;
-	}
+}
 
-
-.sidebar-menu * {
-	white-space: normal;
-	}
-
-.sidebar-menu .v-label {
-	font-size: 0.85em;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 0.03em;
-	padding: 1em .9em .3em;
-	text-shadow: 0 1px 0 rgba(255,255,255,1);
-	}
-
-.sidebar-menu .v-nativebutton {
-	width: 100%;
-	padding: .1em 1.1em;
-	border: none;
-	background: transparent;
-	text-align: left;
-	}
-
-.sidebar-menu .v-nativebutton:focus {
-	outline: none;
-	font-weight: bold;
-	}
-
-.sidebar-menu .tab-selected,
-.sidebar-menu .selected {
-	font-weight: bold;
-	background-color: #333;
-	background-image: url(img/grad-light-top2.png);
-	background-position: 0 -1px;
-	color: #fff;
-	}
-
-.v-ie6 .sidebar-menu .tab-selected,
-.v-ie6 .sidebar-menu .selected {
-	background-image: none;
-	}
-
-.sidebar-menu .tab-selected:focus,
-.sidebar-menu .selected:focus {
-	outline: none;
-	}
-
-.sidebar-menu .v-nativebutton::-moz-focus-inner {
-	border: none;
-	padding: 0;
-	}
-
-.v-horizontallayout-segment .v-button {
+.chameleon .v-horizontallayout-segment .v-button {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 	border-left-width: 0;
 	zoom: 1;
 	overflow: visible;
-	}
+}
 
-.v-horizontallayout-segment .v-button .v-button-wrap {
+.chameleon .v-horizontallayout-segment .v-button .v-button-wrap {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 	zoom: 1;
-	}
+}
 
-.v-horizontallayout-segment .first {
+.chameleon .v-horizontallayout-segment .first {
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-topleft: 3px;
@@ -4826,57 +4936,95 @@ body .v-filterselect-suggestpopup-big td {
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
 	border-left-width: 1px;
-	}
+}
 
-.v-horizontallayout-segment .first .v-button-wrap {
+.chameleon .v-horizontallayout-segment .first .v-button-wrap {
 	-webkit-border-top-left-radius: 2px;
 	-webkit-border-bottom-left-radius: 2px;
 	-moz-border-radius-topleft: 2px;
 	-moz-border-radius-bottomleft: 2px;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
-	}
+}
 
-.v-horizontallayout-segment .last {
+.chameleon .v-horizontallayout-segment .last {
 	-webkit-border-top-right-radius: 3px;
 	-webkit-border-bottom-right-radius: 3px;
 	-moz-border-radius-topright: 3px;
 	-moz-border-radius-bottomright: 3px;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
-	}
+}
 
-.v-horizontallayout-segment .last .v-button-wrap {
+.chameleon .v-horizontallayout-segment .last .v-button-wrap {
 	-webkit-border-top-right-radius: 2px;
 	-webkit-border-bottom-right-radius: 2px;
 	-moz-border-radius-topright: 2px;
 	-moz-border-radius-bottomright: 2px;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
-	}
+}
 
-.v-csslayout-toolbar {
+.chameleon .sidebar-menu * {
+	white-space: normal;
+}
+
+.chameleon .sidebar-menu .v-label {
+	font-size: 11.05px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.03em;
+	padding: 1em 0.9em 0.3em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.chameleon .sidebar-menu .v-nativebutton {
+	width: 100%;
+	padding: 0.1em 1.1em;
+	border: none;
+	background: transparent;
+	text-align: left;
+}
+
+.chameleon .sidebar-menu .v-nativebutton:focus {
+	outline: none;
+	font-weight: bold;
+}
+
+.chameleon .sidebar-menu .tab-selected, .chameleon .sidebar-menu .selected {
+	font-weight: bold;
+	background-color: #333;
+	background-image: url(img/grad-light-top2.png);
+	background-position: 0 -1px;
+	color: #fff;
+}
+
+.chameleon .sidebar-menu .tab-selected:focus, .chameleon .sidebar-menu .selected:focus {
+	outline: none;
+}
+
+.chameleon .sidebar-menu .v-nativebutton::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.chameleon .v-csslayout-toolbar {
 	background: transparent url(img/grad-light-top.png) repeat-x;
 	border: 1px solid #b3b3b3;
 	border-width: 1px 0;
-	}
+}
 
-.v-ie6 .v-csslayout-toolbar {
-	background-image: none;
-	}
-
-.v-csslayout-toolbar .v-csslayout-margin {
-	margin: 3px .3em 2px;
+.chameleon .v-csslayout-toolbar .v-csslayout-margin {
+	margin: 3px 0.3em 2px;
 	padding-bottom: 1px;
 	overflow: hidden;
-	}
+}
 
-.v-csslayout-toolbar .v-button,
-.v-csslayout-toolbar .segment {
+.chameleon .v-csslayout-toolbar .v-button, .chameleon .v-csslayout-toolbar .segment {
 	margin-right: 2px;
 	float: left;
-	}
+}
 
-.v-csslayout-toolbar .segment .v-button {
+.chameleon .v-csslayout-toolbar .segment .v-button {
 	margin-right: 0;
-	}
+}
