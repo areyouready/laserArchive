@@ -13,31 +13,35 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
 import de.ayr.laserdb.main.controller.MainController;
+import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;
 
 @Theme("lasertheme")
 @Title("LaserDisc Database")
 @PreserveOnRefresh
 @VaadinUI
-@Root
+//@Root
 public class LaserWeb extends UI implements Serializable {
 
     private MainController mainController;
-    private MainWindow mainWindow;
+//    private MainWindow mainWindow;
+    private UIHandler uiHandler;
 
     @Inject
-    public LaserWeb(MainController mainController, MainWindow mainWindow) {
+    public LaserWeb(MainController mainController, /*MainWindow mainWindow*/ UIHandler uiHandler ) {
         this.mainController = mainController;
-        this.mainWindow = mainWindow;
+//        this.mainWindow = mainWindow;
+        this.uiHandler = uiHandler;
     }
     
     @Override
     protected void init(VaadinRequest request) {
         setSizeFull();
         
-        mainWindow.setSizeFull();
-        
-        setContent(mainWindow);
+//        mainWindow.setSizeFull();
+//        
+//        setContent(mainWindow);
+        setContent(uiHandler);
         
         
     }

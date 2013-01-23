@@ -3,6 +3,7 @@ package de.ayr.laserdb.main.ui;
 import java.util.HashMap;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 
 import com.vaadin.ui.CustomComponent;
@@ -14,6 +15,7 @@ import de.ayr.laserdb.laserweb.view.LaserView;
 import de.ayr.laserdb.laserweb.view.NewDiscView;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
+@SessionScoped
 public class UIHandler extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
@@ -35,6 +37,10 @@ public class UIHandler extends CustomComponent {
         this.homeView = homeView;
         this.laserView = laserView;
         this.newDiscView = newDiscView;
+    }
+    
+    protected UIHandler() {
+        
     }
 
     @PostConstruct

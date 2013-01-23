@@ -2,13 +2,37 @@ package de.ayr.laserdb.common.services.login.control;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.SessionScoped;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 import de.ayr.laserdb.common.services.login.entity.User;
 
-@SessionScoped
-public interface Authentication extends Serializable {
+//@SessionScoped
+@Stateless
+public class Authentication implements Serializable {
 
-    public User Authenticate(String Username, String Password);
+    private DataStoreLocal dataStoreLocal;
+//    @EJB
+//    private DataStore dataStore;
+    
+    @Inject
+    public Authentication(DataStoreLocal dataStoreLocal) {
+        this.dataStoreLocal = dataStoreLocal;
+    }
+    
+    protected Authentication() {
+        
+    }
+    
+    public User Authenticate(String Username, String Password) {
+        
+        System.out.println(dataStoreLocal.getData());
+        
+        User user = new User("Demo", "User");
+        return user;
+                       
+    }
+    
+    
 
 }

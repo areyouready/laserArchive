@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import de.ayr.laserdb.common.services.login.control.Authentication;
 import de.ayr.laserdb.common.services.login.entity.User;
-import de.ayr.laserdb.ui.LaserWeb;
 
 public class LoginHandler {
 

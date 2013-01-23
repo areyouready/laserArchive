@@ -6,8 +6,6 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 
-import com.vaadin.ui.UI;
-
 import de.ayr.laserdb.login.UserHandler;
 import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.MainWindow;

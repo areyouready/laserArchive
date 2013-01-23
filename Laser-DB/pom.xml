@@ -185,11 +185,11 @@
 		<!-- </dependency> -->
 
 		<!-- Benötigt für Base64Encoder -->
-		<dependency>
-			<groupId>com.vaadin.addon</groupId>
-			<artifactId>jpacontainer-addon-cval-2.0</artifactId>
-			<version>3.0.0-alpha1</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.vaadin.addon</groupId> -->
+<!-- 			<artifactId>jpacontainer-addon-cval-2.0</artifactId> -->
+<!-- 			<version>3.0.0-alpha1</version> -->
+<!-- 		</dependency> -->
 		<!-- <dependency> -->
 		<!-- <groupId>com.vaadin.addon</groupId> -->
 		<!-- <artifactId>beanvalidation-addon</artifactId> -->
@@ -198,10 +198,10 @@
 		<!-- </dependency> -->
 		
 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.hibernate</groupId> -->
+<!-- 			<artifactId>hibernate-validator</artifactId> -->
+<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>log4j</groupId>
