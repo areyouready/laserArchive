@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
 
-import de.ayr.laserdb.common.services.login.entity.User;
+import de.ayr.laserdb.infrastructure.entity.User;
 
 @SessionScoped
 public class UserHandler implements Serializable{

@@ -2,8 +2,8 @@ package de.ayr.laserdb.main.controller;
 
 import javax.inject.Inject;
 
-import de.ayr.laserdb.common.services.login.control.Authentication;
-import de.ayr.laserdb.common.services.login.entity.User;
+import de.ayr.laserdb.infrastructure.entity.User;
+import de.ayr.laserdb.infrastructure.login.control.Authentication;
 
 public class LoginHandler {
 

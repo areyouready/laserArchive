@@ -5,13 +5,5 @@
     <artifactId>Laser-DB</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>MainService</artifactId>
-  <dependencies>
-
-  <dependency>
-  	<groupId>de.ayr.superpom</groupId>
-  	<artifactId>Infrastructure</artifactId>
-  	<version>0.0.1-SNAPSHOT</version>
-  </dependency>
-  </dependencies>
+  <artifactId>Infrastructure</artifactId>
 </project>

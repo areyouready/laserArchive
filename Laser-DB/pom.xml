@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>de.ayr.superpom</groupId>
-  <artifactId>Laser-DB</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
-  
-  <properties>
-  
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.ayr.superpom</groupId>
+	<artifactId>Laser-DB</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<vaadin.version>LATEST</vaadin.version>
-<!--     <vaadin.version>6.8.0</vaadin.version> -->
-<!--     <gwt.version>2.3.0</gwt.version> -->
-<!--     <gwt.plugin.version>2.2.0</gwt.plugin.version> -->
-  </properties>
-  
-  <repositories>
-    <repository>
-      <id>vaadin-snapshots</id>
-      <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>vaadin-addons</id>
-      <url>http://maven.vaadin.com/vaadin-addons</url>
-    </repository>
-    <repository>
+		<!-- <vaadin.version>6.8.0</vaadin.version> -->
+		<!-- <gwt.version>2.3.0</gwt.version> -->
+		<!-- <gwt.plugin.version>2.2.0</gwt.plugin.version> -->
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>vaadin-snapshots</id>
+			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+		<repository>
 			<id>jboss-public-repository</id>
 			<name>JBoss Repository</name>
 			<url>https://repository.jboss.org/nexus/content/groups/public</url>
@@ -55,13 +56,13 @@
 			</releases>
 		</repository>
 		<repository>
-    <id>thirdparty</id>
-    <url>http://localhost:8081/nexus/content/repositories/thirdparty</url>
-  </repository>
-		
-  </repositories>
-  
-  <pluginRepositories>
+			<id>thirdparty</id>
+			<url>http://localhost:8081/nexus/content/repositories/thirdparty</url>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
 		<pluginRepository>
 			<id>central</id>
 			<name>Maven Central Repository</name>
@@ -84,53 +85,55 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
-		
+
 	</pluginRepositories>
-  
-  <modules>
-  <module>LaserWeb</module>
-  <module>CommonServices</module>
-  
-  <module>MainService</module>
-  </modules>
-  <build>
-  	<pluginManagement>
-  		<plugins>
-  			<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-  			<plugin>
-  				<groupId>org.eclipse.m2e</groupId>
-  				<artifactId>lifecycle-mapping</artifactId>
-  				<version>1.0.0</version>
-  				<configuration>
-  					<lifecycleMappingMetadata>
-  						<pluginExecutions>
-  							<pluginExecution>
-  								<pluginExecutionFilter>
-  									<groupId>com.vaadin</groupId>
-  									<artifactId>
-  										vaadin-maven-plugin
-  									</artifactId>
-  									<versionRange>
-  										[1.0.2,)
-  									</versionRange>
-  									<goals>
-  										<goal>update-widgetset</goal>
-  									</goals>
-  								</pluginExecutionFilter>
-  								<action>
-  									<ignore></ignore>
-  								</action>
-  							</pluginExecution>
-  						</pluginExecutions>
-  					</lifecycleMappingMetadata>
-  				</configuration>
-  			</plugin>
-  		</plugins>
-  	</pluginManagement>
-  </build>
-  <dependencies>
-  
-	<!-- Benötigt für Base64Encoder -->
+
+	<modules>
+		<module>LaserWeb</module>
+		
+
+		<module>MainService</module>
+		<module>Infrastructure</module>
+	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.vaadin</groupId>
+										<artifactId>
+											vaadin-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.0.2,)
+										</versionRange>
+										<goals>
+											<goal>update-widgetset</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<dependencies>
+
+		<!-- Benötigt für Base64Encoder -->
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
@@ -185,23 +188,23 @@
 		<!-- </dependency> -->
 
 		<!-- Benötigt für Base64Encoder -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.vaadin.addon</groupId> -->
-<!-- 			<artifactId>jpacontainer-addon-cval-2.0</artifactId> -->
-<!-- 			<version>3.0.0-alpha1</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.vaadin.addon</groupId> -->
+		<!-- <artifactId>jpacontainer-addon-cval-2.0</artifactId> -->
+		<!-- <version>3.0.0-alpha1</version> -->
+		<!-- </dependency> -->
 		<!-- <dependency> -->
 		<!-- <groupId>com.vaadin.addon</groupId> -->
 		<!-- <artifactId>beanvalidation-addon</artifactId> -->
 		<!-- <version>LATEST</version> -->
 		<!-- <version>1.0.0</version> -->
 		<!-- </dependency> -->
-		
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.hibernate</groupId> -->
-<!-- 			<artifactId>hibernate-validator</artifactId> -->
-<!-- 		</dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.hibernate</groupId> -->
+		<!-- <artifactId>hibernate-validator</artifactId> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -214,10 +217,10 @@
 			<scope>provided</scope>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.google.guava</groupId> -->
-<!-- 			<artifactId>guava</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.google.guava</groupId> -->
+		<!-- <artifactId>guava</artifactId> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -232,12 +235,12 @@
 		</dependency>
 
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.vaadin.testbench</groupId> -->
-<!-- 			<artifactId>vaadin-testbench</artifactId> -->
-<!-- 			<version>2.4.2</version> -->
-<!-- 			<scope>test</scope> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.vaadin.testbench</groupId> -->
+		<!-- <artifactId>vaadin-testbench</artifactId> -->
+		<!-- <version>2.4.2</version> -->
+		<!-- <scope>test</scope> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
@@ -250,26 +253,32 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.picketbox</groupId>
+			<artifactId>picketbox</artifactId>
+			<version>4.0.7.Final</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>fakepath</groupId>
 			<artifactId>zad-vaadin-cdi</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
-  </dependencies>
-  
-  <dependencyManagement>
-  	<dependencies>
-  		<dependency>
-  			<groupId>org.jboss.as</groupId>
-  			<artifactId>jboss-as-parent</artifactId>
-  			<version>7.1.1.Final</version>
-  			<type>pom</type>
-  			<scope>import</scope>
-  		</dependency>
-  		
-  		
-  	</dependencies>
-  </dependencyManagement>
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.as</groupId>
+				<artifactId>jboss-as-parent</artifactId>
+				<version>7.1.1.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+
+		</dependencies>
+	</dependencyManagement>
 </project>
