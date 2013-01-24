@@ -16,6 +16,10 @@
   <description>Management</description>
   <role-name>mgmt</role-name>
 </security-role>
+<security-role>
+  <description>Test</description>
+  <role-name>test</role-name>
+</security-role>
 <security-constraint>
 <display-name>SecureApplicationConstraint</display-name>
 <web-resource-collection>

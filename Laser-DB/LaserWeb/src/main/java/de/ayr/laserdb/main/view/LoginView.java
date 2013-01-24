@@ -84,7 +84,7 @@ public class LoginView extends CustomComponent {
         buttonLayout.setComponentAlignment(loginButton, Alignment.MIDDLE_CENTER);
         buttonLayout.setComponentAlignment(logoutButton, Alignment.MIDDLE_CENTER);
         
-        loginButton.addListener(new ClickListener() {
+        loginButton.addClickListener(new Button.ClickListener() {
             public void buttonClick(ClickEvent event) {
                 String loginField = (String) txtUsername.getValue();
                 String pwdField = (String) pwdPassword.getValue();
@@ -95,7 +95,7 @@ public class LoginView extends CustomComponent {
                 } catch (ServletException e) {
 //                     TODO Auto-generated catch block
                     e.printStackTrace();
-                    Notification n = new Notification("Login fehlgeschlagen", Type.WARNING_MESSAGE);
+                    Notification n = new Notification("Login fehlgeschlagen", Type.ERROR_MESSAGE);
                     n.show(UI.getCurrent().getPage());
                 }
                

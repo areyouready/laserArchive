@@ -31,7 +31,7 @@ public class LaserWeb extends UI implements Serializable {
     private LoginView loginView;
 
     @Inject
-    public LaserWeb(MainController mainController, /*MainWindow mainWindow, UIHandler uiHandler*/ LoginView loginView ) {
+    public LaserWeb(MainController mainController, /*MainWindow mainWindow, UIHandler uiHandler,*/ LoginView loginView ) {
         this.mainController = mainController;
 //        this.mainWindow = mainWindow;
 //        this.uiHandler = uiHandler;

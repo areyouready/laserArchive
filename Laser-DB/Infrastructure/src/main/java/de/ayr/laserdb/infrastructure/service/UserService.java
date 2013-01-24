@@ -28,16 +28,22 @@ public class UserService implements Serializable {
         
         User adminUser = new User();
         adminUser.setUsername("admin.user");
-        adminUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "admin_user_secret"));
+        adminUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "admin"));
 //        adminUser.setPassword("admin_user_secret");
         em.persist(adminUser);
         
         User testUser = new User();
         testUser.setUsername("test.user");
 //        testUser.setPassword("test_user_secret");
-        testUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "test_user_secret"));
+        testUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "test"));
         em.persist(testUser);
 
+        User mgmtUser = new User();
+        mgmtUser.setUsername("mgmt.user");
+        mgmtUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "mgmt"));
+        em.persist(mgmtUser);
+
+        
         List<UserRole> userRoles = new ArrayList<UserRole> ();
         // admin role 
         UserRole adminRole = new UserRole();
@@ -48,7 +54,7 @@ public class UserService implements Serializable {
         
         // management role
         UserRole mgmtRole = new UserRole();
-        mgmtRole.setUser(adminUser);
+        mgmtRole.setUser(mgmtUser);
         mgmtRole.setRole("mgmt");
         userRoles.add(mgmtRole);
         em.persist(mgmtRole);
@@ -56,7 +62,7 @@ public class UserService implements Serializable {
         // Test Role
         UserRole tstRole = new UserRole();
         tstRole.setUser(testUser);
-        tstRole.setRole("mgmt");
+        tstRole.setRole("test");
         userRoles.add(tstRole);
         em.persist(tstRole);
         // create user

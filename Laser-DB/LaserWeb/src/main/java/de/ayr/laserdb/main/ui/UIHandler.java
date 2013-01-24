@@ -56,11 +56,11 @@ public class UIHandler extends VerticalLayout {
 
 //        ComponentTools.setVisibleForRoles(laserView, "admin");
         viewList.put("Home", homeView);
-        if(JaasTools.isUserInRole("admin")){
+//        if(JaasTools.isUserInRole("admin")){
         viewList.put("Discs anzeigen", laserView);
-    } else {
+//    } else {
         // Seite mit Berechtigungsinfo
-    }
+//    }
         viewList.put("Neue Disc", newDiscView);
 
         
