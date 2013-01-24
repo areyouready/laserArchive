@@ -2,25 +2,34 @@ package de.ayr.laserdb.main.view;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.servlet.ServletException;
 
+import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.component.JaasTools;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.main.controller.LoginHandler;
+import de.ayr.laserdb.main.ui.UIHandler;
 
+@VaadinView
 public class LoginView extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
-    private final LoginHandler loginHandler;
+//    private final LoginHandler loginHandler;
+  
     //customer.changeSomething();
 
     private TextField txtUsername = new TextField("Login");
@@ -30,10 +39,18 @@ public class LoginView extends CustomComponent {
     private final FormLayout formLogin = new FormLayout();
     private final HorizontalLayout buttonLayout = new HorizontalLayout();
 
-    @Inject
-    public LoginView(LoginHandler loginHandler) {
+    private UIHandler uiHandler;
 
-        this.loginHandler = loginHandler;
+//    @Inject
+//    public LoginView(LoginHandler loginHandler) {
+//
+//        this.loginHandler = loginHandler;
+//        
+//    }
+    
+    @Inject
+    public LoginView(UIHandler uiHandler) {
+        this.uiHandler = uiHandler;
         
     }
 
@@ -71,7 +88,19 @@ public class LoginView extends CustomComponent {
             public void buttonClick(ClickEvent event) {
                 String loginField = (String) txtUsername.getValue();
                 String pwdField = (String) pwdPassword.getValue();
-                loginHandler.doLogin(loginField, pwdField);
+                
+                try {
+                    JaasTools.login(loginField, pwdField);
+                    uiHandler.show();
+                } catch (ServletException e) {
+//                     TODO Auto-generated catch block
+                    e.printStackTrace();
+                    Notification n = new Notification("Login fehlgeschlagen", Type.WARNING_MESSAGE);
+                    n.show(UI.getCurrent().getPage());
+                }
+               
+//                loginHandler.doLogin(loginField, pwdField);
+                
                 //getApplication().setUser(loginField);
                 // if ("packtpub".equals(loginField)) {
                 // getApplication().setUser(loginField);

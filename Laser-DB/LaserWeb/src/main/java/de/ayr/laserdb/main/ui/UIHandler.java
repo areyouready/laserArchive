@@ -6,9 +6,10 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 
-import com.vaadin.cdi.VaadinView;
-import com.vaadin.ui.CustomComponent;
+import com.vaadin.cdi.component.JaasTools;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -18,7 +19,7 @@ import de.ayr.laserdb.laserweb.view.NewDiscView;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
 @SessionScoped
-@VaadinView
+//@VaadinView(rolesAllowed = "admin")
 public class UIHandler extends VerticalLayout {
 
 //    private final VerticalLayout vLayout = new VerticalLayout();
@@ -53,8 +54,13 @@ public class UIHandler extends VerticalLayout {
         setStyleName("UIHandler-Style");
         setSizeFull();
 
+//        ComponentTools.setVisibleForRoles(laserView, "admin");
         viewList.put("Home", homeView);
+        if(JaasTools.isUserInRole("admin")){
         viewList.put("Discs anzeigen", laserView);
+    } else {
+        // Seite mit Berechtigungsinfo
+    }
         viewList.put("Neue Disc", newDiscView);
 
         

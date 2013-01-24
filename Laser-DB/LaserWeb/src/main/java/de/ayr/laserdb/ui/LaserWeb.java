@@ -14,6 +14,7 @@ import com.vaadin.ui.UI;
 
 import de.ayr.laserdb.main.controller.MainController;
 import de.ayr.laserdb.main.ui.UIHandler;
+import de.ayr.laserdb.main.view.LoginView;
 import de.ayr.laserdb.main.view.MainWindow;
 
 //@Theme("reindeer")
@@ -26,20 +27,22 @@ public class LaserWeb extends UI implements Serializable {
 
     private MainController mainController;
 //    private MainWindow mainWindow;
-    private UIHandler uiHandler;
+//    private UIHandler uiHandler;
+    private LoginView loginView;
 
     @Inject
-    public LaserWeb(MainController mainController, /*MainWindow mainWindow*/ UIHandler uiHandler ) {
+    public LaserWeb(MainController mainController, /*MainWindow mainWindow, UIHandler uiHandler*/ LoginView loginView ) {
         this.mainController = mainController;
 //        this.mainWindow = mainWindow;
-        this.uiHandler = uiHandler;
+//        this.uiHandler = uiHandler;
+        this.loginView = loginView;
     }
     
     @Override
     protected void init(VaadinRequest request) {
         setSizeFull();
-        
-        uiHandler.show();
+        setContent(loginView);
+//        uiHandler.show();
         
         
         

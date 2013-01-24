@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.component.ComponentTools;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
@@ -16,7 +17,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import de.ayr.laserdb.infrastructure.service.UserService;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
-@VaadinView
+@VaadinView(rolesAllowed = "admin")
 public class LaserView extends AbstractLaserView implements Serializable {
     
     private final VerticalLayout vLayout = new VerticalLayout();
@@ -53,6 +54,7 @@ public class LaserView extends AbstractLaserView implements Serializable {
                 
             }
         });
+        ComponentTools.setVisibleForRoles(newUserButton, "admin");
         
         vLayout.addComponent(contentPanel);
         vLayout.addComponent(newUserButton);
