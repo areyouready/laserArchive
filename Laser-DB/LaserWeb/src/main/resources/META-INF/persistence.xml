@@ -10,7 +10,7 @@
 		<jta-data-source>java:jboss/datasources/LaserDB</jta-data-source>
 		
 			<class>de.ayr.laserdb.infrastructure.entity.User</class>
-<!-- 			<class>de.ayr.laserdb.infrastructure.entity.UserRole</class> -->
+			<class>de.ayr.laserdb.infrastructure.entity.UserRole</class>
 <!-- 		<class>de.zad.common.services.maintenance.entity.Maintenance</class> -->
 <!-- 		<class>de.zad.common.services.maintenance.entity.MaintainableObject</class> -->
 <!-- 		<class>de.zad.common.services.maintenance.entity.MaintenanceMaintainableObject</class> -->

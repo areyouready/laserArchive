@@ -1,9 +1,12 @@
 package de.ayr.laserdb.infrastructure.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +19,9 @@ public class User {
     
     private String username;
     private String password;
+  
+    @OneToMany(mappedBy = "user")
+    private List<UserRole> userRoles;
     
     public User(String username, String password) {
         
@@ -24,7 +30,7 @@ public class User {
         
     }
     
-    protected User() {
+    public User() {
         
     }
 
@@ -50,5 +56,10 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setUserRoles(List<UserRole> userRoles) {
+         this.userRoles = userRoles;
+        
     }
 }
