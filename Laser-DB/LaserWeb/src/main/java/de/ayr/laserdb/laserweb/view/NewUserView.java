@@ -4,10 +4,13 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.ws.rs.core.NewCookie;
 
 import com.vaadin.cdi.VaadinView;
+import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
@@ -62,8 +65,9 @@ public class NewUserView extends AbstractLaserView {
         contentPanel.setWidth("400px");
         contentPanel.setHeight("300px");
         
-        
-        //Ein Layout um Form und Buttons gemeinsam ins Panel packen zu können
+//        ComboBox userBox = new ComboBox("Benutzer");
+//        
+//        IndexedContainer indexedContainer = new IndexedContainer(userService.getUser());
         
         formWrapper.addComponent(formLogin);
         formLogin.setMargin(true);

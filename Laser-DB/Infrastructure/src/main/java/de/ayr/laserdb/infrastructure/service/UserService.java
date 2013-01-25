@@ -2,6 +2,7 @@ package de.ayr.laserdb.infrastructure.service;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -79,6 +80,10 @@ public class UserService implements Serializable {
         role.setUser(user);
         role.setRole(group);
         em.persist(role);
+    }
+
+    public Collection<?> getUser() {
+        return null;
     }
     
 }
