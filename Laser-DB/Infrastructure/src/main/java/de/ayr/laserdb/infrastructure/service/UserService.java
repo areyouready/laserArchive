@@ -8,6 +8,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.jboss.security.auth.spi.Util;
 
@@ -82,8 +83,9 @@ public class UserService implements Serializable {
         em.persist(role);
     }
 
-    public Collection<?> getUser() {
-        return null;
+    public List<User> getUser() {
+        Query query = em.createNamedQuery(User.FETCH_ALL_USER);
+        return query.getResultList();
     }
     
 }

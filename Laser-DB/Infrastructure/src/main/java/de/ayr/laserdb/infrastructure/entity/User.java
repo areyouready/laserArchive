@@ -6,12 +6,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
+@NamedQueries({
+    @NamedQuery(name = User.FETCH_ALL_USER, query = "SELECT a FROM User a ORDER BY a.username ASC")})
 public class User {
+    
+    public static final String Prefix = "de.ayr.laserdb.infrastructure.entity.User";
+    public static final String FETCH_ALL_USER = Prefix + ".fetchAllUser";
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
