@@ -12,6 +12,7 @@ import com.vaadin.cdi.VaadinUI;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
+import de.ayr.laserdb.infrastructure.service.UserService;
 import de.ayr.laserdb.main.controller.MainController;
 import de.ayr.laserdb.main.ui.UIHandler;
 import de.ayr.laserdb.main.view.LoginView;
@@ -29,18 +30,22 @@ public class LaserWeb extends UI implements Serializable {
 //    private MainWindow mainWindow;
 //    private UIHandler uiHandler;
     private LoginView loginView;
+    
+    private UserService userService;
 
     @Inject
-    public LaserWeb(MainController mainController, /*MainWindow mainWindow, UIHandler uiHandler,*/ LoginView loginView ) {
+    public LaserWeb(MainController mainController, /*MainWindow mainWindow, UIHandler uiHandler,*/ LoginView loginView, UserService userService ) {
         this.mainController = mainController;
 //        this.mainWindow = mainWindow;
 //        this.uiHandler = uiHandler;
         this.loginView = loginView;
+        this.userService = userService;
     }
     
     @Override
     protected void init(VaadinRequest request) {
         setSizeFull();
+        userService.createNewUser();
         setContent(loginView);
 //        uiHandler.show();
         

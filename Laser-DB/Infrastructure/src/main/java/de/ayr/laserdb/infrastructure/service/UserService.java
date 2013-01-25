@@ -28,19 +28,17 @@ public class UserService implements Serializable {
         
         User adminUser = new User();
         adminUser.setUsername("admin.user");
-        adminUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "admin"));
-//        adminUser.setPassword("admin_user_secret");
+        adminUser.setPassword(Util.createPasswordHash("SHA-256", Util.BASE64_ENCODING, null, null, "admin"));
         em.persist(adminUser);
         
         User testUser = new User();
         testUser.setUsername("test.user");
-//        testUser.setPassword("test_user_secret");
-        testUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "test"));
+        testUser.setPassword(Util.createPasswordHash("SHA-256", Util.BASE64_ENCODING, null, null, "test"));
         em.persist(testUser);
 
         User mgmtUser = new User();
         mgmtUser.setUsername("mgmt.user");
-        mgmtUser.setPassword(Util.createPasswordHash("MD5", Util.BASE64_ENCODING, null, null, "mgmt"));
+        mgmtUser.setPassword(Util.createPasswordHash("SHA-256", Util.BASE64_ENCODING, null, null, "mgmt"));
         em.persist(mgmtUser);
 
         
