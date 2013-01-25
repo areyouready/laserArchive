@@ -24,7 +24,6 @@ public class UserService implements Serializable {
     }
     
     public void createNewUser() {
-//        User testUser = new User("Tester", "TestPW");
         
         User adminUser = new User();
         adminUser.setUsername("admin.user");
