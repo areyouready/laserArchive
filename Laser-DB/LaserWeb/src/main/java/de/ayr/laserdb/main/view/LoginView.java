@@ -9,28 +9,23 @@ import com.vaadin.cdi.component.JaasTools;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-import de.ayr.laserdb.main.controller.LoginHandler;
-import de.ayr.laserdb.main.ui.UIHandler;
+import de.ayr.laserdb.main.uicomponents.UIHandler;
 
 @VaadinView
 public class LoginView extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
-//    private final LoginHandler loginHandler;
-  
-    //customer.changeSomething();
 
     private TextField txtUsername = new TextField("Login");
     private PasswordField pwdPassword = new PasswordField("Password");
@@ -41,12 +36,6 @@ public class LoginView extends CustomComponent {
 
     private UIHandler uiHandler;
 
-//    @Inject
-//    public LoginView(LoginHandler loginHandler) {
-//
-//        this.loginHandler = loginHandler;
-//        
-//    }
     
     @Inject
     public LoginView(UIHandler uiHandler) {
@@ -93,23 +82,15 @@ public class LoginView extends CustomComponent {
                     JaasTools.login(loginField, pwdField);
                     uiHandler.show();
                 } catch (ServletException e) {
-//                     TODO Auto-generated catch block
                     e.printStackTrace();
                     Notification n = new Notification("Login fehlgeschlagen", Type.ERROR_MESSAGE);
                     n.show(UI.getCurrent().getPage());
                 }
                
-//                loginHandler.doLogin(loginField, pwdField);
-                
-                //getApplication().setUser(loginField);
-                // if ("packtpub".equals(loginField)) {
-                // getApplication().setUser(loginField);
-                //
-                // }
             }
         });
 
-        logoutButton.addListener(new ClickListener() {
+        logoutButton.addClickListener(new Button.ClickListener() {
             public void buttonClick(ClickEvent event) {
 //                getApplication().setUser(null);
             }

@@ -3,8 +3,37 @@
 .menuTree-style {
 	font-size: 14px;
 	font-weight: bold;
-	margin: 22px;
 	cursor: pointer;
+	width: 100%
+}
+
+.v-tree-node span {
+	padding: 5px;
+	width: 100%;
+	border: thin;
+	background-color: #B3AFAF;
+	text-align: center
+}
+
+.v-tree-node-caption {
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+.v-tree-node-selected {
+	padding: 5px;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-weight: bold;
+	background-image: none;
+	background-color: blue;
+}
+
+
+.v-tree-node-focused {
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .Header-Style {
@@ -16,9 +45,6 @@
 	background-color: lightGoldenRodYellow;
 }
 
-.v-tree-node span {
-	padding: 3px 2px;
-}
 
 .v-captiontext {
     text-align: center;

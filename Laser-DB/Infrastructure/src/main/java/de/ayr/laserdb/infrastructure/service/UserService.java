@@ -23,7 +23,7 @@ public class UserService implements Serializable {
         
     }
     
-    public void createNewUser() {
+    public void createInitialUsers() {
         
         User adminUser = new User();
         adminUser.setUsername("admin.user");
@@ -41,31 +41,44 @@ public class UserService implements Serializable {
         em.persist(mgmtUser);
 
         
-        List<UserRole> userRoles = new ArrayList<UserRole> ();
+//        List<UserRole> userRoles = new ArrayList<UserRole> ();
         // admin role 
         UserRole adminRole = new UserRole();
         adminRole.setUser(adminUser);
         adminRole.setRole("admin");
-        userRoles.add(adminRole);
         em.persist(adminRole);
         
         // management role
         UserRole mgmtRole = new UserRole();
         mgmtRole.setUser(mgmtUser);
         mgmtRole.setRole("mgmt");
-        userRoles.add(mgmtRole);
         em.persist(mgmtRole);
         
         // Test Role
         UserRole tstRole = new UserRole();
         tstRole.setUser(testUser);
         tstRole.setRole("test");
-        userRoles.add(tstRole);
         em.persist(tstRole);
+
         // create user
+//        userRoles.add(adminRole);
+//        userRoles.add(mgmtRole);
+//        userRoles.add(tstRole);
 //        user.setUserRoles(userRoles);
 //        userService.createUser(user);
         
+    }
+
+    public void createNewUser(String username, String password, String group) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(Util.createPasswordHash("SHA-256", Util.BASE64_ENCODING, null, null, password));
+        em.persist(user);
+        
+        UserRole role = new UserRole();
+        role.setUser(user);
+        role.setRole(group);
+        em.persist(role);
     }
     
 }

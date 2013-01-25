@@ -45,12 +45,12 @@ public class LaserView extends AbstractLaserView implements Serializable {
         
         contentPanel.setContent(contentLabel);
         
-        newUserButton = new Button("TestUser anlegen");
+        newUserButton = new Button("Initiale User anlegen");
         newUserButton.addClickListener(new Button.ClickListener() {
             
             
             public void buttonClick(ClickEvent event) {
-                 userService.createNewUser();
+                 userService.createInitialUsers();
                 
             }
         });

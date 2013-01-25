@@ -13,7 +13,6 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
 import de.ayr.laserdb.infrastructure.service.UserService;
-import de.ayr.laserdb.main.controller.MainController;
 import de.ayr.laserdb.main.view.LoginView;
 
 @Theme("lasertheme")
@@ -28,7 +27,7 @@ public class LaserWeb extends UI implements Serializable {
     private UserService userService;
 
     @Inject
-    public LaserWeb(MainController mainController, LoginView loginView /*, UserService userService*/ ) {
+    public LaserWeb(LoginView loginView /*, UserService userService*/ ) {
         this.loginView = loginView;
 //        this.userService = userService;
     }
