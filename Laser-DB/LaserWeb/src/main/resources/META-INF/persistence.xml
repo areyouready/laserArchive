@@ -11,19 +11,7 @@
 		
 			<class>de.ayr.laserdb.infrastructure.entity.User</class>
 			<class>de.ayr.laserdb.infrastructure.entity.UserRole</class>
-<!-- 		<class>de.zad.common.services.maintenance.entity.Maintenance</class> -->
-<!-- 		<class>de.zad.common.services.maintenance.entity.MaintainableObject</class> -->
-<!-- 		<class>de.zad.common.services.maintenance.entity.MaintenanceMaintainableObject</class> -->
-<!-- 		<class>de.zad.common.services.mandant.entity.Mandant</class> -->
-<!-- 		<class>de.zad.common.services.login.entity.User</class> -->
-<!-- 		<class>de.zad.common.services.login.entity.Team</class> -->
-<!-- 		<class>de.zad.common.services.mailing.entity.TicketSubscriber</class> -->
-<!-- 		<class>de.zad.common.services.ticket.entity.Ticket</class> -->
-<!-- 		<class>de.zad.common.services.ticket.entity.Comment</class> -->
-<!-- 		<class>de.zad.common.services.ticket.entity.Protokoll</class> -->
-<!-- 		<class>de.zad.common.services.files.entity.UploadedFile</class> -->
-<!-- 		<class>de.zad.common.services.configuration.entity.Configuration</class> -->
-<!-- 		<class>de.zad.common.services.common.BaseEntity</class> -->
+
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		
 		<!-- Schaltet fuer EntityKlassen die mit @Cachable annotiert sind den 2-Level-Cache ein -->
@@ -49,7 +37,7 @@
 			<property name="hibernate.jndi.java.naming.factory.initial" value="org.jnp.interfaces.NamingContextFactory"/> 
 			<property name="hibernate.jndi.java.naming.factory.url.pkgs" value="org.jboss.naming:org.jnp.interfaces"/> 
 					              
-			<property name="hibernate.show_sql" value="false"/>
+			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="false"/>
 			
 			<!-- jboss caching  -->

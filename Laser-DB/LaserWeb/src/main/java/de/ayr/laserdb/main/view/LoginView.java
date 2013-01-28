@@ -67,11 +67,8 @@ public class LoginView extends CustomComponent {
         formWrapper.addComponent(buttonLayout);
         formWrapper.setComponentAlignment(buttonLayout, Alignment.BOTTOM_CENTER);
         Button loginButton = new Button("Login");
-        Button logoutButton = new Button("Logout");
         buttonLayout.addComponent(loginButton);
-        buttonLayout.addComponent(logoutButton);
         buttonLayout.setComponentAlignment(loginButton, Alignment.MIDDLE_CENTER);
-        buttonLayout.setComponentAlignment(logoutButton, Alignment.MIDDLE_CENTER);
         
         loginButton.addClickListener(new Button.ClickListener() {
             public void buttonClick(ClickEvent event) {
@@ -90,11 +87,6 @@ public class LoginView extends CustomComponent {
             }
         });
 
-        logoutButton.addClickListener(new Button.ClickListener() {
-            public void buttonClick(ClickEvent event) {
-//                getApplication().setUser(null);
-            }
-        });
         
         loginPanel.setContent(formWrapper);
         vLayout.setComponentAlignment(loginPanel, Alignment.MIDDLE_CENTER);
