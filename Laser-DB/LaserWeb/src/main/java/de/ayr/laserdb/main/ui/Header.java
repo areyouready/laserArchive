@@ -1,20 +1,24 @@
 package de.ayr.laserdb.main.ui;
 
+import java.util.logging.Logger;
+
 import javax.annotation.PostConstruct;
+import javax.servlet.ServletException;
 
 import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.component.JaasTools;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
 @VaadinView
 public class Header extends VerticalLayout {
 
-//    private final Panel headerPanel = new Panel();
-//    private AbstractLayout headerPanelLayout;
       private Button btnLogout = new Button("Logout");
       private HorizontalLayout hLayout = new HorizontalLayout();
 
@@ -27,15 +31,8 @@ public class Header extends VerticalLayout {
     @PostConstruct
     private void initUI() {
 
-//        setWidth("100%");
-//        setSizeFull();
         hLayout.setSizeFull();
 
-        // headerPanel.setHeight("150");
-//        headerPanel.setHeight("100%");
-
-        // Standard Margin von 18px rund um Elemente in einem Panel entfernen
-//        headerPanelLayout = (AbstractLayout) headerPanel.getContent();
 
         // neues Image aus Theme Ordner einbinden
         Embedded logoImage = new Embedded(null, new ThemeResource("img/laserarchive_logo.png"));
@@ -45,20 +42,24 @@ public class Header extends VerticalLayout {
         btnLogout.addClickListener(new Button.ClickListener() {
             
             public void buttonClick(ClickEvent event) {
-                    // Close the VaadinServiceSession
-                    getUI().getSession().getService().getCurrentRequest().getWrappedSession().invalidate();
+                try {
+                    JaasTools.logout();
+                    Notification n = new Notification("Benutzer wurde erfolgreich sudgeloggt", Type.HUMANIZED_MESSAGE);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
 
-                    // Invalidate underlying session instead if login info is stored there
-                    // VaadinService.getCurrentRequest().getWrappedSession().invalidate();
 
-                    // Redirect to avoid keeping the removed UI open in the browser
-                    getUI().getPage().setLocation("/LaserWeb");
+
+                
+                // Close the VaadinServiceSession
+//                    getUI().getSession().getService().getCurrentRequest().getWrappedSession().invalidate();
+                // Redirect to avoid keeping the removed UI open in the browser
+//                    getUI().getPage().setLocation("/LaserWeb");
                 }
             
         });
         
-        // Label titleLabel = new Label("LaserDisc Database");
-        // titleLabel.setHeight("50%");
         hLayout.addComponent(logoImage);
         hLayout.addComponent(btnLogout);
 //        hLayout.setWidth("100%");
@@ -66,9 +67,6 @@ public class Header extends VerticalLayout {
 //        hLayout.setComponentAlignment(logoImage, Alignment.MIDDLE_LEFT);
 //        hLayout.setComponentAlignment(btnLogout, Alignment.MIDDLE_CENTER);
 
-//        headerPanel.setContent(hLayout);
-//
-//        addComponent(headerPanel);
         addComponent(hLayout);
     }
 
