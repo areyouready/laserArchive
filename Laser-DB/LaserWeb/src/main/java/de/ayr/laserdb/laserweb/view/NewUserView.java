@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.validation.constraints.NotNull;
+
+import org.jboss.security.auth.spi.Util;
 
 import com.vaadin.cdi.VaadinView;
 import com.vaadin.data.Item;
@@ -45,7 +48,13 @@ public class NewUserView extends AbstractLaserView {
     private TextField txtGroup = new TextField("Gruppe");
     private PasswordField pwdPassword = new PasswordField("Password");
     private ComboBox userBox;
+    private String userName;
+    private String passWord;
+    private String nutzerRolle;
 
+    private User user;
+    private UserRole role;
+    
     private UserService userService;
 
     @Inject
@@ -66,9 +75,9 @@ public class NewUserView extends AbstractLaserView {
         contentPanel.setHeight("200px");
         contentPanel.setWidth("250px");
 
-        // txtUsername.setRequired(true);
-        // pwdPassword.setRequired(true);
-        // txtGroup.setRequired(true);
+         txtUsername.setRequired(true);
+         pwdPassword.setRequired(true);
+         txtGroup.setRequired(true);
 
         vLayout.addComponent(contentPanel);
         contentPanel.setWidth("400px");
@@ -81,6 +90,8 @@ public class NewUserView extends AbstractLaserView {
         userBox.setItemCaptionPropertyId("username");
         userBox.setImmediate(true);
         userBox.addListener(ValueChangeEvent.class, this, "fillFields");
+        txtUsername.setImmediate(true);
+        txtUsername.addListener(ValueChangeEvent.class, this, "fillFields");
         
         formWrapper.addComponent(formLogin);
         formLogin.setMargin(true);
@@ -89,7 +100,6 @@ public class NewUserView extends AbstractLaserView {
         formLogin.addComponent(txtUsername);
         formLogin.addComponent(pwdPassword);
         formLogin.addComponent(txtGroup);
-        
 
         Button newUserButton = new Button("Save");
         newUserButton.addClickListener(new Button.ClickListener() {
@@ -97,8 +107,17 @@ public class NewUserView extends AbstractLaserView {
             @Override
             public void buttonClick(ClickEvent event) {
                 try {
-                    userService.createNewUser(txtUsername.getValue(), pwdPassword.getValue(),
-                            txtGroup.getValue());
+                    if(userBox.getValue() != null) {
+                    user.setUsername(txtUsername.getValue());
+                    user.setPassword(Util.createPasswordHash("SHA-256", Util.BASE64_ENCODING, null, null, pwdPassword.getValue()));
+                    role.setUser(user);
+                    role.setRole(txtGroup.getValue());
+                    userService.updateUser(user, role);
+                    } else {
+                        userService.createNewUser(txtUsername.getValue(), pwdPassword.getValue(),
+                              txtGroup.getValue());
+                    }
+                    
                     Notification n = new Notification("Benutzer wurde angelegt.", Type.HUMANIZED_MESSAGE);
                     n.show(UI.getCurrent().getPage());
 
@@ -120,17 +139,25 @@ public class NewUserView extends AbstractLaserView {
     }
 
     public void fillFields() {
+        if(userBox.getValue() != null) {
         BeanItem<User> userItem = beanContainer.getItem(userBox.getValue());
-        User user = userItem.getBean();
-        String userName = user.getUsername();
-        String passWord = user.getPassword();
+        user = userItem.getBean();
+        userName = user.getUsername();
+        passWord = user.getPassword();
         List<UserRole> roles = user.getUserRoles();
-        UserRole role = roles.get(0);
-        String nutzerRolle = role.getRole();
+        role = roles.get(0);
+        nutzerRolle = role.getRole();
         
         txtUsername.setValue(userName);
         pwdPassword.setValue(passWord);
         txtGroup.setValue(nutzerRolle);
+        } else {
+            passWord = "";
+            nutzerRolle = "";
+            
+            pwdPassword.setValue(passWord);
+            txtGroup.setValue(nutzerRolle);
+        }
     }
 
     @Override
