@@ -31,7 +31,6 @@ public class User {
     private String username;
     private String password;
   
-//    @OneToMany(mappedBy = "user")
     @OneToMany(orphanRemoval = true, cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "user")
     @Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
     private List<UserRole> userRoles;

@@ -17,7 +17,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import de.ayr.laserdb.infrastructure.service.UserService;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
-//@VaadinView(rolesAllowed = "admin")
+@VaadinView(rolesAllowed = "admin")
 public class LaserView extends AbstractLaserView implements Serializable {
     
     private final VerticalLayout vLayout = new VerticalLayout();
