@@ -75,12 +75,12 @@ public class UserService implements Serializable {
         User user = new User();
         user.setUsername(username);
         user.setPassword(Util.createPasswordHash("SHA-256", Util.BASE64_ENCODING, null, null, password));
-        em.persist(user);
+        em.merge(user);
         
         UserRole role = new UserRole();
         role.setUser(user);
         role.setRole(group);
-        em.persist(role);
+        em.merge(role);
     }
 
     public List<User> getUser() {

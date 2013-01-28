@@ -2,7 +2,9 @@ package de.ayr.laserdb.infrastructure.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,6 +12,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
 
 @Entity
 @Table(name = "user")
@@ -27,7 +31,9 @@ public class User {
     private String username;
     private String password;
   
-    @OneToMany(mappedBy = "user")
+//    @OneToMany(mappedBy = "user")
+    @OneToMany(orphanRemoval = true, cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "user")
+    @Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
     private List<UserRole> userRoles;
     
     public User(String username, String password) {
@@ -69,4 +75,9 @@ public class User {
          this.userRoles = userRoles;
         
     }
+    
+    public List<UserRole> getUserRoles() {
+        return userRoles;
+       
+   }
 }

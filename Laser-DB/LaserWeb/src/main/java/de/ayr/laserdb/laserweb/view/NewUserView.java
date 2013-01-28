@@ -79,6 +79,7 @@ public class NewUserView extends AbstractLaserView {
         
         userBox.setContainerDataSource(beanContainer);
         userBox.setItemCaptionPropertyId("username");
+        userBox.setImmediate(true);
         userBox.addListener(ValueChangeEvent.class, this, "fillFields");
         
         formWrapper.addComponent(formLogin);
@@ -119,15 +120,17 @@ public class NewUserView extends AbstractLaserView {
     }
 
     public void fillFields() {
-        @SuppressWarnings("unused")
         BeanItem<User> userItem = beanContainer.getItem(userBox.getValue());
         User user = userItem.getBean();
         String userName = user.getUsername();
         String passWord = user.getPassword();
+        List<UserRole> roles = user.getUserRoles();
+        UserRole role = roles.get(0);
+        String nutzerRolle = role.getRole();
         
         txtUsername.setValue(userName);
         pwdPassword.setValue(passWord);
-//        txtGroup.setValue(group);
+        txtGroup.setValue(nutzerRolle);
     }
 
     @Override
