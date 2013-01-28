@@ -1,17 +1,21 @@
 package de.ayr.laserdb.laserweb.view;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import com.vaadin.cdi.VaadinView;
+import com.vaadin.data.Item;
+import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
+import com.vaadin.ui.Field.ValueChangeEvent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
@@ -23,6 +27,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.infrastructure.entity.User;
+import de.ayr.laserdb.infrastructure.entity.UserRole;
 import de.ayr.laserdb.infrastructure.service.UserService;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
@@ -30,6 +35,7 @@ import de.ayr.laserdb.main.view.AbstractLaserView;
 public class NewUserView extends AbstractLaserView {
 
     protected final VerticalLayout vLayout = new VerticalLayout();
+    private BeanItemContainer<User> beanContainer;
     private final Panel contentPanel = new Panel("Inhalt");
     private final Label contentLabel = new Label("Neue User View");
 
@@ -38,6 +44,7 @@ public class NewUserView extends AbstractLaserView {
     private TextField txtUsername = new TextField("Loginname");
     private TextField txtGroup = new TextField("Gruppe");
     private PasswordField pwdPassword = new PasswordField("Password");
+    private ComboBox userBox;
 
     private UserService userService;
 
@@ -67,11 +74,12 @@ public class NewUserView extends AbstractLaserView {
         contentPanel.setWidth("400px");
         contentPanel.setHeight("300px");
 
-        ComboBox userBox = new ComboBox("Benutzer");
-        BeanItemContainer<User> beanContainer = new BeanItemContainer(User.class, userService.getUser());
+        userBox = new ComboBox("Benutzer");
+        beanContainer = new BeanItemContainer(User.class, userService.getUser());
         
         userBox.setContainerDataSource(beanContainer);
         userBox.setItemCaptionPropertyId("username");
+        userBox.addListener(ValueChangeEvent.class, this, "fillFields");
         
         formWrapper.addComponent(formLogin);
         formLogin.setMargin(true);
@@ -80,6 +88,7 @@ public class NewUserView extends AbstractLaserView {
         formLogin.addComponent(txtUsername);
         formLogin.addComponent(pwdPassword);
         formLogin.addComponent(txtGroup);
+        
 
         Button newUserButton = new Button("Save");
         newUserButton.addClickListener(new Button.ClickListener() {
@@ -107,6 +116,18 @@ public class NewUserView extends AbstractLaserView {
 
         vLayout.setComponentAlignment(contentPanel, Alignment.MIDDLE_CENTER);
 
+    }
+
+    public void fillFields() {
+        @SuppressWarnings("unused")
+        BeanItem<User> userItem = beanContainer.getItem(userBox.getValue());
+        User user = userItem.getBean();
+        String userName = user.getUsername();
+        String passWord = user.getPassword();
+        
+        txtUsername.setValue(userName);
+        pwdPassword.setValue(passWord);
+//        txtGroup.setValue(group);
     }
 
     @Override
