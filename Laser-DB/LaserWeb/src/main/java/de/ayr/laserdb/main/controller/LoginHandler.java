@@ -2,12 +2,12 @@ package de.ayr.laserdb.main.controller;
 
 import javax.inject.Inject;
 
-import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.CDIView;
 
 import de.ayr.laserdb.infrastructure.entity.User;
 import de.ayr.laserdb.infrastructure.login.control.Authentication;
 
-@VaadinView
+@CDIView
 public class LoginHandler {
 
 //    private AuthenticationImpl auth = new AuthenticationImpl();

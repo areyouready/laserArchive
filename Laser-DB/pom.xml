@@ -12,7 +12,7 @@
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>LATEST</vaadin.version>
+		<vaadin.version>7.0.4</vaadin.version>
 		<!-- <vaadin.version>6.8.0</vaadin.version> -->
 		<!-- <gwt.version>2.3.0</gwt.version> -->
 		<!-- <gwt.plugin.version>2.2.0</gwt.plugin.version> -->
@@ -269,9 +269,9 @@
 
 
 		<dependency>
-			<groupId>fakepath</groupId>
-			<artifactId>zad-vaadin-cdi</artifactId>
-			<version>1.0</version>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-cdi</artifactId>
+			<version>1.0.0.alpha1</version>
 		</dependency>
 
 	</dependencies>

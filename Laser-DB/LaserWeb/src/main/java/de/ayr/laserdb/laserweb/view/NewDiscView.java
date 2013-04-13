@@ -1,10 +1,8 @@
 package de.ayr.laserdb.laserweb.view;
 
-import java.io.Serializable;
-
 import javax.annotation.PostConstruct;
 
-import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.CDIView;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
@@ -12,7 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
-@VaadinView
+@CDIView
 public class NewDiscView extends AbstractLaserView {
     
     protected final VerticalLayout vLayout = new VerticalLayout();

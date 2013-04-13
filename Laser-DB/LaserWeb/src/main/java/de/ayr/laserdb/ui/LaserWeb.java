@@ -7,8 +7,7 @@ import javax.inject.Inject;
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
-import com.vaadin.cdi.Root;
-import com.vaadin.cdi.VaadinUI;
+import com.vaadin.cdi.CDIUI;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
@@ -18,8 +17,8 @@ import de.ayr.laserdb.main.view.LoginView;
 @Theme("lasertheme")
 @Title("LaserDisc Database")
 @PreserveOnRefresh
-@Root
-@VaadinUI
+// Ohne Value = Root, alle anderen CDIUIs bekommen Namen via (value = "SecondUI")
+@CDIUI
 public class LaserWeb extends UI implements Serializable {
 
     private LoginView loginView;

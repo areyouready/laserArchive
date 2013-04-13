@@ -1,22 +1,20 @@
 package de.ayr.laserdb.main.ui;
 
-import java.util.logging.Logger;
-
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 
-import com.vaadin.cdi.VaadinView;
-import com.vaadin.cdi.component.JaasTools;
+import com.vaadin.cdi.CDIView;
+import com.vaadin.cdi.access.JaasAccessControl;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
-@VaadinView
+@CDIView
 public class Header extends VerticalLayout {
 
       private Button btnLogout = new Button("Logout");
@@ -43,7 +41,7 @@ public class Header extends VerticalLayout {
             
             public void buttonClick(ClickEvent event) {
                 try {
-                    JaasTools.logout();
+                    JaasAccessControl.logout();
                     Notification n = new Notification("Benutzer wurde erfolgreich sudgeloggt", Type.HUMANIZED_MESSAGE);
                 } catch (ServletException e) {
                     e.printStackTrace();

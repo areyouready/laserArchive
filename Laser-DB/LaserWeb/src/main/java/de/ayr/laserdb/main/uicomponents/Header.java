@@ -2,15 +2,15 @@ package de.ayr.laserdb.main.uicomponents;
 
 import javax.annotation.PostConstruct;
 
-import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.CDIView;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
-@VaadinView
+@CDIView
 public class Header extends VerticalLayout {
 
 //    private final Panel headerPanel = new Panel();

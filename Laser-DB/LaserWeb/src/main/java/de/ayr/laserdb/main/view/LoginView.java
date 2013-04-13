@@ -4,8 +4,8 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 
-import com.vaadin.cdi.VaadinView;
-import com.vaadin.cdi.component.JaasTools;
+import com.vaadin.cdi.CDIView;
+import com.vaadin.cdi.access.JaasAccessControl;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -22,7 +22,7 @@ import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.main.uicomponents.UIHandler;
 
-@VaadinView
+@CDIView
 public class LoginView extends CustomComponent {
 
     private final VerticalLayout vLayout = new VerticalLayout();
@@ -76,7 +76,7 @@ public class LoginView extends CustomComponent {
                 String pwdField = (String) pwdPassword.getValue();
                 
                 try {
-                    JaasTools.login(loginField, pwdField);
+                    JaasAccessControl.login(loginField, pwdField);
                     uiHandler.show();
                 } catch (ServletException e) {
                     e.printStackTrace();

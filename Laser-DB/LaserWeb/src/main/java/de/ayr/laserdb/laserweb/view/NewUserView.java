@@ -1,19 +1,15 @@
 package de.ayr.laserdb.laserweb.view;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.validation.constraints.NotNull;
 
 import org.jboss.security.auth.spi.Util;
 
-import com.vaadin.cdi.VaadinView;
-import com.vaadin.data.Item;
+import com.vaadin.cdi.CDIView;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -34,7 +30,7 @@ import de.ayr.laserdb.infrastructure.entity.UserRole;
 import de.ayr.laserdb.infrastructure.service.UserService;
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
-@VaadinView
+@CDIView
 public class NewUserView extends AbstractLaserView {
 
     protected final VerticalLayout vLayout = new VerticalLayout();
@@ -104,7 +100,6 @@ public class NewUserView extends AbstractLaserView {
         Button newUserButton = new Button("Save");
         newUserButton.addClickListener(new Button.ClickListener() {
 
-            @Override
             public void buttonClick(ClickEvent event) {
                 try {
                     if(userBox.getValue() != null) {

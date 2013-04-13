@@ -5,16 +5,12 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import com.vaadin.cdi.component.ComponentTools;
-import com.vaadin.cdi.component.JaasTools;
+import com.vaadin.cdi.access.JaasAccessControl;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Panel;
 import com.vaadin.ui.Tree;
-
-import de.ayr.laserdb.ui.LaserWeb;
 
 public class Menu extends CssLayout implements ValueChangeListener {
 
@@ -23,6 +19,7 @@ public class Menu extends CssLayout implements ValueChangeListener {
     // private Panel menuPanel;
 
     private UIHandler uiHandler;
+    private JaasAccessControl jaasControl;
     private List<String> menu;
 
     // String Mappings für die Menüpunkte
@@ -32,9 +29,10 @@ public class Menu extends CssLayout implements ValueChangeListener {
     public static final String M_USER = "Neue Benutzer";
 
     @Inject
-    public Menu(UIHandler uiHandler) {
+    public Menu(UIHandler uiHandler, JaasAccessControl jaasControl) {
 
         this.uiHandler = uiHandler;
+        this.jaasControl = jaasControl;
     }
 
     @PostConstruct
@@ -60,7 +58,7 @@ public class Menu extends CssLayout implements ValueChangeListener {
     // Menüpunkte in den Tree einfügen
     private void treePop() {
         
-        if (JaasTools.isUserInRole("admin") || JaasTools.isUserInRole("mgmt")) {
+        if (jaasControl.isUserInRole("admin") || jaasControl.isUserInRole("mgmt")) {
             final String menu[] = { M_HOME, M_SHOW, M_NEU, M_USER };
             for (String menuItem : menu) {
 

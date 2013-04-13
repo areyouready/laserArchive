@@ -2,13 +2,13 @@ package de.ayr.laserdb.laserweb.view;
 
 import javax.annotation.PostConstruct;
 
-import com.vaadin.cdi.VaadinView;
+import com.vaadin.cdi.CDIView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import de.ayr.laserdb.main.view.AbstractLaserView;
 
-@VaadinView
+@CDIView
 public class HomeView extends AbstractLaserView {
     
     private VerticalLayout vLayout = new VerticalLayout();;
