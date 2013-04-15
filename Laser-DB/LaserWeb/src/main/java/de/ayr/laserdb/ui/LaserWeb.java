@@ -26,7 +26,7 @@ public class LaserWeb extends UI implements Serializable {
     private UserService userService;
 
     @Inject
-    public LaserWeb(LoginView loginView /*, UserService userService*/ ) {
+    public LaserWeb(LoginView loginView /*, UserService userService */) {
         this.loginView = loginView;
 //        this.userService = userService;
     }
@@ -35,6 +35,7 @@ public class LaserWeb extends UI implements Serializable {
     protected void init(VaadinRequest request) {
         setSizeFull();
 //        userService.createNewUser();
+//        userService.createInitialUsers();
         setContent(loginView);
         
     }

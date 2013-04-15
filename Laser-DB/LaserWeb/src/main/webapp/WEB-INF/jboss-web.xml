@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jboss-web>
     <context-root>/LaserWeb</context-root>
+<!--     In standalone.xml definiert -->
     <security-domain>java:/jaas/LaserDBProject</security-domain>
 </jboss-web>
