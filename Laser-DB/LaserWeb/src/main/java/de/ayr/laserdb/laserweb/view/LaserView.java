@@ -70,7 +70,7 @@ public class LaserView extends AbstractLaserView implements Serializable {
 
 	}
 
-	public void setVisibleForRoles(Component component, String... roles) {
+	public void setVisibleForRoles(Component component, String roles) {
 		component.setVisible(jaasControl.isUserInSomeRole(roles));
 	}
 
