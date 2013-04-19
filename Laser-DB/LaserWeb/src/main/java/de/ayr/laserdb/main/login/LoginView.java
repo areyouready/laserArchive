@@ -1,4 +1,4 @@
-package de.ayr.laserdb.main.view;
+package de.ayr.laserdb.main.login;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -20,7 +20,8 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-import de.ayr.laserdb.main.uicomponents.UIHandler;
+import de.ayr.laserdb.main.ui.UIHandler;
+
 
 @CDIView
 public class LoginView extends CustomComponent {

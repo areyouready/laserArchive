@@ -11,8 +11,8 @@ import com.vaadin.cdi.CDIUI;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
-import de.ayr.laserdb.infrastructure.service.UserService;
-import de.ayr.laserdb.main.view.LoginView;
+import de.ayr.laserdb.infrastructure.boundary.UserService;
+import de.ayr.laserdb.main.login.LoginView;
 
 @Theme("lasertheme")
 @Title("LaserDisc Database")

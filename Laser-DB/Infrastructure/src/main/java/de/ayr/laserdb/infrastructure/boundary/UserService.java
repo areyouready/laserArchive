@@ -1,4 +1,4 @@
-package de.ayr.laserdb.infrastructure.service;
+package de.ayr.laserdb.infrastructure.boundary;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import javax.persistence.Query;
 
 import org.jboss.security.auth.spi.Util;
 
+import de.ayr.laserdb.infrastructure.entity.BaseEntity;
 import de.ayr.laserdb.infrastructure.entity.User;
 import de.ayr.laserdb.infrastructure.entity.UserRole;
 
@@ -63,10 +64,17 @@ public class UserService implements Serializable {
 
     }
 
-    public void updateUser(User user, UserRole role) {
-        em.merge(user);
+    public User updateUser(User otherUser, UserRole otherRole) {
+    	BaseEntity user = em.find(User.class, otherUser.getId());
+    	UserRole role = em.find(UserRole.class, otherRole.getId());
+    	
+    	otherUser.setId(otherUser.getId());
+    	otherUser.setPassword(otherUser.getPassword());
+    	otherUser.setUsername(otherUser.getUsername());
+    	
+        return em.merge(otherUser);
 
-        em.merge(role);
+//        em.merge(role);
     }
 
     public void createNewUser(String username, String password, String group) {

@@ -6,7 +6,6 @@ import com.vaadin.cdi.CDIView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-import de.ayr.laserdb.main.view.AbstractLaserView;
 
 @CDIView
 public class HomeView extends AbstractLaserView {

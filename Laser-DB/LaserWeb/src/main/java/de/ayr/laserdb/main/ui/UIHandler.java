@@ -11,10 +11,11 @@ import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+import de.ayr.laserdb.laserweb.view.AbstractLaserView;
 import de.ayr.laserdb.laserweb.view.HomeView;
 import de.ayr.laserdb.laserweb.view.LaserView;
 import de.ayr.laserdb.laserweb.view.NewDiscView;
-import de.ayr.laserdb.main.view.AbstractLaserView;
+import de.ayr.laserdb.laserweb.view.UserView;
 
 @SessionScoped
 // @VaadinView(rolesAllowed = "admin")
@@ -28,19 +29,21 @@ public class UIHandler extends VerticalLayout {
 	private HomeView homeView;
 	private LaserView laserView;
 	private NewDiscView newDiscView;
+	private UserView userView;
 	private JaasAccessControl jaasControl;
 
 	private HashMap<String, AbstractLaserView> viewList = new HashMap<String, AbstractLaserView>();
 
 	@Inject
 	public UIHandler(Header header, Menu menu, HomeView homeView,
-			LaserView laserView, NewDiscView newDiscView,
+			LaserView laserView, NewDiscView newDiscView, UserView userView,
 			JaasAccessControl jaasControl) {
 		this.header = header;
 		this.menu = menu;
 		this.homeView = homeView;
 		this.laserView = laserView;
 		this.newDiscView = newDiscView;
+		this.userView = userView;
 		this.jaasControl = jaasControl;
 	}
 
@@ -62,6 +65,7 @@ public class UIHandler extends VerticalLayout {
 		// Seite mit Berechtigungsinfo
 		// }
 		viewList.put("Neue Disc", newDiscView);
+		viewList.put("Benutzerverwaltung", userView);
 
 		menuHoSplit = new HorizontalSplitPanel();
 		// menuHoSplit.setHeight(100, UNITS_PERCENTAGE);

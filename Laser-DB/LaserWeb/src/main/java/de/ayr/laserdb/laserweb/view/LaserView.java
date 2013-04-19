@@ -1,7 +1,5 @@
 package de.ayr.laserdb.laserweb.view;
 
-import java.io.Serializable;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
@@ -15,10 +13,13 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
-import de.ayr.laserdb.infrastructure.service.UserService;
-import de.ayr.laserdb.main.view.AbstractLaserView;
+import de.ayr.laserdb.infrastructure.boundary.UserService;
+import de.ayr.laserdb.infrastructure.entity.LaserDisc;
+
+import java.io.Serializable;
 
 @CDIView
 @RolesAllowed("admin")
@@ -27,8 +28,9 @@ public class LaserView extends AbstractLaserView implements Serializable {
 	private final VerticalLayout vLayout = new VerticalLayout();
 	private final Panel contentPanel = new Panel("Platzhalter");
 	private final Label contentLabel = new Label("LaserView");
-	private Button newUserButton;
-
+	private final Table laserTable = new Table();
+	private LaserDisc laserDiscs = new LaserDisc();
+	
 	private final UserService userService;
 	private JaasAccessControl jaasControl;
 
@@ -42,6 +44,8 @@ public class LaserView extends AbstractLaserView implements Serializable {
 
 	@PostConstruct
 	private void initUI() {
+		Button newUserButton = new Button("Initiale User anlegen");
+
 		setCompositionRoot(vLayout);
 		setStyleName("LaserView-Style");
 		setSizeFull();
@@ -51,7 +55,6 @@ public class LaserView extends AbstractLaserView implements Serializable {
 
 		contentPanel.setContent(contentLabel);
 
-		newUserButton = new Button("Initiale User anlegen");
 		newUserButton.addClickListener(new Button.ClickListener() {
 
 			public void buttonClick(ClickEvent event) {
@@ -62,6 +65,8 @@ public class LaserView extends AbstractLaserView implements Serializable {
 
 		setVisibleForRoles(newUserButton, "admin");
 
+		
+//		vLayout.addComponent(laserTable);
 		vLayout.addComponent(contentPanel);
 		vLayout.addComponent(newUserButton);
 

@@ -8,7 +8,6 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
-import de.ayr.laserdb.main.view.AbstractLaserView;
 
 @CDIView
 public class NewDiscView extends AbstractLaserView {

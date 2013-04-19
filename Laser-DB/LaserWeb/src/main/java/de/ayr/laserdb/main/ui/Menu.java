@@ -26,6 +26,7 @@ public class Menu extends CssLayout implements ValueChangeListener {
     public static final String M_HOME = "Home";
     public static final String M_SHOW = "Discs anzeigen";
     public static final String M_NEU = "Neue Disc";
+    public static final String M_USER = "Benutzerverwaltung";
 
     @Inject
     public Menu(UIHandler uiHandler, JaasAccessControl jaasControl) {
@@ -59,7 +60,7 @@ public class Menu extends CssLayout implements ValueChangeListener {
 //         final String menu[] = { M_HOME, M_SHOW, M_NEU };
         
         if (jaasControl.isUserInRole("admin") || jaasControl.isUserInRole("mgmt")) {
-            final String menu[] = { M_HOME, M_SHOW, M_NEU };
+            final String menu[] = { M_HOME, M_SHOW, M_NEU, M_USER };
             for (String menuItem : menu) {
 
                 menuTree.addItem(menuItem);

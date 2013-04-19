@@ -1,11 +1,11 @@
-package de.ayr.laserdb.main.view;
+package de.ayr.laserdb.main.ui;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import com.vaadin.ui.Window;
 
-import de.ayr.laserdb.main.ui.UIHandler;
+import de.ayr.laserdb.main.login.LoginView;
 
 public class MainWindow extends Window {
     private LoginView loginView;

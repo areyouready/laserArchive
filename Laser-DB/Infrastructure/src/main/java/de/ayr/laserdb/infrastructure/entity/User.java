@@ -5,9 +5,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -19,14 +16,10 @@ import org.hibernate.annotations.Fetch;
 @Table(name = "user")
 @NamedQueries({
     @NamedQuery(name = User.FETCH_ALL_USER, query = "SELECT a FROM User a ORDER BY a.username ASC")})
-public class User {
+public class User extends BaseEntity {
     
     public static final String Prefix = "de.ayr.laserdb.infrastructure.entity.User";
     public static final String FETCH_ALL_USER = Prefix + ".fetchAllUser";
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     
     private String username;
     private String password;
@@ -62,14 +55,6 @@ public class User {
         return password;
     }
     
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setUserRoles(List<UserRole> userRoles) {
          this.userRoles = userRoles;
         

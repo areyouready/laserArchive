@@ -1,4 +1,4 @@
-package de.ayr.laserdb.main.view;
+package de.ayr.laserdb.laserweb.view;
 
 import java.io.Serializable;
 

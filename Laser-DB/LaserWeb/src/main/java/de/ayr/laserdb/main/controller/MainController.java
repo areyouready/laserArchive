@@ -8,8 +8,8 @@ import javax.inject.Inject;
 
 import com.vaadin.cdi.access.JaasAccessControl;
 
+import de.ayr.laserdb.main.ui.MainWindow;
 import de.ayr.laserdb.main.ui.UIHandler;
-import de.ayr.laserdb.main.view.MainWindow;
 
 @SessionScoped
 public class MainController implements Serializable {
