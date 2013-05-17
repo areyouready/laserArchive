@@ -1,12 +1,14 @@
 package de.ayr.laserdb.laserweb.view;
 
+import java.io.Serializable;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 
 import com.vaadin.cdi.CDIView;
-import com.vaadin.cdi.access.AccessControl;
 import com.vaadin.cdi.access.JaasAccessControl;
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -16,10 +18,9 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
+import de.ayr.laserdb.infrastructure.boundary.LaserService;
 import de.ayr.laserdb.infrastructure.boundary.UserService;
 import de.ayr.laserdb.infrastructure.entity.LaserDisc;
-
-import java.io.Serializable;
 
 @CDIView
 @RolesAllowed("admin")
@@ -30,15 +31,19 @@ public class LaserView extends AbstractLaserView implements Serializable {
 	private final Label contentLabel = new Label("LaserView");
 	private final Table laserTable = new Table();
 	private LaserDisc laserDiscs = new LaserDisc();
-	
+	private BeanItemContainer<LaserDisc> ldContainer;
+
 	private final UserService userService;
 	private JaasAccessControl jaasControl;
+	private LaserService laserService;
 
 	@Inject
-	public LaserView(UserService userService, JaasAccessControl jaasControl) {
+	public LaserView(UserService userService, JaasAccessControl jaasControl,
+			LaserService laserService) {
 
 		this.userService = userService;
 		this.jaasControl = jaasControl;
+		this.laserService = laserService;
 
 	}
 
@@ -65,14 +70,20 @@ public class LaserView extends AbstractLaserView implements Serializable {
 
 		setVisibleForRoles(newUserButton, "admin");
 
-		
-//		vLayout.addComponent(laserTable);
+		laserTable.setContainerDataSource(populateTable());
+
+		vLayout.addComponent(laserTable);
 		vLayout.addComponent(contentPanel);
 		vLayout.addComponent(newUserButton);
 
 		vLayout.setComponentAlignment(contentPanel, Alignment.BOTTOM_CENTER);
 		vLayout.setSizeFull();
 
+	}
+
+	private BeanItemContainer<LaserDisc> populateTable() {
+		ldContainer = new BeanItemContainer(LaserDisc.class, laserService.fetchAllDiscs());
+		return ldContainer;
 	}
 
 	public void setVisibleForRoles(Component component, String roles) {

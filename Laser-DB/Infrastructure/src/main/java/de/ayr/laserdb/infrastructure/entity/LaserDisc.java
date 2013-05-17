@@ -12,25 +12,33 @@ import de.ayr.laserdb.infrastructure.enums.Videoformat;
 @Table(name = "laserdiscs")
 public class LaserDisc extends BaseEntity {
 
-	private String Title;
-	private Integer Year;
+	private String title;
+	private Integer year;
 	private Videoformat videoformat;
 	private AgeLimit agelimit;
+	
+	public LaserDisc(String title) {
+		this.title = title;
+	}
+	
+	public LaserDisc() {
+		
+	}
 
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 
 	public void setTitle(String title) {
-		Title = title;
+		title = title;
 	}
 
 	public Integer getYear() {
-		return Year;
+		return year;
 	}
 
 	public void setYear(Integer year) {
-		Year = year;
+		year = year;
 	}
 
 	@Enumerated(EnumType.STRING)

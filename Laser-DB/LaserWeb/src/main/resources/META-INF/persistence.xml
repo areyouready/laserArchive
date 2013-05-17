@@ -11,6 +11,7 @@
 		
 			<class>de.ayr.laserdb.infrastructure.entity.User</class>
 			<class>de.ayr.laserdb.infrastructure.entity.UserRole</class>
+			<class>de.ayr.laserdb.infrastructure.entity.LaserDisc</class>
 
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		
