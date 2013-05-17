@@ -27,8 +27,8 @@ import de.ayr.laserdb.infrastructure.entity.LaserDisc;
 public class LaserView extends AbstractLaserView implements Serializable {
 
 	private final VerticalLayout vLayout = new VerticalLayout();
-	private final Panel contentPanel = new Panel("Platzhalter");
-	private final Label contentLabel = new Label("LaserView");
+//	private final Panel contentPanel = new Panel("Platzhalter");
+//	private final Label contentLabel = new Label("LaserView");
 	private final Table laserTable = new Table();
 	private LaserDisc laserDiscs = new LaserDisc();
 	private BeanItemContainer<LaserDisc> ldContainer;
@@ -55,10 +55,10 @@ public class LaserView extends AbstractLaserView implements Serializable {
 		setStyleName("LaserView-Style");
 		setSizeFull();
 
-		contentPanel.setHeight("300px");
-		contentPanel.setWidth("250px");
-
-		contentPanel.setContent(contentLabel);
+//		contentPanel.setHeight("300px");
+//		contentPanel.setWidth("250px");
+//
+//		contentPanel.setContent(contentLabel);
 
 		newUserButton.addClickListener(new Button.ClickListener() {
 
@@ -73,10 +73,10 @@ public class LaserView extends AbstractLaserView implements Serializable {
 		laserTable.setContainerDataSource(populateTable());
 
 		vLayout.addComponent(laserTable);
-		vLayout.addComponent(contentPanel);
+//		vLayout.addComponent(contentPanel);
 		vLayout.addComponent(newUserButton);
 
-		vLayout.setComponentAlignment(contentPanel, Alignment.BOTTOM_CENTER);
+//		vLayout.setComponentAlignment(contentPanel, Alignment.BOTTOM_CENTER);
 		vLayout.setSizeFull();
 
 	}
